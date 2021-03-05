@@ -20,8 +20,9 @@ bool Guess(int number) {
 		target = -1;
 		return true;
 	}
-	else std::count << "Wrong!!" << std::endl;
-	return false;
+	else if (number > target) std::count << "Smaller!!" << std::endl;
+	else if (number > target) std::count << "Bigger!!" << std::endl;
+	return false<
 }
 
 int main(array<System::String^>^ args) {
