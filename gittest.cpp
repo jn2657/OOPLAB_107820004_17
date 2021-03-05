@@ -10,6 +10,7 @@ bool Guess(int number){
 
 int main(array<System::String ^> ^args){
 	int guess;
+	int guess1;
 	do{
 		std::cin>>guess;
 	}while(!Guess(guess));
