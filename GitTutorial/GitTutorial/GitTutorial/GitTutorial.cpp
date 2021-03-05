@@ -15,7 +15,12 @@ bool Guess(int number) {
 		target = r.Next() % 100 + 1;
 	}
 
-	if (number == target) return true;
+	if (number == target) {
+		std::count << "Correct!!";
+		target = -1;
+		return true;
+	}
+	else std::count << "Wrong!!" << std::endl;
 	return false;
 }
 
