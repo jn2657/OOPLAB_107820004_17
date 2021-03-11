@@ -24,7 +24,7 @@ bool Guess(int number) {
 //	else if (number > target) std::count << "Bigger!!" << std::endl;
 //	return false<
 }
-
+//change
 int main(array<System::String^>^ args) {
 	int guess;
 	do {
