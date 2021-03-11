@@ -1,4 +1,4 @@
-﻿// GitTutorial.cpp : 此檔案包含 'main' 函式。程式會於該處開始執行及結束執行。
+// GitTutorial.cpp : 此檔案包含 'main' 函式。程式會於該處開始執行及結束執行。
 //
 
 #include "stdafx.h"
@@ -8,21 +8,22 @@
 using namespace System;
 
 bool Guess(int number) {
-	static int target = -1;
-
-	if (target == -1) {
-		Random r;
-		target = r.Next() % 100 + 1;
-	}
-
-	if (number == target) {
-		std::count << "Correct!!";
-		target = -1;
-		return true;
-	}
-	else if (number > target) std::count << "Smaller!!" << std::endl;
-	else if (number > target) std::count << "Bigger!!" << std::endl;
-	return false<
+//	static int target = -1;
+//
+//	if (target == -1) {
+//		Random r;
+//		target = r.Next() % 100 + 1;
+//	}
+//
+//	if (number == target) {
+//		std::count << "Correct!!";
+//		target = -1;
+//		return true;
+//	}
+//	else if (number > target) std::count << "Smaller!!" << std::endl;
+//	else if (number > target) std::count << "Bigger!!" << std::endl;
+//	return false<
+    return false
 }
 
 int main(array<System::String^>^ args) {
