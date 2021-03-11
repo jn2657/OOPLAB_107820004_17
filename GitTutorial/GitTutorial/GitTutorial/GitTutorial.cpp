@@ -25,7 +25,7 @@ bool Guess(int number) {
 //	return false<
     return false
 }
-
+//change
 int main(array<System::String^>^ args) {
 	int guess;
 	do {
