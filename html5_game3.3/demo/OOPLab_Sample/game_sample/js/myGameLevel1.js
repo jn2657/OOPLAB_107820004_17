@@ -4,6 +4,10 @@
         this.practice.load();
         this.rootScene.attach(this.practice.pic);
 
+        this.gameMap = new GameMap();
+        this.gameMap.load();
+        this.rootScene.attach(this.gameMap);
+
         this.pic = new Framework.Sprite(define.imagePath + 'firststage.png');
         this.pic.position = {
             x : 800,

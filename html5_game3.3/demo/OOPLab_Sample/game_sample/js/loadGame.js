@@ -46,7 +46,8 @@ var loadGameEnd;
         { src: 'game_sample/js/character.js', lookFor: 'Character' },
         { src: 'game_sample/js/myGameLevel1.js', lookFor: 'MyGame' },
         { src: 'game_sample/js/mainGame.js'},
-        { src: 'game_sample/js/Practice.js', lookFor: 'Practice' }
+        { src: 'game_sample/js/Practice.js', lookFor: 'Practice' },
+        { src: 'game_sample/js/GameMap.js', lookFor: 'GameMap'}
     ]
 
     importJS(listScript);
