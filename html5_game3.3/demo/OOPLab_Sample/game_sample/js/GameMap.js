@@ -1,5 +1,5 @@
 var GameMap = function(){
-    this.MW = 70;
+    this.MW = 40;
     this.MH = 40;
 
     this.position = {
@@ -29,7 +29,20 @@ var GameMap = function(){
             for(j=0;j<4;j++){
                 var picPosition = {
                     x: this.position.x + (this.MW*j) + this.MW/2,
-                    y: this.position.y + (this.MH*i) + this.MH/2
+                    y: this.position.y + (this.MH*i) + this.MH/2,
+                }
+
+                switch(this.map[i][j]){
+                    case 0:
+                        break;
+                    case 1:
+                        this.block.position = picPosition;
+                        this.block.draw(ctx);
+                        break;
+                    case 2:
+                        this.block1.position = picPosition;
+                        this.block1.draw(ctx);
+                        break;
                 }
             }
         }

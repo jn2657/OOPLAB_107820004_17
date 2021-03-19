@@ -2,23 +2,23 @@
 	load: function(){
         this.practice = new Practice();
         this.practice.load();
-        this.rootScene.attach(this.practice.pic);
+        this.rootScene.attach(this.practice);
 
         this.gameMap = new GameMap();
         this.gameMap.load();
         this.rootScene.attach(this.gameMap);
 
-        this.pic = new Framework.Sprite(define.imagePath + 'firststage.png');
-        this.pic.position = {
-            x : 800,
-            y : 450
-        }
+        // this.pic = new Framework.Sprite(define.imagePath + 'firststage.png');
+        // this.pic.position = {
+        //     x : 800,
+        //     y : 450
+        // }
 
 	    var characterPosition;
 
-        this.rotation = 0;
-        this.rootScene.attach(this.pic);
-        //this.pic.draw();
+        // this.rotation = 0;
+        // this.rootScene.attach(this.pic);
+        // this.pic.draw();
 
         this.isStop = false;
         this.isPlayed = false;
@@ -114,6 +114,7 @@
         var game = this;
         this.rootScene.update(); 
         this.practice.update();
+        this.gameMap.update();
 
         // this.position.x ++;
         // this.rotation ++;
@@ -152,7 +153,7 @@
     },
 
     draw:function(parentCtx){
-        this.pic.draw();
+        //this.pic.draw();
         this.rootScene.draw();
         //可支援畫各種單純的圖形和字
         parentCtx.fillStyle = (this.secondHandRotationRate > 0)?'green':'red'; 
@@ -167,6 +168,9 @@
     },
 
     keydown:function(e, list){
+
+        this.practice.keydown(e, list);
+
         Framework.DebugInfo.Log.warning(e.key);
         if(e.key === 'Numpad +' || e.key === '=') {
             this.secondHandRotationRate += 0.05;
