@@ -52,6 +52,7 @@ var loadGameEnd;
         { src: 'game_sample/js/ConflingSign.js', lookFor: 'ConflingSign' },//控制指示
         { src: 'game_sample/js/MovingBotton.js', lookFor: 'MovingBotton' },//橫移按鈕
         { src: 'game_sample/js/startSign.js', lookFor: 'StartSign' },//開始指示
+        { src: 'game_sample/js/startPic.js', lookFor: 'StartPic' },//開始圖片
         { src: 'game_sample/js/GoalSign.js', lookFor: 'GoalSign' },//終點指示
         { src: 'game_sample/js/EndScene.js', lookFor: 'EndScene' },//破關圖
         { src: 'game_sample/js/OverScene.js', lookFor: 'OverScene' },//死亡圖

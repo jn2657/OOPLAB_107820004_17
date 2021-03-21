@@ -1,10 +1,10 @@
 var GameMap = function(){
-    this.MW = 70;
+    this.MW = 40;
     this.MH = 40;
 
     this.position = {
-        x: 200,
-        y: 500
+        x: 800,
+        y: 450
     };
 
     this.map = [[1,2,1,2],[2,1,2,1],
@@ -24,15 +24,27 @@ var GameMap = function(){
 
     };
 
-    this.draw = function(ctx){
+    this.draw = function(){
         for(i=0;i<5;i++){
             for(j=0;j<4;j++){
                 var picPosition = {
                     x: this.position.x + (this.MW*j) + this.MW/2,
-                    y: this.position.y + (this.MH*i) + this.MH/2
+                    y: this.position.y + (this.MH*i) + this.MH/2,
+                }
+            
+
+                switch(this.map[i][j]){
+                    case 0:
+                        break;
+                    case 1:
+                        this.block.position = picPosition;
+                        this.block.draw();
+                    case 2:
+                        this.block1.position = picPosition;
+                        this.block1.draw();
                 }
             }
         }
-    }
+    };
 
 }
