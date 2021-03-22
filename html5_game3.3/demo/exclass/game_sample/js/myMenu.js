@@ -21,7 +21,11 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
     },
 
     load: function(){   
-
+        
+        ////////Load開始圖片/////////
+        this.startPic = new StartPic();
+        this.startPic.load();
+        this.rootScene.attach(this.startPic.startPic);
 
         ////////Load開始標語/////////
         this.startpic = new StartSign();
@@ -87,12 +91,17 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
             Framework.Game.goToNextLevel();
         }*/
         this.startpic.mousedown(e);
+        //this.startPic.mousedown(e);
 		
         if(!this.confling.isCall){
             this.select.click(e);
         }
         if(!this.select.isCall){
             this.confling.click(e);
+        }
+
+        if(this.startPic.startPic.click(e)){
+            Framework.Game.goToLevel("level1");
         }
         
         this.board.mBotton.click(e);

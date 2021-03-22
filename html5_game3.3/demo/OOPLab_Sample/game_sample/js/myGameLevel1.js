@@ -1,8 +1,20 @@
 ﻿var MyGame = Framework.Class(Framework.Level , {
 	load: function(){
+<<<<<<< HEAD
         // this.practice = new Practice();
         // this.practice.load();
         // this.rootScene.attach(this.practice);
+=======
+<<<<<<< HEAD
+        // this.practice = new Practice();
+        // this.practice.load();
+        // this.rootScene.attach(this.practice);
+=======
+        this.practice = new Practice();
+        this.practice.load();
+        this.rootScene.attach(this.practice);
+>>>>>>> aa545b1829df31593d68eb5576af59f39d3f830a
+>>>>>>> 847953d8a5f2e89ddff4f521c4bd39a7221a13cb
 
         this.gameMap = new GameMap();
         this.gameMap.load();
@@ -16,9 +28,15 @@
 
 	    var characterPosition;
 
+<<<<<<< HEAD
+        this.rotation = 0;
+        //this.rootScene.attach(this.pic);
+        //this.pic.draw();
+=======
         // this.rotation = 0;
         // this.rootScene.attach(this.pic);
         // this.pic.draw();
+>>>>>>> aa545b1829df31593d68eb5576af59f39d3f830a
 
         this.isStop = false;
         this.isPlayed = false;
@@ -113,8 +131,17 @@
     update: function() {
         var game = this;
         this.rootScene.update(); 
+<<<<<<< HEAD
         //this.practice.update();
+=======
+<<<<<<< HEAD
+        //this.practice.update();
+        //this.gameMap.update();
+=======
+        this.practice.update();
+>>>>>>> 847953d8a5f2e89ddff4f521c4bd39a7221a13cb
         this.gameMap.update();
+>>>>>>> aa545b1829df31593d68eb5576af59f39d3f830a
 
         // this.position.x ++;
         // this.rotation ++;

@@ -3,8 +3,8 @@ var GameMap = function(){
     this.MH = 40;
 
     this.position = {
-        x: 200,
-        y: 500
+        x: 800,
+        y: 450
     };
 
     this.map = [[1,2,1,2],[2,1,2,1],
@@ -24,28 +24,39 @@ var GameMap = function(){
 
     };
 
-    this.draw = function(ctx){
+    this.draw = function(){
         for(i=0;i<5;i++){
             for(j=0;j<4;j++){
                 var picPosition = {
                     x: this.position.x + (this.MH*i) + this.MH/2,
                     y: this.position.y + (this.MH*i) + this.MH/2,
                 }
+<<<<<<< HEAD
+            
+=======
+>>>>>>> aa545b1829df31593d68eb5576af59f39d3f830a
 
                 switch(this.map[i][j]){
                     case 0:
                         break;
                     case 1:
                         this.block.position = picPosition;
+<<<<<<< HEAD
+                        this.block.draw();
+                    case 2:
+                        this.block1.position = picPosition;
+                        this.block1.draw();
+=======
                         this.block.draw(ctx);
                         break;
                     case 2:
                         this.block1.position = picPosition;
                         this.block1.draw(ctx);
                         break;
+>>>>>>> aa545b1829df31593d68eb5576af59f39d3f830a
                 }
             }
         }
-    }
+    };
 
 }
