@@ -31,17 +31,29 @@ var GameMap = function(){
                     x: this.position.x + (this.MW*j) + this.MW/2,
                     y: this.position.y + (this.MH*i) + this.MH/2,
                 }
+<<<<<<< HEAD
             
+=======
+>>>>>>> aa545b1829df31593d68eb5576af59f39d3f830a
 
                 switch(this.map[i][j]){
                     case 0:
                         break;
                     case 1:
                         this.block.position = picPosition;
+<<<<<<< HEAD
                         this.block.draw();
                     case 2:
                         this.block1.position = picPosition;
                         this.block1.draw();
+=======
+                        this.block.draw(ctx);
+                        break;
+                    case 2:
+                        this.block1.position = picPosition;
+                        this.block1.draw(ctx);
+                        break;
+>>>>>>> aa545b1829df31593d68eb5576af59f39d3f830a
                 }
             }
         }

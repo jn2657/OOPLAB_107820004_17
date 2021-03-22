@@ -18,14 +18,24 @@ var Practice = function(){
     };
 
     this.update = function(){
-        this.position = {
-            x: this.position.x + 1,
-            y: this.position.y
-        }
-        this.rotation +=1;
-        this.pic.position = this.position
-        this.pic.rotation = this.rotation
+        // this.position = {
+        //     x: this.position.x + 1,
+        //     y: this.position.y
+        // }
+        // this.rotation +=1;
+        // this.pic.position = this.position
+        // this.pic.rotation = this.rotation
+
     };
+
+    this.keydown = function(e, list){
+        if(e.key == 'Right'){
+            this.pic.rotation += 10;
+        }
+        if(e.key == 'Left'){
+            this.pic.rotation -= 10;
+        }
+    }
 
     this.draw = function(ctx){
         this.pic.draw(ctx)

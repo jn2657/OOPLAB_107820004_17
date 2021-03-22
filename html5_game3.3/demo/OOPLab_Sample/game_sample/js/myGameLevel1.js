@@ -1,8 +1,14 @@
 ﻿var MyGame = Framework.Class(Framework.Level , {
 	load: function(){
+<<<<<<< HEAD
         // this.practice = new Practice();
         // this.practice.load();
         // this.rootScene.attach(this.practice);
+=======
+        this.practice = new Practice();
+        this.practice.load();
+        this.rootScene.attach(this.practice);
+>>>>>>> aa545b1829df31593d68eb5576af59f39d3f830a
 
         this.gameMap = new GameMap();
         this.gameMap.load();
@@ -16,9 +22,15 @@
 
 	    var characterPosition;
 
+<<<<<<< HEAD
         this.rotation = 0;
         //this.rootScene.attach(this.pic);
         //this.pic.draw();
+=======
+        // this.rotation = 0;
+        // this.rootScene.attach(this.pic);
+        // this.pic.draw();
+>>>>>>> aa545b1829df31593d68eb5576af59f39d3f830a
 
         this.isStop = false;
         this.isPlayed = false;
@@ -113,8 +125,13 @@
     update: function() {
         var game = this;
         this.rootScene.update(); 
+<<<<<<< HEAD
         //this.practice.update();
         //this.gameMap.update();
+=======
+        this.practice.update();
+        this.gameMap.update();
+>>>>>>> aa545b1829df31593d68eb5576af59f39d3f830a
 
         // this.position.x ++;
         // this.rotation ++;
@@ -168,6 +185,9 @@
     },
 
     keydown:function(e, list){
+
+        this.practice.keydown(e, list);
+
         Framework.DebugInfo.Log.warning(e.key);
         if(e.key === 'Numpad +' || e.key === '=') {
             this.secondHandRotationRate += 0.05;
