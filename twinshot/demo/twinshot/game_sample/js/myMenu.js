@@ -19,20 +19,23 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
 
 	load: function(){
 		//Animation Sprite會用到的圖片資源        
-        // var photoLink = 
-        // [               
-        //     define.imagePath + 'image1.png',
-        //     define.imagePath + 'image2.png',
-        //     define.imagePath + 'image3.png',
-        //     define.imagePath + 'image4.png',
-        //     define.imagePath + 'image5.png'
-        // ];
+        var photoLink = 
+        [               
+            define.imagePath + 'image1.png',
+            define.imagePath + 'image2.png',
+            define.imagePath + 'image3.png',
+            define.imagePath + 'image4.png',
+            define.imagePath + 'image5.png'
+        ];
 
-        //this.scrollBar = new Framework.Sprite(define.imagePath + 'scrollBar.png');
-        //this.rightArrow = new Framework.Sprite(define.imagePath + 'rightArrow.png');
-        //this.photo = new Framework.AnimationSprite({url: photoLink, loop: true, speed: 0.05});
+        this.scrollBar = new Framework.Sprite(define.imagePath + 'scrollBar.png');
+        this.rightArrow = new Framework.Sprite(define.imagePath + 'rightArrow.png');
+        this.photo = new Framework.AnimationSprite({url: photoLink, loop: true, speed: 0.05});
 
         this.firststage = new Framework.Sprite(define.imagePath + 'firststage.png');
+        this.startpic = new StartPic();
+        this.startpic.load(Framework.Game.getCanvasWidth() / 2 , Framework.Game.getCanvasHeight() / 2);
+        this.rootScene.attach(this.startpic.startPic);
 		
 		this.isTouchArrow = false;
         this.previousTouch = { x: 0, y: 0 };
@@ -48,40 +51,40 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
 
         //由於scrollBar將會被attach到this.center上
         //故x設為0, 表示x也是要正中心
-        // this.scrollBar.position = {
-        //     x: Framework.Game.getCanvasWidth() / 2,
-        //     y: Framework.Game.getCanvasHeight() / 4 * 3
-        // };
+        this.scrollBar.position = {
+            x: Framework.Game.getCanvasWidth() / 2,
+            y: Framework.Game.getCanvasHeight() / 4 * 3
+        };
 
-        // this.photo.position = {
-        //     x: 0,
-        //     y: 0
-        // };
+        this.photo.position = {
+            x: 0,
+            y: 0
+        };
 
         this.firststage.position = {
             x: 800,
             y: 450
         }
 
-        //Framework支援scale, rotation等功能
-        // this.rightArrow.scale = 0.35;
-        // this.rightArrow.position = {
-        //     x: Framework.Game.getCanvasWidth() / 2 - 500,
-        //     y: Framework.Game.getCanvasHeight() / 4 * 3
-        // };
+        Framework支援scale, rotation等功能
+        this.rightArrow.scale = 0.35;
+        this.rightArrow.position = {
+            x: Framework.Game.getCanvasWidth() / 2 - 500,
+            y: Framework.Game.getCanvasHeight() / 4 * 3
+        };
 		
-        //this.center.attach(this.photo);
+        this.center.attach(this.photo);
         this.center.attach(this.firststage);
 
         //rootScene為系統預設的容器, 由於其他東西都被attach到center上
         //將物件attach到center上, 順序是會影響繪製出來的效果的
         this.rootScene.attach(this.center);
         this.rootScene.attach(this.firststage);
-        // this.rootScene.attach(this.scrollBar);
-        // this.rootScene.attach(this.rightArrow);
+        this.rootScene.attach(this.scrollBar);
+        this.rootScene.attach(this.rightArrow);
 
         //讓AnimationSprite開始被播放
-        //this.photo.start();
+        this.photo.start();
 
 	},
 	
@@ -94,14 +97,18 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
         //this.rootScene.update(); 
 
         //目前的Framework, 當任何一個GameObject不做attach時, 則必須要自行update
-        // this.center.update();        
-        //this.scrollBar.update();
+        this.center.update();        
+        this.scrollBar.update();
     },
 
     draw: function(parentCtx) { 
         //this.rootScene.draw();一定要在第一行
         this.rootScene.draw(parentCtx);
         
+    },
+
+    mouseup: function(e) {
+
     },
 
     mousedown: function(e) {
@@ -116,20 +123,20 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
         }
     },
 
-    // mousemove: function(e) {        
-    //     if (this.isTouchArrow) {
-    //         this.currentTouch = { x: e.x, y: e.y };
-    //         if (this.currentTouch.x > this.previousTouch.x && this.currentTouch.y < this.rightArrow.lowerLeft.y && this.currentTouch.y > this.rightArrow.upperLeft.y) {
-    //             //當arrow被Touch到時, 會跟隨著觸控的位置移動
-    //             this.rightArrow.position.x = this.rightArrow.position.x + this.currentTouch.x - this.previousTouch.x 
-    //             if(this.currentTouch.x > Framework.Game.getCanvasWidth() - this.rightArrow.width) {
-    //                 //當要換關時, 可以呼叫goToNextLevel, goToPreviousLevel, goToLevel(levelName)
-    //                 Framework.Game.goToNextLevel();
-    //             }
-    //         }
-    //    }
-    //     this.previousTouch = this.currentTouch;
-    // },
+    mousemove: function(e) {        
+        if (this.isTouchArrow) {
+            this.currentTouch = { x: e.x, y: e.y };
+            if (this.currentTouch.x > this.previousTouch.x && this.currentTouch.y < this.rightArrow.lowerLeft.y && this.currentTouch.y > this.rightArrow.upperLeft.y) {
+                //當arrow被Touch到時, 會跟隨著觸控的位置移動
+                this.rightArrow.position.x = this.rightArrow.position.x + this.currentTouch.x - this.previousTouch.x 
+                if(this.currentTouch.x > Framework.Game.getCanvasWidth() - this.rightArrow.width) {
+                    //當要換關時, 可以呼叫goToNextLevel, goToPreviousLevel, goToLevel(levelName)
+                    Framework.Game.goToNextLevel();
+                }
+            }
+       }
+        this.previousTouch = this.currentTouch;
+    },
 
     mouseup: function(e) {
         this.isTouchArrow = false;
@@ -146,7 +153,7 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
         this.mouseup();
     },
     
-    // touchmove: function (e) {
-    //     this.mousemove({ x: e.touches[0].clientX, y: e.touches[0].clientY });
-    // }
+    touchmove: function (e) {
+        this.mousemove({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+    }
 });

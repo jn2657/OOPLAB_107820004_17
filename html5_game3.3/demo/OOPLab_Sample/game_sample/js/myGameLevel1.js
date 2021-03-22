@@ -1,8 +1,8 @@
 ﻿var MyGame = Framework.Class(Framework.Level , {
 	load: function(){
-        this.practice = new Practice();
-        this.practice.load();
-        this.rootScene.attach(this.practice);
+        // this.practice = new Practice();
+        // this.practice.load();
+        // this.rootScene.attach(this.practice);
 
         this.gameMap = new GameMap();
         this.gameMap.load();
@@ -113,7 +113,7 @@
     update: function() {
         var game = this;
         this.rootScene.update(); 
-        this.practice.update();
+        //this.practice.update();
         this.gameMap.update();
 
         // this.position.x ++;
