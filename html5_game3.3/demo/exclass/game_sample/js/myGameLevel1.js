@@ -49,9 +49,9 @@ var MyGame = Framework.Class(Framework.Level , {
 
 
         ////////Load開始標語/////////
-        this.startpic = new StartSign();
-        this.startpic.load(this.setX,this.setY);
-        this.rootScene.attach(this.startpic.startPic);
+        // this.startpic = new StartSign();
+        // this.startpic.load(this.setX,this.setY);
+        // this.rootScene.attach(this.startpic.startPic);
 
         
         ////////Load滑鼠圖形隨行/////////
@@ -101,7 +101,7 @@ var MyGame = Framework.Class(Framework.Level , {
         this.isEnd=false;    //告知關卡終結的布林代數要重設回false
         this.isOut=false;
 
-        this.rootScene.attach(this.background);
+        //this.rootScene.attach(this.background);
 
     },
 
@@ -249,9 +249,9 @@ var MyGame = Framework.Class(Framework.Level , {
     
     click: function (e) {  
         this.mousepic.mousedown(e);
-        if(this.mousepic.isStart){
-            this.startpic.go_out();  //如果開始遊戲就讓起始標示丟到畫面外
-        }
+        // if(this.mousepic.isStart){
+        //     this.startpic.go_out();  //如果開始遊戲就讓起始標示丟到畫面外
+        // }
 
         if(this.endScene.btn1_clicked(e) && this.isEnd){    //以下為如果破關的按鈕
             Framework.Game.goToNextLevel();

@@ -1,6 +1,6 @@
 var Board=function(){
 	this.load=function(px,py){
-        this.boardPic = new Framework.Sprite(define.imagePath + 'board.png');  //宣告圖片
+        this.boardPic = new Framework.Sprite(define.imagePath + '1levels.png');  //宣告圖片
         this.boardPic.position={                                             //起始位置
             x:Framework.Game.getCanvasWidth()+250,
             y:Framework.Game.getCanvasHeight()/2
@@ -31,7 +31,7 @@ var Board=function(){
         
 
         if(target1.isCall || target2.isCall){
-			if(this.boardPic.lowerRight.x>Framework.Game.getCanvasWidth()){
+			if(this.boardPic.lowerRight.x>Framework.Game.getCanvasWidth()-240){
 			     this.boardPic.position.x=this.boardPic.position.x-25;
                 
 			}

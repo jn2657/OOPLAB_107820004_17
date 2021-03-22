@@ -47,7 +47,6 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
         this.board.load();
         this.rootScene.attach(this.board.boardPic);
         this.rootScene.attach(this.board.mBotton.bottonPic);
-        
 
 
 
