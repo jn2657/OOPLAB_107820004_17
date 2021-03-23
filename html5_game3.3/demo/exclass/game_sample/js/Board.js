@@ -6,14 +6,21 @@ var Board=function(){
             y:Framework.Game.getCanvasHeight()/2
         };
 
-        this.level_x=Framework.Game.getCanvasWidth()-200;  //設定選關按鈕的x位置
+        this.level_x=Framework.Game.getCanvasWidth()-1260;  //設定選關按鈕的x位置
         this.level_n=6;                                    //設定關卡數量
 
         this.botton=[];            //生成選關按鈕
         for(i=0;i<this.level_n;i++){
         	this.botton[i]=new Botton(120,40);
-        	this.botton[i].load(this.level_x-65 ,105+i*50);
+            if(i == 5){
+                this.botton[i].load(this.level_x + 460,670);
+            }else{
+                this.botton[i].load(this.level_x + (i*100),300);
+            }
         }
+        //this.button[5] = new Botton(120,40);
+        //this.botton[5].load(this.level_x + 460, 670);
+
         this.t1_isCall=false;
         this.t2_isCall=false;
 
@@ -57,17 +64,17 @@ var Board=function(){
 
 
 	this.draw=function(ctx){
-		ctx.font = '35pt bold';
+		ctx.font = '20pt bold';
         ctx.fillStyle = 'white';
         ctx.textBaseline = 'top';
         ctx.textAlign = 'center';
         if(this.t1_isCall){
-            ctx.fillText('Level1',this.level_x , 100, 180);
-            ctx.fillText('Level2',this.level_x , 150, 180);
-            ctx.fillText('Level3',this.level_x , 200, 180);
-            ctx.fillText('Level4',this.level_x , 250, 180);
-            ctx.fillText('Level5',this.level_x , 300, 180);
-            ctx.fillText('Random',this.level_x , 350, 180);
+            ctx.fillText('Level1',this.level_x , 300, 180);
+            ctx.fillText('Level2',this.level_x + 100, 300, 180);
+            ctx.fillText('Level3',this.level_x + 200, 300, 180);
+            ctx.fillText('Level4',this.level_x + 300, 300, 180);
+            ctx.fillText('Level5',this.level_x + 400, 300, 180);
+            ctx.fillText('Back',this.level_x + 460, 670, 180);
         }
         else if(this.t2_isCall){
             ctx.fillText('Train Mode: on off',this.level_x-20 , 100, 380);

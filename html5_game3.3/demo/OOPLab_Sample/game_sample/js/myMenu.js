@@ -28,8 +28,8 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
             define.imagePath + 'image5.png'
         ];
 
-        //this.scrollBar = new Framework.Sprite(define.imagePath + 'scrollBar.png');
-        //this.rightArrow = new Framework.Sprite(define.imagePath + 'rightArrow.png');
+        this.scrollBar = new Framework.Sprite(define.imagePath + 'scrollBar.png');
+        this.rightArrow = new Framework.Sprite(define.imagePath + 'rightArrow.png');
         this.photo = new Framework.AnimationSprite({url: photoLink, loop: true, speed: 0.05});
 		
 		this.isTouchArrow = false;
@@ -57,19 +57,19 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
         };
 
         //Framework支援scale, rotation等功能
-        // this.rightArrow.scale = 0.35;
-        // this.rightArrow.position = {
-        //     x: Framework.Game.getCanvasWidth() / 2 - 500,
-        //     y: Framework.Game.getCanvasHeight() / 4 * 3
-        // };
+        this.rightArrow.scale = 0.35;
+        this.rightArrow.position = {
+            x: Framework.Game.getCanvasWidth() / 2 - 500,
+            y: Framework.Game.getCanvasHeight() / 4 * 3
+        };
 		
         this.center.attach(this.photo);
 
         //rootScene為系統預設的容器, 由於其他東西都被attach到center上
         //將物件attach到center上, 順序是會影響繪製出來的效果的
         this.rootScene.attach(this.center);
-        //this.rootScene.attach(this.scrollBar);
-        //this.rootScene.attach(this.rightArrow);
+        this.rootScene.attach(this.scrollBar);
+        this.rootScene.attach(this.rightArrow);
 
         //讓AnimationSprite開始被播放
         this.photo.start();
@@ -85,8 +85,8 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
         //this.rootScene.update(); 
 
         //目前的Framework, 當任何一個GameObject不做attach時, 則必須要自行update
-        // this.center.update();        
-        //this.scrollBar.update();
+        this.center.update();        
+        this.scrollBar.update();
     },
 
     draw: function(parentCtx) { 
@@ -106,10 +106,10 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
             console.log(e.x, e.y);
         }
         
-        // this.previousTouch = { x: e.x, y: e.y };
-        // if (this.previousTouch.x > this.rightArrow.upperLeft.x && this.previousTouch.x < this.rightArrow.upperRight.x && this.previousTouch.y > this.rightArrow.upperLeft.y && this.previousTouch.y < this.rightArrow.lowerLeft.y) {
-        //     this.isTouchArrow = true;
-        // }
+        this.previousTouch = { x: e.x, y: e.y };
+        if (this.previousTouch.x > this.rightArrow.upperLeft.x && this.previousTouch.x < this.rightArrow.upperRight.x && this.previousTouch.y > this.rightArrow.upperLeft.y && this.previousTouch.y < this.rightArrow.lowerLeft.y) {
+            this.isTouchArrow = true;
+        }
     },
 
     mousemove: function(e) {        
