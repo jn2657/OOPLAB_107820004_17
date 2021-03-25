@@ -49,9 +49,9 @@ var MyGame = Framework.Class(Framework.Level , {
 
 
         ////////Load開始標語/////////
-        // this.startpic = new StartSign();
-        // this.startpic.load(this.setX,this.setY);
-        // this.rootScene.attach(this.startpic.startPic);
+        this.startpic = new StartSign();
+        this.startpic.load(this.setX,this.setY);
+        this.rootScene.attach(this.startpic.startPic);
 
         
         ////////Load滑鼠圖形隨行/////////

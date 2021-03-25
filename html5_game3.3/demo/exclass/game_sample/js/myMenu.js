@@ -124,7 +124,12 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
                 Framework.Game.goToLevel("level5");
             }
             else if(this.board.botton[5].click(e)){
-                Framework.Game.goToLevel("levelR");
+                if(this.board.boardPic.lowerRight.x>Framework.Game.getCanvasWidth()-240){
+                    this.board.boardPic.position.x=this.board.boardPic.position.x-25;
+                }else{
+                    this.board.boardPic.position.x=this.board.boardPic.position.x+25;
+                }
+                //Framework.Game.goToLevel("levelR");
             }
         }
 
