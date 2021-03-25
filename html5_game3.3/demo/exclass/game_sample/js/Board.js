@@ -1,12 +1,12 @@
 var Board=function(){
 	this.load=function(px,py){
-        this.boardPic = new Framework.Sprite(define.imagePath + '1levels.png');  //宣告圖片
+        this.boardPic = new Framework.Sprite(define.imagePath + 'board.png');  //宣告圖片
         this.boardPic.position={                                             //起始位置
             x:Framework.Game.getCanvasWidth()+250,
             y:Framework.Game.getCanvasHeight()/2
         };
 
-        this.level_x=Framework.Game.getCanvasWidth()-200;  //設定選關按鈕的x位置
+        this.level_x=Framework.Game.getCanvasWidth()-400;  //設定選關按鈕的x位置
         this.level_n=6;                                    //設定關卡數量
 
         this.botton=[];            //生成選關按鈕
