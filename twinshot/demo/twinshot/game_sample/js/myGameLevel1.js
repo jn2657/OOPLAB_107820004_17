@@ -190,16 +190,16 @@
         //     this.firen.sprite.resume();
         // }
 
-        if(e.key === 'Enter') {
-            if(!this.isFullScreen) {
-                Framework.Game.fullScreen();
-                this.isFullScreen = true;
-            } else {
-                Framework.Game.exitFullScreen();
-                this.isFullScreen = false;
-            }
+        // if(e.key === 'Enter') {
+        //     if(!this.isFullScreen) {
+        //         Framework.Game.fullScreen();
+        //         this.isFullScreen = true;
+        //     } else {
+        //         Framework.Game.exitFullScreen();
+        //         this.isFullScreen = false;
+        //     }
             
-        }
+        // }
     },
 
     touchstart: function (e) {
