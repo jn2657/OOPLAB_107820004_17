@@ -4,9 +4,9 @@
         this.practice.load();
         this.rootScene.attach(this.practice);
 
-        // this.gameMap = new GameMap();
-        // this.gameMap.load();
-        // this.rootScene.attach(this.gameMap);
+        this.gameMap = new GameMap();
+        this.gameMap.load();
+        this.rootScene.attach(this.gameMap);
 
         // this.pic = new Framework.Sprite(define.imagePath + 'firststage.png');
         // this.pic.position = {
@@ -60,13 +60,13 @@
 
 
         this.secondHandRotationRate = 0.3;
-        this.wholeClock.attach(this.clock);
-        this.clockCenter.attach(this.secondHand);
-        this.clockCenter.attach(this.firen.sprite);
-        this.clockCenterNeg.attach(this.freeze.sprite);
-        this.wholeClock.attach(this.clockCenterNeg); 
-        this.wholeClock.attach(this.clockCenter);                    
-        this.rootScene.attach(this.wholeClock);
+        // this.wholeClock.attach(this.clock);
+        // this.clockCenter.attach(this.secondHand);
+        // this.clockCenter.attach(this.firen.sprite);
+        // this.clockCenterNeg.attach(this.freeze.sprite);
+        // this.wholeClock.attach(this.clockCenterNeg); 
+        // this.wholeClock.attach(this.clockCenter);                    
+        // this.rootScene.attach(this.wholeClock);
 
         //繪製Sprite的boundry (Debug用)
         this.firen.sprite.isDrawBoundry = true;
@@ -156,13 +156,13 @@
         //this.pic.draw();
         this.rootScene.draw();
         //可支援畫各種單純的圖形和字
-        parentCtx.fillStyle = (this.secondHandRotationRate > 0)?'green':'red'; 
-        parentCtx.fillRect(this.rectPosition.x , this.rectPosition.y, 260, 90);  
-        parentCtx.font = '65pt bold';
-        parentCtx.fillStyle = 'white';
-        parentCtx.textBaseline = 'top';
-        parentCtx.textAlign = 'center';
-        parentCtx.fillText('Click Me', this.rectPosition.x + 130, this.rectPosition.y, 260);
+        // parentCtx.fillStyle = (this.secondHandRotationRate > 0)?'green':'red'; 
+        // parentCtx.fillRect(this.rectPosition.x , this.rectPosition.y, 260, 90);  
+        // parentCtx.font = '65pt bold';
+        // parentCtx.fillStyle = 'white';
+        // parentCtx.textBaseline = 'top';
+        // parentCtx.textAlign = 'center';
+        // parentCtx.fillText('Click Me', this.rectPosition.x + 130, this.rectPosition.y, 260);
          
         
     },

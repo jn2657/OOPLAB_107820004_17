@@ -1,9 +1,9 @@
 var StartPic=function(){
-	this.load=function(px,py){
+	this.load=function(){
         this.startPic = new Framework.Sprite(define.imagePath + 'firststage.png');  //宣告圖片
         this.init_position={        //起始位置
-            x:px,
-            y:py
+            x:Framework.Game.getCanvasWidth()/2,
+            y:Framework.Game.getCanvasHeight()/2
         }
         this.startPic.position=this.init_position;
         this.isStart=false;

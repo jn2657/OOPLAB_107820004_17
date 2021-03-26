@@ -1,6 +1,6 @@
 var Practice = function(){
     this.load = function(){
-        this.pic = new Framework.Sprite(define.imagePath + 'firststage.png');
+        this.pic = new Framework.Sprite(define.imagePath + 'background.png');
         this.pic.position = {
             x: 800,
             y: 450

@@ -67,6 +67,13 @@ var loadGameEnd;
         { src: 'game_sample/js/level2.js', lookFor: 'Level2' },
         { src: 'game_sample/js/level2_change.js', lookFor: 'Level2_change' },
         { src: 'game_sample/js/gameOver.js', lookFor: 'GameOver' },
+        //{ src: 'game_sample/js/Botton.js', lookFor: 'Botton' },
+        //{ src: 'game_sample/js/Board.js', lookFor: 'Board' },
+        //{ src: 'game_sample/js/ConflingSign.js', lookFor: 'ConflingSign' },
+        //{ src: 'game_sample/js/MovingBotton.js', lookFor: 'MovingBotton' },
+        //{ src: 'game_sample/js/SelectSign.js', lookFor: 'SelectSign' },
+        //{ src: 'game_sample/js/startPic.js', lookFor: 'StartPic' },
+        //{ src: 'game_sample/js/startSign.js', lookFor: 'StartSign' },
         { src: 'game_sample/js/mainGame.js'}
     ]
     importJS(listScript);

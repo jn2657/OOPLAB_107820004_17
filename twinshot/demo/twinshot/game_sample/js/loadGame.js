@@ -47,6 +47,12 @@ var loadGameEnd;
         { src: 'game_sample/js/myGameLevel1.js', lookFor: 'MyGame' },
         { src: 'game_sample/js/Practice.js', lookFor: 'Practice' },
         { src: 'game_sample/js/GameMap.js', lookFor: 'GameMap'},
+        { src: 'game_sample/js/Board.js', lookFor: 'Board'},
+        { src: 'game_sample/js/Botton.js', lookFor: 'Botton'},
+        { src: 'game_sample/js/MovingBotton.js', lookFor: 'MovingBotton'},
+        { src: 'game_sample/js/SelectSign.js', lookFor: 'SelectSign'},
+        { src: 'game_sample/js/startSign.js', lookFor: 'StartSign'},
+        { src: 'game_sample/js/StartPic.js', lookFor: 'StartPic'},
         { src: 'game_sample/js/mainGame.js'}
         
     ]

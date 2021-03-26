@@ -1,17 +1,6 @@
 var MyGame = Framework.Class(Framework.Level , {
 	load: function(){
-        // this.box2d = new Framework.Box2D();
-        // this.box2d.createWorld();
         
-        // this.background = new Framework.Sprite(define.imagePath + 'stage1.png');
-        // this.background.position = {
-        //     x: 800,
-        //     y: 450
-        // };
-
-        // var ground = this.box2d.createSquareBody(10,10,this.box2d.bodyType_Static);
-        // ground.SetPosition(new this.box2d.b2Vec2(10,10));
-
         this.setX=200;
         this.setY=200;
 

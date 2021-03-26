@@ -19,72 +19,31 @@ var MyMenu = Framework.exClass(Framework.GameMainMenu , {
 
 	load: function(){
 		//Animation Sprite會用到的圖片資源        
-        var photoLink = 
-        [               
-            define.imagePath + 'image1.png',
-            define.imagePath + 'image2.png',
-            define.imagePath + 'image3.png',
-            define.imagePath + 'image4.png',
-            define.imagePath + 'image5.png'
-        ];
+        ////////Load開始圖片/////////
+        this.startPic = new StartPic();
+        this.startPic.load();
+        this.rootScene.attach(this.startPic.startPic);
 
-        this.scrollBar = new Framework.Sprite(define.imagePath + 'scrollBar.png');
-        this.rightArrow = new Framework.Sprite(define.imagePath + 'rightArrow.png');
-        this.photo = new Framework.AnimationSprite({url: photoLink, loop: true, speed: 0.05});
-
-        this.firststage = new Framework.Sprite(define.imagePath + 'firststage.png');
-        this.startpic = new StartPic();
+        ////////Load開始標語/////////
+        this.startpic = new StartSign();
         this.startpic.load(Framework.Game.getCanvasWidth() / 2 , Framework.Game.getCanvasHeight() / 2);
         this.rootScene.attach(this.startpic.startPic);
-		
-		this.isTouchArrow = false;
-        this.previousTouch = { x: 0, y: 0 };
-        this.currentTouch = { x: 0, y: 0 };
 
-        //為了讓之後的位置較好操控, new出一個位於中心點且可以黏貼任何東西的容器
-        //注意, Position都是用中心點
-        this.center = new Framework.Scene();
-        this.center.position = {
-            x: Framework.Game.getCanvasWidth() / 2,
-            y: Framework.Game.getCanvasHeight() / 2
-        };
+        ////////Load選關按鈕/////////
+        this.select=new SelectSign();
+        this.select.load();
+        this.rootScene.attach(this.select.bottonPic);
 
-        //由於scrollBar將會被attach到this.center上
-        //故x設為0, 表示x也是要正中心
-        this.scrollBar.position = {
-            x: Framework.Game.getCanvasWidth() / 2,
-            y: Framework.Game.getCanvasHeight() / 4 * 3
-        };
+        ////////Load選關按鈕/////////
+        this.confling=new ConflingSign();
+        this.confling.load();
+        this.rootScene.attach(this.confling.bottonPic);
 
-        this.photo.position = {
-            x: 0,
-            y: 0
-        };
-
-        this.firststage.position = {
-            x: 800,
-            y: 450
-        }
-
-        Framework支援scale, rotation等功能
-        this.rightArrow.scale = 0.35;
-        this.rightArrow.position = {
-            x: Framework.Game.getCanvasWidth() / 2 - 500,
-            y: Framework.Game.getCanvasHeight() / 4 * 3
-        };
-		
-        this.center.attach(this.photo);
-        this.center.attach(this.firststage);
-
-        //rootScene為系統預設的容器, 由於其他東西都被attach到center上
-        //將物件attach到center上, 順序是會影響繪製出來的效果的
-        this.rootScene.attach(this.center);
-        this.rootScene.attach(this.firststage);
-        this.rootScene.attach(this.scrollBar);
-        this.rootScene.attach(this.rightArrow);
-
-        //讓AnimationSprite開始被播放
-        this.photo.start();
+        ////////Load模板/////////
+        this.board=new Board();
+        this.board.load();
+        this.rootScene.attach(this.board.boardPic);
+        this.rootScene.attach(this.board.mBotton.bottonPic);
 
 	},
 	
