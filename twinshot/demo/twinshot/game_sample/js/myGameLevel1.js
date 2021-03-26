@@ -14,7 +14,10 @@
         //     y : 450
         // }
 
-	    var characterPosition;
+	    var characterPosition = {
+            x: 850,
+            y: 600
+        };
 
         // this.rotation = 0;
         // this.rootScene.attach(this.pic);
@@ -30,7 +33,7 @@
             y: 0
         };
 
-        characterPosition = {x: 0, y: -1138 * this.clock.scale};
+        //characterPosition = {x: 0, y: -1138 * this.clock.scale};
         this.secondHand = new Framework.Sprite(define.imagePath + 'secondHand.jpg'); 
         this.firen = new Character(define.imagePath + 'firen.png', {position: characterPosition, run: {from: 20, to: 22}, beHit: {from:30, to: 35}, hit: {from: 10, to: 13}}); 
         this.freeze = new Character(define.imagePath + 'freeze.png', {position: characterPosition, scale: 1, run: {from: 29, to: 27}, beHit: {from:39, to: 35}, hit: {from: 19, to: 16}});
@@ -60,6 +63,8 @@
 
 
         this.secondHandRotationRate = 0.3;
+        this.rootScene.attach(this.firen.sprite);
+        this.rootScene.attach(this.freeze.sprite);
         // this.wholeClock.attach(this.clock);
         // this.clockCenter.attach(this.secondHand);
         // this.clockCenter.attach(this.firen.sprite);

@@ -34,6 +34,16 @@ var GameMap = function(){
         this.pillar2 = new Framework.Sprite(define.imagePath + 'pillar2.png');
     };
 
+    this.setPlayerPosition = function(playerPosition){
+        this.player1.position = playerPosition;
+    }
+    this.addMonster = function(monsterPosition)
+    {
+        var newMonster = new Monster(define.imagePath + 'monster.png',this, {down: {from: 0, to: 2}, left: {from:3, to: 5}, right: {from: 6, to: 8}, up: {from: 9, to: 11}});
+        newMonster.position = monsterPosition;
+        this.monster.push(newMonster);
+    }
+
     this.initialize = function(){
 
     };
