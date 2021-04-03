@@ -1,29 +1,13 @@
-var GameMap = function(){
+var GameMap = function(map){
     this.MW = 45;
     this.MH = 45;
+
+    this.mapArray = map;
 
     this.position = {
         x: 200,
         y: 100
     };
-
-    this.map = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,1,3,2,2,3,1,2,3,1,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,5,0,0,5,0,5,0,0,5,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,1,3,1,1,2,2,1,3,1,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0],
-                [0,1,3,1,3,1,3,2,1,2,0,0,0,6,0,6,0,0,0,1,1,3,3,1,2,2,3,1,0],
-                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
 
     this.load = function(){
         this.block = new Framework.Sprite(define.imagePath + 'block.png');
@@ -32,27 +16,34 @@ var GameMap = function(){
         this.pillar = new Framework.Sprite(define.imagePath + 'pillar.png');
         this.pillar1 = new Framework.Sprite(define.imagePath + 'pillar1.png');
         this.pillar2 = new Framework.Sprite(define.imagePath + 'pillar2.png');
+
+        this.player1 = new BombMan(define.imagePath + 'player1.png', 
+                    {down: {from: 0, to: 2}, left: {from:3, to: 5}, right: {from: 6, to: 8}, up: {from: 9, to: 11}});
+        this.player1.position = {x:850, y:600};
+
+        //this.monster = [];
     };
 
     this.setPlayerPosition = function(playerPosition){
         this.player1.position = playerPosition;
-    }
+    };
     this.addMonster = function(monsterPosition)
     {
         var newMonster = new Monster(define.imagePath + 'monster.png',this, {down: {from: 0, to: 2}, left: {from:3, to: 5}, right: {from: 6, to: 8}, up: {from: 9, to: 11}});
         newMonster.position = monsterPosition;
         this.monster.push(newMonster);
-    }
+    };
 
     this.initialize = function(){
 
     };
 
     this.update = function(){
-
+        this.player1.update();
     };
 
     this.draw = function(ctx){
+        this.player1.draw(ctx);
         for(i=0;i<17;i++){
             for(j=0;j<29;j++){
                 var picPosition = {
@@ -60,7 +51,7 @@ var GameMap = function(){
                     y: this.position.y + (this.MH*i) + this.MH/2,
                 }
 
-                switch(this.map[i][j]){
+                switch(this.mapArray[i][j]){
                     case 0:
                         break;
                     case 1:
@@ -92,6 +83,75 @@ var GameMap = function(){
                 }
             }
         }
-    }
+    };
+
+    this.checkIsWalkAble = function(x,y){
+        if(x < 0 || x > this.mapArray[0].length){ return false; }
+        if(y < 0 || y > this.mapArray.length){ return false; }
+
+        if(this.mapArray[y][x] > 0){ return false; }
+        else{ return true;}
+    };
+
+    this.keydown = function(e, list){
+        var playerPosition = this.player1.position;
+        if(e.key === 'Down') {
+            if(this.checkIsWalkAble(playerPosition.x,playerPosition.y+1)){
+                //this.player1.walk({x:0,y:1});
+                this.playerWalkDirection = {x:0,y:1};
+                this.pressWalk = true;
+                this.keyPress = "Down";
+            }
+        }
+
+        if(e.key === 'Left') {
+            if(this.checkIsWalkAble(playerPosition.x-1,playerPosition.y)){
+                //this.player1.walk({x:-1,y:0});
+                this.playerWalkDirection = {x:-1,y:0};
+                this.pressWalk = true;
+                this.keyPress = "Left";
+            }
+        }
+
+        if(e.key === 'Right') {
+            if(this.checkIsWalkAble(playerPosition.x+1,playerPosition.y)){
+                //this.player1.walk({x:1,y:0});
+                this.playerWalkDirection = {x:1,y:0};
+                this.pressWalk = true;
+                this.keyPress = "Right";
+            }
+        }
+
+        if(e.key === 'Up') {
+            if(this.checkIsWalkAble(playerPosition.x,playerPosition.y-1)){
+                //this.player1.walk({x:0,y:-1});
+                this.playerWalkDirection = {x:0,y:-1};
+                this.pressWalk = true;
+                this.keyPress = "Up";
+            }
+        }
+
+        if(e.key === 'Space'){
+            var bomb = this.player1.placeBomb();
+            if(!Framework.Util.isNull(bomb))
+            {
+                bomb.ExploredCallBack.push(Framework.Game._currentLevel.map.bombExploredHandler);
+                this.bombArray.push(bomb);
+                var bombPosition = bomb.position;
+                this.mapArray[bombPosition.y][bombPosition.x] = 3;
+            }
+        }
+    };
+
+    this.keyup = function(e, list){
+        if(e.key === 'Down' || e.key === 'Up' || e.key === 'Left' || e.key === 'Right') {
+
+            if(this.keyPress == e.key)
+            {
+                this.player1.walkEnd();
+                this.pressWalk = false;
+            };
+        }
+    };
 
 }

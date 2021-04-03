@@ -53,6 +53,9 @@ var loadGameEnd;
         { src: 'game_sample/js/SelectSign.js', lookFor: 'SelectSign'},
         { src: 'game_sample/js/startSign.js', lookFor: 'StartSign'},
         { src: 'game_sample/js/StartPic.js', lookFor: 'StartPic'},
+        { src: 'game_sample/js/monster.js', lookFor: 'Monster'},
+        { src: 'game_sample/js/constants.js', lookFor: 'Constants'},
+        { src: 'game_sample/js/bombMan.js', lookFor: 'BombMan'},
         { src: 'game_sample/js/mainGame.js'}
         
     ]

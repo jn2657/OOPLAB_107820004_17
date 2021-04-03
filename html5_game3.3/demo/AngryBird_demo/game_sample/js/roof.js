@@ -81,9 +81,5 @@ var roof = function(){
         this.pic.draw();
     
     };
-<<<<<<< HEAD
-}
-=======
     
 }
->>>>>>> 2b7d31db991c8f9398dd1ddde65f0445a1398ecb

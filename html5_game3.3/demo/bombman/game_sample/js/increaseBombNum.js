@@ -18,7 +18,7 @@ var IncreaseBombNum = function() {
 
     }
 
-    this.update = function()
+    this.update = function(){
 
     }
 
