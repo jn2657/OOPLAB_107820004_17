@@ -112,10 +112,8 @@
     },
 
     keydown:function(e, list){
-        this.map.keydown(e, list);
-        if(e.key === "Right"){
-            this.characterPosition.x += 10;
-        }
+        this.gameMap.keydown(e, list);
+
     },
 
     touchstart: function (e) {

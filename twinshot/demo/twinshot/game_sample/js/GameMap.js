@@ -34,11 +34,39 @@ var GameMap = function(map){
         this.monster.push(newMonster);
     };
 
-    this.initialize = function(){
+    this.playerMovedHandler = function(player){
+        var constants = new Constants();
+        var item = m_map.mapArray[player.position.y][player.position.x];
+        if(item === constants.ItemEnum.INCREASE_BOMB){
+            player.increaseBombNum();
+            m_map.mapArray[player.position.y][player.position.x] = 0;
+            m_map.tileArray[player.position.y*22+player.position.x].tileType = 0;
+            m_map.score.addScore(200);
+        }else if(item === constants.ItemEnum.INCREASE_POWER){
+            player.increaseBombPower();
+            m_map.mapArray[player.position.y][player.position.x] = 0;
+            m_map.tileArray[player.position.y*22+player.position.x].tileType = 0;
+            m_map.score.addScore(200);
+        }else if(item === constants.ItemEnum.STOP_MONSTER){
+            m_map.stopMonster = true;
+            m_map.mapArray[player.position.y][player.position.x] = 0;
+            m_map.tileArray[player.position.y*22+player.position.x].tileType = 0;
+            m_map.score.addScore(200);
+        }
+    }
 
+    this.initialize = function(){
+        this.player1.StepMovedCallBack.push(this.playerMovedHandler);
     };
 
     this.update = function(){
+        if(this.pressWalk === true && this.player1.isWalking === false)
+        {
+            if(this.checkIsWalkAble(this.player1.position.x+this.playerWalkDirection.x,this.player1.position.y+this.playerWalkDirection.y))
+            {
+                this.player1.walk(this.playerWalkDirection);
+            }
+        }
         this.player1.update();
     };
 
@@ -93,6 +121,9 @@ var GameMap = function(map){
         else{ return true;}
     };
 
+    this.playerWalkDirection = {x:0,y:0};
+    this.pressWalk = false;
+    this.keyPress = "";
     this.keydown = function(e, list){
         var playerPosition = this.player1.position;
         if(e.key === 'Down') {
