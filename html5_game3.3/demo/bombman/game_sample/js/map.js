@@ -61,8 +61,7 @@ var Map = function(map)
                     var box = new Box(this.constants.ItemEnum.STOP_MONSTER);
                     box.position = {x:j, y:i};
                     this.boxArray.push(box);
-                }else
-                {
+                }else{
                     tile.tileType = line[j];
                 }
                 this.tileArray.push(tile);
