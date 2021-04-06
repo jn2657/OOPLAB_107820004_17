@@ -1,0 +1,48 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="tw.edu.ntut.csie.game"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="15"
+8-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="23" />
+9-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
+10
+11    <application
+11-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:5:5-19:19
+12        android:allowBackup="true"
+12-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:6:9-35
+13        android:debuggable="true"
+14        android:hardwareAccelerated="true"
+14-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:7:9-43
+15        android:icon="@drawable/icon"
+15-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:8:9-38
+16        android:label="@string/app_name"
+16-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:9:9-41
+17        android:testOnly="true" >
+18        <activity
+18-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:10:9-18:20
+19            android:name="tw.edu.ntut.csie.game.Game"
+19-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:10:19-39
+20            android:hardwareAccelerated="true"
+20-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:13:13-47
+21            android:label="@string/app_name"
+21-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:11:13-45
+22            android:screenOrientation="landscape" >
+22-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:12:13-50
+23            <intent-filter>
+23-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:14:13-17:29
+24                <action android:name="android.intent.action.MAIN" />
+24-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:15:17-69
+24-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:15:25-66
+25
+26                <category android:name="android.intent.category.LAUNCHER" />
+26-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:16:17-77
+26-->/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:16:27-74
+27            </intent-filter>
+28        </activity>
+29    </application>
+30
+31</manifest>
