@@ -44,6 +44,10 @@
         "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/help_info.png"
     },
     {
+        "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_arrow_right.png.flat",
+        "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/arrow_right.png"
+    },
+    {
         "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_apple.png.flat",
         "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/apple.png"
     },
@@ -94,6 +98,10 @@
     {
         "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_about_info.png.flat",
         "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/about_info.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_arrow_left.png.flat",
+        "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/arrow_left.png"
     },
     {
         "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_exit.png.flat",

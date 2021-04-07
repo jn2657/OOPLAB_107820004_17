@@ -25,12 +25,13 @@ public class StateRun extends GameState {
     private MovingBitmap _background;
     private MovingBitmap _android;
     private MovingBitmap _android1;
+    private MovingBitmap _android2;
     private MovingBitmap _cloud;
     private MovingBitmap _door;
     private MovingBitmap _message;
     private GameMap gameMap;
 
-    private Animation _flower;
+    private Charactor _flower;
 
     private Integer _scores;
 
@@ -64,6 +65,8 @@ public class StateRun extends GameState {
         _android.setLocation(100, 200);
         _android1 = new MovingBitmap(R.drawable.android_green);
         _android1.setLocation(500, 200);
+        _android2 = new MovingBitmap(R.drawable.android_green);
+        _android2.setLocation(500, 100);
 
         gameMap = new GameMap();
         timer = null;
@@ -79,14 +82,16 @@ public class StateRun extends GameState {
 
         _scores = new Integer(DEFAULT_SCORE_DIGITS, 50, 550, 10);
 
-        _flower = new Animation();
-        _flower.setLocation(300, 240);
-        _flower.addFrame(R.drawable.flower1);
-        _flower.addFrame(R.drawable.flower2);
-        _flower.addFrame(R.drawable.flower3);
-        _flower.addFrame(R.drawable.flower4);
-        _flower.addFrame(R.drawable.flower5);
-        _flower.setDelay(2);
+//        _flower = new Animation();
+//        _flower.setLocation(300, 240);
+//        _flower.addFrame(R.drawable.flower1);
+//        _flower.addFrame(R.drawable.flower2);
+//        _flower.addFrame(R.drawable.flower3);
+//        _flower.addFrame(R.drawable.flower4);
+//        _flower.addFrame(R.drawable.flower5);
+//        _flower.setDelay(2);
+        _flower = new Charactor();
+        _flower.initialize(gameMap);
 
         _music = new Audio(R.raw.ntut);
         _music.setRepeating(true);
@@ -126,6 +131,7 @@ public class StateRun extends GameState {
         //_door.show();
         _android.show();
         _android1.show();
+        _android2.show();
 //        mPractice.show();
         gameMap.show();
     }
@@ -136,6 +142,7 @@ public class StateRun extends GameState {
         _scores.release();
         _android.release();
         _android1.release();
+        _android2.release();
         _flower.release();
         _message.release();
         _cloud.release();
@@ -148,6 +155,7 @@ public class StateRun extends GameState {
         _scores = null;
         _android = null;
         _android1 = null;
+        _android2 = null;
         _flower = null;
         _message = null;
         _cloud = null;
@@ -186,7 +194,14 @@ public class StateRun extends GameState {
         int touchY = actionPointer.getY();
         if(touchX >=480 && touchX <= 550 &&
                 touchY >= 150 && touchY <= 250){
-            starttimer();
+            if(_flower.getHeight() == 5){
+                _flower.jump(5);
+            }
+
+        }
+        if(touchX >= 480 && touchX <= 550 &&
+            touchY >= 50 && touchY <= 150){
+            _flower.shot();
         }
         if(touchX > _android.getX() && touchX < _android.getX() + _android.getWidth() &&
         touchY > _android.getY() && touchY < _android.getY() + _android.getHeight()){
@@ -214,11 +229,22 @@ public class StateRun extends GameState {
             int moveX = actionPointer.getX();
             int moveY = actionPointer.getY();
             if(moveX > _android.getX()){
-                _flower.setLocation(_flower.getX()+5, _flower.getY());
+                if(gameMap.isWalkable(_flower.getX()+5, _flower.getY())){
+                    _flower.setLocation(_flower.getX()+5, _flower.getY());
+                    _flower.setDirection("right");
+                }
+                if(gameMap.isWalkable(_flower.getX(), _flower.getY()+5)){
+                    _flower.jump(0);
+                }
             }else if(moveX < _android.getX() + _android.getWidth()){
-                _flower.setLocation(_flower.getX()-5, _flower.getY());
+                if(gameMap.isWalkable(_flower.getX()-5, _flower.getY())){
+                    _flower.setLocation(_flower.getX()-5, _flower.getY());
+                    _flower.setDirection("left");
+                }
+                if(gameMap.isWalkable(_flower.getX(), _flower.getY()+5)){
+                    _flower.jump(0);
+                }
             }
-
         }
 
         if(_pointer1 != null && _pointer2 != null){
@@ -229,59 +255,6 @@ public class StateRun extends GameState {
             }
         }
         return false;
-    }
-
-    public void resizeAndroidIcon() {
-
-    }
-
-    private void starttimer(){
-        if(timer == null){
-            timer = new Timer();
-        }
-        if(timerTask == null) {
-            timer.scheduleAtFixedRate(new TimerTask() {
-                @Override
-                public void run() {
-                    if(jumpheight>0){
-                        _flower.setLocation(_flower.getX(), _flower.getY() - 15);
-                        jumpheight--;
-                    }
-                    if(jumpheight<=0 && jumpheight != -5){
-                        _flower.setLocation(_flower.getX(), _flower.getY() + 15);
-                        jumpheight--;
-                    }
-                    if(jumpheight == -5){
-                        stopTimer();
-                    }
-                }
-
-            }, 200, 100);
-        }
-    }
-
-    private void stopTimer(){
-        if(timer != null){
-            timer.cancel();
-            timer = null;
-        }
-        if(timerTask != null){
-            timerTask.cancel();
-            timerTask = null;
-        }
-        jumpheight = 5;
-
-    }
-    
-    public void jump(int j){
-        jumpheight = j;
-        Timer timer = new Timer();
-        timer.scheduleAtFixedRate(timerTask = new TimerTask() {
-            public void run() {
-                _flower.setLocation(_flower.getX(), _flower.getY()-15);
-            }
-        }, 0, 500);
-
     }
 
     @Override

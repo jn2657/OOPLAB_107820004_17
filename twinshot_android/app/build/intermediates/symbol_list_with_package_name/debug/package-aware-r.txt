@@ -452,6 +452,8 @@ drawable about_pressed
 drawable android_black
 drawable android_green
 drawable apple
+drawable arrow_left
+drawable arrow_right
 drawable background
 drawable background1
 drawable block

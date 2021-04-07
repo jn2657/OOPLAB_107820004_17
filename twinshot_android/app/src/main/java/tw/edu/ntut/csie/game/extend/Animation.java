@@ -251,6 +251,10 @@ public class Animation implements GameObject {
         _visible = visible;
     }
 
+    public boolean getVisible(){
+        return _visible;
+    }
+
 
     public void jump(int x, int y){
         int i = 5;
