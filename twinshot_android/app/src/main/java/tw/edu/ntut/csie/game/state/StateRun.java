@@ -191,6 +191,7 @@ public class StateRun extends GameState {
     @Override
     public boolean pointerPressed(Pointer actionPointer, List<Pointer> pointers) {
         _message.setVisible(false);
+        _flower.reset();
         int touchX = actionPointer.getX();
         int touchY = actionPointer.getY();
         if(touchX >=480 && touchX <= 550 &&
@@ -202,7 +203,7 @@ public class StateRun extends GameState {
         }
         if(touchX >= 480 && touchX <= 550 &&
             touchY >= 50 && touchY <= 150){
-            _flower.shot();
+            //_flower.shot();
         }
         if(touchX > _android.getX() && touchX < _android.getX() + _android.getWidth() &&
         touchY > _android.getY() && touchY < _android.getY() + _android.getHeight()){
@@ -233,6 +234,7 @@ public class StateRun extends GameState {
                 if(gameMap.isWalkable(_flower.getX()+5, _flower.getY())){
                     _flower.setLocation(_flower.getX()+5, _flower.getY());
                     _flower.setDirection("right");
+                    _flower.animePlay("right");
                 }
                 if(gameMap.isWalkable(_flower.getX(), _flower.getY()+5)){
                     _flower.jump(0);
@@ -241,6 +243,7 @@ public class StateRun extends GameState {
                 if(gameMap.isWalkable(_flower.getX()-5, _flower.getY())){
                     _flower.setLocation(_flower.getX()-5, _flower.getY());
                     _flower.setDirection("left");
+                    _flower.animePlay("left");
                 }
                 if(gameMap.isWalkable(_flower.getX(), _flower.getY()+5)){
                     _flower.jump(0);
@@ -261,6 +264,12 @@ public class StateRun extends GameState {
     @Override
     public boolean pointerReleased(Pointer actionPointer, List<Pointer> pointers) {
         _grab = false;
+        if(_flower.getDirection().contains("right")){
+            _flower.animePlay("standr");
+        }else{
+            _flower.animePlay("standl");
+        }
+
         return false;
     }
 

@@ -255,16 +255,4 @@ public class Animation implements GameObject {
         return _visible;
     }
 
-
-    public void jump(int x, int y){
-        int i = 5;
-        while(i > 0){
-            this.setLocation(this.getX(), this.getY()+3);
-            i--;
-        }
-        while(i<5){
-            this.setLocation(this.getX(), this.getY()-3);
-            i++;
-        }
-    }
 }
