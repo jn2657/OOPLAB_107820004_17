@@ -132,7 +132,7 @@ public class Charactor implements GameObject {
         arrowMoveCount = 10;
         count = delay;
         if(direction.equals("right")){
-            arrowRight.setLocation(main.getX(), main.getY());
+            arrowRight.setLocation(main.getX(), main.getY()-15);
             while(gameMap.isWalkable(arrowRight.getX()+15, arrowRight.getY())){ //無限遠限制
                 System.out.println("test1");
                 if(--delay <= 0){
