@@ -27,6 +27,7 @@ public class Charactor implements GameObject {
     private String direction;
     private Handler handler;
     private Runnable runnable;
+    private boolean jumping;
 
 
     public Charactor(){
@@ -51,7 +52,7 @@ public class Charactor implements GameObject {
 //            int id = context.getResources().getIdentifier("flower"+String.valueOf(i), "drawable", context.getPackageName());
 //            main.addFrame(id);
 //        }
-        main.setLocation(500, 260);
+        main.setLocation(300, 230);
         main.addFrame(R.drawable.mainright);
         main.addFrame(R.drawable.mainright);
         main.addFrame(R.drawable.mainright1);
@@ -74,7 +75,12 @@ public class Charactor implements GameObject {
         gameMap = map;
     }
 
+    public boolean isJumping(){
+        return jumping;
+    }
+
     public void jump(int j){
+        jumping = true;
         jumpHeight = j;
         jumpHeight *= 5;
         if(timer == null){
@@ -84,7 +90,7 @@ public class Charactor implements GameObject {
             @Override
             public void run() {
                 if(jumpHeight>0){
-                    if(gameMap.isWalkable(main.getX(), main.getY()-5)){
+                    if(gameMap.isWalkable_up_right(main.getX(), main.getY()-5)){
                         main.setLocation(main.getX(), main.getY() - 5);
                         jumpHeight--;
                     }else{
@@ -93,16 +99,18 @@ public class Charactor implements GameObject {
 
                 }
                 if(jumpHeight<=0){
-                    if(gameMap.isWalkable(main.getX(), main.getY()+5)){
+                    if(gameMap.isWalkable_down_left(main.getX(), main.getY()+5)){
                         main.setLocation(main.getX(), main.getY() + 5);
                         jumpHeight--;
                     }else{
+                        jumping = false;
                         stopTimer();
                     }
                 }
             }
 
         }, 100, 20);
+
     }
 
 //    //Declare timer
