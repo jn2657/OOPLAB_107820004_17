@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mk-rMK/values-mk-rMK.xml",
+            "outputFile": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-mk-rMK\\values-mk-rMK.xml",
             "map": [
                 {
-                    "source": "/Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/4e2350a24f672f30a6172c9373d46657/appcompat-v7-23.2.0/res/values-mk-rMK/values-mk-rMK.xml",
+                    "source": "C:\\Users\\helle\\.gradle\\caches\\transforms-2\\files-2.1\\4e2350a24f672f30a6172c9373d46657\\appcompat-v7-23.2.0\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

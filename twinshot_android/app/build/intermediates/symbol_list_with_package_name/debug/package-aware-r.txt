@@ -456,6 +456,8 @@ drawable arrow_left
 drawable arrow_right
 drawable background
 drawable background1
+drawable background2
+drawable background3
 drawable block
 drawable block1
 drawable block2
@@ -475,6 +477,7 @@ drawable digit_9
 drawable door
 drawable exit
 drawable exit_pressed
+drawable firststage
 drawable flower1
 drawable flower2
 drawable flower3
@@ -485,6 +488,10 @@ drawable help
 drawable help_info
 drawable help_pressed
 drawable icon
+drawable levelbackground
+drawable levelbackground1
+drawable mainleft
+drawable mainright
 drawable menu
 drawable menu_pressed
 drawable message
