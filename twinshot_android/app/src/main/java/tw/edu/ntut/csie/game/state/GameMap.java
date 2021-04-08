@@ -12,7 +12,7 @@ public class GameMap implements GameObject {
     private MovingBitmap pillar;
     private MovingBitmap pillar1;
     private MovingBitmap pillar2;
-    private Animation _flower;
+    private Monster monster;
 
 //    private int[][] map = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 //                            {0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -64,15 +64,8 @@ public class GameMap implements GameObject {
         pillar = new MovingBitmap(R.drawable.pillar);
         pillar1 = new MovingBitmap(R.drawable.pillar1);
         pillar2 = new MovingBitmap(R.drawable.pillar2);
+        monster = new Monster();
 
-        _flower = new Animation();
-        _flower.setLocation(560, 310);
-        _flower.addFrame(R.drawable.flower1);
-        _flower.addFrame(R.drawable.flower2);
-        _flower.addFrame(R.drawable.flower3);
-        _flower.addFrame(R.drawable.flower4);
-        _flower.addFrame(R.drawable.flower5);
-        _flower.setDelay(2);
     }
 
     @Override
@@ -83,6 +76,7 @@ public class GameMap implements GameObject {
         pillar.release();
         pillar1.release();
         pillar2.release();
+        monster.release();
 
         block = null;
         block1 = null;
@@ -90,6 +84,7 @@ public class GameMap implements GameObject {
         pillar = null;
         pillar1 = null;
         pillar2 = null;
+        monster = null;
     }
 
     @Override
@@ -143,5 +138,9 @@ public class GameMap implements GameObject {
         }else{
             return true;
         }
+    }
+
+    public boolean collide(){
+        return false;
     }
 }

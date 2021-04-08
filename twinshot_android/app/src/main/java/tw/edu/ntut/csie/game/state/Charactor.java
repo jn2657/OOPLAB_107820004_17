@@ -2,6 +2,8 @@ package tw.edu.ntut.csie.game.state;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import android.os.CountDownTimer;
 import android.os.Handler;
 
 import tw.edu.ntut.csie.game.GameObject;
@@ -39,6 +41,7 @@ public class Charactor implements GameObject {
         jumpHeight = 5;
         disppearCount = 10;
         life = 3;
+        direction = "right";
     }
 
     public void initialize(GameMap map){
@@ -49,18 +52,31 @@ public class Charactor implements GameObject {
 //            main.addFrame(id);
 //        }
         main.setLocation(500, 260);
-        main.addFrame(R.drawable.flower1);
-        main.addFrame(R.drawable.flower2);
-        main.addFrame(R.drawable.flower3);
-        main.addFrame(R.drawable.flower4);
-        main.addFrame(R.drawable.flower5);
+        main.addFrame(R.drawable.mainright);
+        main.addFrame(R.drawable.mainright);
+        main.addFrame(R.drawable.mainright1);
+        main.addFrame(R.drawable.mainright2);
+        main.addFrame(R.drawable.mainright3);
+        main.addFrame(R.drawable.mainright4);
+        main.addFrame(R.drawable.mainright5);
+        main.addFrame(R.drawable.mainright6);
+        main.addFrame(R.drawable.mainright7);
+        main.addFrame(R.drawable.mainleft);
+        main.addFrame(R.drawable.mainleftshake);
+        main.addFrame(R.drawable.mainleft1);
+        main.addFrame(R.drawable.mainleft2);
+        main.addFrame(R.drawable.mainleft3);
+        main.addFrame(R.drawable.mainleft4);
+        main.addFrame(R.drawable.mainleft5);
+        main.addFrame(R.drawable.mainleft6);
+        main.addFrame(R.drawable.mainleft7);
         main.setDelay(2);
-
         gameMap = map;
     }
 
     public void jump(int j){
-        this.jumpHeight = j;
+        jumpHeight = j;
+        jumpHeight *= 5;
         if(timer == null){
             timer = new Timer();
         }
@@ -68,8 +84,8 @@ public class Charactor implements GameObject {
             @Override
             public void run() {
                 if(jumpHeight>0){
-                    if(gameMap.isWalkable(main.getX(), main.getY()-15)){
-                        main.setLocation(main.getX(), main.getY() - 15);
+                    if(gameMap.isWalkable(main.getX(), main.getY()-5)){
+                        main.setLocation(main.getX(), main.getY() - 5);
                         jumpHeight--;
                     }else{
                         jumpHeight = 0;
@@ -77,8 +93,8 @@ public class Charactor implements GameObject {
 
                 }
                 if(jumpHeight<=0){
-                    if(gameMap.isWalkable(main.getX(), main.getY()+15)){
-                        main.setLocation(main.getX(), main.getY() + 15);
+                    if(gameMap.isWalkable(main.getX(), main.getY()+5)){
+                        main.setLocation(main.getX(), main.getY() + 5);
                         jumpHeight--;
                     }else{
                         stopTimer();
@@ -86,8 +102,59 @@ public class Charactor implements GameObject {
                 }
             }
 
-        }, 200, 100);
+        }, 100, 20);
     }
+
+//    //Declare timer
+//    CountDownTimer cTimer = null;
+//
+//    //start timer function
+//    void startTimer() {
+//        cTimer = new CountDownTimer(200, 100) {
+//            public void onTick(long millisUntilFinished) {
+//            }
+//            public void onFinish() {
+//                cancelTimer();
+//            }
+//        };
+//        cTimer.start();
+//    }
+//
+//
+//    //cancel timer
+//    void cancelTimer() {
+//        if(cTimer!=null)
+//            cTimer.cancel();
+//            cTimer = null;
+//    }
+//
+//    public void jump(int j){
+//        jumpHeight = j;
+//        while(true){
+//            if(jumpHeight>0){
+//                if(gameMap.isWalkable(main.getX(), main.getY()-15)){
+//                    main.setLocation(main.getX(), main.getY() - 15);
+//                    jumpHeight--;
+//                }else{
+//                    jumpHeight = 0;
+//                }
+//
+//            }
+//            if(jumpHeight<=0){
+//                if(gameMap.isWalkable(main.getX(), main.getY()+15)){
+//                    main.setLocation(main.getX(), main.getY() + 15);
+//                    jumpHeight--;
+//                }else{
+//                    break;
+//                }
+//            }
+//            System.out.println("start");
+//            startTimer();
+//            System.out.println("end");
+//        }
+//
+//    }
+
 
 //    public void jump(int j){
 //        jumpHeight = j;
@@ -128,67 +195,67 @@ public class Charactor implements GameObject {
 //    }
 
 
-    public void arrowMove(int delay){
-        arrowMoveCount = 10;
-        count = delay;
-        if(direction.equals("right")){
-            arrowRight.setLocation(main.getX(), main.getY()-15);
-            while(gameMap.isWalkable(arrowRight.getX()+15, arrowRight.getY())){ //無限遠限制
-                System.out.println("test1");
-                if(--delay <= 0){
-                    if(arrowMoveCount <= 2){
-                        if(gameMap.isWalkable(arrowRight.getX()+15, arrowRight.getY()+15)){
-                            arrowRight.setLocation(arrowRight.getX()+15, arrowRight.getY()+15);
-                        }else{
-                            arrowRight.setLocation(arrowRight.getX()+15, arrowRight.getY());
-                        }
-                    }else{
-                        arrowRight.setLocation(arrowRight.getX()+15, arrowRight.getY());
-                    }
-                    arrowMoveCount--;
-                    delay = count;
-                }
-                System.out.println("test1-1");
-            }
-            System.out.println("test2");
-            while(true){
-                if(--delay <= 0){
-                    if(--disppearCount <= 0){
-                        if(arrowRight.getVisible()){
-                            arrowRight.setVisible(false);
-                        }else {
-                            arrowRight.setVisible(true);
-                        }
-                    }
-                    if(disppearCount == -10){
-                        arrowRight.setVisible(false);
-                        break;
-                    }
-                    delay = count;
-                }
-
-            }
-            System.out.println("test3");
-
-        }
-    }
-
-    public void shot(){
-        if(direction.equals("right")){
-            if(arrowRight == null){
-                arrowRight = new Animation();
-                arrowRight.addFrame(R.drawable.arrow_right);
-            }
-            arrowMove(20);
-        }
-        if(direction.equals("left")){
-            if(arrowLeft == null){
-                arrowLeft = new Animation();
-                arrowLeft.addFrame(R.drawable.arrow_left);
-            }
-            arrowMove(20);
-        }
-    }
+//    public void arrowMove(int delay){
+//        arrowMoveCount = 10;
+//        count = delay;
+//        if(direction.equals("right")){
+//            arrowRight.setLocation(main.getX(), main.getY()-15);
+//            while(gameMap.isWalkable(arrowRight.getX()+15, arrowRight.getY())){ //無限遠限制
+//                System.out.println("test1");
+//                if(--delay <= 0){
+//                    if(arrowMoveCount <= 2){
+//                        if(gameMap.isWalkable(arrowRight.getX()+15, arrowRight.getY()+15)){
+//                            arrowRight.setLocation(arrowRight.getX()+15, arrowRight.getY()+15);
+//                        }else{
+//                            arrowRight.setLocation(arrowRight.getX()+15, arrowRight.getY());
+//                        }
+//                    }else{
+//                        arrowRight.setLocation(arrowRight.getX()+15, arrowRight.getY());
+//                    }
+//                    arrowMoveCount--;
+//                    delay = count;
+//                }
+//                System.out.println("test1-1");
+//            }
+//            System.out.println("test2");
+//            while(true){
+//                if(--delay <= 0){
+//                    if(--disppearCount <= 0){
+//                        if(arrowRight.getVisible()){
+//                            arrowRight.setVisible(false);
+//                        }else {
+//                            arrowRight.setVisible(true);
+//                        }
+//                    }
+//                    if(disppearCount == -10){
+//                        arrowRight.setVisible(false);
+//                        break;
+//                    }
+//                    delay = count;
+//                }
+//
+//            }
+//            System.out.println("test3");
+//
+//        }
+//    }
+//
+//    public void shot(){
+//        if(direction.equals("right")){
+//            if(arrowRight == null){
+//                arrowRight = new Animation();
+//                arrowRight.addFrame(R.drawable.arrow_right);
+//            }
+//            arrowMove(20);
+//        }
+//        if(direction.equals("left")){
+//            if(arrowLeft == null){
+//                arrowLeft = new Animation();
+//                arrowLeft.addFrame(R.drawable.arrow_left);
+//            }
+//            arrowMove(20);
+//        }
+//    }
 
     public void setDirection(String d){
         direction = d;
@@ -222,9 +289,57 @@ public class Charactor implements GameObject {
         main.setLocation(x, y);
     }
 
+    public String getDirection() {return direction;}
+
     public int getHeight(){
         return jumpHeight;
     }
+
+    public void reset(){
+        main.reset();
+    }
+
+    public void animePlay(String s){
+        if(s.equals("right")){
+            main.setCurrentFrameIndex(2);
+            main.move();
+            if(main.getCurrentFrameIndex() == 8){
+                main.setCurrentFrameIndex(2);
+            }
+        }else if(s.equals("left")){
+            main.setCurrentFrameIndex(11);
+            main.move();
+            if(main.getCurrentFrameIndex() == 17){
+                main.setCurrentFrameIndex(11);
+            }
+        }else if(s.equals("standl")){
+            main.setCurrentFrameIndex(0);
+            main.move();
+            if(main.getCurrentFrameIndex() == 1){// delay has problem
+                main.setCurrentFrameIndex(0);
+                main.move();
+            }
+
+        }else if(s.equals("standr")){
+            main.setCurrentFrameIndex(9);
+            main.move();
+            if(main.getCurrentFrameIndex() == 10) {
+                main.setCurrentFrameIndex(9);
+                main.move();
+            }
+        }
+    }
+
+//    public void animeStop(){
+//        if(direction.equals("right")){
+//            main.reset();
+//            //main.setRepeating(false);
+//        }
+//        if(direction.equals("left")){
+//            main.setCurrentFrameIndex(8);
+//            //main.setRepeating(false);
+//        }
+//    }
 
 
     private void stopTimer(){
