@@ -1,89 +1,89 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:2:1-21:12
-MERGED from [com.android.support:appcompat-v7:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/4e2350a24f672f30a6172c9373d46657/appcompat-v7-23.2.0/AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:animated-vector-drawable:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/977acc5333becfd0d3e1297b7989a2bc/animated-vector-drawable-23.2.0/AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:support-vector-drawable:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/50e7ff32050bfe5412deef4a34fc6d83/support-vector-drawable-23.2.0/AndroidManifest.xml:2:1-9:12
-MERGED from [com.android.support:support-v4:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/35335fbced1cc3a45d4a51e3cfeb5a47/support-v4-23.2.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:2:1-21:12
-INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:2:1-21:12
+ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:2:1-21:12
+MERGED from [com.android.support:appcompat-v7:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\4e2350a24f672f30a6172c9373d46657\appcompat-v7-23.2.0\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\977acc5333becfd0d3e1297b7989a2bc\animated-vector-drawable-23.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-vector-drawable:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\50e7ff32050bfe5412deef4a34fc6d83\support-vector-drawable-23.2.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-v4:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\35335fbced1cc3a45d4a51e3cfeb5a47\support-v4-23.2.0\AndroidManifest.xml:17:1-24:12
+INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:2:1-21:12
 	package
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:3:5-36
-		INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:3:5-36
+		INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:2:1-21:12
-		INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
+		INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:2:1-21:12
+		INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:2:1-21:12
-		INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
+		INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:2:1-21:12
+		INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:5:5-19:19
-MERGED from [com.android.support:appcompat-v7:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/4e2350a24f672f30a6172c9373d46657/appcompat-v7-23.2.0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/4e2350a24f672f30a6172c9373d46657/appcompat-v7-23.2.0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/977acc5333becfd0d3e1297b7989a2bc/animated-vector-drawable-23.2.0/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:animated-vector-drawable:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/977acc5333becfd0d3e1297b7989a2bc/animated-vector-drawable-23.2.0/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/50e7ff32050bfe5412deef4a34fc6d83/support-vector-drawable-23.2.0/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-vector-drawable:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/50e7ff32050bfe5412deef4a34fc6d83/support-vector-drawable-23.2.0/AndroidManifest.xml:7:5-20
-MERGED from [com.android.support:support-v4:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/35335fbced1cc3a45d4a51e3cfeb5a47/support-v4-23.2.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/35335fbced1cc3a45d4a51e3cfeb5a47/support-v4-23.2.0/AndroidManifest.xml:22:5-20
+ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:5:5-19:19
+MERGED from [com.android.support:appcompat-v7:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\4e2350a24f672f30a6172c9373d46657\appcompat-v7-23.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\4e2350a24f672f30a6172c9373d46657\appcompat-v7-23.2.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\977acc5333becfd0d3e1297b7989a2bc\animated-vector-drawable-23.2.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\977acc5333becfd0d3e1297b7989a2bc\animated-vector-drawable-23.2.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\50e7ff32050bfe5412deef4a34fc6d83\support-vector-drawable-23.2.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\50e7ff32050bfe5412deef4a34fc6d83\support-vector-drawable-23.2.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\35335fbced1cc3a45d4a51e3cfeb5a47\support-v4-23.2.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\35335fbced1cc3a45d4a51e3cfeb5a47\support-v4-23.2.0\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:9:9-41
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:9:9-41
 	android:hardwareAccelerated
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:7:9-43
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:7:9-43
 	android:icon
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:8:9-38
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:8:9-38
 	android:allowBackup
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:6:9-35
 activity#tw.edu.ntut.csie.game.Game
-ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:10:9-18:20
+ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:10:9-18:20
 	android:screenOrientation
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:12:13-50
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:12:13-50
 	android:label
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:11:13-45
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:11:13-45
 	android:hardwareAccelerated
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:13:13-47
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:13:13-47
 	android:name
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:10:19-39
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:10:19-39
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:14:13-17:29
+ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:14:13-17:29
 action#android.intent.action.MAIN
-ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:15:17-69
+ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:15:17-69
 	android:name
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:15:25-66
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:15:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:16:17-77
+ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:16:17-77
 	android:name
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml:16:27-74
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml:16:27-74
 uses-sdk
-INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
-MERGED from [com.android.support:appcompat-v7:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/4e2350a24f672f30a6172c9373d46657/appcompat-v7-23.2.0/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/4e2350a24f672f30a6172c9373d46657/appcompat-v7-23.2.0/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/977acc5333becfd0d3e1297b7989a2bc/animated-vector-drawable-23.2.0/AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:animated-vector-drawable:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/977acc5333becfd0d3e1297b7989a2bc/animated-vector-drawable-23.2.0/AndroidManifest.xml:5:5-44
-MERGED from [com.android.support:support-vector-drawable:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/50e7ff32050bfe5412deef4a34fc6d83/support-vector-drawable-23.2.0/AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-vector-drawable:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/50e7ff32050bfe5412deef4a34fc6d83/support-vector-drawable-23.2.0/AndroidManifest.xml:5:5-43
-MERGED from [com.android.support:support-v4:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/35335fbced1cc3a45d4a51e3cfeb5a47/support-v4-23.2.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-v4:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/35335fbced1cc3a45d4a51e3cfeb5a47/support-v4-23.2.0/AndroidManifest.xml:20:5-43
-INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
+INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
+INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\4e2350a24f672f30a6172c9373d46657\appcompat-v7-23.2.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\4e2350a24f672f30a6172c9373d46657\appcompat-v7-23.2.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\977acc5333becfd0d3e1297b7989a2bc\animated-vector-drawable-23.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:animated-vector-drawable:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\977acc5333becfd0d3e1297b7989a2bc\animated-vector-drawable-23.2.0\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\50e7ff32050bfe5412deef4a34fc6d83\support-vector-drawable-23.2.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-vector-drawable:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\50e7ff32050bfe5412deef4a34fc6d83\support-vector-drawable-23.2.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\35335fbced1cc3a45d4a51e3cfeb5a47\support-v4-23.2.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\35335fbced1cc3a45d4a51e3cfeb5a47\support-v4-23.2.0\AndroidManifest.xml:20:5-43
+INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
+INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:23.2.0] /Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/4e2350a24f672f30a6172c9373d46657/appcompat-v7-23.2.0/AndroidManifest.xml:23:9-75
+		ADDED from [com.android.support:appcompat-v7:23.2.0] C:\Users\helle\.gradle\caches\transforms-2\files-2.1\4e2350a24f672f30a6172c9373d46657\appcompat-v7-23.2.0\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
+		INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/AndroidManifest.xml
+		INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
+		ADDED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\OOPLAB\twinshot_android\app\src\main\AndroidManifest.xml

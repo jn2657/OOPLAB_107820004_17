@@ -68,7 +68,7 @@ public class Monster extends Animation {
     }
 
     public void regularmove(){
-        
+
     }
 
 
