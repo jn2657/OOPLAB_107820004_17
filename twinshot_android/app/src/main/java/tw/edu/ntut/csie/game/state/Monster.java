@@ -11,6 +11,7 @@ public class Monster extends Animation {
 
     public Monster(){
         monster = new Animation();
+        monster.setLocation(0,0);
         monster.addFrame(R.drawable.monsterleft1);
         monster.addFrame(R.drawable.monsterleft2);
         monster.addFrame(R.drawable.monsterleft3);
@@ -64,6 +65,10 @@ public class Monster extends Animation {
 
     public void show(){
         monster.show();
+    }
+
+    public void regularmove(){
+
     }
 
 

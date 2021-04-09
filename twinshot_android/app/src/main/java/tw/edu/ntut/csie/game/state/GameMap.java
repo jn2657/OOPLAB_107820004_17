@@ -65,6 +65,7 @@ public class GameMap implements GameObject {
         pillar1 = new MovingBitmap(R.drawable.pillar1);
         pillar2 = new MovingBitmap(R.drawable.pillar2);
         monster = new Monster();
+        monster.setLocation(500, 280);
 
     }
 
@@ -89,11 +90,12 @@ public class GameMap implements GameObject {
 
     @Override
     public void move(){
-
+        monster.move();
     }
 
     @Override
     public void show(){
+        monster.show();
         for(int i = 0; i < 17; i++){
             for(int j = 0; j<29; j++){
                 switch(map[i][j]){
@@ -130,9 +132,14 @@ public class GameMap implements GameObject {
         }
     }
 
-    public boolean isWalkable(int x, int y){
-        int i = y/23+1;
-        int j = x/23+1;
+    public boolean isWalkable_down_left(int x, int y){
+        int i = y/23+2;
+        int j;
+        if(x%23 > 12.5){
+            j = x/23;
+        }else{
+            j = x/23+1;
+        }
         if(map[i][j] != 0){
             return false;
         }else{
@@ -140,7 +147,21 @@ public class GameMap implements GameObject {
         }
     }
 
-    public boolean collide(){
+    public boolean isWalkable_up_right(int x, int y){
+        int i = y/23+1;
+        int j = x/23+2;
+        if(map[i][j] != 0){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public boolean collide(int x, int y){
+        if(x >= monster.getX() && x<= monster.getX() + monster.getWidth() &&
+                y >= monster.getY() && y <= monster.getY() + monster.getHeight()){
+            return true;
+        }
         return false;
     }
 }

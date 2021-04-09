@@ -43,14 +43,6 @@ public class StateRun extends GameState {
     private Pointer _pointer1;
     private Pointer _pointer2;
     private int jumpheight = 5;
-    private int _pointerDistance;
-    private int _tempDistance;
-    private int _androidWidth;
-    private int _androidHeight;
-    private int _newWidth;
-    private int _newHeight;
-    private Timer timer;
-    private TimerTask timerTask;
 
     public StateRun(GameEngine engine) {
         super(engine);
@@ -70,8 +62,6 @@ public class StateRun extends GameState {
         _android2.setLocation(500, 100);
 
         gameMap = new GameMap();
-        timer = null;
-        timerTask = null;
 
         _cloud = new MovingBitmap(R.drawable.cloud);
         _cx = 100;
@@ -102,12 +92,6 @@ public class StateRun extends GameState {
 
         _pointer1 = null;
         _pointer2 = null;
-        _pointerDistance = 0;
-        _tempDistance = 0;
-        _androidWidth = _android.getWidth();
-        _androidHeight = _android.getHeight();
-        _newHeight = _androidHeight;
-        _newWidth = _androidWidth;
 
 //        mPractice = new Practice();
 //        mPractice.initialize();
@@ -118,6 +102,7 @@ public class StateRun extends GameState {
     public void move() {
         _flower.move();
         _cloud.setLocation(_cx, _cy);
+        gameMap.move();
 //        mPractice.move();
     }
 
@@ -231,22 +216,26 @@ public class StateRun extends GameState {
             int moveX = actionPointer.getX();
             int moveY = actionPointer.getY();
             if(moveX > _android.getX()){
-                if(gameMap.isWalkable(_flower.getX()+5, _flower.getY())){
+                if(gameMap.isWalkable_up_right(_flower.getX()+5, _flower.getY())){
                     _flower.setLocation(_flower.getX()+5, _flower.getY());
                     _flower.setDirection("right");
                     _flower.animePlay("right");
                 }
-                if(gameMap.isWalkable(_flower.getX(), _flower.getY()+5)){
-                    _flower.jump(0);
+                if(gameMap.isWalkable_up_right(_flower.getX(), _flower.getY()+5)){
+                    if(!_flower.isJumping()){
+                        _flower.jump(0);
+                    }
                 }
             }else if(moveX < _android.getX() + _android.getWidth()){
-                if(gameMap.isWalkable(_flower.getX()-5, _flower.getY())){
+                if(gameMap.isWalkable_down_left(_flower.getX()-5, _flower.getY())){
                     _flower.setLocation(_flower.getX()-5, _flower.getY());
                     _flower.setDirection("left");
                     _flower.animePlay("left");
                 }
-                if(gameMap.isWalkable(_flower.getX(), _flower.getY()+5)){
-                    _flower.jump(0);
+                if(gameMap.isWalkable_down_left(_flower.getX(), _flower.getY()+5)){
+                    if(!_flower.isJumping()){
+                        _flower.jump(0);
+                    }
                 }
             }
         }
