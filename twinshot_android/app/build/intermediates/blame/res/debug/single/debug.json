@@ -24,12 +24,12 @@
         "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/flower1.png"
     },
     {
-        "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_digit_6.png.flat",
-        "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/digit_6.png"
-    },
-    {
         "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_pillar2.png.flat",
         "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/pillar2.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_digit_6.png.flat",
+        "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/digit_6.png"
     },
     {
         "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_pillar1.png.flat",
@@ -74,6 +74,10 @@
     {
         "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_apple.png.flat",
         "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/apple.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_background3.png.flat",
+        "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/background3.png"
     },
     {
         "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_flower2.png.flat",
@@ -130,6 +134,10 @@
     {
         "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterleft3.png.flat",
         "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/monsterleft3.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_levelbackground1.png.flat",
+        "source": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/src/main/res/drawable/levelbackground1.png"
     },
     {
         "merged": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterleft5.png.flat",

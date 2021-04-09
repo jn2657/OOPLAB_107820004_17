@@ -67,5 +67,9 @@ public class Monster extends Animation {
         monster.show();
     }
 
+    public void regularmove(){
+        
+    }
+
 
 }

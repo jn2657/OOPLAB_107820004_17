@@ -31,8 +31,10 @@ public class StateReady extends AbstractGameState {
     @Override
     public void initialize(Map<String, Object> data) {
         addGameObject(_helpInfo = new MovingBitmap(R.drawable.help_info));
-        addGameObject(_background = new MovingBitmap(R.drawable.background1));
+        addGameObject(_background = new MovingBitmap(R.drawable.background3));
         addGameObject(_aboutInfo = new MovingBitmap(R.drawable.about_info));
+        _background.resize((int)(_background.getWidth()*1.124),(int)(_background.getHeight()*1.045));
+        _background.setLocation(60,0);
         initializeStartButton();
         initializeExitButton();
         initializeMenuButton();
