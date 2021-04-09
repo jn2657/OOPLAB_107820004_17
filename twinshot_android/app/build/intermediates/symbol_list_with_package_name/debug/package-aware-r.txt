@@ -488,12 +488,8 @@ drawable help
 drawable help_info
 drawable help_pressed
 drawable icon
-<<<<<<< HEAD
 drawable levelbackground
 drawable levelbackground1
-drawable mainleft
-drawable mainright
-=======
 drawable mainleft
 drawable mainleft1
 drawable mainleft2
@@ -511,7 +507,6 @@ drawable mainright4
 drawable mainright5
 drawable mainright6
 drawable mainright7
->>>>>>> 6626414c2dc28459857342155dff7a7e85cfada2
 drawable menu
 drawable menu_pressed
 drawable message
