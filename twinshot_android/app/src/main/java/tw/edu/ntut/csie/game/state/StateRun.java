@@ -188,7 +188,7 @@ public class StateRun extends GameState {
         }
         if(touchX >= 480 && touchX <= 550 &&
             touchY >= 50 && touchY <= 150){
-            //_flower.shot();
+            _flower.shot();
         }
         if(touchX > _android.getX() && touchX < _android.getX() + _android.getWidth() &&
         touchY > _android.getY() && touchY < _android.getY() + _android.getHeight()){

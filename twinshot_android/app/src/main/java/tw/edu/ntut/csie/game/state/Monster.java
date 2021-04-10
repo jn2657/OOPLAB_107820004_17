@@ -1,5 +1,8 @@
 package tw.edu.ntut.csie.game.state;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.extend.Animation;
 
@@ -8,6 +11,11 @@ public class Monster extends Animation {
     private boolean iskilled;
     private int xmax;
     private int xmin;
+    private Timer timer;
+    private TimerTask timerTask;
+    private int step;
+    private int direction;
+    private double speed;
 
     public Monster(){
         monster = new Animation();
@@ -28,6 +36,8 @@ public class Monster extends Animation {
 
     public void initialize(){
         iskilled = false;
+        step = 30;
+        direction = 0;
     }
 
     public void setIskilled(){
@@ -67,8 +77,55 @@ public class Monster extends Animation {
         monster.show();
     }
 
-    public void regularmove(){
+    public void regular(){
+        speed = 2;
+        if (step <= 0 && direction == 0){
+            direction = 1;
+            step = 30;
+        }else if (step <= 0 && direction == 1){
+            direction = 0;
+            step = 30;
+        }else{
+            if (direction == 0){
+                monster.setLocation((int)(monster.getX() + speed), monster.getY());
+            }else{
+                monster.setLocation((int)(monster.getX() - speed), monster.getY());
+            }
+        }
+        step--;
+    }
 
+    public void regularMove(){
+        if(timer == null) {
+            timer = new Timer();
+        }
+        timer.scheduleAtFixedRate(timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                int i = (int)(Math.random()*99+1);
+                if(i%7==0 && monster.getX()+10 <= xmax && monster.getX()-10 >= xmin){
+                    if(i%2==0){
+                        monster.setLocation(monster.getX()+10, monster.getY());
+                    }else{
+                        monster.setLocation(monster.getX()-10, monster.getY());
+                    }
+                }
+                if(iskilled) {
+                    stopTimer();
+                }
+            };
+        }, 100, 200);
+    }
+
+    private void stopTimer(){
+        if(timerTask!= null){
+            timerTask.cancel();
+            timerTask = null;
+        }
+        if(timer != null){
+            timer.cancel();
+            timer = null;
+        }
     }
 
 
