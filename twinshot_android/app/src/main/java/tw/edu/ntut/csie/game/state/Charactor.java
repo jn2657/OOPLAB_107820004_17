@@ -202,68 +202,18 @@ public class Charactor implements GameObject {
 //        handler.postDelayed(runnable, 200);
 //    }
 
-
-//    public void arrowMove(int delay){
-//        arrowMoveCount = 10;
-//        count = delay;
-//        if(direction.equals("right")){
-//            arrowRight.setLocation(main.getX(), main.getY()-15);
-//            while(gameMap.isWalkable(arrowRight.getX()+15, arrowRight.getY())){ //無限遠限制
-//                System.out.println("test1");
-//                if(--delay <= 0){
-//                    if(arrowMoveCount <= 2){
-//                        if(gameMap.isWalkable(arrowRight.getX()+15, arrowRight.getY()+15)){
-//                            arrowRight.setLocation(arrowRight.getX()+15, arrowRight.getY()+15);
-//                        }else{
-//                            arrowRight.setLocation(arrowRight.getX()+15, arrowRight.getY());
-//                        }
-//                    }else{
-//                        arrowRight.setLocation(arrowRight.getX()+15, arrowRight.getY());
-//                    }
-//                    arrowMoveCount--;
-//                    delay = count;
-//                }
-//                System.out.println("test1-1");
-//            }
-//            System.out.println("test2");
-//            while(true){
-//                if(--delay <= 0){
-//                    if(--disppearCount <= 0){
-//                        if(arrowRight.getVisible()){
-//                            arrowRight.setVisible(false);
-//                        }else {
-//                            arrowRight.setVisible(true);
-//                        }
-//                    }
-//                    if(disppearCount == -10){
-//                        arrowRight.setVisible(false);
-//                        break;
-//                    }
-//                    delay = count;
-//                }
-//
-//            }
-//            System.out.println("test3");
-//
-//        }
-//    }
-//
-//    public void shot(){
-//        if(direction.equals("right")){
-//            if(arrowRight == null){
-//                arrowRight = new Animation();
-//                arrowRight.addFrame(R.drawable.arrow_right);
-//            }
-//            arrowMove(20);
-//        }
-//        if(direction.equals("left")){
-//            if(arrowLeft == null){
-//                arrowLeft = new Animation();
-//                arrowLeft.addFrame(R.drawable.arrow_left);
-//            }
-//            arrowMove(20);
-//        }
-//    }
+    public void shot(){
+        if(direction.contains("right")){
+            Arrow aright = new Arrow(gameMap);
+            aright.initializeRight();
+            aright.shot(main.getX(), main.getY(), 20);
+        }
+        if(direction.contains("left")){
+            Arrow aleft = new Arrow(gameMap);
+            aleft.initializeLeft();
+            aleft.shot(main.getX(), main.getY(), 20);
+        }
+    }
 
     public void setDirection(String d){
         direction = d;

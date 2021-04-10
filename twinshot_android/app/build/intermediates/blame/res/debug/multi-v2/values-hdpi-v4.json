@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-hdpi-v4\\values-hdpi-v4.xml",
+            "outputFile": "/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\helle\\.gradle\\caches\\transforms-2\\files-2.1\\4e2350a24f672f30a6172c9373d46657\\appcompat-v7-23.2.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "source": "/Users/JohnnyLee/.gradle/caches/transforms-2/files-2.1/4e2350a24f672f30a6172c9373d46657/appcompat-v7-23.2.0/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

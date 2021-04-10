@@ -1,6 +1,11 @@
 package tw.edu.ntut.csie.game.state;
 
+<<<<<<< HEAD
 import android.view.animation.TranslateAnimation;
+=======
+import java.util.Timer;
+import java.util.TimerTask;
+>>>>>>> 7d37c64d95003989ee63a6c8a52a6e5a3550c62b
 
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.extend.Animation;
@@ -10,6 +15,11 @@ public class Monster extends Animation {
     private boolean iskilled;
     private int xmax;
     private int xmin;
+<<<<<<< HEAD
+=======
+    private Timer timer;
+    private TimerTask timerTask;
+>>>>>>> 7d37c64d95003989ee63a6c8a52a6e5a3550c62b
     private int step;
     private int direction;
     private double speed;
@@ -33,7 +43,11 @@ public class Monster extends Animation {
 
     public void initialize(){
         iskilled = false;
+<<<<<<< HEAD
         step = 12;
+=======
+        step = 30;
+>>>>>>> 7d37c64d95003989ee63a6c8a52a6e5a3550c62b
         direction = 0;
     }
 
@@ -76,6 +90,7 @@ public class Monster extends Animation {
 
     public void regular(){
         speed = 2;
+<<<<<<< HEAD
         if(step <= 0 && direction == 0){
             direction = 1;
             step = 12;
@@ -90,6 +105,55 @@ public class Monster extends Animation {
             }
         }
         step--;
+=======
+        if (step <= 0 && direction == 0){
+            direction = 1;
+            step = 30;
+        }else if (step <= 0 && direction == 1){
+            direction = 0;
+            step = 30;
+        }else{
+            if (direction == 0){
+                monster.setLocation((int)(monster.getX() + speed), monster.getY());
+            }else{
+                monster.setLocation((int)(monster.getX() - speed), monster.getY());
+            }
+        }
+        step--;
+    }
+
+    public void regularMove(){
+        if(timer == null) {
+            timer = new Timer();
+        }
+        timer.scheduleAtFixedRate(timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                int i = (int)(Math.random()*99+1);
+                if(i%7==0 && monster.getX()+10 <= xmax && monster.getX()-10 >= xmin){
+                    if(i%2==0){
+                        monster.setLocation(monster.getX()+10, monster.getY());
+                    }else{
+                        monster.setLocation(monster.getX()-10, monster.getY());
+                    }
+                }
+                if(iskilled) {
+                    stopTimer();
+                }
+            };
+        }, 100, 200);
+    }
+
+    private void stopTimer(){
+        if(timerTask!= null){
+            timerTask.cancel();
+            timerTask = null;
+        }
+        if(timer != null){
+            timer.cancel();
+            timer = null;
+        }
+>>>>>>> 7d37c64d95003989ee63a6c8a52a6e5a3550c62b
     }
 
 
