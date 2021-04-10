@@ -3,7 +3,6 @@ package tw.edu.ntut.csie.game.state;
 import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
-import tw.edu.ntut.csie.game.extend.Animation;
 
 public class GameMap implements GameObject {
     private MovingBitmap block;
@@ -65,8 +64,8 @@ public class GameMap implements GameObject {
         pillar1 = new MovingBitmap(R.drawable.pillar1);
         pillar2 = new MovingBitmap(R.drawable.pillar2);
         monster = new Monster();
+        monster.initialize();
         monster.setLocation(500, 280);
-
     }
 
     @Override
@@ -91,6 +90,7 @@ public class GameMap implements GameObject {
     @Override
     public void move(){
         monster.move();
+        monster.regular();
     }
 
     @Override
