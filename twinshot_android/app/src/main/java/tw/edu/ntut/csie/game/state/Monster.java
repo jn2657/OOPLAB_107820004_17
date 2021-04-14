@@ -95,28 +95,6 @@ public class Monster extends Animation {
         step--;
     }
 
-    public void regularMove(){
-        if(timer == null) {
-            timer = new Timer();
-        }
-        timer.scheduleAtFixedRate(timerTask = new TimerTask() {
-            @Override
-            public void run() {
-                int i = (int)(Math.random()*99+1);
-                if(i%7==0 && monster.getX()+10 <= xmax && monster.getX()-10 >= xmin){
-                    if(i%2==0){
-                        monster.setLocation(monster.getX()+10, monster.getY());
-                    }else{
-                        monster.setLocation(monster.getX()-10, monster.getY());
-                    }
-                }
-                if(iskilled) {
-                    stopTimer();
-                }
-            };
-        }, 100, 200);
-    }
-
     private void stopTimer(){
         if(timerTask!= null){
             timerTask.cancel();
@@ -127,6 +105,5 @@ public class Monster extends Animation {
             timer = null;
         }
     }
-
 
 }

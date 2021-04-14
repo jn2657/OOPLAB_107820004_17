@@ -3,6 +3,7 @@ package tw.edu.ntut.csie.game.state;
 import android.util.Log;
 
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Timer;
@@ -30,8 +31,15 @@ public class StateRun extends GameState {
     private MovingBitmap _door;
     private MovingBitmap _message;
     private GameMap gameMap;
+    private List<Monster> MonsterList;
+    private MovingBitmap _life1;
+    private MovingBitmap _life2;
+    private MovingBitmap _life3;
+    private MovingBitmap _black1;
+    private MovingBitmap _black2;
+    private MovingBitmap _black3;
 
-    private Charactor _flower;
+    private Charactor character;
 
     private Integer _scores;
 
@@ -62,6 +70,8 @@ public class StateRun extends GameState {
         _android2.setLocation(500, 100);
 
         gameMap = new GameMap();
+        MonsterList = new ArrayList<Monster>();
+        MonsterList = gameMap.getMonsterList();
 
         _cloud = new MovingBitmap(R.drawable.cloud);
         _cx = 100;
@@ -71,18 +81,10 @@ public class StateRun extends GameState {
         _door = new MovingBitmap(R.drawable.door);
         _door.setLocation(300, 200);
 
-        _scores = new Integer(DEFAULT_SCORE_DIGITS, 50, 550, 10);
+        //_scores = new Integer(DEFAULT_SCORE_DIGITS, 50, 550, 10);
 
-//        _flower = new Animation();
-//        _flower.setLocation(300, 240);
-//        _flower.addFrame(R.drawable.flower1);
-//        _flower.addFrame(R.drawable.flower2);
-//        _flower.addFrame(R.drawable.flower3);
-//        _flower.addFrame(R.drawable.flower4);
-//        _flower.addFrame(R.drawable.flower5);
-//        _flower.setDelay(2);
-        _flower = new Charactor();
-        _flower.initialize(gameMap);
+        character = new Charactor();
+        character.initialize(gameMap);
 
         _music = new Audio(R.raw.ntut);
         _music.setRepeating(true);
@@ -93,14 +95,30 @@ public class StateRun extends GameState {
         _pointer1 = null;
         _pointer2 = null;
 
-//        mPractice = new Practice();
-//        mPractice.initialize();
+        _black3 = new MovingBitmap(R.drawable.blacklife);
+        _black3.setLocation(600, 350);
+
+        _black2 = new MovingBitmap(R.drawable.blacklife);
+        _black2.setLocation(577, 350);
+
+        _black1 = new MovingBitmap(R.drawable.blacklife);
+        _black1.setLocation(554, 350);
+
+        _life3 = new MovingBitmap(R.drawable.lifewithoutframe);
+        _life3.setLocation(603, 353);
+
+        _life2 = new MovingBitmap(R.drawable.lifewithoutframe);
+        _life2.setLocation(580, 353);
+
+        _life1 = new MovingBitmap(R.drawable.lifewithoutframe);
+        _life1.setLocation(557, 353);
 
     }
 
     @Override
     public void move() {
-        _flower.move();
+        character.move();
+        character.hurt(checkCollide());
         _cloud.setLocation(_cx, _cy);
         gameMap.move();
 //        mPractice.move();
@@ -111,7 +129,7 @@ public class StateRun extends GameState {
         // 順序為貼圖順序
         _background.show();
         //_scores.show();
-        _flower.show();
+        character.show();
         _message.show();
         //_cloud.show();
         //_door.show();
@@ -120,6 +138,12 @@ public class StateRun extends GameState {
         _android2.show();
 //        mPractice.show();
         gameMap.show();
+        _black1.show();
+        _black2.show();
+        _black3.show();
+        _life1.show();
+        _life2.show();
+        _life3.show();
     }
 
     @Override
@@ -129,7 +153,7 @@ public class StateRun extends GameState {
         _android.release();
         _android1.release();
         _android2.release();
-        _flower.release();
+        character.release();
         _message.release();
         _cloud.release();
         _music.release();
@@ -142,7 +166,7 @@ public class StateRun extends GameState {
         _android = null;
         _android1 = null;
         _android2 = null;
-        _flower = null;
+        character = null;
         _message = null;
         _cloud = null;
         _music = null;
@@ -176,19 +200,19 @@ public class StateRun extends GameState {
     @Override
     public boolean pointerPressed(Pointer actionPointer, List<Pointer> pointers) {
         _message.setVisible(false);
-        _flower.reset();
+        character.reset();
         int touchX = actionPointer.getX();
         int touchY = actionPointer.getY();
         if(touchX >=480 && touchX <= 550 &&
                 touchY >= 150 && touchY <= 250){
-            if(_flower.getHeight() == 5){
-                _flower.jump(5);
+            if(character.getHeight() == 5){
+                character.jump(5);
             }
 
         }
         if(touchX >= 480 && touchX <= 550 &&
             touchY >= 50 && touchY <= 150){
-            _flower.shot();
+            character.shot();
         }
         if(touchX > _android.getX() && touchX < _android.getX() + _android.getWidth() &&
         touchY > _android.getY() && touchY < _android.getY() + _android.getHeight()){
@@ -216,25 +240,25 @@ public class StateRun extends GameState {
             int moveX = actionPointer.getX();
             int moveY = actionPointer.getY();
             if(moveX > _android.getX()){
-                if(gameMap.isWalkable_up_right(_flower.getX()+5, _flower.getY())){
-                    _flower.setLocation(_flower.getX()+5, _flower.getY());
-                    _flower.setDirection("right");
-                    _flower.animePlay("right");
+                if(gameMap.isWalkable_up_right(character.getX()+5, character.getY())){
+                    character.setLocation(character.getX()+5, character.getY());
+                    character.setDirection("right");
+                    character.animePlay("right");
                 }
-                if(gameMap.isWalkable_up_right(_flower.getX(), _flower.getY()+5)){
-                    if(!_flower.isJumping()){
-                        _flower.jump(0);
+                if(gameMap.isWalkable_up_right(character.getX(), character.getY()+5)){
+                    if(!character.isJumping()){
+                        character.jump(0);
                     }
                 }
             }else if(moveX < _android.getX() + _android.getWidth()){
-                if(gameMap.isWalkable_down_left(_flower.getX()-5, _flower.getY())){
-                    _flower.setLocation(_flower.getX()-5, _flower.getY());
-                    _flower.setDirection("left");
-                    _flower.animePlay("left");
+                if(gameMap.isWalkable_down_left(character.getX()-5, character.getY())){
+                    character.setLocation(character.getX()-5, character.getY());
+                    character.setDirection("left");
+                    character.animePlay("left");
                 }
-                if(gameMap.isWalkable_down_left(_flower.getX(), _flower.getY()+5)){
-                    if(!_flower.isJumping()){
-                        _flower.jump(0);
+                if(gameMap.isWalkable_down_left(character.getX(), character.getY()+5)){
+                    if(!character.isJumping()){
+                        character.jump(0);
                     }
                 }
             }
@@ -253,10 +277,10 @@ public class StateRun extends GameState {
     @Override
     public boolean pointerReleased(Pointer actionPointer, List<Pointer> pointers) {
         _grab = false;
-        if(_flower.getDirection().contains("right")){
-            _flower.animePlay("standr");
+        if(character.getDirection().contains("right")){
+            character.animePlay("standr");
         }else{
-            _flower.animePlay("standl");
+            character.animePlay("standl");
         }
 
         return false;
@@ -270,5 +294,33 @@ public class StateRun extends GameState {
     @Override
     public void resume() {
         _music.resume();
+    }
+
+    public boolean checkCollide(){
+        for(Monster monster: MonsterList){
+            if(character.getX() > monster.getX()+23 || character.getX() < monster.getX()-23){
+                return false;
+            }else if(character.getY() > monster.getY()+23 || character.getY() < monster.getY()-23){
+                return false;
+            }else{
+                if(_life1 == null){
+                    if(_life2 == null){
+                        if(_life3 != null){
+                            _life3.release();
+                            _life3 = null;
+                        }
+                        //changeState(Game.OVER_STATE);
+                    }else{
+                        _life2.release();
+                        _life2 = null;
+                    }
+                }else{
+                    _life1.release();
+                    _life1 = null;
+                }
+                return true;
+            }
+        }
+        return false;
     }
 }
