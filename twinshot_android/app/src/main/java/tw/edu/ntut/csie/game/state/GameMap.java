@@ -11,6 +11,7 @@ public class GameMap implements GameObject {
     private MovingBitmap pillar;
     private MovingBitmap pillar1;
     private MovingBitmap pillar2;
+//    private MovingBitmap life;
     private Monster monster;
 
 //    private int[][] map = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -63,14 +64,10 @@ public class GameMap implements GameObject {
         pillar = new MovingBitmap(R.drawable.pillar);
         pillar1 = new MovingBitmap(R.drawable.pillar1);
         pillar2 = new MovingBitmap(R.drawable.pillar2);
+//        life = new MovingBitmap(R.drawable.life);
         monster = new Monster();
         monster.initialize();
         monster.setLocation(500, 280);
-<<<<<<< HEAD
-=======
-        monster.setMoveBorder(450, 550);
-//        monster.regular();
->>>>>>> 7d37c64d95003989ee63a6c8a52a6e5a3550c62b
     }
 
     @Override
@@ -135,6 +132,7 @@ public class GameMap implements GameObject {
                 }
             }
         }
+//        life.show();
     }
 
     public boolean isWalkable_down_left(int x, int y){
@@ -169,4 +167,6 @@ public class GameMap implements GameObject {
         }
         return false;
     }
+
+
 }

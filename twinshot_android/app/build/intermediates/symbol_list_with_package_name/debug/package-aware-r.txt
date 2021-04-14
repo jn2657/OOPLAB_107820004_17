@@ -458,6 +458,7 @@ drawable background
 drawable background1
 drawable background2
 drawable background3
+drawable blacklife
 drawable block
 drawable block1
 drawable block2
@@ -490,6 +491,8 @@ drawable help_pressed
 drawable icon
 drawable levelbackground
 drawable levelbackground1
+drawable life
+drawable lifewithoutframe
 drawable mainleft
 drawable mainleft1
 drawable mainleft2

@@ -311,4 +311,11 @@ public class Charactor implements GameObject {
         }
         jumpHeight = 5;
     }
+
+    public void hurt(){
+        life--;
+        if(life == 0){
+//            change state
+        }
+    }
 }

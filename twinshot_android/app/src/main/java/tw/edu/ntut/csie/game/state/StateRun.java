@@ -30,6 +30,12 @@ public class StateRun extends GameState {
     private MovingBitmap _door;
     private MovingBitmap _message;
     private GameMap gameMap;
+    private MovingBitmap _life1;
+    private MovingBitmap _life2;
+    private MovingBitmap _life3;
+    private MovingBitmap _black1;
+    private MovingBitmap _black2;
+    private MovingBitmap _black3;
 
     private Charactor _flower;
 
@@ -96,6 +102,24 @@ public class StateRun extends GameState {
 //        mPractice = new Practice();
 //        mPractice.initialize();
 
+        _black3 = new MovingBitmap(R.drawable.blacklife);
+        _black3.setLocation(600,350);
+
+        _black2 = new MovingBitmap(R.drawable.blacklife);
+        _black2.setLocation(577,350);
+
+        _black1 = new MovingBitmap(R.drawable.blacklife);
+        _black1.setLocation(554,350);
+
+        _life3 = new MovingBitmap(R.drawable.lifewithoutframe);
+        _life3.setLocation(603,353);
+
+        _life2 = new MovingBitmap(R.drawable.lifewithoutframe);
+        _life2.setLocation(580,353);
+
+        _life1 = new MovingBitmap(R.drawable.lifewithoutframe);
+        _life1.setLocation(557,353);
+
     }
 
     @Override
@@ -104,6 +128,7 @@ public class StateRun extends GameState {
         _cloud.setLocation(_cx, _cy);
         gameMap.move();
 //        mPractice.move();
+        
     }
 
     @Override
@@ -120,6 +145,12 @@ public class StateRun extends GameState {
         _android2.show();
 //        mPractice.show();
         gameMap.show();
+        _black1.show();
+        _black2.show();
+        _black3.show();
+        _life1.show();
+        _life2.show();
+        _life3.show();
     }
 
     @Override
