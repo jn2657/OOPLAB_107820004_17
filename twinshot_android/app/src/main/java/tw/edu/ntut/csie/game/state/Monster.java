@@ -9,13 +9,13 @@ import tw.edu.ntut.csie.game.extend.Animation;
 public class Monster extends Animation {
     private Animation monster;
     private boolean iskilled;
+    private int xmax;
+    private int xmin;
     private Timer timer;
     private TimerTask timerTask;
     private int step;
     private int direction;
     private double speed;
-    private int selfX;
-    private int selfY;
 
     public Monster(){
         monster = new Animation();
@@ -32,8 +32,6 @@ public class Monster extends Animation {
         monster.addFrame(R.drawable.monsterleft10);
         monster.addFrame(R.drawable.monsterleft11);
         monster.setDelay(2);
-        selfX = monster.getX();
-        selfY = monster.getY();
     }
 
     public void initialize(){
@@ -59,6 +57,11 @@ public class Monster extends Animation {
 
     public int getY(){
         return monster.getY();
+    }
+
+    public void setMoveBorder(int xleft, int xright){
+        xmax = xright;
+        xmin = xleft;
     }
 
     public void release(){

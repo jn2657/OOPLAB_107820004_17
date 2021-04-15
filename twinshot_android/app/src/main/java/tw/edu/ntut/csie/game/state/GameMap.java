@@ -6,6 +6,7 @@ import java.util.List;
 import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
+import tw.edu.ntut.csie.game.extend.Animation;
 
 public class GameMap implements GameObject {
     private MovingBitmap block;
@@ -14,7 +15,6 @@ public class GameMap implements GameObject {
     private MovingBitmap pillar;
     private MovingBitmap pillar1;
     private MovingBitmap pillar2;
-//    private MovingBitmap life;
     private Monster monster;
     private List<Monster> MonsterList;
 
@@ -68,11 +68,11 @@ public class GameMap implements GameObject {
         pillar = new MovingBitmap(R.drawable.pillar);
         pillar1 = new MovingBitmap(R.drawable.pillar1);
         pillar2 = new MovingBitmap(R.drawable.pillar2);
-
         MonsterList = new ArrayList<Monster>();
         monster = new Monster();
         monster.initialize();
         monster.setLocation(500, 280);
+        monster.setMoveBorder(450, 550);
         MonsterList.add(monster);
 //        monster.regular();
     }
@@ -139,7 +139,6 @@ public class GameMap implements GameObject {
                 }
             }
         }
-//        life.show();
     }
 
     public boolean isWalkable_down_left(int x, int y){
@@ -174,7 +173,6 @@ public class GameMap implements GameObject {
         }
         return false;
     }
-
 
     public List<Monster> getMonsterList(){
         return MonsterList;

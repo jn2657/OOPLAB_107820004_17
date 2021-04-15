@@ -31,15 +31,8 @@ public class StateRun extends GameState {
     private MovingBitmap _door;
     private MovingBitmap _message;
     private GameMap gameMap;
-
     private List<Monster> MonsterList;
-    
-    private MovingBitmap _life1;
-    private MovingBitmap _life2;
-    private MovingBitmap _life3;
-    private MovingBitmap _black1;
-    private MovingBitmap _black2;
-    private MovingBitmap _black3;
+
 
     private Charactor character;
 
@@ -97,42 +90,6 @@ public class StateRun extends GameState {
         _pointer1 = null;
         _pointer2 = null;
 
-        _black3 = new MovingBitmap(R.drawable.blacklife);
-        _black3.setLocation(600, 350);
-
-        _black2 = new MovingBitmap(R.drawable.blacklife);
-        _black2.setLocation(577, 350);
-
-        _black1 = new MovingBitmap(R.drawable.blacklife);
-        _black1.setLocation(554, 350);
-
-        _life3 = new MovingBitmap(R.drawable.lifewithoutframe);
-        _life3.setLocation(603, 353);
-
-        _life2 = new MovingBitmap(R.drawable.lifewithoutframe);
-        _life2.setLocation(580, 353);
-
-        _life1 = new MovingBitmap(R.drawable.lifewithoutframe);
-        _life1.setLocation(557, 353);
-
-        _black3 = new MovingBitmap(R.drawable.blacklife);
-        _black3.setLocation(600,350);
-
-        _black2 = new MovingBitmap(R.drawable.blacklife);
-        _black2.setLocation(577,350);
-
-        _black1 = new MovingBitmap(R.drawable.blacklife);
-        _black1.setLocation(554,350);
-
-        _life3 = new MovingBitmap(R.drawable.lifewithoutframe);
-        _life3.setLocation(603,353);
-
-        _life2 = new MovingBitmap(R.drawable.lifewithoutframe);
-        _life2.setLocation(580,353);
-
-        _life1 = new MovingBitmap(R.drawable.lifewithoutframe);
-        _life1.setLocation(557,353);
-
     }
 
     @Override
@@ -142,7 +99,6 @@ public class StateRun extends GameState {
         _cloud.setLocation(_cx, _cy);
         gameMap.move();
 //        mPractice.move();
-        
     }
 
     @Override
@@ -159,12 +115,6 @@ public class StateRun extends GameState {
         _android2.show();
 //        mPractice.show();
         gameMap.show();
-        _black1.show();
-        _black2.show();
-        _black3.show();
-        _life1.show();
-        _life2.show();
-        _life3.show();
     }
 
     @Override
@@ -324,21 +274,6 @@ public class StateRun extends GameState {
             }else if(character.getY() > monster.getY()+23 || character.getY() < monster.getY()-23){
                 return false;
             }else{
-                if(_life1 == null){
-                    if(_life2 == null){
-                        if(_life3 != null){
-                            _life3.release();
-                            _life3 = null;
-                        }
-                        //changeState(Game.OVER_STATE);
-                    }else{
-                        _life2.release();
-                        _life2 = null;
-                    }
-                }else{
-                    _life1.release();
-                    _life1 = null;
-                }
                 return true;
             }
         }
