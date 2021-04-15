@@ -1,5 +1,8 @@
 package tw.edu.ntut.csie.game.state;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
@@ -13,6 +16,7 @@ public class GameMap implements GameObject {
     private MovingBitmap pillar2;
 //    private MovingBitmap life;
     private Monster monster;
+    private List<Monster> MonsterList;
 
 //    private int[][] map = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 //                            {0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -64,10 +68,13 @@ public class GameMap implements GameObject {
         pillar = new MovingBitmap(R.drawable.pillar);
         pillar1 = new MovingBitmap(R.drawable.pillar1);
         pillar2 = new MovingBitmap(R.drawable.pillar2);
-//        life = new MovingBitmap(R.drawable.life);
+
+        MonsterList = new ArrayList<Monster>();
         monster = new Monster();
         monster.initialize();
         monster.setLocation(500, 280);
+        MonsterList.add(monster);
+//        monster.regular();
     }
 
     @Override
@@ -169,4 +176,7 @@ public class GameMap implements GameObject {
     }
 
 
+    public List<Monster> getMonsterList(){
+        return MonsterList;
+    }
 }

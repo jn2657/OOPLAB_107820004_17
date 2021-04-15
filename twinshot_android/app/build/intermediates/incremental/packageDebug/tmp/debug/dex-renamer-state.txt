@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Wed Apr 14 20:30:21 CST 2021
 base.0=C\:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+=======
+#Wed Apr 14 22:00:01 CST 2021
+base.0=/Users/JohnnyLee/Documents/Class/OOPlab/twinshot_android/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+>>>>>>> fc2edf66a1077e57b7472e8e9a95693e02a622eb
 path.0=classes.dex
 renamed.0=classes.dex

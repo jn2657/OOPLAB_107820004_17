@@ -454,6 +454,8 @@ drawable android_green
 drawable apple
 drawable arrow_left
 drawable arrow_right
+drawable arrowleft
+drawable arrowright
 drawable background
 drawable background1
 drawable background2
@@ -491,7 +493,10 @@ drawable help_pressed
 drawable icon
 drawable levelbackground
 drawable levelbackground1
+<<<<<<< HEAD
 drawable life
+=======
+>>>>>>> fc2edf66a1077e57b7472e8e9a95693e02a622eb
 drawable lifewithoutframe
 drawable mainleft
 drawable mainleft1

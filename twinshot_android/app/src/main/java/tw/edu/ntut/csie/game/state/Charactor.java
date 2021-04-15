@@ -12,8 +12,8 @@ import tw.edu.ntut.csie.game.extend.Animation;
 
 public class Charactor implements GameObject {
     private Animation main;
-    private Animation arrowLeft;
-    private Animation arrowRight;
+    private Arrow arrowLeft;
+    private Arrow arrowRight;
 
     private Timer timer;
     private TimerTask timerTask;
@@ -23,11 +23,13 @@ public class Charactor implements GameObject {
     private int jumpHeight;
     private int life;
     private int count;
+    private int godModeCount;
     private GameMap gameMap;
     private String direction;
     private Handler handler;
     private Runnable runnable;
     private boolean jumping;
+    private boolean godMode;
 
 
     public Charactor(){
@@ -41,17 +43,13 @@ public class Charactor implements GameObject {
         count = 0;
         jumpHeight = 5;
         disppearCount = 10;
+        godModeCount = 50;
         life = 3;
         direction = "right";
+        godMode = false;
     }
 
     public void initialize(GameMap map){
-//        Context context = null;
-//        String s = "flower";
-//        for(int i = 1; i < 6; i++){
-//            int id = context.getResources().getIdentifier("flower"+String.valueOf(i), "drawable", context.getPackageName());
-//            main.addFrame(id);
-//        }
         main.setLocation(300, 230);
         main.addFrame(R.drawable.mainright);
         main.addFrame(R.drawable.mainright);
@@ -113,105 +111,19 @@ public class Charactor implements GameObject {
 
     }
 
-//    //Declare timer
-//    CountDownTimer cTimer = null;
-//
-//    //start timer function
-//    void startTimer() {
-//        cTimer = new CountDownTimer(200, 100) {
-//            public void onTick(long millisUntilFinished) {
-//            }
-//            public void onFinish() {
-//                cancelTimer();
-//            }
-//        };
-//        cTimer.start();
-//    }
-//
-//
-//    //cancel timer
-//    void cancelTimer() {
-//        if(cTimer!=null)
-//            cTimer.cancel();
-//            cTimer = null;
-//    }
-//
-//    public void jump(int j){
-//        jumpHeight = j;
-//        while(true){
-//            if(jumpHeight>0){
-//                if(gameMap.isWalkable(main.getX(), main.getY()-15)){
-//                    main.setLocation(main.getX(), main.getY() - 15);
-//                    jumpHeight--;
-//                }else{
-//                    jumpHeight = 0;
-//                }
-//
-//            }
-//            if(jumpHeight<=0){
-//                if(gameMap.isWalkable(main.getX(), main.getY()+15)){
-//                    main.setLocation(main.getX(), main.getY() + 15);
-//                    jumpHeight--;
-//                }else{
-//                    break;
-//                }
-//            }
-//            System.out.println("start");
-//            startTimer();
-//            System.out.println("end");
-//        }
-//
-//    }
-
-
-//    public void jump(int j){
-//        jumpHeight = j;
-//        System.out.println("test");
-//        if(handler == null){
-//            handler = new Handler();
-//        }
-//        if(runnable == null){
-//            runnable = new Runnable() {
-//                @Override
-//                public void run() {
-//                    if(jumpHeight>0){
-//                        if(gameMap.isWalkable(main.getX(), main.getY()-15)){
-//                            main.setLocation(main.getX(), main.getY() - 15);
-//                            jumpHeight--;
-//                            handler.postDelayed(this, 100);
-//                        }else{
-//                            jumpHeight = 0;
-//                            handler.postDelayed(this, 100);
-//                        }
-//
-//                    }
-//                    if(jumpHeight<=0){
-//                        if(gameMap.isWalkable(main.getX(), main.getY()+15)){
-//                            main.setLocation(main.getX(), main.getY() + 15);
-//                            jumpHeight--;
-//                            handler.postDelayed(this, 100);
-//                        }else{
-//                            System.out.println("over");
-//                            handler.removeCallbacks(this);
-//                        }
-//                    }
-//                }
-//            };
-//        }
-//
-//        handler.postDelayed(runnable, 200);
-//    }
 
     public void shot(){
         if(direction.contains("right")){
-            Arrow aright = new Arrow(gameMap);
-            aright.initializeRight();
-            aright.shot(main.getX(), main.getY(), 20);
+            arrowRight = new Arrow(gameMap);
+            arrowRight.initializeRight();
+            arrowRight.attack(true, main.getX(), main.getY(), 20);
+
         }
         if(direction.contains("left")){
-            Arrow aleft = new Arrow(gameMap);
-            aleft.initializeLeft();
-            aleft.shot(main.getX(), main.getY(), 20);
+            arrowLeft = new Arrow(gameMap);
+            arrowLeft.initializeLeft();
+            arrowLeft.attack(true, main.getX(), main.getY(), 20);
+
         }
     }
 
@@ -222,11 +134,32 @@ public class Charactor implements GameObject {
     @Override
     public void move(){
         main.move();
+        if(arrowRight != null){
+            arrowRight.move();
+            if(!arrowRight.getAttackState()){
+                arrowRight.release();
+                arrowRight = null;
+            }
+        }
+        if(arrowLeft != null){
+            arrowLeft.move();
+            if(!arrowLeft.getAttackState()){
+                arrowLeft.release();
+                arrowLeft = null;
+            }
+        }
+        animePlay(direction);
     }
 
     @Override
     public void show(){
         main.show();
+        if(arrowRight != null){
+            arrowRight.show();
+        }
+        if(arrowLeft != null){
+            arrowLeft.show();
+        }
     }
 
     @Override
@@ -258,32 +191,46 @@ public class Charactor implements GameObject {
     }
 
     public void animePlay(String s){
+        if(godMode && godModeCount != 0){
+            if(main.getVisible()){
+                main.setVisible(false);
+            }else{
+                main.setVisible(true);
+            }
+            godModeCount--;
+            if(godModeCount == 0){
+                godMode = false;
+                godModeCount = 50;
+            }
+        }
         if(s.equals("right")){
-            main.setCurrentFrameIndex(2);
-            main.move();
+            if(main.getCurrentFrameIndex() > 8 || main.getCurrentFrameIndex() < 2){
+                main.setCurrentFrameIndex(2);
+            }
             if(main.getCurrentFrameIndex() == 8){
                 main.setCurrentFrameIndex(2);
             }
         }else if(s.equals("left")){
-            main.setCurrentFrameIndex(11);
-            main.move();
+            if(main.getCurrentFrameIndex() > 17 || main.getCurrentFrameIndex() < 11){
+                main.setCurrentFrameIndex(11);
+            }
             if(main.getCurrentFrameIndex() == 17){
                 main.setCurrentFrameIndex(11);
             }
         }else if(s.equals("standl")){
-            main.setCurrentFrameIndex(0);
-            main.move();
-            if(main.getCurrentFrameIndex() == 1){// delay has problem
+            if(main.getCurrentFrameIndex() > 1){
                 main.setCurrentFrameIndex(0);
-                main.move();
+            }
+            if(main.getCurrentFrameIndex() == 1){
+                main.setCurrentFrameIndex(0);
             }
 
         }else if(s.equals("standr")){
-            main.setCurrentFrameIndex(9);
-            main.move();
+            if(main.getCurrentFrameIndex() > 10 || main.getCurrentFrameIndex() < 9){
+                main.setCurrentFrameIndex(9);
+            }
             if(main.getCurrentFrameIndex() == 10) {
                 main.setCurrentFrameIndex(9);
-                main.move();
             }
         }
     }
@@ -312,10 +259,21 @@ public class Charactor implements GameObject {
         jumpHeight = 5;
     }
 
-    public void hurt(){
-        life--;
+
+    public boolean isGodMode(){
+        return godMode;
+    }
+
+    public void hurt(boolean collide){
+        if(collide){
+            if(!godMode) {
+                life--;
+                jump(5);
+                godMode = true;
+            }
+        }
         if(life == 0){
-//            change state
+            //change state
         }
     }
 }
