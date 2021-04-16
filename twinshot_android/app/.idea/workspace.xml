@@ -41,7 +41,7 @@
       <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Arrow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Charactor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Character.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/GameMap.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Monster.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/arrow_left.png" afterDir="false" />
@@ -109,7 +109,23 @@
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/select.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/select_back.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/state_ready1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/dex/debug/mergeDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/dex/debug/mergeDexDebug/classes.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/Arrow.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/Arrow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/Charactor$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/Charactor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/GameMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/GameMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/Monster.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/StateRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/StateRun.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/Arrow.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/Arrow.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/Charactor$1.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/Charactor.dex" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/GameMap.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/GameMap.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/Monster.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/Monster.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/StateRun.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/StateRun.dex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/proguard-rules.pro" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/assets/ntut_csie.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/assets/ntut_csie.png" afterDir="false" />
@@ -134,7 +150,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/extend/ButtonEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/extend/ButtonEventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/extend/Integer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/extend/Integer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/AbstractGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/AbstractGameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Arrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Arrow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Charactor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/GameMap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Monster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/StateOver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/StateOver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/StateReady.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/StateReady.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/StateRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/StateRun.java" afterDir="false" />

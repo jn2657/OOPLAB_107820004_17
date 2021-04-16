@@ -23,21 +23,22 @@ public class StateRun extends GameState {
     public static final int DEFAULT_SCORE_DIGITS = 4;
     private MovingBitmap _background;
     private MovingBitmap _android;
-    private MovingBitmap _android1;
-    private MovingBitmap _android2;
-    private MovingBitmap _cloud;
-    private MovingBitmap _door;
     private MovingBitmap _message;
     private GameMap gameMap;
     private List<Monster> MonsterList;
 
+    private MovingBitmap _life1;
+    private MovingBitmap _life2;
+    private MovingBitmap _life3;
+    private MovingBitmap _black1;
+    private MovingBitmap _black2;
+    private MovingBitmap _black3;
 
-    private Charactor character;
+    private Character character;
 
     private Integer _scores;
 
     private boolean _grab;
-    private int _cx, _cy;
 
     private Audio _music;
 
@@ -52,31 +53,19 @@ public class StateRun extends GameState {
     @Override
     public void initialize(Map<String, Object> data) {
         _background = new MovingBitmap(R.drawable.levelbackground1);
-        _background.setLocation(55,0);
+        _background.setLocation(60,0);
         _message = new MovingBitmap(R.drawable.message, 130, 150);
 
         _android = new MovingBitmap(R.drawable.android_green);
         _android.setLocation(100, 200);
-        _android1 = new MovingBitmap(R.drawable.android_green);
-        _android1.setLocation(500, 200);
-        _android2 = new MovingBitmap(R.drawable.android_green);
-        _android2.setLocation(500, 100);
 
         gameMap = new GameMap();
         MonsterList = new ArrayList<Monster>();
         MonsterList = gameMap.getMonsterList();
 
-        _cloud = new MovingBitmap(R.drawable.cloud);
-        _cx = 100;
-        _cy = 50;
-        _cloud.setLocation(_cx, _cy);
+        _scores = new Integer(DEFAULT_SCORE_DIGITS, 0, 460, 350);
 
-        _door = new MovingBitmap(R.drawable.door);
-        _door.setLocation(300, 200);
-
-        //_scores = new Integer(DEFAULT_SCORE_DIGITS, 50, 550, 10);
-
-        character = new Charactor();
+        character = new Character();
         character.initialize(gameMap);
 
         _music = new Audio(R.raw.ntut);
@@ -88,31 +77,48 @@ public class StateRun extends GameState {
         _pointer1 = null;
         _pointer2 = null;
 
+        _black3 = new MovingBitmap(R.drawable.blacklife);
+        _black3.setLocation(600, 350);
+
+        _black2 = new MovingBitmap(R.drawable.blacklife);
+        _black2.setLocation(577, 350);
+
+        _black1 = new MovingBitmap(R.drawable.blacklife);
+        _black1.setLocation(554, 350);
+
+        _life3 = new MovingBitmap(R.drawable.lifewithoutframe);
+        _life3.setLocation(603, 353);
+
+        _life2 = new MovingBitmap(R.drawable.lifewithoutframe);
+        _life2.setLocation(580, 353);
+
+        _life1 = new MovingBitmap(R.drawable.lifewithoutframe);
+        _life1.setLocation(557, 353);
+
     }
 
     @Override
     public void move() {
         character.move();
         character.hurt(checkCollide());
-        _cloud.setLocation(_cx, _cy);
         gameMap.move();
-//        mPractice.move();
     }
 
     @Override
     public void show() {
         // 順序為貼圖順序
         _background.show();
-        //_scores.show();
         character.show();
         _message.show();
-        //_cloud.show();
-        //_door.show();
         _android.show();
-        _android1.show();
-        _android2.show();
-//        mPractice.show();
         gameMap.show();
+        _scores.show();
+        _black1.show();
+        _black2.show();
+        _black3.show();
+        _life1.show();
+        _life2.show();
+        _life3.show();
     }
 
     @Override
@@ -120,27 +126,29 @@ public class StateRun extends GameState {
         _background.release();
         _scores.release();
         _android.release();
-        _android1.release();
-        _android2.release();
         character.release();
         _message.release();
-        _cloud.release();
         _music.release();
-        _door.release();
-//        mPractice.release();
         gameMap.release();
+        _black1.release();
+        _black2.release();
+        _black3.release();
+        _life1.release();
+        _life2.release();
+        _life3.release();
 
         _background = null;
         _scores = null;
         _android = null;
-        _android1 = null;
-        _android2 = null;
         character = null;
         _message = null;
-        _cloud = null;
         _music = null;
-        _door = null;
-//        mPractice = null;
+        _black1 = null;
+        _black2 = null;
+        _black3 = null;
+        _life1 = null;
+        _life2 = null;
+        _life3 = null;
     }
 
     @Override
@@ -155,10 +163,10 @@ public class StateRun extends GameState {
 
     @Override
     public void orientationChanged(float pitch, float azimuth, float roll) {
-        if (roll > 15 && roll < 60 && _cx > 50)
-            _cx -= 2;
-        if (roll < -15 && roll > -60 && _cx + _cloud.getWidth() < 500)
-            _cx += 2;
+//        if (roll > 15 && roll < 60 && _cx > 50)
+//            _cx -= 2;
+//        if (roll < -15 && roll > -60 && _cx + _cloud.getWidth() < 500)
+//            _cx += 2;
     }
 
     @Override
@@ -169,22 +177,18 @@ public class StateRun extends GameState {
     @Override
     public boolean pointerPressed(Pointer actionPointer, List<Pointer> pointers) {
         _message.setVisible(false);
-        character.reset();
         int touchX = actionPointer.getX();
         int touchY = actionPointer.getY();
-        if(touchX >=480 && touchX <= 550 &&
-                touchY >= 150 && touchY <= 250){
+        if(touchX > 325 && touchY > 185){
             if(character.getHeight() == 5){
                 character.jump(5);
             }
-
         }
-        if(touchX >= 480 && touchX <= 550 &&
-            touchY >= 50 && touchY <= 150){
+        if(touchX > 325 && touchY < 185){
             character.shot();
         }
         if(touchX > _android.getX() && touchX < _android.getX() + _android.getWidth() &&
-        touchY > _android.getY() && touchY < _android.getY() + _android.getHeight()){
+                touchY > _android.getY() && touchY < _android.getY() + _android.getHeight()){
             _grab = true;
         }else{
             _grab = false;
@@ -212,7 +216,6 @@ public class StateRun extends GameState {
                 if(gameMap.isWalkable_up_right(character.getX()+5, character.getY())){
                     character.setLocation(character.getX()+5, character.getY());
                     character.setDirection("right");
-                    character.animePlay("right");
                 }
                 if(gameMap.isWalkable_up_right(character.getX(), character.getY()+5)){
                     if(!character.isJumping()){
@@ -223,7 +226,6 @@ public class StateRun extends GameState {
                 if(gameMap.isWalkable_down_left(character.getX()-5, character.getY())){
                     character.setLocation(character.getX()-5, character.getY());
                     character.setDirection("left");
-                    character.animePlay("left");
                 }
                 if(gameMap.isWalkable_down_left(character.getX(), character.getY()+5)){
                     if(!character.isJumping()){
@@ -246,12 +248,11 @@ public class StateRun extends GameState {
     @Override
     public boolean pointerReleased(Pointer actionPointer, List<Pointer> pointers) {
         _grab = false;
-        if(character.getDirection().contains("right")){
-            character.animePlay("standr");
+        if(character.getDirection().contains("right") || character.getDirection().contains("standingRight")){
+            character.setDirection("standingRight");
         }else{
-            character.animePlay("standl");
+            character.setDirection("standingLeft");
         }
-
         return false;
     }
 
@@ -272,41 +273,30 @@ public class StateRun extends GameState {
             }else if(character.getY() > monster.getY()+23 || character.getY() < monster.getY()-23){
                 return false;
             }else{
-                return true;
+                if(!monster.iskilled){
+                    switch (character.life){
+                        case 2:
+                            if(_life1 != null){
+                                _life1.release();
+                                _life1 = null;
+                            }
+                        case 1:
+                            if(_life1 != null) {
+                                _life2.release();
+                                _life2 = null;
+                            }
+                        case 0:
+                            if(_life1 != null) {
+                                _life3.release();
+                                _life3 = null;
+                            }
+                            //change state
+                    }
+                    return true;
+                }
             }
         }
         return false;
     }
 
-    public void arrowRightCollide(Arrow arrow){
-        if (arrow != null){
-            for(Monster monster: MonsterList){
-                if(arrow.getX() > monster.getX() + 23 || arrow.getX() < monster.getX() - 46){
-                    continue;
-                }else if(arrow.getY() > monster.getY() + 23 || character.getY() < monster.getY() - 14){
-                    continue;
-                }else{
-                    if(!arrow.noPower){
-                        monster.setIskilled();
-                    }
-                }
-            }
-        }
-    }
-
-    public void arrowLeftCollide(Arrow arrow){
-        if (arrow != null){
-            for(Monster monster: MonsterList){
-                if(arrow.getX() > monster.getX() + 23 || arrow.getX() < monster.getX() - 10){
-                    continue;
-                }else if(arrow.getY() > monster.getY() + 23 || character.getY() < monster.getY() - 14){
-                    continue;
-                }else{
-                    if(!arrow.noPower){
-                        monster.setIskilled();
-                    }
-                }
-            }
-        }
-    }
 }

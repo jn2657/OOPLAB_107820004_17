@@ -17,8 +17,9 @@ public class Arrow extends Animation {
     private int fallCount;
     private int disappearCount;
     private boolean attack;
-    private int mainx,mainy;
     boolean noPower;
+    boolean hitMonster;
+    private int mainx,mainy;
 
     public Arrow(GameMap map){
         arrow = new Animation();
@@ -28,6 +29,7 @@ public class Arrow extends Animation {
         disappearCount = 30;
         arrow.setVisible(false);
         attack = false;
+        hitMonster = false;
     }
 
     public void initializeLeft(){
@@ -44,66 +46,6 @@ public class Arrow extends Animation {
         noPower = false;
     }
 
-//    public void shot(int x, int y, int delay){
-//        fallCount = delay;
-//        arrow.setLocation(x, y);
-//        System.out.println(x);
-//        System.out.println(y);
-//        arrow.move();
-//        arrow.show();
-//        if(timer == null){
-//            timer = new Timer();
-//        }
-//        timer.scheduleAtFixedRate(timerTask = new TimerTask() {
-//            @Override
-//            public void run() {
-//                if(direction.contains("left")){
-//                    if(gameMap.isWalkable_down_left(arrow.getX()-15, arrow.getY()) && fallCount > 0){
-//                        arrow.setLocation(arrow.getX()-15, arrow.getY());
-//                        fallCount--;
-//                    }else if(gameMap.isWalkable_down_left(arrow.getX()-15, arrow.getY()+5) && fallCount <= 0){
-//                        arrow.setLocation(arrow.getX()-15, arrow.getY()+5);
-//                        fallCount--;
-//                    }else{
-//                        disappearCount--;
-//                        if(disappearCount != 0){
-//                            int i = (int)(Math.random()*99);
-//                            if(i%2==0){
-//                                arrow.setVisible(true);
-//                            }else{
-//                                arrow.setVisible(false);
-//                            }
-//                        }else{
-//                            stopTimer();
-//                            release();
-//                        }
-//                    }
-//                }
-//                if(direction.contains("right")){
-//                    if(gameMap.isWalkable_up_right(arrow.getX()+15, arrow.getY()) && fallCount > 0){
-//                        arrow.setLocation(arrow.getX()+15, arrow.getY());
-//                        fallCount--;
-//                    }else if(gameMap.isWalkable_up_right(arrow.getX()+15, arrow.getY()+5) && fallCount <= 0){
-//                        arrow.setLocation(arrow.getX()+15, arrow.getY()+5);
-//                        fallCount--;
-//                    }else{
-//                        disappearCount--;
-//                        if(disappearCount != 0){
-//                            int i = (int)(Math.random()*99);
-//                            if(i%2==0){
-//                                arrow.setVisible(true);
-//                            }else{
-//                                arrow.setVisible(false);
-//                            }
-//                        }else{
-//                            stopTimer();
-//                            release();
-//                        }
-//                    }
-//                }
-//            }
-//        }, 100, 500);
-//    }
     public void attack(boolean state, int x, int y, int delay){
         attack = state;
         mainx = x;
@@ -111,23 +53,28 @@ public class Arrow extends Animation {
         arrow.setLocation(mainx, mainy+15);
         fallCount = delay;
         arrow.setVisible(true);
+        noPower = false;
+        hitMonster = false;
     }
 
     public void shot(){
         if(attack){
-            if(direction.contains("left")){
-                if(gameMap.isWalkable_up_right(arrow.getX()-20, arrow.getY()) && fallCount > 0){
+            if(direction.contains("left") || direction.contains("standingLeft")){
+                if(gameMap.arrowEnable_left(arrow.getX()-20, arrow.getY(), this) && fallCount > 0 && !hitMonster){
                     arrow.setLocation(arrow.getX()-20, arrow.getY());
                     fallCount--;
-                }else if(gameMap.isWalkable_up_right(arrow.getX()-20, arrow.getY()+5)){
-                    arrow.setLocation(arrow.getX()-20, arrow.getY()+5);
-                }else if(gameMap.isWalkable_up_right(arrow.getX()-20, arrow.getY())){
+                }else if(gameMap.arrowEnable_left(arrow.getX()-20, arrow.getY()+18, this) && !hitMonster){
+                    arrow.setLocation(arrow.getX()-20, arrow.getY()+6);
+                }else if(gameMap.arrowEnable_left(arrow.getX()-20, arrow.getY(), this) && !hitMonster){
                     arrow.setLocation(arrow.getX()-20, arrow.getY());
                     noPower = true;
                 }else{
                     noPower = true;
                     disappearCount--;
-                    if(disappearCount != 0){
+                    if(hitMonster){
+                        arrow.setVisible(false);
+                        attack = false;
+                    }else if(disappearCount != 0){
                         if(disappearCount%2==0){
                             arrow.setVisible(false);
                         }else{
@@ -141,19 +88,22 @@ public class Arrow extends Animation {
                     arrow.setLocation(600, arrow.getY());
                 }
             }
-            if(direction.contains("right")){
-                if(gameMap.isWalkable_up_right(arrow.getX()+20, arrow.getY()) && fallCount > 0){
+            if(direction.contains("right") || direction.contains("standingRight")){
+                if(gameMap.arrowEnable_right(arrow.getX()+20, arrow.getY(), this) && fallCount > 0 && !hitMonster){
                     arrow.setLocation(arrow.getX()+20, arrow.getY());
                     fallCount--;
-                }else if(gameMap.isWalkable_up_right(arrow.getX()+20, arrow.getY()+5)){
-                    arrow.setLocation(arrow.getX()+20, arrow.getY()+5);
-                }else if(gameMap.isWalkable_up_right(arrow.getX()+20, arrow.getY())){
+                }else if(gameMap.arrowEnable_right(arrow.getX()+20, arrow.getY()+18, this) && !hitMonster){
+                    arrow.setLocation(arrow.getX()+20, arrow.getY()+6);
+                }else if(gameMap.arrowEnable_right(arrow.getX()+20, arrow.getY(), this) && !hitMonster){
                     arrow.setLocation(arrow.getX()+20, arrow.getY());
                     noPower = true;
                 }else{
                     noPower = true;
                     disappearCount--;
-                    if(disappearCount != 0){
+                    if(hitMonster){
+                        arrow.setVisible(false);
+                        attack = false;
+                    }else if(disappearCount != 0){
                         if(disappearCount%2==0){
                             arrow.setVisible(false);
                         }else{
@@ -198,8 +148,10 @@ public class Arrow extends Animation {
         }
     }
 
+    @Override
     public void release(){
         arrow.release();
         arrow = null;
     }
+
 }

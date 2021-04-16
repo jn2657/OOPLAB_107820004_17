@@ -8,7 +8,7 @@ import tw.edu.ntut.csie.game.extend.Animation;
 
 public class Monster extends Animation {
     private Animation monster;
-    private boolean iskilled;
+    boolean iskilled;
     private int xmax;
     private int xmin;
     private Timer timer;
@@ -43,8 +43,7 @@ public class Monster extends Animation {
     public void setIskilled(){
         iskilled = true;
         monster.setVisible(false);
-        monster.release();
-        monster = null;
+        monster.setLocation(650, 400);
     }
 
     public void setLocation(int x, int y){
@@ -59,18 +58,15 @@ public class Monster extends Animation {
         return monster.getY();
     }
 
-    public void setMoveBorder(int xleft, int xright){
-        xmax = xright;
-        xmin = xleft;
-    }
-
     public void release(){
         monster.release();
         monster = null;
     }
 
     public void move(){
-        monster.move();
+        if(monster != null){
+            monster.move();
+        }
     }
 
     public void show(){
@@ -78,32 +74,27 @@ public class Monster extends Animation {
     }
 
     public void regular(){
-        speed = 2;
-        if (step <= 0 && direction == 0){
-            direction = 1;
-            step = 30;
-        }else if (step <= 0 && direction == 1){
-            direction = 0;
-            step = 30;
-        }else{
-            if (direction == 0){
-                monster.setLocation((int)(monster.getX() + speed), monster.getY());
+        if(monster != null){
+            speed = 2;
+            if (step <= 0 && direction == 0){
+                direction = 1;
+                step = 30;
+            }else if (step <= 0 && direction == 1){
+                direction = 0;
+                step = 30;
             }else{
-                monster.setLocation((int)(monster.getX() - speed), monster.getY());
+                if (direction == 0){
+                    monster.setLocation((int)(monster.getX() + speed), monster.getY());
+                }else{
+                    monster.setLocation((int)(monster.getX() - speed), monster.getY());
+                }
             }
+            step--;
         }
-        step--;
     }
 
-    private void stopTimer(){
-        if(timerTask!= null){
-            timerTask.cancel();
-            timerTask = null;
-        }
-        if(timer != null){
-            timer.cancel();
-            timer = null;
-        }
+    public void animePlay(){//dead anime
+
     }
 
 }

@@ -16,44 +16,27 @@ public class GameMap implements GameObject {
     private MovingBitmap pillar1;
     private MovingBitmap pillar2;
     private Monster monster;
+    private Monster monster1;
     private List<Monster> MonsterList;
     private MovingBitmap scores;
 
-//    private int[][] map = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,1,3,2,2,3,1,2,3,1,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,1,3,1,1,2,2,1,3,1,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,1,3,1,3,1,3,2,1,2,0,0,0,0,0,0,0,0,0,1,1,3,3,1,2,2,3,1,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-//                            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
-
     private int[][] map = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,1,3,2,2,3,1,2,3,1,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
-        {7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
-        {7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
-        {7,0,0,0,0,0,0,0,0,0,1,3,1,1,2,2,1,3,1,0,0,0,0,0,0,0,0,0,7},
-        {7,0,0,0,0,0,0,0,0,0,6,7,0,6,0,6,0,7,6,0,0,0,0,0,0,0,0,0,7},
-        {0,1,3,1,3,1,3,2,1,2,7,7,0,0,0,0,0,7,7,1,1,3,3,1,2,2,3,1,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,1,3,2,2,3,1,2,3,1,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
+            {7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
+            {7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
+            {7,0,0,0,0,0,0,0,0,0,1,3,1,1,2,2,1,3,1,0,0,0,0,0,0,0,0,0,7},
+            {7,0,0,0,0,0,0,0,0,0,6,7,0,6,0,6,0,7,6,0,0,0,0,0,0,0,0,0,7},
+            {0,1,3,1,3,1,3,2,1,2,7,7,0,0,0,0,0,7,7,1,1,3,3,1,2,2,3,1,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
 
     //大地圖左上角座標
     private final int X = 0;
@@ -72,12 +55,14 @@ public class GameMap implements GameObject {
         scores = new MovingBitmap(R.drawable.scores);
         MonsterList = new ArrayList<Monster>();
         monster = new Monster();
+        monster1 = new Monster();
         monster.initialize();
         monster.setLocation(500, 280);
-        monster.setMoveBorder(450, 550);
+        monster1.initialize();
+        monster1.setLocation(100, 280);
         MonsterList.add(monster);
+        MonsterList.add(monster1);
         scores.setLocation(453,348);
-//        monster.regular();
     }
 
     @Override
@@ -89,6 +74,7 @@ public class GameMap implements GameObject {
         pillar1.release();
         pillar2.release();
         monster.release();
+        monster1.release();
         scores.release();
 
         block = null;
@@ -98,17 +84,21 @@ public class GameMap implements GameObject {
         pillar1 = null;
         pillar2 = null;
         monster = null;
+        monster1 = null;
     }
 
     @Override
     public void move(){
         monster.move();
         monster.regular();
+        monster1.move();
+        monster1.regular();
     }
 
     @Override
     public void show(){
         monster.show();
+        monster1.show();
         scores.show();
         for(int i = 0; i < 17; i++){
             for(int j = 0; j<29; j++){
@@ -171,12 +161,50 @@ public class GameMap implements GameObject {
         }
     }
 
-    public boolean collide(int x, int y){
-        if(x >= monster.getX() && x<= monster.getX() + monster.getWidth() &&
-                y >= monster.getY() && y <= monster.getY() + monster.getHeight()){
+    public boolean arrowEnable_left(int x, int y, Arrow arrow){// map and monster check
+        int i = y/23;
+        int j = x/23+1;
+        for(Monster monster: MonsterList){
+            if(x > monster.getX()+23 || x < monster.getX()){
+                continue;
+            }else if(y > monster.getY()+23 || y < monster.getY()-10){
+                continue;
+            }else{
+                if(!arrow.noPower){
+                    monster.setIskilled();
+                    arrow.hitMonster = true;
+                    return false;
+                }
+            }
+        }
+        if(map[i][j] != 0){
+            return false;
+        }else{
             return true;
         }
-        return false;
+    }
+
+    public boolean arrowEnable_right(int x, int y, Arrow arrow){
+        int i = y/23;
+        int j = x/23+2;
+        for(Monster monster: MonsterList){
+            if(x+46 > monster.getX()+10 || x+46 < monster.getX()){
+                continue;
+            }else if(y > monster.getY()+23 || y < monster.getY()-10){
+                continue;
+            }else{
+                if(!arrow.noPower){
+                    monster.setIskilled();
+                    arrow.hitMonster = true;
+                    return false;
+                }
+            }
+        }
+        if(map[i][j] != 0){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     public List<Monster> getMonsterList(){
