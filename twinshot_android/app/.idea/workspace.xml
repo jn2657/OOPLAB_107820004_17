@@ -44,7 +44,6 @@
       <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Charactor.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/GameMap.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Practice.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/arrow_left.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/arrow_right.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/arrowleft.png" afterDir="false" />
@@ -61,8 +60,15 @@
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/clickstart.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/clickstart_pressed.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/firststage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/level1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/level1_pressed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/level2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/level2_pressed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/level3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/level3_pressed.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/levelbackground.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/levelbackground1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/levels.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/lifewithoutframe.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainleft.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainleft1.png" afterDir="false" />
@@ -95,8 +101,13 @@
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar1.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/play_pressed.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/players.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/players_back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/scores.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/select.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/select_back.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/state_ready1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/proguard-rules.pro" afterDir="false" />
@@ -346,6 +357,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618537730088">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1618537730088" />
     <state x="415" y="6" key="CommitChangelistDialog2" timestamp="1617873807814">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

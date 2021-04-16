@@ -20,8 +20,6 @@ import tw.edu.ntut.csie.game.extend.Integer;
 
 
 public class StateRun extends GameState {
-    private Practice mPractice;
-
     public static final int DEFAULT_SCORE_DIGITS = 4;
     private MovingBitmap _background;
     private MovingBitmap _android;
@@ -54,7 +52,7 @@ public class StateRun extends GameState {
     @Override
     public void initialize(Map<String, Object> data) {
         _background = new MovingBitmap(R.drawable.levelbackground1);
-        _background.setLocation(60,0);
+        _background.setLocation(55,0);
         _message = new MovingBitmap(R.drawable.message, 130, 150);
 
         _android = new MovingBitmap(R.drawable.android_green);

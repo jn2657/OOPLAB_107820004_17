@@ -17,6 +17,7 @@ public class GameMap implements GameObject {
     private MovingBitmap pillar2;
     private Monster monster;
     private List<Monster> MonsterList;
+    private MovingBitmap scores;
 
 //    private int[][] map = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
 //                            {0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0},
@@ -68,12 +69,14 @@ public class GameMap implements GameObject {
         pillar = new MovingBitmap(R.drawable.pillar);
         pillar1 = new MovingBitmap(R.drawable.pillar1);
         pillar2 = new MovingBitmap(R.drawable.pillar2);
+        scores = new MovingBitmap(R.drawable.scores);
         MonsterList = new ArrayList<Monster>();
         monster = new Monster();
         monster.initialize();
         monster.setLocation(500, 280);
         monster.setMoveBorder(450, 550);
         MonsterList.add(monster);
+        scores.setLocation(453,348);
 //        monster.regular();
     }
 
@@ -86,6 +89,7 @@ public class GameMap implements GameObject {
         pillar1.release();
         pillar2.release();
         monster.release();
+        scores.release();
 
         block = null;
         block1 = null;
@@ -105,6 +109,7 @@ public class GameMap implements GameObject {
     @Override
     public void show(){
         monster.show();
+        scores.show();
         for(int i = 0; i < 17; i++){
             for(int j = 0; j<29; j++){
                 switch(map[i][j]){

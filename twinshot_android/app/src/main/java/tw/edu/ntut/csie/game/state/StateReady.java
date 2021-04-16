@@ -11,18 +11,20 @@ import tw.edu.ntut.csie.game.extend.ButtonEventHandler;
 
 public class StateReady extends AbstractGameState {
 
-    private MovingBitmap _helpInfo;
-    private MovingBitmap _aboutInfo;
+    private MovingBitmap _mode;
+    private MovingBitmap _levels;
     private MovingBitmap _background;
 
-    private BitmapButton _exitButton;
-    private BitmapButton _helpButton;
-    private BitmapButton _menuButton;
-    private BitmapButton _aboutButton;
+    private BitmapButton _play;
+    private BitmapButton _back1;
+    private BitmapButton _back2;
     private BitmapButton _startButton;
+    private BitmapButton _level1;
+    private BitmapButton _level2;
+    private BitmapButton _level3;
 
-    private boolean _showHelp;
-    private boolean _showAbout;
+    private boolean _showMode;
+    private boolean _showLevels;
 
     public StateReady(GameEngine engine) {
         super(engine);
@@ -30,17 +32,20 @@ public class StateReady extends AbstractGameState {
 
     @Override
     public void initialize(Map<String, Object> data) {
-        addGameObject(_helpInfo = new MovingBitmap(R.drawable.players));
+        addGameObject(_mode = new MovingBitmap(R.drawable.select));
         addGameObject(_background = new MovingBitmap(R.drawable.background3));
-        addGameObject(_aboutInfo = new MovingBitmap(R.drawable.about_info));
+        addGameObject(_levels = new MovingBitmap(R.drawable.levels));
         _background.resize((int)(_background.getWidth()*1.124),(int)(_background.getHeight()*1.045));
-        _background.setLocation(60,0);
-        _helpInfo.setLocation(60,0);
+        _background.setLocation(55,0);
+        _mode.setLocation(55,0);
+        _levels.setLocation(55,0);
         initializeStartButton();
-        initializeExitButton();
-        initializeMenuButton();
-        initializeHelpButton();
-        initializeAboutButton();
+        initializeBack1Button();
+        initializePlayButton();
+        initializeBack2Button();
+        initializeLevel1Button();
+        initializeLevel2Button();
+        initializeLevel3Button();
         setVisibility(false, false);
     }
 
@@ -48,69 +53,91 @@ public class StateReady extends AbstractGameState {
      * ��l�ơyAbout�z�����s�C
      */
     // �}�o²��
-    private void initializeAboutButton() {
-        addGameObject(_aboutButton = new BitmapButton(R.drawable.about, R.drawable.about_pressed, 465, 270));
-        _aboutButton.addButtonEventHandler(new ButtonEventHandler() {
+    private void initializeBack2Button() {
+        addGameObject(_back2 = new BitmapButton(R.drawable.back, R.drawable.back_pressed, 257, 280));
+        _back2.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-                setVisibility(false, true);
+                setVisibility(true, false);
             }
         });
-        addPointerEventHandler(_aboutButton);
+        addPointerEventHandler(_back2);
     }
 
     /**
      * ��l�ơyHelp�z�����s�C
      */
     // �C������
-    private void initializeHelpButton() {
-        addGameObject(_helpButton = new BitmapButton(R.drawable.help, R.drawable.help_pressed, 465, 220));
-        _helpButton.addButtonEventHandler(new ButtonEventHandler() {
+    private void initializePlayButton() {
+        addGameObject(_play = new BitmapButton(R.drawable.play, R.drawable.play_pressed, 492, 120));
+        _play.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-                setVisibility(true, false);
+                setVisibility(false, true);
             }
         });
-        addPointerEventHandler(_helpButton);
+        addPointerEventHandler(_play);
     }
 
     /**
      * ��l�ơyMenu�z�����s�C
      */
-    private void initializeMenuButton() {
-        addGameObject(_menuButton = new BitmapButton(R.drawable.back, R.drawable.back_pressed, 262, 319));
-        _menuButton.addButtonEventHandler(new ButtonEventHandler() {
+    private void initializeBack1Button() {
+        addGameObject(_back1 = new BitmapButton(R.drawable.back, R.drawable.back_pressed, 257, 319));
+        _back1.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
                 setVisibility(false, false);
             }
         });
-        addPointerEventHandler(_menuButton);
+        addPointerEventHandler(_back1);
     }
 
     /**
      * ��l�ơyExit�z�����s�C
      */
-    private void initializeExitButton() {
-        addGameObject(_exitButton = new BitmapButton(R.drawable.exit, R.drawable.exit_pressed, 465, 320));
-        _exitButton.addButtonEventHandler(new ButtonEventHandler() {
+    private void initializeLevel1Button() {
+        addGameObject(_level1 = new BitmapButton(R.drawable.level1, R.drawable.level1_pressed, 76, 112));
+        _level1.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-                _engine.exit();
+                changeState(Game.RUNNING_STATE);
             }
         });
-        addPointerEventHandler(_exitButton);
+        addPointerEventHandler(_level1);
+    }
+
+    private void initializeLevel2Button() {
+        addGameObject(_level2 = new BitmapButton(R.drawable.level2, R.drawable.level2_pressed, 127, 112));
+        _level2.addButtonEventHandler(new ButtonEventHandler() {
+            @Override
+            public void perform(BitmapButton button) {
+                changeState(Game.RUNNING_STATE);
+            }
+        });
+        addPointerEventHandler(_level2);
+    }
+
+    private void initializeLevel3Button() {
+        addGameObject(_level3 = new BitmapButton(R.drawable.level3, R.drawable.level3_pressed, 179, 112));
+        _level3.addButtonEventHandler(new ButtonEventHandler() {
+            @Override
+            public void perform(BitmapButton button) {
+                changeState(Game.RUNNING_STATE);
+            }
+        });
+        addPointerEventHandler(_level3);
     }
 
     /**
      * ��l�ơyStart�z�����s�C
      */
     private void initializeStartButton() {
-        addGameObject(_startButton = new BitmapButton(R.drawable.clickstart, R.drawable.clickstart_pressed, 225, 331));
+        addGameObject(_startButton = new BitmapButton(R.drawable.clickstart, R.drawable.clickstart_pressed, 220, 331));
         _startButton.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-                changeState(Game.RUNNING_STATE);
+                setVisibility(true, false);
             }
         });
         addPointerEventHandler(_startButton);
@@ -127,22 +154,24 @@ public class StateReady extends AbstractGameState {
     /**
      * �]�w�e���W���ǹϤ�����ܡA���ǹϤ������áC
      *
-     * @param showHelp  ���Help�e��
-     * @param showAbout ���About�e��
+     * @param showMode  ���Help�e��
+     * @param showLevels ���About�e��
      */
-    private void setVisibility(boolean showHelp, boolean showAbout) {
-        _showHelp = showHelp;
-        _showAbout = showAbout;
-        boolean showMenu = !_showAbout && !_showHelp;
-        _helpInfo.setVisible(_showHelp);
-        _aboutInfo.setVisible(_showAbout);
+    private void setVisibility(boolean showMode, boolean showLevels) {
+        _showMode = showMode;
+        _showLevels = showLevels;
+        boolean showMenu = !_showLevels && !_showMode;
         _background.setVisible(showMenu);
+        _mode.setVisible(_showMode);
+        _levels.setVisible(_showLevels);
 
-        _exitButton.setVisible(showMenu);
-        _helpButton.setVisible(showMenu);
-        _aboutButton.setVisible(showMenu);
         _startButton.setVisible(showMenu);
-        _menuButton.setVisible(!showMenu);
+        _play.setVisible(_showMode);
+        _back1.setVisible(_showMode);
+        _back2.setVisible(_showLevels);
+        _level1.setVisible(_showLevels);
+        _level2.setVisible(_showLevels);
+        _level3.setVisible(_showLevels);
     }
 }
 
