@@ -279,4 +279,36 @@ public class StateRun extends GameState {
         }
         return false;
     }
+
+    public void arrowRightCollide(Arrow arrow){
+        if (arrow != null){
+            for(Monster monster: MonsterList){
+                if(arrow.getX() > monster.getX() + 23 || arrow.getX() < monster.getX() - 46){
+                    continue;
+                }else if(arrow.getY() > monster.getY() + 23 || character.getY() < monster.getY() - 14){
+                    continue;
+                }else{
+                    if(!arrow.noPower){
+                        monster.setIskilled();
+                    }
+                }
+            }
+        }
+    }
+
+    public void arrowLeftCollide(Arrow arrow){
+        if (arrow != null){
+            for(Monster monster: MonsterList){
+                if(arrow.getX() > monster.getX() + 23 || arrow.getX() < monster.getX() - 10){
+                    continue;
+                }else if(arrow.getY() > monster.getY() + 23 || character.getY() < monster.getY() - 14){
+                    continue;
+                }else{
+                    if(!arrow.noPower){
+                        monster.setIskilled();
+                    }
+                }
+            }
+        }
+    }
 }

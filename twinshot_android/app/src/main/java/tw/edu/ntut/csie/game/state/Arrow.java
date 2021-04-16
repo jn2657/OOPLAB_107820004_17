@@ -18,6 +18,7 @@ public class Arrow extends Animation {
     private int disappearCount;
     private boolean attack;
     private int mainx,mainy;
+    boolean noPower;
 
     public Arrow(GameMap map){
         arrow = new Animation();
@@ -33,12 +34,14 @@ public class Arrow extends Animation {
         arrow.addFrame(R.drawable.arrowleft);
         arrow.setDelay(2);
         direction = "left";
+        noPower = false;
     }
 
     public void initializeRight(){
         arrow.addFrame(R.drawable.arrowright);
         arrow.setDelay(2);
         direction = "right";
+        noPower = false;
     }
 
 //    public void shot(int x, int y, int delay){
@@ -120,7 +123,9 @@ public class Arrow extends Animation {
                     arrow.setLocation(arrow.getX()-20, arrow.getY()+5);
                 }else if(gameMap.isWalkable_up_right(arrow.getX()-20, arrow.getY())){
                     arrow.setLocation(arrow.getX()-20, arrow.getY());
+                    noPower = true;
                 }else{
+                    noPower = true;
                     disappearCount--;
                     if(disappearCount != 0){
                         if(disappearCount%2==0){
@@ -144,7 +149,9 @@ public class Arrow extends Animation {
                     arrow.setLocation(arrow.getX()+20, arrow.getY()+5);
                 }else if(gameMap.isWalkable_up_right(arrow.getX()+20, arrow.getY())){
                     arrow.setLocation(arrow.getX()+20, arrow.getY());
+                    noPower = true;
                 }else{
+                    noPower = true;
                     disappearCount--;
                     if(disappearCount != 0){
                         if(disappearCount%2==0){

@@ -456,6 +456,8 @@ drawable arrow_left
 drawable arrow_right
 drawable arrowleft
 drawable arrowright
+drawable back
+drawable back_pressed
 drawable background
 drawable background1
 drawable background2
@@ -465,6 +467,8 @@ drawable block
 drawable block1
 drawable block2
 drawable blue
+drawable clickstart
+drawable clickstart_pressed
 drawable cloud
 drawable digit_0
 drawable digit_1
@@ -530,6 +534,8 @@ drawable ntut_csie
 drawable pillar
 drawable pillar1
 drawable pillar2
+drawable players
+drawable players_back
 drawable start
 drawable start_pressed
 drawable state_over

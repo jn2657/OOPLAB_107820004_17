@@ -49,6 +49,8 @@
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/arrow_right.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/arrowleft.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/arrowright.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/back_pressed.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/background1.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/background2.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/background3.png" afterDir="false" />
@@ -56,6 +58,8 @@
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/block.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/block1.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/block2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/clickstart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/clickstart_pressed.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/firststage.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/levelbackground.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/levelbackground1.png" afterDir="false" />
@@ -91,6 +95,8 @@
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar1.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/players.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/players_back.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/state_ready1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/proguard-rules.pro" afterDir="false" />
