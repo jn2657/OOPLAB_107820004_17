@@ -7,215 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13b4baa8-a3dc-4e87-be4f-dae06662428c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/copyright/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_23_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_23_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_23_2_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_23_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_23_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/generated/source/buildConfig/debug/tw/edu/ntut/csie/game/BuildConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Arrow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/GameMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Monster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/arrow_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/arrow_right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/arrowleft.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/arrowright.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/back_pressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/background1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/background2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/background3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/blacklife.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/block.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/block1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/block2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/clickstart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/clickstart_pressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/firststage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/level1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/level1_pressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/level2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/level2_pressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/level3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/level3_pressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/levelbackground.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/levelbackground1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/levels.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/lifewithoutframe.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainleft.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainleft1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainleft2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainleft3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainleft4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainleft5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainleft6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainleft7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainleftshake.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainright.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainright1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainright2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainright3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainright4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainright5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainright6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainright7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft9.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/play.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/play_pressed.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/players.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/players_back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/scores.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/select.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/select_back.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/state_ready1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/dex/debug/mergeDexDebug/classes.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/dex/debug/mergeDexDebug/classes.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/Arrow.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/Arrow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/Charactor$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/Charactor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/GameMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/GameMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/Monster.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/Monster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/StateRun.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/javac/debug/classes/tw/edu/ntut/csie/game/state/StateRun.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/Arrow.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/Arrow.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/Charactor$1.dex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/Charactor.dex" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/GameMap.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/GameMap.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/Monster.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/Monster.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/StateRun.dex" beforeDir="false" afterPath="$PROJECT_DIR$/build/intermediates/project_dex_archive/debug/out/tw/edu/ntut/csie/game/state/StateRun.dex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/outputs/apk/debug/app-debug.apk" beforeDir="false" afterPath="$PROJECT_DIR$/build/outputs/apk/debug/app-debug.apk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/proguard-rules.pro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/assets/ntut_csie.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/assets/ntut_csie.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/GameObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/KeyEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/KeyEventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/Pointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/Pointer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/PointerEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/PointerEventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/ReleasableResource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/ReleasableResource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/SensorEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/SensorEventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/core/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/core/Audio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/core/MovingBitmap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/core/MovingBitmap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/core/SoundEffects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/core/SoundEffects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/engine/EmptyState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/engine/EmptyState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/engine/EventDispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/engine/EventDispatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/engine/GameEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/engine/GameEngine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/engine/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/engine/GameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/engine/SurfaceEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/engine/SurfaceEventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/extend/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/extend/Animation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/extend/BitmapButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/extend/BitmapButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/extend/ButtonEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/extend/ButtonEventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/extend/Integer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/extend/Integer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/AbstractGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/AbstractGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Arrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Arrow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Charactor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/GameMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/GameMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/Monster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/StateOver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/StateOver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/StateReady.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/StateReady.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/StateRun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tw/edu/ntut/csie/game/state/StateRun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/about.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/about.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/about_info.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/about_info.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/about_pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/about_pressed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/android_black.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/android_black.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/android_green.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/android_green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/apple.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/apple.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/background.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/cloud.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/cloud.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/digit_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/digit_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/digit_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/digit_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/digit_10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/digit_10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/digit_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/digit_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/digit_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/digit_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/digit_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/digit_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/digit_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/digit_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/digit_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/digit_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/digit_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/digit_7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/digit_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/digit_8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/digit_9.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/digit_9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/door.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/door.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/exit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/exit_pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/exit_pressed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/flower1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/flower1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/flower2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/flower2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/flower3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/flower3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/flower4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/flower4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/flower5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/flower5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/green.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/help.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/help.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/help_info.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/help_info.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/help_pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/help_pressed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/menu.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/menu_pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/menu_pressed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/message.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/message.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/ntut_csie.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/ntut_csie.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/start.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/start.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/start_pressed.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/start_pressed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/state_over.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/state_over.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/state_ready.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/state_ready.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/raw/ntut.mid" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/raw/ntut.mid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pictures/smaller_divi/mainleft.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../pictures/smaller_divi/mainleft.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_3a_XL_API_30" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_XL_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -229,7 +28,7 @@
     </system>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="ProjectId" id="1qsgSr20kGvrdgTaq87XO8K01eW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -243,16 +42,77 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Pixel_2_XL_API_29" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-04-18T09:47:54.869Z" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/res/drawable" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
-  <component name="RunManager" selected="Android App.twinshot_android-app">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/res/drawable" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.OOPLAB_107820004_17-twinshot_android-app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OOPLAB_107820004_17-twinshot_android-app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="OOPLAB_107820004_17-twinshot_android-app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
       <method v="2">
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
@@ -377,6 +237,11 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="245" y="169" key="#PSD" timestamp="1618739257631">
+      <screen x="0" y="23" width="1440" height="821" />
+    </state>
+    <state x="245" y="168" key="#PSD/0.23.1440.814@0.23.1440.814" timestamp="1618737799350" />
+    <state x="245" y="169" key="#PSD/0.23.1440.821@0.23.1440.821" timestamp="1618739257631" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1618537730088">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -385,17 +250,20 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="415" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1617873807814" />
-    <state x="270" y="54" key="SettingsEditor" timestamp="1618471296597">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="253" y="76" key="SettingsEditor" timestamp="1618738598508">
+      <screen x="0" y="23" width="1440" height="816" />
     </state>
     <state x="270" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1618471296597" />
-    <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1617873930397">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="253" y="76" key="SettingsEditor/0.23.1440.816@0.23.1440.816" timestamp="1618738598508" />
+    <state x="23" y="65" width="1266" height="632" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1618738628079">
+      <screen x="0" y="23" width="1440" height="816" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1617873930397" />
-    <state x="457" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1618471382111">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="23" y="65" width="1266" height="632" key="com.android.tools.idea.avdmanager.AvdListDialog/0.23.1440.816@0.23.1440.816" timestamp="1618738628079" />
+    <state x="428" y="257" key="com.intellij.ide.util.TipDialog" timestamp="1619072522755">
+      <screen x="0" y="23" width="1440" height="823" />
     </state>
     <state x="457" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1618471382111" />
+    <state x="428" y="257" key="com.intellij.ide.util.TipDialog/0.23.1440.823@0.23.1440.823" timestamp="1619072522755" />
   </component>
 </project>

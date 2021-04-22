@@ -23,6 +23,7 @@ public class Character implements GameObject {
     private int disppearCount;
     private int jumpHeight;
     int life;
+    int score;
     private int count;
     private int godModeCount;
     private GameMap gameMap;
@@ -54,6 +55,7 @@ public class Character implements GameObject {
         disppearCount = 10;
         godModeCount = 50;
         life = 3;
+        score = 0;
         direction = "standingRight";
         godMode = false;
     }
@@ -81,23 +83,6 @@ public class Character implements GameObject {
         main.setDelay(2);
         gameMap = map;
 
-//        _black3 = new MovingBitmap(R.drawable.blacklife);
-//        _black3.setLocation(600, 350);
-//
-//        _black2 = new MovingBitmap(R.drawable.blacklife);
-//        _black2.setLocation(577, 350);
-//
-//        _black1 = new MovingBitmap(R.drawable.blacklife);
-//        _black1.setLocation(554, 350);
-//
-//        _life3 = new MovingBitmap(R.drawable.lifewithoutframe);
-//        _life3.setLocation(603, 353);
-//
-//        _life2 = new MovingBitmap(R.drawable.lifewithoutframe);
-//        _life2.setLocation(580, 353);
-//
-//        _life1 = new MovingBitmap(R.drawable.lifewithoutframe);
-//        _life1.setLocation(557, 353);
     }
 
     public boolean isJumping(){
@@ -250,32 +235,19 @@ public class Character implements GameObject {
             }
         }
         if(s.equals("right")){
-            if(main.getCurrentFrameIndex() > 8 || main.getCurrentFrameIndex() < 2){
-                main.setCurrentFrameIndex(2);
-            }
-            if(main.getCurrentFrameIndex() == 8){
+            if(main.getCurrentFrameIndex() >= 8 || main.getCurrentFrameIndex() < 2){
                 main.setCurrentFrameIndex(2);
             }
         }else if(s.equals("left")){
-            if(main.getCurrentFrameIndex() > 17 || main.getCurrentFrameIndex() < 11){
-                main.setCurrentFrameIndex(11);
-            }
-            if(main.getCurrentFrameIndex() == 17){
+            if(main.getCurrentFrameIndex() >= 17 || main.getCurrentFrameIndex() < 11){
                 main.setCurrentFrameIndex(11);
             }
         }else if(s.equals("standingRight")){
-            if(main.getCurrentFrameIndex() > 1){
+            if(main.getCurrentFrameIndex() >= 1){
                 main.setCurrentFrameIndex(0);
             }
-            if(main.getCurrentFrameIndex() == 1){
-                main.setCurrentFrameIndex(0);
-            }
-
         }else if(s.equals("standingLeft")){
-            if(main.getCurrentFrameIndex() > 10 || main.getCurrentFrameIndex() < 9){
-                main.setCurrentFrameIndex(9);
-            }
-            if(main.getCurrentFrameIndex() == 10) {
+            if(main.getCurrentFrameIndex() >= 10 || main.getCurrentFrameIndex() < 9){
                 main.setCurrentFrameIndex(9);
             }
         }
@@ -292,10 +264,6 @@ public class Character implements GameObject {
             timerTask = null;
         }
         jumpHeight = 5;
-    }
-
-    public boolean isGodMode(){
-        return godMode;
     }
 
     public void decreaseLife(boolean mode){

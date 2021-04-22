@@ -16,6 +16,7 @@ public class Monster extends Animation {
     private int step;
     private int direction;
     private double speed;
+    private boolean addScoreCheck;
 
     public Monster(){
         monster = new Animation();
@@ -38,6 +39,7 @@ public class Monster extends Animation {
         iskilled = false;
         step = 30;
         direction = 0;
+        addScoreCheck = true;
     }
 
     public void setIskilled(){
@@ -95,6 +97,15 @@ public class Monster extends Animation {
 
     public void animePlay(){//dead anime
 
+    }
+
+    public boolean getScore(){
+        if(iskilled && addScoreCheck){
+            addScoreCheck = false;
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

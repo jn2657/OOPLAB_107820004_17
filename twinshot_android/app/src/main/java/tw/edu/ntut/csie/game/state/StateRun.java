@@ -22,7 +22,7 @@ import tw.edu.ntut.csie.game.extend.Integer;
 public class StateRun extends GameState {
     public static final int DEFAULT_SCORE_DIGITS = 4;
     private MovingBitmap _background;
-    private MovingBitmap _android;
+    private MovingBitmap _button;
     private MovingBitmap _message;
     private GameMap gameMap;
     private List<Monster> MonsterList;
@@ -56,8 +56,8 @@ public class StateRun extends GameState {
         _background.setLocation(60,0);
         _message = new MovingBitmap(R.drawable.message, 130, 150);
 
-        _android = new MovingBitmap(R.drawable.android_green);
-        _android.setLocation(100, 200);
+        _button = new MovingBitmap(R.drawable.button);
+        _button.setLocation(100, 200);
 
         gameMap = new GameMap();
         MonsterList = new ArrayList<Monster>();
@@ -110,7 +110,7 @@ public class StateRun extends GameState {
         _background.show();
         character.show();
         _message.show();
-        _android.show();
+        _button.show();
         gameMap.show();
         _scores.show();
         _black1.show();
@@ -125,7 +125,7 @@ public class StateRun extends GameState {
     public void release() {
         _background.release();
         _scores.release();
-        _android.release();
+        _button.release();
         character.release();
         _message.release();
         _music.release();
@@ -139,7 +139,7 @@ public class StateRun extends GameState {
 
         _background = null;
         _scores = null;
-        _android = null;
+        _button = null;
         character = null;
         _message = null;
         _music = null;
@@ -187,8 +187,8 @@ public class StateRun extends GameState {
         if(touchX > 325 && touchY < 185){
             character.shot();
         }
-        if(touchX > _android.getX() && touchX < _android.getX() + _android.getWidth() &&
-                touchY > _android.getY() && touchY < _android.getY() + _android.getHeight()){
+        if(touchX > _button.getX() && touchX < _button.getX() + _button.getWidth() &&
+                touchY > _button.getY() && touchY < _button.getY() + _button.getHeight()){
             _grab = true;
         }else{
             _grab = false;
@@ -212,7 +212,7 @@ public class StateRun extends GameState {
         if(_grab){
             int moveX = actionPointer.getX();
             int moveY = actionPointer.getY();
-            if(moveX > _android.getX()){
+            if(moveX > _button.getX()){
                 if(gameMap.isWalkable_up_right(character.getX()+5, character.getY())){
                     character.setLocation(character.getX()+5, character.getY());
                     character.setDirection("right");
@@ -222,7 +222,7 @@ public class StateRun extends GameState {
                         character.jump(0);
                     }
                 }
-            }else if(moveX < _android.getX() + _android.getWidth()){
+            }else if(moveX < _button.getX() + _button.getWidth()){
                 if(gameMap.isWalkable_down_left(character.getX()-5, character.getY())){
                     character.setLocation(character.getX()-5, character.getY());
                     character.setDirection("left");
@@ -268,6 +268,9 @@ public class StateRun extends GameState {
 
     public boolean checkCollide(){
         for(Monster monster: MonsterList){
+            if(monster.getScore()){
+                _scores.add(10);
+            }
             if(character.getX() > monster.getX()+23 || character.getX() < monster.getX()-23){
                 return false;
             }else if(character.getY() > monster.getY()+23 || character.getY() < monster.getY()-23){
