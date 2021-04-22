@@ -33,15 +33,6 @@ public class Character implements GameObject {
     private boolean jumping;
     private boolean godMode;
 
-//    private MovingBitmap _life1;
-//    private MovingBitmap _life2;
-//    private MovingBitmap _life3;
-//    private MovingBitmap _black1;
-//    private MovingBitmap _black2;
-//    private MovingBitmap _black3;
-
-
-
     public Character(){
         main = new Animation();
         handler = null;
@@ -166,12 +157,6 @@ public class Character implements GameObject {
     @Override
     public void show(){
         main.show();
-//        _black1.show();
-//        _black2.show();
-//        _black3.show();
-//        _life1.show();
-//        _life2.show();
-//        _life3.show();
         if(arrowRight != null){
             arrowRight.show();
         }
@@ -183,20 +168,7 @@ public class Character implements GameObject {
     @Override
     public void release(){
         main.release();
-//        _black1.release();
-//        _black2.release();
-//        _black3.release();
-//        _life1.release();
-//        _life2.release();
-//        _life3.release();
-
         main = null;
-//        _black1 = null;
-//        _black2 = null;
-//        _black3 = null;
-//        _life1 = null;
-//        _life2 = null;
-//        _life3 = null;
     }
 
     public int getX(){

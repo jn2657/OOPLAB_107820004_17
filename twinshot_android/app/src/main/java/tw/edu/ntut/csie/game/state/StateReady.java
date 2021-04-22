@@ -15,6 +15,8 @@ public class StateReady extends AbstractGameState {
     private MovingBitmap _levels;
     private MovingBitmap _background;
 
+//    private BitmapButton _sound;
+
     private BitmapButton _play;
     private BitmapButton _back1;
     private BitmapButton _back2;
@@ -46,6 +48,7 @@ public class StateReady extends AbstractGameState {
         initializeLevel1Button();
         initializeLevel2Button();
         initializeLevel3Button();
+//        initializeSoundButton();
         setVisibility(false, false);
     }
 
@@ -142,6 +145,17 @@ public class StateReady extends AbstractGameState {
         });
         addPointerEventHandler(_startButton);
     }
+
+//    private void initializeSoundButton() {
+//        addGameObject(_startButton = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 220, 331));
+//        _startButton.addButtonEventHandler(new ButtonEventHandler() {
+//            @Override
+//            public void perform(BitmapButton button) {
+//                setVisibility(true, false);
+//            }
+//        });
+//        addPointerEventHandler(_startButton);
+//    }
 
     @Override
     public void pause() {

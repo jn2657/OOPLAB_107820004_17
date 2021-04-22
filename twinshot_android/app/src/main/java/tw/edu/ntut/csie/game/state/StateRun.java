@@ -16,10 +16,12 @@ import tw.edu.ntut.csie.game.core.Audio;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
 import tw.edu.ntut.csie.game.engine.GameEngine;
 import tw.edu.ntut.csie.game.extend.Animation;
+import tw.edu.ntut.csie.game.extend.BitmapButton;
+import tw.edu.ntut.csie.game.extend.ButtonEventHandler;
 import tw.edu.ntut.csie.game.extend.Integer;
 
 
-public class StateRun extends GameState {
+public class StateRun extends AbstractGameState {
     public static final int DEFAULT_SCORE_DIGITS = 4;
     private MovingBitmap _background;
     private MovingBitmap _button;
@@ -45,6 +47,9 @@ public class StateRun extends GameState {
     private Pointer _pointer1;
     private Pointer _pointer2;
     private int jumpheight = 5;
+
+    private BitmapButton _sound;
+    private BitmapButton _pause;
 
     public StateRun(GameEngine engine) {
         super(engine);
@@ -95,6 +100,24 @@ public class StateRun extends GameState {
         _life1 = new MovingBitmap(R.drawable.lifewithoutframe);
         _life1.setLocation(557, 353);
 
+
+        addGameObject(_sound = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10));
+        _sound.addButtonEventHandler(new ButtonEventHandler() {
+            @Override
+            public void perform(BitmapButton button) {
+                _music.pause();
+            }
+        });
+        addPointerEventHandler(_sound);
+
+        addGameObject(_pause = new BitmapButton(R.drawable.pause, R.drawable.pause_pressed, 590, 10));
+        _pause.addButtonEventHandler(new ButtonEventHandler() {
+            @Override
+            public void perform(BitmapButton button) {
+
+            }
+        });
+        addPointerEventHandler(_pause);
     }
 
     @Override
@@ -119,6 +142,8 @@ public class StateRun extends GameState {
         _life1.show();
         _life2.show();
         _life3.show();
+        _sound.show();
+        _pause.show();
     }
 
     @Override
@@ -136,6 +161,8 @@ public class StateRun extends GameState {
         _life1.release();
         _life2.release();
         _life3.release();
+        _sound.release();
+        _pause.release();
 
         _background = null;
         _scores = null;
@@ -149,6 +176,8 @@ public class StateRun extends GameState {
         _life1 = null;
         _life2 = null;
         _life3 = null;
+        _sound = null;
+        _pause = null;
     }
 
     @Override
@@ -184,7 +213,7 @@ public class StateRun extends GameState {
                 character.jump(5);
             }
         }
-        if(touchX > 325 && touchY < 185){
+        if(touchX > 325 && touchY < 185 && touchY > 20){
             character.shot();
         }
         if(touchX > _button.getX() && touchX < _button.getX() + _button.getWidth() &&

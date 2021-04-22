@@ -59,9 +59,9 @@ public class GameMap implements GameObject {
         monster = new Monster();
         monster1 = new Monster();
         monster.initialize();
-        monster.setLocation(500, 280);
+        monster.setLocation(500, 285);
         monster1.initialize();
-        monster1.setLocation(100, 280);
+        monster1.setLocation(100, 285);
         MonsterList.add(monster);
         MonsterList.add(monster1);
         scores.setLocation(453,348);
@@ -101,8 +101,6 @@ public class GameMap implements GameObject {
 
     @Override
     public void show(){
-        monster.show();
-        monster1.show();
         scores.show();
         for(int i = 0; i < 17; i++){
             for(int j = 0; j<29; j++){
@@ -140,6 +138,8 @@ public class GameMap implements GameObject {
                 }
             }
         }
+        monster.show();
+        monster1.show();
     }
 
     public boolean isWalkable_down_left(int x, int y){
