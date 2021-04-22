@@ -101,7 +101,7 @@ public class StateRun extends AbstractGameState {
         _life1.setLocation(557, 353);
 
 
-        addGameObject(_sound = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 5));
+        addGameObject(_sound = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10));
         _sound.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
@@ -110,7 +110,7 @@ public class StateRun extends AbstractGameState {
         });
         addPointerEventHandler(_sound);
 
-        addGameObject(_pause = new BitmapButton(R.drawable.pause, R.drawable.pause_pressed, 585, 5));
+        addGameObject(_pause = new BitmapButton(R.drawable.pause, R.drawable.pause_pressed, 590, 10));
         _pause.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {

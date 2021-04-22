@@ -57,9 +57,9 @@ public class GameMap implements GameObject {
         monster = new Monster();
         monster1 = new Monster();
         monster.initialize();
-        monster.setLocation(500, 280);
+        monster.setLocation(500, 285);
         monster1.initialize();
-        monster1.setLocation(100, 280);
+        monster1.setLocation(100, 285);
         MonsterList.add(monster);
         MonsterList.add(monster1);
         scores.setLocation(453,348);

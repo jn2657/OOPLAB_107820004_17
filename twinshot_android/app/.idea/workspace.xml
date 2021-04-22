@@ -24,11 +24,6 @@
       <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_23_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_23_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_23_2_0_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_v4_23_2_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_23_2_0_aar.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
@@ -59,6 +54,30 @@
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/block2.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/clickstart.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/clickstart_pressed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d18.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/d9.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/endgame.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/endgame_pressed.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/firststage.png" afterDir="false" />
@@ -89,6 +108,20 @@
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainright5.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainright6.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/mainright7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterdied9.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft1.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft10.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft11.png" afterDir="false" />
@@ -100,6 +133,17 @@
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft7.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft8.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterleft9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterright1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterright10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterright11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterright2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterright3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterright4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterright5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterright6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterright7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterright8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/monsterright9.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/options.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pause.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pause_pressed.png" afterDir="false" />
@@ -107,6 +151,7 @@
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar1.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/pillar3.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/play.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/play_pressed.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/res/drawable/players.png" afterDir="false" />
@@ -375,10 +420,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1618537730088" />
-    <state x="481" y="56" key="#twinshot_android-app" timestamp="1618737754850">
+    <state x="481" y="56" key="#twinshot_android-app" timestamp="1618748080924">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="481" y="56" key="#twinshot_android-app/0.0.1536.824@0.0.1536.824" timestamp="1618737754850" />
+    <state x="481" y="56" key="#twinshot_android-app/0.0.1536.824@0.0.1536.824" timestamp="1618748080924" />
     <state x="415" y="6" key="CommitChangelistDialog2" timestamp="1617873807814">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -391,9 +436,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1536.824@0.0.1536.824" timestamp="1617873930397" />
-    <state x="457" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1618737738004">
+    <state x="457" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1619072551516">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="457" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1618737738004" />
+    <state x="457" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1619072551516" />
   </component>
 </project>
