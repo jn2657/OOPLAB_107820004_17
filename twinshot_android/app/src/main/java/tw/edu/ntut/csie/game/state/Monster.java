@@ -16,6 +16,7 @@ public class Monster extends Animation {
     private int step;
     private int direction;
     private double speed;
+    private boolean addScoreCheck;
     boolean turned;
     private int jumpStep;
     private int fallStep;
@@ -79,6 +80,7 @@ public class Monster extends Animation {
         jumpStep = 5;
         fallStep = 30;
         direction = 0;
+        addScoreCheck = true;
         turned = false;
     }
 
@@ -161,6 +163,15 @@ public class Monster extends Animation {
                     monster.setCurrentFrameIndex(0);
                 }
             }
+        }
+    }
+
+    public boolean getScore(){
+        if(iskilled && addScoreCheck){
+            addScoreCheck = false;
+            return true;
+        }else{
+            return false;
         }
     }
 }

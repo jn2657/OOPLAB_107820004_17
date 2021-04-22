@@ -15,6 +15,7 @@ public class GameMap implements GameObject {
     private MovingBitmap pillar;
     private MovingBitmap pillar1;
     private MovingBitmap pillar2;
+    private MovingBitmap pillar3;
     private Monster monster;
     private Monster monster1;
     private List<Monster> MonsterList;
@@ -29,12 +30,12 @@ public class GameMap implements GameObject {
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
-            {7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
-            {7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7},
-            {7,0,0,0,0,0,0,0,0,0,1,3,1,1,2,2,1,3,1,0,0,0,0,0,0,0,0,0,7},
-            {7,0,0,0,0,0,0,0,0,0,6,7,0,6,0,6,0,7,6,0,0,0,0,0,0,0,0,0,7},
-            {0,1,3,1,3,1,3,2,1,2,7,7,0,0,0,0,0,7,7,1,1,3,3,1,2,2,3,1,0},
+            {0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,0},
+            {0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,0},
+            {0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,0},
+            {0,8,0,0,0,0,0,0,0,0,1,3,1,1,2,2,1,3,1,0,0,0,0,0,0,0,0,8,0},
+            {0,8,0,0,0,0,0,0,0,0,6,0,0,6,0,6,0,0,6,0,0,0,0,0,0,0,0,8,0},
+            {0,1,3,1,3,1,3,2,1,2,0,0,0,0,0,0,0,0,0,1,1,3,3,1,2,2,3,1,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
 
@@ -52,6 +53,7 @@ public class GameMap implements GameObject {
         pillar = new MovingBitmap(R.drawable.pillar);
         pillar1 = new MovingBitmap(R.drawable.pillar1);
         pillar2 = new MovingBitmap(R.drawable.pillar2);
+        pillar3 = new MovingBitmap(R.drawable.pillar3);
         scores = new MovingBitmap(R.drawable.scores);
         MonsterList = new ArrayList<Monster>();
         monster = new Monster();
@@ -73,6 +75,7 @@ public class GameMap implements GameObject {
         pillar.release();
         pillar1.release();
         pillar2.release();
+        pillar3.release();
         monster.release();
         monster1.release();
         scores.release();
@@ -83,6 +86,7 @@ public class GameMap implements GameObject {
         pillar = null;
         pillar1 = null;
         pillar2 = null;
+        pillar3 = null;
         monster = null;
         monster1 = null;
     }
@@ -97,14 +101,10 @@ public class GameMap implements GameObject {
 
     @Override
     public void show(){
-        monster.show();
-        monster1.show();
         scores.show();
         for(int i = 0; i < 17; i++){
             for(int j = 0; j<29; j++){
                 switch(map[i][j]){
-                    case 0:
-                        break;
                     case 1:
                         block.setLocation(X+(MW*j), Y+(MH*i));
                         block.show();
@@ -129,35 +129,59 @@ public class GameMap implements GameObject {
                         pillar2.setLocation(X+(MW*j), Y+(MH*i));
                         pillar2.show();
                         break;
+                    case 7:
+                        pillar3.setLocation(X+(MW*j), Y+(MH*i));
+                        pillar3.show();
+                        break;
                     default:
                         break;
                 }
             }
         }
+        monster.show();
+        monster1.show();
     }
 
     public boolean isWalkable_down_left(int x, int y){
-        int i = y/23+2;
-        int j;
-        if(x%23 > 12.5){
-            j = x/23;
-        }else{
-            j = x/23+1;
-        }
-        if(map[i][j] != 0){
-            return false;
-        }else{
+//        int i = y/23+2;
+//        int j;
+//        if(x%23 > 12.5){
+//            j = x/23;
+//        }else{
+//            j = x/23+1;
+//        }
+//        if(map[i][j] != 0){
+//            return false;
+//        }else{
+//            return true;
+//        }
+        if(x > 430 && x < 587 && y < 323-46){//345 - character height
             return true;
+        }else if(x <= 430 && x > 204 && y < 279-46){
+            return true;
+        }else if(x <= 204 && x > 35 && y < 323-46){
+            return true;
+        }else{
+            return false;
         }
     }
 
     public boolean isWalkable_up_right(int x, int y){
-        int i = y/23+1;
-        int j = x/23+2;
-        if(map[i][j] != 0){
-            return false;
-        }else{
+//        int i = y/23+1;
+//        int j = x/23+2;
+//        if(map[i][j] != 0){
+//            return false;
+//        }else{
+//            return true;
+//        }
+        if(x > 413 && x < 587 && y < 323-46){//345 - character height
             return true;
+        }else if(x <= 413 && x > 192 && y < 279-46 && y > 175-46){
+            return true;
+        }else if(x <= 192 && x > 35 && y < 323-46){
+            return true;
+        }else{
+            return false;
         }
     }
 
@@ -186,7 +210,7 @@ public class GameMap implements GameObject {
 
     public boolean arrowEnable_right(int x, int y, Arrow arrow){
         int i = y/23;
-        int j = x/23+2;
+        int j = x/23+1;
         for(Monster monster: MonsterList){
             if(x+46 > monster.getX()+10 || x+46 < monster.getX()){
                 continue;
