@@ -32,13 +32,6 @@ public class Character implements GameObject {
     private boolean jumping;
     private boolean godMode;
 
-//    private MovingBitmap _life1;
-//    private MovingBitmap _life2;
-//    private MovingBitmap _life3;
-//    private MovingBitmap _black1;
-//    private MovingBitmap _black2;
-//    private MovingBitmap _black3;
-
 
 
     public Character(){
@@ -80,24 +73,6 @@ public class Character implements GameObject {
         main.addFrame(R.drawable.mainleft7);
         main.setDelay(2);
         gameMap = map;
-
-//        _black3 = new MovingBitmap(R.drawable.blacklife);
-//        _black3.setLocation(600, 350);
-//
-//        _black2 = new MovingBitmap(R.drawable.blacklife);
-//        _black2.setLocation(577, 350);
-//
-//        _black1 = new MovingBitmap(R.drawable.blacklife);
-//        _black1.setLocation(554, 350);
-//
-//        _life3 = new MovingBitmap(R.drawable.lifewithoutframe);
-//        _life3.setLocation(603, 353);
-//
-//        _life2 = new MovingBitmap(R.drawable.lifewithoutframe);
-//        _life2.setLocation(580, 353);
-//
-//        _life1 = new MovingBitmap(R.drawable.lifewithoutframe);
-//        _life1.setLocation(557, 353);
     }
 
     public boolean isJumping(){
@@ -181,12 +156,6 @@ public class Character implements GameObject {
     @Override
     public void show(){
         main.show();
-//        _black1.show();
-//        _black2.show();
-//        _black3.show();
-//        _life1.show();
-//        _life2.show();
-//        _life3.show();
         if(arrowRight != null){
             arrowRight.show();
         }
@@ -198,20 +167,8 @@ public class Character implements GameObject {
     @Override
     public void release(){
         main.release();
-//        _black1.release();
-//        _black2.release();
-//        _black3.release();
-//        _life1.release();
-//        _life2.release();
-//        _life3.release();
 
         main = null;
-//        _black1 = null;
-//        _black2 = null;
-//        _black3 = null;
-//        _life1 = null;
-//        _life2 = null;
-//        _life3 = null;
     }
 
     public int getX(){

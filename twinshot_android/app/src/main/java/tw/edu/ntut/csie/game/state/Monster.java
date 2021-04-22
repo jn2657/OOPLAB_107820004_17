@@ -77,6 +77,7 @@ public class Monster extends Animation {
         iskilled = false;
         step = 30;
         jumpStep = 5;
+        fallStep = 30;
         direction = 0;
         turned = false;
     }
