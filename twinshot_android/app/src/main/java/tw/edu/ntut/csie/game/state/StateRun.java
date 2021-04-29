@@ -51,9 +51,7 @@ public class StateRun extends GameState {
     private Pointer _pointer2;
     private int jumpheight = 5;
 
-    private BitmapButton _sound;
-    private BitmapButton _pause;
-    private BitmapButton _reset;
+    private boolean allKilled;
 
     public StateRun(GameEngine engine) {
         super(engine);
@@ -106,79 +104,7 @@ public class StateRun extends GameState {
         _life1 = new MovingBitmap(R.drawable.lifewithoutframe);
         _life1.setLocation(557, 353);
 
-        initializeResetButton();
-        initializeSoundButton();
-//        initializePauseButton();
-    }
-
-<<<<<<< HEAD
-
-    private void initializeResetButton(){
-        addGameObject(_reset = new BitmapButton(R.drawable.options, R.drawable.options_pressed, 585, 10));
-        _reset.addButtonEventHandler(new ButtonEventHandler() {
-            @Override
-            public void perform(BitmapButton button) {
-                character.initialize(gameMap);
-//                character.setLocation(300,230);
-            }
-        });
-        addPointerEventHandler(_reset);
-    }
-
-    private void initializeSoundButton(){
-        addGameObject(_sound = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10));
-        _sound.addButtonEventHandler(new ButtonEventHandler() {
-            @Override
-            public void perform(BitmapButton button) {
-                _music.pause();
-            }
-        });
-        addPointerEventHandler(_sound);
-    }
-
-//    private void initializePauseButton(){
-//        addGameObject(_pause = new BitmapButton(R.drawable.paused, R.drawable.paused, 140, 100));
-//        _pause.addButtonEventHandler(new ButtonEventHandler() {
-//            @Override
-//            public void perform(BitmapButton button) {
-//                pause();
-//                _music.pause();
-//            }
-//        });
-//        addPointerEventHandler(_pause);
-=======
-//        addGameObject(_sound = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10));
-        _sound = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10);
-//        _sound.addButtonEventHandler(new ButtonEventHandler() {
-//            @Override
-//            public void perform(BitmapButton button) {
-//                _music.pause();
-//                pause();
-//            }
-//        });
-
-//        addPointerEventHandler(_sound);
-
-//        addGameObject(_sound1 = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 530, 10));
-//        _sound1 = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10);
-//        _sound1.addButtonEventHandler(new ButtonEventHandler() {
-//            @Override
-//            public void perform(BitmapButton button) {
-//                _music.pause();
-//                StateRun.super.onResume();
-//            }
-//        });
-//        addPointerEventHandler(_sound1);
-//
-//        addGameObject(_pause = new BitmapButton(R.drawable.pause, R.drawable.pause_pressed, 590, 10));
-        _pause = new BitmapButton(R.drawable.pause, R.drawable.pause_pressed, 590, 10);
-        _pause.addButtonEventHandler(new ButtonEventHandler() {
-            @Override
-            public void perform(BitmapButton button) {
-                resume();
-            }
-        });
-//        addPointerEventHandler(_pause);
+        allKilled = false;
     }
 
 //    @Override
@@ -189,11 +115,21 @@ public class StateRun extends GameState {
 //    @Override
 //    public void onResume(){
 //        super.notifyAll();
->>>>>>> 80fac7475253b4d808d45028358516838e885899
 //    }
 
     @Override
     public void move() {
+        for (Monster monster : MonsterList){
+            if (monster.iskilled){
+                allKilled = true;
+            }else {
+                allKilled = false;
+            }
+        }
+        if (allKilled){
+            release();
+            changeState(Game.INITIAL_STATE);
+        }
         character.move();
         character.hurt(checkCollide());
         gameMap.move();
@@ -214,9 +150,6 @@ public class StateRun extends GameState {
         _life1.show();
         _life2.show();
         _life3.show();
-        _sound.show();
-//        _pause.show();
-        _reset.show();
     }
 
     @Override
@@ -234,9 +167,6 @@ public class StateRun extends GameState {
         _life1.release();
         _life2.release();
         _life3.release();
-        _sound.release();
-//        _pause.release();
-        _reset.release();
 
         _background = null;
         _scores = null;
@@ -250,9 +180,6 @@ public class StateRun extends GameState {
         _life1 = null;
         _life2 = null;
         _life3 = null;
-        _sound = null;
-//        _pause = null;
-        _reset = null;
     }
 
     @Override
@@ -283,16 +210,12 @@ public class StateRun extends GameState {
         _message.setVisible(false);
         int touchX = actionPointer.getX();
         int touchY = actionPointer.getY();
-<<<<<<< HEAD
-        
-=======
-        if(touchX > 560 && touchX < 590 && touchY < 20){
-            resume();
-        }
-        if(touchX > 590 && touchY < 20){
-            pause();
-        }
->>>>>>> 80fac7475253b4d808d45028358516838e885899
+//        if(touchX > 560 && touchX < 590 && touchY < 20){
+//            resume();
+//        }
+//        if(touchX > 590 && touchY < 20){
+//            pause();
+//        }
         if(touchX > 325 && touchY > 185){
             if(character.getHeight() == 5){
                 character.jump(5);
@@ -300,14 +223,6 @@ public class StateRun extends GameState {
         }
         if(touchX > 325 && touchY < 185 && touchY > 20){
             character.shot();
-        }
-
-        if(touchX < 540 && touchY < 50){
-            pause();
-        }
-
-        if(touchX < 540 && touchY > 50 && touchY < 150){
-            resume();
         }
 
         if(touchX > _button.getX() && touchX < _button.getX() + _button.getWidth() &&

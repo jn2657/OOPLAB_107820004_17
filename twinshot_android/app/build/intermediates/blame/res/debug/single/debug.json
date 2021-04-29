@@ -4,16 +4,16 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\mainleft7.png"
     },
     {
-        "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mainright6.png.flat",
-        "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\mainright6.png"
+        "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_digit_4.png.flat",
+        "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\digit_4.png"
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_level2_pressed.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\level2_pressed.png"
     },
     {
-        "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_digit_4.png.flat",
-        "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\digit_4.png"
+        "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mainright6.png.flat",
+        "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\mainright6.png"
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_help_pressed.png.flat",
@@ -78,6 +78,10 @@
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_start.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\start.png"
+    },
+    {
+        "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_statechange_background.png.flat",
+        "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\statechange_background.png"
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mainleft6.png.flat",

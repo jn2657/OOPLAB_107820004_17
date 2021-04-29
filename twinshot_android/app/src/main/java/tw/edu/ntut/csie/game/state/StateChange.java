@@ -35,9 +35,9 @@ public class StateChange extends AbstractGameState {
     @Override
     public void initialize(Map<String, Object> data) {
         addGameObject(_mode = new MovingBitmap(R.drawable.select));
-        addGameObject(_background = new MovingBitmap(R.drawable.background3));
+        addGameObject(_background = new MovingBitmap(R.drawable.statechange_background));
         addGameObject(_levels = new MovingBitmap(R.drawable.levels));
-        _background.resize((int)(_background.getWidth()*1.124),(int)(_background.getHeight()*1.045));
+//        _background.resize((int)(_background.getWidth()*1.124),(int)(_background.getHeight()*1.045));
         _background.setLocation(55,0);
         _mode.setLocation(55,0);
         _levels.setLocation(55,0);

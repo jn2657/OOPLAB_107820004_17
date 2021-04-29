@@ -11,6 +11,7 @@ import tw.edu.ntut.csie.game.engine.GameEngine;
 import tw.edu.ntut.csie.game.state.StateOver;
 import tw.edu.ntut.csie.game.state.StateReady;
 import tw.edu.ntut.csie.game.state.StateRun;
+import tw.edu.ntut.csie.game.state.StateChange;
 
 import static android.hardware.Sensor.TYPE_ACCELEROMETER;
 import static android.hardware.Sensor.TYPE_ORIENTATION;
@@ -113,6 +114,7 @@ public class Game extends Activity {
             _engine.registerGameState(INITIAL_STATE, new StateReady(_engine));
             _engine.registerGameState(RUNNING_STATE, new StateRun(_engine));
             _engine.registerGameState(OVER_STATE, new StateOver(_engine));
+            _engine.registerGameState(CHANGE_STATE, new StateChange(_engine));
             _engine.setGameState(INITIAL_STATE);
             _view.setGameEngine(_engine);
         }
