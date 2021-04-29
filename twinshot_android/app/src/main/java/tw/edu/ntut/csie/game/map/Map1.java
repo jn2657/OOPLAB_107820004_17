@@ -1,4 +1,4 @@
-package tw.edu.ntut.csie.game.state;
+package tw.edu.ntut.csie.game.map;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,9 +6,10 @@ import java.util.List;
 import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
-import tw.edu.ntut.csie.game.extend.Animation;
+import tw.edu.ntut.csie.game.state.Arrow;
+import tw.edu.ntut.csie.game.state.Monster;
 
-public class GameMap implements GameObject {
+public class Map1 implements GameObject, GameMap {
     private MovingBitmap block;
     private MovingBitmap block1;
     private MovingBitmap block2;
@@ -46,7 +47,7 @@ public class GameMap implements GameObject {
     private final int MW = 23;
     private final int MH = 23;
 
-    public GameMap(){
+    public Map1(){
         block = new MovingBitmap(R.drawable.block);
         block1 = new MovingBitmap(R.drawable.block1);
         block2 = new MovingBitmap(R.drawable.block2);
@@ -65,6 +66,16 @@ public class GameMap implements GameObject {
         MonsterList.add(monster);
         MonsterList.add(monster1);
         scores.setLocation(453,348);
+    }
+
+    @Override
+    public int getInitialPositionX(){
+        return 300;
+    }
+
+    @Override
+    public int getInitialPositionY() {
+        return 230;
     }
 
     @Override
@@ -89,14 +100,20 @@ public class GameMap implements GameObject {
         pillar3 = null;
         monster = null;
         monster1 = null;
+        MonsterList = null;
+        scores = null;
     }
 
     @Override
     public void move(){
-        monster.move();
-        monster.regular();
-        monster1.move();
-        monster1.regular();
+        if(monster != null){
+            monster.move();
+            monster.regular();
+        }
+        if(monster1 != null) {
+            monster1.move();
+            monster1.regular();
+        }
     }
 
     @Override

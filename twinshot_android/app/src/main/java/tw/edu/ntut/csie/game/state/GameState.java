@@ -152,4 +152,5 @@ public abstract class GameState implements GameObject, KeyEventHandler, SensorEv
      * 通知遊戲引擎已回復並繼續處理畫面更新。
      */
     public abstract void resume();
+
 }

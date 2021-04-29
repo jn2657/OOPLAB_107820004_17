@@ -1,4 +1,4 @@
-package tw.edu.ntut.csie.game.state;
+package tw.edu.ntut.csie.game.map;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,10 @@ import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
 import tw.edu.ntut.csie.game.extend.Animation;
+import tw.edu.ntut.csie.game.state.Arrow;
+import tw.edu.ntut.csie.game.state.Monster;
 
-public class GameMap1 implements GameObject {
+public class Map2 implements GameObject, GameMap {
     private MovingBitmap block;
     private MovingBitmap block1;
     private MovingBitmap block2;
@@ -48,7 +50,7 @@ public class GameMap1 implements GameObject {
     private final int MW = 23;
     private final int MH = 23;
 
-    public GameMap1(){
+    public Map2(){
         block = new MovingBitmap(R.drawable.block);
         block1 = new MovingBitmap(R.drawable.block1);
         block2 = new MovingBitmap(R.drawable.block2);
@@ -68,6 +70,16 @@ public class GameMap1 implements GameObject {
         MonsterList.add(monster);
         MonsterList.add(monster1);
         scores.setLocation(453,348);
+    }
+
+    @Override
+    public int getInitialPositionX(){
+        return 300;
+    }
+
+    @Override
+    public int getInitialPositionY() {
+        return 170;
     }
 
     @Override
@@ -94,14 +106,20 @@ public class GameMap1 implements GameObject {
         pillar4 = null;
         monster = null;
         monster1 = null;
+        MonsterList = null;
+        scores = null;
     }
 
     @Override
     public void move(){
-        monster.move();
-        monster.regular();
-        monster1.move();
-        monster1.regular();
+        if(monster != null){
+            monster.move();
+            monster.regular();
+        }
+        if(monster1 != null) {
+            monster1.move();
+            monster1.regular();
+        }
     }
 
     @Override
@@ -198,15 +216,17 @@ public class GameMap1 implements GameObject {
         int i = y/23;
         int j = x/23+1;
         for(Monster monster: MonsterList){
-            if(x > monster.getX()+23 || x < monster.getX()){
-                continue;
-            }else if(y > monster.getY()+23 || y < monster.getY()-10){
-                continue;
-            }else{
-                if(!arrow.noPower){
-                    monster.setIskilled();
-                    arrow.hitMonster = true;
-                    return false;
+            if(monster != null){
+                if(x > monster.getX()+23 || x < monster.getX()){
+                    continue;
+                }else if(y > monster.getY()+23 || y < monster.getY()-10){
+                    continue;
+                }else{
+                    if(!arrow.noPower){
+                        monster.setIskilled();
+                        arrow.hitMonster = true;
+                        return false;
+                    }
                 }
             }
         }
@@ -221,15 +241,17 @@ public class GameMap1 implements GameObject {
         int i = y/23;
         int j = x/23+1;
         for(Monster monster: MonsterList){
-            if(x+46 > monster.getX()+10 || x+46 < monster.getX()){
-                continue;
-            }else if(y > monster.getY()+23 || y < monster.getY()-10){
-                continue;
-            }else{
-                if(!arrow.noPower){
-                    monster.setIskilled();
-                    arrow.hitMonster = true;
-                    return false;
+            if(monster != null){
+                if(x+46 > monster.getX()+10 || x+46 < monster.getX()){
+                    continue;
+                }else if(y > monster.getY()+23 || y < monster.getY()-10){
+                    continue;
+                }else{
+                    if(!arrow.noPower){
+                        monster.setIskilled();
+                        arrow.hitMonster = true;
+                        return false;
+                    }
                 }
             }
         }
