@@ -21,7 +21,7 @@ import tw.edu.ntut.csie.game.extend.ButtonEventHandler;
 import tw.edu.ntut.csie.game.extend.Integer;
 
 
-public class StateRun extends AbstractGameState {
+public class StateRun extends GameState {
     public static final int DEFAULT_SCORE_DIGITS = 4;
     private MovingBitmap _background;
     private MovingBitmap _button;
@@ -50,6 +50,7 @@ public class StateRun extends AbstractGameState {
 
     private BitmapButton _sound;
     private BitmapButton _pause;
+    private BitmapButton _reset;
 
     public StateRun(GameEngine engine) {
         super(engine);
@@ -100,7 +101,25 @@ public class StateRun extends AbstractGameState {
         _life1 = new MovingBitmap(R.drawable.lifewithoutframe);
         _life1.setLocation(557, 353);
 
+        initializeResetButton();
+        initializeSoundButton();
+//        initializePauseButton();
+    }
 
+
+    private void initializeResetButton(){
+        addGameObject(_reset = new BitmapButton(R.drawable.options, R.drawable.options_pressed, 585, 10));
+        _reset.addButtonEventHandler(new ButtonEventHandler() {
+            @Override
+            public void perform(BitmapButton button) {
+                character.initialize(gameMap);
+//                character.setLocation(300,230);
+            }
+        });
+        addPointerEventHandler(_reset);
+    }
+
+    private void initializeSoundButton(){
         addGameObject(_sound = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10));
         _sound.addButtonEventHandler(new ButtonEventHandler() {
             @Override
@@ -109,16 +128,19 @@ public class StateRun extends AbstractGameState {
             }
         });
         addPointerEventHandler(_sound);
-
-        addGameObject(_pause = new BitmapButton(R.drawable.pause, R.drawable.pause_pressed, 590, 10));
-        _pause.addButtonEventHandler(new ButtonEventHandler() {
-            @Override
-            public void perform(BitmapButton button) {
-
-            }
-        });
-        addPointerEventHandler(_pause);
     }
+
+//    private void initializePauseButton(){
+//        addGameObject(_pause = new BitmapButton(R.drawable.paused, R.drawable.paused, 140, 100));
+//        _pause.addButtonEventHandler(new ButtonEventHandler() {
+//            @Override
+//            public void perform(BitmapButton button) {
+//                pause();
+//                _music.pause();
+//            }
+//        });
+//        addPointerEventHandler(_pause);
+//    }
 
     @Override
     public void move() {
@@ -143,7 +165,8 @@ public class StateRun extends AbstractGameState {
         _life2.show();
         _life3.show();
         _sound.show();
-        _pause.show();
+//        _pause.show();
+        _reset.show();
     }
 
     @Override
@@ -162,7 +185,8 @@ public class StateRun extends AbstractGameState {
         _life2.release();
         _life3.release();
         _sound.release();
-        _pause.release();
+//        _pause.release();
+        _reset.release();
 
         _background = null;
         _scores = null;
@@ -177,7 +201,8 @@ public class StateRun extends AbstractGameState {
         _life2 = null;
         _life3 = null;
         _sound = null;
-        _pause = null;
+//        _pause = null;
+        _reset = null;
     }
 
     @Override
@@ -208,6 +233,7 @@ public class StateRun extends AbstractGameState {
         _message.setVisible(false);
         int touchX = actionPointer.getX();
         int touchY = actionPointer.getY();
+        
         if(touchX > 325 && touchY > 185){
             if(character.getHeight() == 5){
                 character.jump(5);
@@ -216,6 +242,15 @@ public class StateRun extends AbstractGameState {
         if(touchX > 325 && touchY < 185 && touchY > 20){
             character.shot();
         }
+
+        if(touchX < 540 && touchY < 50){
+            pause();
+        }
+
+        if(touchX < 540 && touchY > 50 && touchY < 150){
+            resume();
+        }
+
         if(touchX > _button.getX() && touchX < _button.getX() + _button.getWidth() &&
                 touchY > _button.getY() && touchY < _button.getY() + _button.getHeight()){
             _grab = true;
@@ -288,11 +323,13 @@ public class StateRun extends AbstractGameState {
     @Override
     public void pause() {
         _music.pause();
+        pause();
     }
 
     @Override
     public void resume() {
         _music.resume();
+        resume();
     }
 
     public boolean checkCollide(){

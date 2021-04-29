@@ -1,10 +1,13 @@
 package tw.edu.ntut.csie.game.state;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.KeyEventHandler;
 import tw.edu.ntut.csie.game.PointerEventHandler;
+import tw.edu.ntut.csie.game.ReleasableResource;
 import tw.edu.ntut.csie.game.SensorEventHandler;
 import tw.edu.ntut.csie.game.engine.GameEngine;
 
@@ -19,6 +22,11 @@ import tw.edu.ntut.csie.game.engine.GameEngine;
 public abstract class GameState implements GameObject, KeyEventHandler, SensorEventHandler, PointerEventHandler {
 
     protected GameEngine _engine;
+    private List<PointerEventHandler> _pointerHandlers;
+    private List<GameObject> _objects;
+    private List<ReleasableResource> _resources;
+
+
 
     /**
      * 建構一個<code>GameState</code>實體。
@@ -27,6 +35,9 @@ public abstract class GameState implements GameObject, KeyEventHandler, SensorEv
      */
     protected GameState(GameEngine engine) {
         _engine = engine;
+        _objects = new ArrayList<GameObject>();
+        _resources = new ArrayList<ReleasableResource>();
+        _pointerHandlers = new ArrayList<PointerEventHandler>();
     }
 
     /**
@@ -46,6 +57,69 @@ public abstract class GameState implements GameObject, KeyEventHandler, SensorEv
      */
     public void changeState(int state, Map<String, Object> parameter) {
         _engine.setGameState(state, parameter);
+    }
+
+    @Override
+    public void move() {
+        moveAllGameObjects();
+    }
+
+    @Override
+    public void show() {
+        showAllGameObjects();
+    }
+
+    @Override
+    public void release() {
+        releaseAllResources();
+    }
+
+    protected void addReleasableResource(ReleasableResource resource) {
+        if (!_resources.contains(resource)) {
+            _resources.add(resource);
+        }
+    }
+
+    protected void releaseAllResources() {
+        for (ReleasableResource resource : _resources) {
+            resource.release();
+        }
+        _objects.clear();
+        _resources.clear();
+        _pointerHandlers.clear();
+    }
+
+    protected void addGameObject(GameObject object) {
+        if (!_objects.contains(object)) {
+            _objects.add(object);
+        }
+        addReleasableResource(object);
+    }
+
+    protected void removeGameObject(GameObject object) {
+        _objects.remove(object);
+    }
+
+    protected void moveAllGameObjects() {
+        for (GameObject object : _objects) {
+            object.move();
+        }
+    }
+
+    protected void showAllGameObjects() {
+        for (GameObject object : _objects) {
+            object.show();
+        }
+    }
+
+    protected void addPointerEventHandler(PointerEventHandler handler) {
+        if (!_pointerHandlers.contains(handler)) {
+            _pointerHandlers.add(handler);
+        }
+    }
+
+    protected void removePointerEventHandler(PointerEventHandler handler) {
+        _pointerHandlers.remove(handler);
     }
 
     /**

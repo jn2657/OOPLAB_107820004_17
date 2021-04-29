@@ -16,6 +16,7 @@ public class GameMap1 implements GameObject {
     private MovingBitmap pillar1;
     private MovingBitmap pillar2;
     private MovingBitmap pillar3;
+    private MovingBitmap pillar4;
     private Monster monster;
     private Monster monster1;
     private List<Monster> MonsterList;
@@ -23,18 +24,18 @@ public class GameMap1 implements GameObject {
 
     private int[][] map = {
             {0,0,1,1,3,1,1,3,1,1,3,3,2,2,1,3,3,1,1,1,3,1,2,3,1,1,1,0,0},
-            {0,0,9,0,0,0,0,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,0,9,0,0},
-            {0,0,9,0,0,0,0,0,0,0,0,0,0,4,0,4,0,0,0,0,0,0,0,0,0,0,9,0,0},
-            {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0},
             {0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,0,0},
-            {0,0,9,0,0,0,0,0,0,1,1,1,1,3,2,1,2,1,1,1,0,0,0,0,0,0,9,0,0},
-            {0,0,9,0,0,0,0,0,0,0,0,5,0,0,0,0,0,5,0,0,0,0,0,0,0,0,9,0,0},
-            {0,0,2,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,1,0,0},
             {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0},
+            {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0},
+            {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0},
+            {0,0,9,0,0,0,0,0,0,1,1,1,1,3,2,1,2,1,1,1,0,0,0,0,0,0,9,0,0},
+            {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0},
+            {0,0,2,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,1,0,0},
+            {0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,0,0},
             {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0},
             {0,0,9,0,0,0,0,0,0,1,1,2,3,3,2,1,1,1,3,1,0,0,0,0,0,0,9,0,0},
-            {0,0,8,0,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0,9,0,0,0,0,0,0,8,0,0},
             {0,0,9,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,9,0,0},
+            {0,0,9,0,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0,9,0,0,0,0,0,0,9,0,0},
             {0,0,9,0,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0,9,0,0,0,0,0,0,9,0,0},
             {0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,1,1,3,3,1,2,2,3,0,0},
             {0,0,5,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,5,0,0},
@@ -55,6 +56,7 @@ public class GameMap1 implements GameObject {
         pillar1 = new MovingBitmap(R.drawable.pillar1);
         pillar2 = new MovingBitmap(R.drawable.pillar2);
         pillar3 = new MovingBitmap(R.drawable.pillar3);
+        pillar4 = new MovingBitmap(R.drawable.pillar4);
         scores = new MovingBitmap(R.drawable.scores);
         MonsterList = new ArrayList<Monster>();
         monster = new Monster();
@@ -77,6 +79,7 @@ public class GameMap1 implements GameObject {
         pillar1.release();
         pillar2.release();
         pillar3.release();
+        pillar4.release();
         monster.release();
         monster1.release();
         scores.release();
@@ -88,6 +91,7 @@ public class GameMap1 implements GameObject {
         pillar1 = null;
         pillar2 = null;
         pillar3 = null;
+        pillar4 = null;
         monster = null;
         monster1 = null;
     }
@@ -134,6 +138,10 @@ public class GameMap1 implements GameObject {
                         pillar3.setLocation(X+(MW*j), Y+(MH*i));
                         pillar3.show();
                         break;
+                    case 8:
+                        pillar4.setLocation(X+(MW*j), Y+(MH*i));
+                        pillar4.show();
+                        break;
                     default:
                         break;
                 }
@@ -144,46 +152,46 @@ public class GameMap1 implements GameObject {
     }
 
     public boolean isWalkable_down_left(int x, int y){
-//        int i = y/23+2;
-//        int j;
-//        if(x%23 > 12.5){
-//            j = x/23;
-//        }else{
-//            j = x/23+1;
-//        }
-//        if(map[i][j] != 0){
-//            return false;
-//        }else{
-//            return true;
-//        }
-        if(x > 430 && x < 587 && y < 323-46){//345 - character height
-            return true;
-        }else if(x <= 430 && x > 204 && y < 279-46){
-            return true;
-        }else if(x <= 204 && x > 35 && y < 323-46){
-            return true;
+        int i = y/23+2;
+        int j;
+        if(x%23 > 12.5){
+            j = x/23;
         }else{
-            return false;
+            j = x/23+1;
         }
+        if(map[i][j] != 0){
+            return false;
+        }else{
+            return true;
+        }
+//        if(x > 430 && x < 587 && y < 323-46){//345 - character height
+//            return true;
+//        }else if(x <= 430 && x > 204 && y < 279-46){
+//            return true;
+//        }else if(x <= 204 && x > 35 && y < 323-46){
+//            return true;
+//        }else{
+//            return false;
+//        }
     }
 
     public boolean isWalkable_up_right(int x, int y){
-//        int i = y/23+1;
-//        int j = x/23+2;
-//        if(map[i][j] != 0){
-//            return false;
-//        }else{
-//            return true;
-//        }
-        if(x > 413 && x < 587 && y < 323-46){//345 - character height
-            return true;
-        }else if(x <= 413 && x > 192 && y < 279-46 && y > 175-46){
-            return true;
-        }else if(x <= 192 && x > 35 && y < 323-46){
-            return true;
-        }else{
+        int i = y/23+1;
+        int j = x/23+2;
+        if(map[i][j] != 0){
             return false;
+        }else{
+            return true;
         }
+//        if(x > 413 && x < 587 && y < 323-46){//345 - character height
+//            return true;
+//        }else if(x <= 413 && x > 192 && y < 279-46 && y > 175-46){
+//            return true;
+//        }else if(x <= 192 && x > 35 && y < 323-46){
+//            return true;
+//        }else{
+//            return false;
+//        }
     }
 
     public boolean arrowEnable_left(int x, int y, Arrow arrow){// map and monster check
