@@ -1,5 +1,6 @@
 package tw.edu.ntut.csie.game.state;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import tw.edu.ntut.csie.game.Game;
@@ -28,6 +29,9 @@ public class StateReady extends AbstractGameState {
     private boolean _showMode;
     private boolean _showLevels;
 
+    private Map<String, Object> level1;
+    private Map<String, Object> level2;
+
     public StateReady(GameEngine engine) {
         super(engine);
     }
@@ -50,6 +54,12 @@ public class StateReady extends AbstractGameState {
         initializeLevel3Button();
 //        initializeSoundButton();
         setVisibility(false, false);
+
+        level1 = new HashMap<>();
+        level1.put("level", 2);
+
+        level2 = new HashMap<>();
+        level2.put("level", 3);
     }
 
     /**
@@ -104,7 +114,8 @@ public class StateReady extends AbstractGameState {
         _level1.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-                changeState(Game.RUNNING_STATE);
+//                changeState(Game.RUNNING_STATE);
+                changeState(Game.RUNNING_STATE, level1);
             }
         });
         addPointerEventHandler(_level1);
@@ -115,7 +126,7 @@ public class StateReady extends AbstractGameState {
         _level2.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-                changeState(Game.RUNNING_STATE);
+                changeState(Game.RUNNING_STATE, level2);
             }
         });
         addPointerEventHandler(_level2);
@@ -126,7 +137,7 @@ public class StateReady extends AbstractGameState {
         _level3.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-                changeState(Game.RUNNING_STATE);
+                changeState(Game.RUNNING_STATE, level2);
             }
         });
         addPointerEventHandler(_level3);
