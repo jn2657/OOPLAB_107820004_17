@@ -10,6 +10,8 @@ import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
 import tw.edu.ntut.csie.game.extend.Animation;
+import tw.edu.ntut.csie.game.map.MapController;
+import tw.edu.ntut.csie.game.map.GameMap;
 
 public class Character implements GameObject {
     private Animation main;
@@ -52,7 +54,7 @@ public class Character implements GameObject {
     }
 
     public void initialize(GameMap map){
-        main.setLocation(300, 230);
+        main.setLocation(map.getInitialPositionX(), map.getInitialPositionY());
         main.addFrame(R.drawable.mainright);
         main.addFrame(R.drawable.mainright);
         main.addFrame(R.drawable.mainright1);

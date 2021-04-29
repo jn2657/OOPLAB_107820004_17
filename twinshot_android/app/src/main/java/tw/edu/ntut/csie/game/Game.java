@@ -34,6 +34,7 @@ public class Game extends Activity {
     public static final int INITIAL_STATE = 1;
     public static final int RUNNING_STATE = 2;
     public static final int OVER_STATE = 3;
+    public static final int CHANGE_STATE = 4;
 
     /**
      * 預設的畫面更新速度，一秒約15張畫面(理想值)。

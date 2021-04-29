@@ -7,6 +7,8 @@ import java.util.TimerTask;
 import tw.edu.ntut.csie.game.Game;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.extend.Animation;
+import tw.edu.ntut.csie.game.map.GameMap;
+import tw.edu.ntut.csie.game.map.MapController;
 
 public class Arrow extends Animation {
     private Animation arrow;
@@ -17,8 +19,8 @@ public class Arrow extends Animation {
     private int fallCount;
     private int disappearCount;
     private boolean attack;
-    boolean noPower;
-    boolean hitMonster;
+    public boolean noPower;
+    public boolean hitMonster;
     private int mainx,mainy;
 
     public Arrow(GameMap map){

@@ -19,14 +19,17 @@ import tw.edu.ntut.csie.game.extend.Animation;
 import tw.edu.ntut.csie.game.extend.BitmapButton;
 import tw.edu.ntut.csie.game.extend.ButtonEventHandler;
 import tw.edu.ntut.csie.game.extend.Integer;
+import tw.edu.ntut.csie.game.map.MapController;
+import tw.edu.ntut.csie.game.map.GameMap;
 
 
-public class StateRun extends AbstractGameState {
+public class StateRun extends GameState {
     public static final int DEFAULT_SCORE_DIGITS = 4;
     private MovingBitmap _background;
     private MovingBitmap _button;
     private MovingBitmap _message;
     private GameMap gameMap;
+    private MapController mapController;
     private List<Monster> MonsterList;
 
     private MovingBitmap _life1;
@@ -64,7 +67,9 @@ public class StateRun extends AbstractGameState {
         _button = new MovingBitmap(R.drawable.button);
         _button.setLocation(100, 200);
 
-        gameMap = new GameMap();
+        mapController = new MapController();
+        mapController.initialize();
+        gameMap = mapController.FirstLevel();
         MonsterList = new ArrayList<Monster>();
         MonsterList = gameMap.getMonsterList();
 
@@ -101,24 +106,49 @@ public class StateRun extends AbstractGameState {
         _life1.setLocation(557, 353);
 
 
-        addGameObject(_sound = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10));
-        _sound.addButtonEventHandler(new ButtonEventHandler() {
-            @Override
-            public void perform(BitmapButton button) {
-                _music.pause();
-            }
-        });
-        addPointerEventHandler(_sound);
+//        addGameObject(_sound = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10));
+        _sound = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10);
+//        _sound.addButtonEventHandler(new ButtonEventHandler() {
+//            @Override
+//            public void perform(BitmapButton button) {
+//                _music.pause();
+//                pause();
+//            }
+//        });
 
-        addGameObject(_pause = new BitmapButton(R.drawable.pause, R.drawable.pause_pressed, 590, 10));
+//        addPointerEventHandler(_sound);
+
+//        addGameObject(_sound1 = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 530, 10));
+//        _sound1 = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10);
+//        _sound1.addButtonEventHandler(new ButtonEventHandler() {
+//            @Override
+//            public void perform(BitmapButton button) {
+//                _music.pause();
+//                StateRun.super.onResume();
+//            }
+//        });
+//        addPointerEventHandler(_sound1);
+//
+//        addGameObject(_pause = new BitmapButton(R.drawable.pause, R.drawable.pause_pressed, 590, 10));
+        _pause = new BitmapButton(R.drawable.pause, R.drawable.pause_pressed, 590, 10);
         _pause.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-
+                resume();
             }
         });
-        addPointerEventHandler(_pause);
+//        addPointerEventHandler(_pause);
     }
+
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//    }
+//
+//    @Override
+//    public void onResume(){
+//        super.notifyAll();
+//    }
 
     @Override
     public void move() {
@@ -208,6 +238,12 @@ public class StateRun extends AbstractGameState {
         _message.setVisible(false);
         int touchX = actionPointer.getX();
         int touchY = actionPointer.getY();
+        if(touchX > 560 && touchX < 590 && touchY < 20){
+            resume();
+        }
+        if(touchX > 590 && touchY < 20){
+            pause();
+        }
         if(touchX > 325 && touchY > 185){
             if(character.getHeight() == 5){
                 character.jump(5);
@@ -228,10 +264,6 @@ public class StateRun extends AbstractGameState {
             }else if(_pointer2 == null){
                 _pointer2 = actionPointer;
             }
-
-//            if(_pointer1 != null && _pointer2 != null){
-//                _pointerDistance = Math.abs(_pointer1.getX() - _pointer2.getX());
-//            }
         }
         return true;
     }
