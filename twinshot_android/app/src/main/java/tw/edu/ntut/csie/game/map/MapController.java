@@ -11,11 +11,14 @@ public class MapController {
         mapList = new ArrayList<>();
     }
 
+    //須在stateReady也加入map
     public void initialize(){
         GameMap map1 = new Map1();
         GameMap map2 = new Map2();
+        GameMap map3 = new Map3();
         mapList.add(map1);
         mapList.add(map2);
+        mapList.add(map3);
     }
 
     public void release(){

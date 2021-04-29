@@ -41,7 +41,9 @@ public class StateChange extends AbstractGameState {
 //        initializeSoundButton();
     }
 
-
+    /**
+     * ��l�ơyExit�z�����s�C
+     */
     private void initializeContinueButton() {
         addGameObject(_continue = new BitmapButton(R.drawable.continue_button, R.drawable.continue_pressed, 250, 190));
         _continue.addButtonEventHandler(new ButtonEventHandler() {

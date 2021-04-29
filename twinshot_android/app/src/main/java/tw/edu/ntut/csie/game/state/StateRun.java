@@ -163,6 +163,8 @@ public class StateRun extends GameState {
         character = null;
         _message = null;
         _music = null;
+        gameMap = null;
+        changelevel = null;
         _black1 = null;
         _black2 = null;
         _black3 = null;

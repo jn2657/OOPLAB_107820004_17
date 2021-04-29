@@ -1,6 +1,8 @@
 package tw.edu.ntut.csie.game.state;
 
 import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import tw.edu.ntut.csie.game.Game;
@@ -9,6 +11,8 @@ import tw.edu.ntut.csie.game.core.MovingBitmap;
 import tw.edu.ntut.csie.game.engine.GameEngine;
 import tw.edu.ntut.csie.game.extend.BitmapButton;
 import tw.edu.ntut.csie.game.extend.ButtonEventHandler;
+import tw.edu.ntut.csie.game.map.GameMap;
+import tw.edu.ntut.csie.game.map.MapController;
 
 public class StateReady extends AbstractGameState {
 
@@ -31,6 +35,9 @@ public class StateReady extends AbstractGameState {
 
     private Map<String, Object> level1;
     private Map<String, Object> level2;
+    private Map<String, Object> level3;
+
+    private Map<String, Object> chooseLevel;
 
     public StateReady(GameEngine engine) {
         super(engine);
@@ -60,6 +67,9 @@ public class StateReady extends AbstractGameState {
 
         level2 = new HashMap<>();
         level2.put("level", 3);
+
+        level3 = new HashMap<>();
+        level3.put("level", 4);
     }
 
     /**
@@ -137,7 +147,7 @@ public class StateReady extends AbstractGameState {
         _level3.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-                changeState(Game.RUNNING_STATE, level2);
+                changeState(Game.RUNNING_STATE, level3);
             }
         });
         addPointerEventHandler(_level3);
@@ -198,5 +208,15 @@ public class StateReady extends AbstractGameState {
         _level2.setVisible(_showLevels);
         _level3.setVisible(_showLevels);
     }
+
+//    private void setMap(){
+//        chooseLevel = new HashMap<>();
+//        MapController mc = new MapController();
+//        mc.initialize();
+//        List<GameMap> mapList= new ArrayList<>(mc.getMapList());
+//        for(GameMap map: mapList){
+//            chooseLevel.put("level"+map.getLevel(), map);
+//        }
+//    }
 }
 
