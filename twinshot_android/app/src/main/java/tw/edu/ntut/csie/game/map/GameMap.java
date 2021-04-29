@@ -17,5 +17,6 @@ public interface GameMap extends GameObject {
     public boolean arrowEnable_left(int x, int y, Arrow arrow);
     public boolean arrowEnable_right(int x, int y, Arrow arrow);
     public List<Monster> getMonsterList();
+    public int getLevel();
 
 }

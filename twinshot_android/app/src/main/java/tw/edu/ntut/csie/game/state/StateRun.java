@@ -4,6 +4,7 @@ import android.util.Log;
 
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Timer;
@@ -42,6 +43,7 @@ public class StateRun extends GameState {
     private Character character;
 
     private Integer _scores;
+    private int currentLevel;
 
     private boolean _grab;
 
@@ -51,7 +53,7 @@ public class StateRun extends GameState {
     private Pointer _pointer2;
     private int jumpheight = 5;
 
-    private boolean allKilled;
+    private Map<String, Object> changelevel;
 
     public StateRun(GameEngine engine) {
         super(engine);
@@ -59,16 +61,25 @@ public class StateRun extends GameState {
 
     @Override
     public void initialize(Map<String, Object> data) {
+        mapController = new MapController();
+        mapController.initialize();
+        if(data != null){
+            currentLevel = (int) data.get("level");
+            gameMap = mapController.goToLevel(currentLevel);
+        }else{
+            gameMap = mapController.FirstLevel();
+        }
+
         _background = new MovingBitmap(R.drawable.levelbackground1);
-        _background.setLocation(60,0);
+        _background.setLocation(60, 0);
         _message = new MovingBitmap(R.drawable.message, 130, 150);
 
         _button = new MovingBitmap(R.drawable.button);
         _button.setLocation(100, 200);
 
-        mapController = new MapController();
-        mapController.initialize();
-        gameMap = mapController.FirstLevel();
+        changelevel = new HashMap<>();
+        changelevel.put("level", gameMap.getLevel()+1);
+
         MonsterList = new ArrayList<Monster>();
         MonsterList = gameMap.getMonsterList();
 
@@ -103,36 +114,14 @@ public class StateRun extends GameState {
 
         _life1 = new MovingBitmap(R.drawable.lifewithoutframe);
         _life1.setLocation(557, 353);
-
-        allKilled = false;
     }
-
-//    @Override
-//    public void onPause() {
-//        super.onPause();
-//    }
-//
-//    @Override
-//    public void onResume(){
-//        super.notifyAll();
-//    }
 
     @Override
     public void move() {
-        for (Monster monster : MonsterList){
-            if (monster.iskilled){
-                allKilled = true;
-            }else {
-                allKilled = false;
-            }
-        }
-        if (allKilled){
-            release();
-            changeState(Game.INITIAL_STATE);
-        }
         character.move();
         character.hurt(checkCollide());
         gameMap.move();
+        checkState();
     }
 
     @Override
@@ -336,6 +325,18 @@ public class StateRun extends GameState {
             }
         }
         return false;
+    }
+
+    public void checkState(){
+        int i = 0;
+        for(Monster moster: MonsterList){
+            if(!moster.iskilled){
+                i += 1;
+            }
+        }
+        if(i == 0){
+            changeState(Game.CHANGE_STATE, changelevel);
+        }
     }
 
 }
