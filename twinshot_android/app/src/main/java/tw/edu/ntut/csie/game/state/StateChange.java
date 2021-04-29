@@ -1,5 +1,6 @@
 package tw.edu.ntut.csie.game.state;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import tw.edu.ntut.csie.game.Game;
@@ -28,12 +29,19 @@ public class StateChange extends AbstractGameState {
     private boolean _showMode;
     private boolean _showLevels;
 
+    private Map<String, Object> Nextlevel;
+    private int currentLevel;
+
     public StateChange(GameEngine engine) {
         super(engine);
     }
 
     @Override
     public void initialize(Map<String, Object> data) {
+        currentLevel = (int) data.get("level");
+        Nextlevel = new HashMap<>();
+        Nextlevel.put("level", currentLevel+1);
+
         addGameObject(_mode = new MovingBitmap(R.drawable.select));
         addGameObject(_background = new MovingBitmap(R.drawable.background3));
         addGameObject(_levels = new MovingBitmap(R.drawable.levels));
@@ -45,7 +53,7 @@ public class StateChange extends AbstractGameState {
         initializeBack1Button();
         initializePlayButton();
         initializeBack2Button();
-        initializeLevel1Button();
+        initializeNextLevelButton();
         initializeLevel2Button();
         initializeLevel3Button();
 //        initializeSoundButton();
@@ -99,7 +107,7 @@ public class StateChange extends AbstractGameState {
     /**
      * ��l�ơyExit�z�����s�C
      */
-    private void initializeLevel1Button() {
+    private void initializeNextLevelButton() {
         addGameObject(_level1 = new BitmapButton(R.drawable.level1, R.drawable.level1_pressed, 76, 112));
         _level1.addButtonEventHandler(new ButtonEventHandler() {
             @Override

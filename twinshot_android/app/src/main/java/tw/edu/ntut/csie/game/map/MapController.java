@@ -20,8 +20,10 @@ public class MapController {
 
     public void release(){
         for(GameMap map: mapList){
-            map.release();
-            map = null;
+            if(map != null){
+                map.release();
+                map = null;
+            }
         }
         mapList = null;
     }

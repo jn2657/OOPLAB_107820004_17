@@ -169,6 +169,7 @@ int drawable start_pressed 0x7f0100a7
 int drawable state_over 0x7f0100a8
 int drawable state_ready 0x7f0100a9
 int drawable state_ready1 0x7f0100aa
+int drawable statechange_background 0x7f0100ab
 int id FrameLayout 0x7f020000
 int id GameView 0x7f020001
 int layout main 0x7f030000

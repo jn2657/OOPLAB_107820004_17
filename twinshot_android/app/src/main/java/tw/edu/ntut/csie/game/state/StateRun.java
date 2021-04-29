@@ -4,6 +4,7 @@ import android.util.Log;
 
 import java.sql.Time;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Timer;
@@ -42,6 +43,7 @@ public class StateRun extends GameState {
     private Character character;
 
     private Integer _scores;
+    private int currentLevel;
 
     private boolean _grab;
 
@@ -51,8 +53,7 @@ public class StateRun extends GameState {
     private Pointer _pointer2;
     private int jumpheight = 5;
 
-    private BitmapButton _sound;
-    private BitmapButton _pause;
+    private Map<String, Object> changelevel;
 
     public StateRun(GameEngine engine) {
         super(engine);
@@ -60,16 +61,25 @@ public class StateRun extends GameState {
 
     @Override
     public void initialize(Map<String, Object> data) {
+        mapController = new MapController();
+        mapController.initialize();
+        if(data != null){
+            currentLevel = (int) data.get("level");
+            gameMap = mapController.goToLevel(currentLevel);
+        }else{
+            gameMap = mapController.FirstLevel();
+        }
+
         _background = new MovingBitmap(R.drawable.levelbackground1);
-        _background.setLocation(60,0);
+        _background.setLocation(60, 0);
         _message = new MovingBitmap(R.drawable.message, 130, 150);
 
         _button = new MovingBitmap(R.drawable.button);
         _button.setLocation(100, 200);
 
-        mapController = new MapController();
-        mapController.initialize();
-        gameMap = mapController.FirstLevel();
+        changelevel = new HashMap<>();
+        changelevel.put("level", gameMap.getLevel()+1);
+
         MonsterList = new ArrayList<Monster>();
         MonsterList = gameMap.getMonsterList();
 
@@ -105,56 +115,14 @@ public class StateRun extends GameState {
         _life1 = new MovingBitmap(R.drawable.lifewithoutframe);
         _life1.setLocation(557, 353);
 
-
-//        addGameObject(_sound = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10));
-        _sound = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10);
-//        _sound.addButtonEventHandler(new ButtonEventHandler() {
-//            @Override
-//            public void perform(BitmapButton button) {
-//                _music.pause();
-//                pause();
-//            }
-//        });
-
-//        addPointerEventHandler(_sound);
-
-//        addGameObject(_sound1 = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 530, 10));
-//        _sound1 = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 560, 10);
-//        _sound1.addButtonEventHandler(new ButtonEventHandler() {
-//            @Override
-//            public void perform(BitmapButton button) {
-//                _music.pause();
-//                StateRun.super.onResume();
-//            }
-//        });
-//        addPointerEventHandler(_sound1);
-//
-//        addGameObject(_pause = new BitmapButton(R.drawable.pause, R.drawable.pause_pressed, 590, 10));
-        _pause = new BitmapButton(R.drawable.pause, R.drawable.pause_pressed, 590, 10);
-        _pause.addButtonEventHandler(new ButtonEventHandler() {
-            @Override
-            public void perform(BitmapButton button) {
-                resume();
-            }
-        });
-//        addPointerEventHandler(_pause);
     }
-
-//    @Override
-//    public void onPause() {
-//        super.onPause();
-//    }
-//
-//    @Override
-//    public void onResume(){
-//        super.notifyAll();
-//    }
 
     @Override
     public void move() {
         character.move();
         character.hurt(checkCollide());
         gameMap.move();
+        checkState();
     }
 
     @Override
@@ -172,8 +140,6 @@ public class StateRun extends GameState {
         _life1.show();
         _life2.show();
         _life3.show();
-        _sound.show();
-        _pause.show();
     }
 
     @Override
@@ -191,8 +157,6 @@ public class StateRun extends GameState {
         _life1.release();
         _life2.release();
         _life3.release();
-        _sound.release();
-        _pause.release();
 
         _background = null;
         _scores = null;
@@ -206,8 +170,6 @@ public class StateRun extends GameState {
         _life1 = null;
         _life2 = null;
         _life3 = null;
-        _sound = null;
-        _pause = null;
     }
 
     @Override
@@ -361,6 +323,18 @@ public class StateRun extends GameState {
             }
         }
         return false;
+    }
+
+    public void checkState(){
+        int i = 0;
+        for(Monster moster: MonsterList){
+            if(!moster.iskilled){
+                i += 1;
+            }
+        }
+        if(i == 0){
+            changeState(Game.CHANGE_STATE, changelevel);
+        }
     }
 
 }

@@ -2,6 +2,7 @@ package tw.edu.ntut.csie.game.state;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.KeyEventHandler;
@@ -49,6 +50,16 @@ public abstract class AbstractGameState extends GameState {
      */
     public void changeState(int state) {
         _engine.setGameState(state);
+    }
+
+    /**
+     * 更換狀態。
+     *
+     * @param state      新狀態的代碼
+     * @param parameter  給新狀態的參數
+     */
+    public void changeState(int state, Map<String, Object> parameter) {
+        _engine.setGameState(state, parameter);
     }
 
     public void keyPressed(int keyCode) {

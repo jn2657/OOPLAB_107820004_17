@@ -257,4 +257,6 @@ public class Map2 implements GameObject, GameMap {
     public List<Monster> getMonsterList(){
         return MonsterList;
     }
+
+    public int getLevel() { return 2; }
 }
