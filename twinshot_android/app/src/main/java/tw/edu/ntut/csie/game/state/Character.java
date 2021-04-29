@@ -92,24 +92,36 @@ public class Character implements GameObject {
         timer.scheduleAtFixedRate(timerTask = new TimerTask() {
             @Override
             public void run() {
-                if(jumpHeight>0){
-                    if(gameMap.isWalkable_up_right(main.getX(), main.getY()-5)){
-                        main.setLocation(main.getX(), main.getY() - 5);
-                        jumpHeight--;
-                    }else{
-                        jumpHeight = 0;
-                    }
+                if(jumping){
+                    if(jumpHeight>0){
+                        if(gameMap.isWalkable_up_right(main.getX(), main.getY()-5)){
+                            main.setLocation(main.getX(), main.getY() - 5);
+                            jumpHeight--;
+                        }else{
+                            jumpHeight = 0;
+                        }
 
-                }
-                if(jumpHeight<=0){
-                    if(gameMap.isWalkable_down_left(main.getX(), main.getY()+5)){
-                        main.setLocation(main.getX(), main.getY() + 5);
-                        jumpHeight--;
-                    }else{
-                        jumping = false;
-                        stopTimer();
+                    }
+                    if(jumpHeight<=0){
+                        if(gameMap.isWalkable_down_left(main.getX(), main.getY()+5)){
+                            if(checkIfLeftArrowOnWall(main.getX(), main.getY()+5)){
+                                jumping = false;
+                                stopTimer();
+                            }
+                            if(checkIfRightArrowOnWall(main.getX(), main.getY()+5)){
+                                jumping = false;
+                                stopTimer();
+                            }
+                            main.setLocation(main.getX(), main.getY() + 5);
+                            jumpHeight--;
+
+                        }else{
+                            jumping = false;
+                            stopTimer();
+                        }
                     }
                 }
+
             }
 
         }, 100, 20);
@@ -252,6 +264,31 @@ public class Character implements GameObject {
             decreaseLife(godMode);
             godMode = true;
         }
+    }
 
+    public boolean checkIfLeftArrowOnWall(int mainX, int mainY){
+        int ArrowX;
+        int ArrowY;
+        if(arrowLeft != null && arrowLeft.onWall){
+            ArrowX = arrowLeft.getX();
+            ArrowY = arrowLeft.getY();
+            if(mainX+46 > ArrowX && mainX+46 < ArrowX+46 && mainY+46 < ArrowY && mainY+46 > ArrowY - 10){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean checkIfRightArrowOnWall(int mainX, int mainY){
+        int ArrowX;
+        int ArrowY;
+        if(arrowRight != null && arrowRight.onWall){
+            ArrowX = arrowRight.getX();
+            ArrowY = arrowRight.getY();
+            if(mainX+46 > ArrowX && mainX+46 < ArrowX+46 && mainY+46 < ArrowY && mainY+46 > ArrowY - 30){
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -20,15 +20,15 @@ public class Arrow extends Animation {
     private int disappearCount;
     private boolean attack;
     public boolean noPower;
+    public boolean onWall;
     public boolean hitMonster;
-    private int mainx,mainy;
 
     public Arrow(GameMap map){
         arrow = new Animation();
         direction = null;
         gameMap = map;
         fallCount = 0;
-        disappearCount = 30;
+        disappearCount = 50;
         arrow.setVisible(false);
         attack = false;
         hitMonster = false;
@@ -39,6 +39,7 @@ public class Arrow extends Animation {
         arrow.setDelay(2);
         direction = "left";
         noPower = false;
+        onWall = false;
     }
 
     public void initializeRight(){
@@ -46,13 +47,12 @@ public class Arrow extends Animation {
         arrow.setDelay(2);
         direction = "right";
         noPower = false;
+        onWall = false;
     }
 
-    public void attack(boolean state, int x, int y, int delay){
+    public void attack(boolean state, int mainX, int mainY, int delay){
         attack = state;
-        mainx = x;
-        mainy = y;
-        arrow.setLocation(mainx, mainy+15);
+        arrow.setLocation(mainX, mainY+15);
         fallCount = delay;
         arrow.setVisible(true);
         noPower = false;
@@ -106,6 +106,7 @@ public class Arrow extends Animation {
                         arrow.setVisible(false);
                         attack = false;
                     }else if(disappearCount != 0){
+                        onWall = true;
                         if(disappearCount%2==0){
                             arrow.setVisible(false);
                         }else{
@@ -113,6 +114,7 @@ public class Arrow extends Animation {
                         }
                     }else{
                         attack = false;
+                        onWall = false;
                     }
                 }
                 if(arrow.getX() > 600){
