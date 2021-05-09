@@ -31,16 +31,16 @@ public class StateChange extends AbstractGameState {
         currentLevel = (int) data.get("level");
         Nextlevel = new HashMap<>();
         Nextlevel.put("level", currentLevel+1);
+        Nextlevel.put("score", data.get("score"));
 
         addGameObject(_complete = new MovingBitmap(R.drawable.complete));
-        addGameObject(_background = new MovingBitmap(R.drawable.statechange_background));
+        addGameObject(_background = new MovingBitmap(R.drawable.levelbackground1));
         _background.setLocation(55,0);
         _complete.setLocation(225,80);
         initializeContinueButton();
         initializeEndButton();
 //        initializeSoundButton();
     }
-
     /**
      * ��l�ơyExit�z�����s�C
      */

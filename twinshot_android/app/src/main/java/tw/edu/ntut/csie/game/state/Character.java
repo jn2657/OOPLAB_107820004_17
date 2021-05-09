@@ -15,8 +15,8 @@ import tw.edu.ntut.csie.game.map.GameMap;
 
 public class Character implements GameObject {
     private Animation main;
-    Arrow arrowLeft;
-    Arrow arrowRight;
+    public Arrow arrowLeft;
+    public Arrow arrowRight;
 
     private Timer timer;
     private TimerTask timerTask;
@@ -24,8 +24,8 @@ public class Character implements GameObject {
     private int arrowMoveCount;
     private int disppearCount;
     private int jumpHeight;
-    int life;
-    int score;
+    public int life;
+    public int score;
     private int count;
     private int godModeCount;
     private GameMap gameMap;
@@ -34,6 +34,7 @@ public class Character implements GameObject {
     private Runnable runnable;
     private boolean jumping;
     private boolean falling;
+    private boolean shooting;
     private boolean godMode;
 
 
@@ -54,6 +55,7 @@ public class Character implements GameObject {
         direction = "standingRight";
         godMode = false;
         falling = false;
+        shooting = false;
     }
 
     public void initialize(GameMap map){
@@ -76,6 +78,18 @@ public class Character implements GameObject {
         main.addFrame(R.drawable.mainleft5);
         main.addFrame(R.drawable.mainleft6);
         main.addFrame(R.drawable.mainleft7);
+        main.addFrame(R.drawable.shoot_left1);
+        main.addFrame(R.drawable.shoot_left2);
+        main.addFrame(R.drawable.shoot_left3);
+        main.addFrame(R.drawable.shoot_left4);
+        main.addFrame(R.drawable.shoot_right1_1);
+        main.addFrame(R.drawable.shoot_right2_1);
+        main.addFrame(R.drawable.shoot_right3_1);
+        main.addFrame(R.drawable.shoot_right4_1);
+        main.addFrame(R.drawable.jumpleft);
+        main.addFrame(R.drawable.jumpright);
+        main.addFrame(R.drawable.fallleft);
+        main.addFrame(R.drawable.fallright);
         main.setDelay(2);
         gameMap = map;
     }
@@ -137,17 +151,18 @@ public class Character implements GameObject {
 
 
     public void shot(){
+        shooting = true;
         if(direction.contains("right") || direction.contains("standingRight")){
             arrowRight = new Arrow(gameMap);
             arrowRight.initializeRight();
             arrowRight.attack(true, main.getX(), main.getY(), 20);
-
+            direction = "shootingRight";
         }
         if(direction.contains("left") || direction.contains("standingLeft")){
             arrowLeft = new Arrow(gameMap);
             arrowLeft.initializeLeft();
             arrowLeft.attack(true, main.getX(), main.getY(), 20);
-
+            direction = "shootingLeft";
         }
     }
 
@@ -236,7 +251,23 @@ public class Character implements GameObject {
                 godModeCount = 50;
             }
         }
-        if(s.equals("right")){
+        if(falling && !shooting){
+            if((s.contains("left") || s.contains("Left"))){
+                if(main.getCurrentFrameIndex() != 28){
+                    main.setCurrentFrameIndex(28);
+                }
+            }else{
+                main.setCurrentFrameIndex(29);
+            }
+        }else if(jumping && !shooting && (s.contains("left") || s.contains("Left"))){
+            if(main.getCurrentFrameIndex() != 26){
+                main.setCurrentFrameIndex(26);
+            }
+        }else if(jumping && !shooting && (s.contains("right") || s.contains("Right"))){
+            if(main.getCurrentFrameIndex() != 27){
+                main.setCurrentFrameIndex(27);
+            }
+        }else if(s.equals("right")){
             if(main.getCurrentFrameIndex() >= 8 || main.getCurrentFrameIndex() < 2){
                 main.setCurrentFrameIndex(2);
             }
@@ -245,12 +276,28 @@ public class Character implements GameObject {
                 main.setCurrentFrameIndex(11);
             }
         }else if(s.equals("standingRight")){
-            if(main.getCurrentFrameIndex() >= 1){
+            if(main.getCurrentFrameIndex() >= 2){
                 main.setCurrentFrameIndex(0);
             }
         }else if(s.equals("standingLeft")){
             if(main.getCurrentFrameIndex() != 9){
                 main.setCurrentFrameIndex(9);
+            }
+        }else if(s.equals("shootingLeft")){
+            if(main.getCurrentFrameIndex() < 18 || main.getCurrentFrameIndex() >= 22){
+                main.setCurrentFrameIndex(18);
+            }
+            if(main.getCurrentFrameIndex() == 21){
+                shooting = false;
+                direction = "standingLeft";
+            }
+        }else if(s.equals("shootingRight")){
+            if(main.getCurrentFrameIndex() < 22 || main.getCurrentFrameIndex() >= 26){
+                main.setCurrentFrameIndex(22);
+            }
+            if(main.getCurrentFrameIndex() == 25){
+                shooting = false;
+                direction = "standingRight";
             }
         }
     }
@@ -268,17 +315,17 @@ public class Character implements GameObject {
         jumpHeight = 5;
     }
 
-    public void decreaseLife(boolean mode){
-        if(!mode){
-            life--;
-            jump(5);
-        }
+    public void decreaseLife(){
+        life--;
+        jump(5);
     }
 
     public void hurt(boolean collide){
         if(collide){
-            decreaseLife(godMode);
-            godMode = true;
+            if(!godMode){
+                decreaseLife();
+                godMode = true;
+            }
         }
     }
 

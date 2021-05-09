@@ -63,6 +63,7 @@ public class GameEngine implements Runnable {
      * 目前遊戲狀態的代碼。
      */
     private int _currentState;
+    private GameState _currentGameState;
 
     /**
      * 遊戲引擎內部狀態。
@@ -380,6 +381,41 @@ public class GameEngine implements Runnable {
                 }
                 _gameState = _gameStates.get(state) != null ? _gameStates.get(state) : _emptyState;
                 _gameState.initialize(parameters);
+            }
+        }
+    }
+
+    public void setGameStatePause(int PauseState, GameState runningState, Map<String, Object> parameters) {
+        synchronized (this) {
+            if (_currentState != PauseState) {
+                _currentState = PauseState;
+                // 如果有前一個遊戲狀態，請求釋放資源
+//                if (_gameState != null) {
+//                    _gameState.release();
+//                    _gameState = null;
+//                }
+                Map<String, Object> temp = new HashMap<>();
+                temp.put("state", runningState);
+                _gameState = _gameStates.get(PauseState) != null ? _gameStates.get(PauseState) : _emptyState;
+                _gameState.initialize(temp);
+                _currentGameState = runningState;
+            }
+        }
+    }
+
+    public void setGameStateResume(int state, Map<String, Object> parameters) {
+        synchronized (this) {
+            if (_currentState != state) {
+                _currentState = state;
+                // 如果有前一個遊戲狀態，請求釋放資源
+                if (_gameState != null) {
+                    _gameState.release();
+                    _gameState = null;
+                }
+//                _gameState = _gameStates.get(state) != null ? _gameStates.get(state) : _emptyState;
+//                _gameState.initialize(parameters);
+                _gameState = _currentGameState;
+                _currentGameState = null;
             }
         }
     }

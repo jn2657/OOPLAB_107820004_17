@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import tw.edu.ntut.csie.game.engine.GameEngine;
 import tw.edu.ntut.csie.game.state.StateOver;
+import tw.edu.ntut.csie.game.state.StatePause;
 import tw.edu.ntut.csie.game.state.StateReady;
 import tw.edu.ntut.csie.game.state.StateRun;
 import tw.edu.ntut.csie.game.state.StateChange;
@@ -36,11 +37,12 @@ public class Game extends Activity {
     public static final int RUNNING_STATE = 2;
     public static final int OVER_STATE = 3;
     public static final int CHANGE_STATE = 4;
+    public static final int PAUSE_STATE = 5;
 
     /**
      * 預設的畫面更新速度，一秒約15張畫面(理想值)。
      */
-    public static final int FRAME_RATE = 30;
+    public static final int FRAME_RATE = 15;
 
     /**
      * 預設的最大除錯資訊顯示數量
@@ -115,6 +117,7 @@ public class Game extends Activity {
             _engine.registerGameState(RUNNING_STATE, new StateRun(_engine));
             _engine.registerGameState(OVER_STATE, new StateOver(_engine));
             _engine.registerGameState(CHANGE_STATE, new StateChange(_engine));
+            _engine.registerGameState(PAUSE_STATE, new StatePause(_engine));
             _engine.setGameState(INITIAL_STATE);
             _view.setGameEngine(_engine);
         }

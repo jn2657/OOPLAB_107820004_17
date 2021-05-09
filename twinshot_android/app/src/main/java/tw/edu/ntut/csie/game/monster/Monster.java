@@ -1,4 +1,4 @@
-package tw.edu.ntut.csie.game.state;
+package tw.edu.ntut.csie.game.monster;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -8,11 +8,7 @@ import tw.edu.ntut.csie.game.extend.Animation;
 
 public class Monster extends Animation {
     private Animation monster;
-    boolean iskilled;
-    private int xmax;
-    private int xmin;
-    private Timer timer;
-    private TimerTask timerTask;
+    public boolean iskilled;
     private int step;
     private int initStep;
     private int direction;
@@ -138,7 +134,7 @@ public class Monster extends Animation {
         }
     }
 
-    public void animePlay() {//dead anime
+    public void animePlay() {
         if (iskilled) {
             if (monster.getCurrentFrameIndex() <= 21) {
                 monster.setCurrentFrameIndex(22);
