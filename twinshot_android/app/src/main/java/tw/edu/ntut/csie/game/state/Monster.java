@@ -14,6 +14,7 @@ public class Monster extends Animation {
     private Timer timer;
     private TimerTask timerTask;
     private int step;
+    private int initStep;
     private int direction;
     private double speed;
     private boolean addScoreCheck;
@@ -74,9 +75,10 @@ public class Monster extends Animation {
         monster.setDelay(2);
     }
 
-    public void initialize() {
+    public void initialize(int monsterStep) {
         iskilled = false;
-        step = 30;
+        step = monsterStep;
+        initStep = monsterStep;
         jumpStep = 5;
         fallStep = 30;
         direction = 0;
@@ -121,10 +123,10 @@ public class Monster extends Animation {
             speed = 2;
             if (step <= 0 && direction == 0) {
                 direction = 1;
-                step = 30;
+                step = initStep;
             } else if (step <= 0 && direction == 1) {
                 direction = 0;
-                step = 30;
+                step = initStep;
             } else {
                 if (direction == 0) {
                     monster.setLocation((int) (monster.getX() + speed), monster.getY());

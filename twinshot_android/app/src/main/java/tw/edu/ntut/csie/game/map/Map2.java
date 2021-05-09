@@ -23,6 +23,7 @@ public class Map2 implements GameObject, GameMap {
     private Monster monster1;
     private List<Monster> MonsterList;
     private MovingBitmap scores;
+    private int monsterStep = 110;
 
     private int[][] map = {
             {0,0,1,1,3,1,1,3,1,1,3,3,2,2,1,3,3,1,1,1,3,1,2,3,1,1,1,0,0},
@@ -63,10 +64,10 @@ public class Map2 implements GameObject, GameMap {
         MonsterList = new ArrayList<Monster>();
         monster = new Monster();
         monster1 = new Monster();
-        monster.initialize();
-        monster.setLocation(500, 285);
-        monster1.initialize();
-        monster1.setLocation(100, 285);
+        monster.initialize(monsterStep);
+        monster.setLocation(210, 80);
+        monster1.initialize(monsterStep);
+        monster1.setLocation(210, 196);
         MonsterList.add(monster);
         MonsterList.add(monster1);
         scores.setLocation(453,348);
@@ -74,12 +75,12 @@ public class Map2 implements GameObject, GameMap {
 
     @Override
     public int getInitialPositionX(){
-        return 300;
+        return 490;
     }
 
     @Override
     public int getInitialPositionY() {
-        return 170;
+        return 275;
     }
 
     @Override
@@ -169,61 +170,122 @@ public class Map2 implements GameObject, GameMap {
         monster1.show();
     }
 
-    public boolean isWalkable_down_left(int x, int y){
-//        int i = y/23+2;
-//        int j;
-//        if(x%23 > 12.5){
-//            j = x/23;
-//        }else{
-//            j = x/23+1;
-//        }
-//        if(map[i][j] != 0){
-//            return false;
-//        }else{
+//    public boolean isWalkable_down_left(int x, int y){
+////        int i = y/23+2;
+////        int j;
+////        if(x%23 > 12.5){
+////            j = x/23;
+////        }else{
+////            j = x/23+1;
+////        }
+////        if(map[i][j] != 0){
+////            return false;
+////        }else{
+////            return true;
+////        }
+//        if (x <= 621 && x > 500 && y < 161-46){
 //            return true;
+//        }else if (x <= 621 && x > 500 && y < 322-46 && y > 184){
+//            return true;
+//        }else if (x <= 506 && x > 450 && y < 322-46){
+//            return true;
+//        }else if (x <= 455 && x > 175 && y < 230-46 && y > 138){
+//            return true;
+//        }else if (x <= 455 && x > 175 && y < 115-46){
+//            return true;
+//        }else if (x <= 175 && x > 138 && y < 322-46){
+//            return true;
+//        }if (x <= 155 && x > 63 && y < 161-46){
+//            return true;
+//        }else if (x <= 155 && x > 63 && y < 322-46 && y > 184){
+//            return true;
+//        }else {
+//            return false;
 //        }
-        if (x <= 621 && x > 500 && y < 161-46){
-            return true;
-        }else if (x <= 621 && x > 500 && y < 322-46 && y > 184){
-            return true;
-        }else if (x <= 506 && x > 450 && y < 322-46){
-            return true;
-        }else if (x <= 455 && x > 175 && y < 230-46 && y > 138){
-            return true;
-        }else if (x <= 455 && x > 175 && y < 115-46){
-            return true;
-        }else if (x <= 175 && x > 138 && y < 322-46){
-            return true;
-        }if (x <= 155 && x > 63 && y < 161-46){
-            return true;
-        }else if (x <= 155 && x > 63 && y < 322-46 && y > 184){
-            return true;
+//    }
+//
+//    public boolean isWalkable_up_right(int x, int y){
+////        int i = y/23+1;
+////        int j = x/23+2;
+////        if(map[i][j] != 0){
+////            return false;
+////        }else{
+////            return true;
+////        }
+//        if (x <= 556 && x > 500 && y < 162-46){
+//            return true;
+//        }else if (x <= 556 && x > 500 && y < 323-46 && y > 184){
+//            return true;
+//        }else if (x <= 506 && x > 450 && y < 323-46){
+//            return true;
+//        }else if (x <= 455 && x > 165 && y < 231-46){
+//            return true;
+//        }else if (x <= 168 && x > 138 && y < 323-46){
+//            return true;
+//        }if (x <= 155 && x > 46 && y < 162-46){
+//            return true;
+//        }else if (x <= 155 && x > 46 && y < 323-46 && y > 184){
+//            return true;
+//        }else {
+//            return false;
+//        }
+//    }
+
+    public boolean isWalkable_right(int x, int y){
+        if (x > 63 && x < 529) {
+            if (y < 322 && y > 184) {
+                return true;
+            } else if (y > 23 && y < 161 - 64) {
+                return true;
+            } else {
+                return false;
+            }
         }else {
             return false;
         }
     }
-
-    public boolean isWalkable_up_right(int x, int y){
-//        int i = y/23+1;
-//        int j = x/23+2;
-//        if(map[i][j] != 0){
-//            return false;
-//        }else{
-//            return true;
-//        }
-        if (x <= 556 && x > 500 && y < 162-46){
+    public boolean isWalkable_left(int x, int y){
+        if (x > 92 && x < 529) {
+            if (y < 322 && y > 184) {
+                return true;
+            }else if (y > 23 && y < 161 - 64) {
+                return true;
+            }else {
+                return false;
+            }
+        }else {
+            return false;
+        }
+    }
+    public boolean isWalkable_down(int x, int y){
+        if (y > 23 && y < 161-64){
             return true;
-        }else if (x <= 556 && x > 500 && y < 323-46 && y > 184){
+        }else if(y > 161){
+            if ((x <= 276 && x > 184) || (x > 368 && x < 460)){
+                if (y < 322) {
+                    return true;
+                }else {
+                    return false;
+                }
+            }else if (x < 184 || x > 460){
+                return true;
+            }else {
+                if (y < 322 && y > 276-46){
+                    return true;
+                }else if (y < 276-46){
+                    return true;
+                }else {
+                    return false;
+                }
+            }
+        }else {
+            return false;
+        }
+    }
+    public boolean isWalkable_up(int x, int y){
+        if (y > 23 && y < 161-64){
             return true;
-        }else if (x <= 506 && x > 450 && y < 323-46){
-            return true;
-        }else if (x <= 455 && x > 165 && y < 231-46){
-            return true;
-        }else if (x <= 168 && x > 138 && y < 323-46){
-            return true;
-        }if (x <= 155 && x > 46 && y < 162-46){
-            return true;
-        }else if (x <= 155 && x > 46 && y < 323-46 && y > 184){
+        }else if(y > 161 && y < 322){
             return true;
         }else {
             return false;

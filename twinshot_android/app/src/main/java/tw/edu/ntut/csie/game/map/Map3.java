@@ -13,33 +13,36 @@ public class Map3 implements GameObject, GameMap {
     private MovingBitmap block;
     private MovingBitmap block1;
     private MovingBitmap block2;
+    private MovingBitmap block3;
+    private MovingBitmap block4;
     private MovingBitmap pillar;
     private MovingBitmap pillar1;
     private MovingBitmap pillar2;
     private MovingBitmap pillar3;
     private Monster monster;
-    private Monster monster1;
+//    private Monster monster1;
     private List<Monster> MonsterList;
     private MovingBitmap scores;
+    private int monsterStep = 200;
 
     private int[][] map = {
-            {0,0,1,1,3,1,1,3,1,1,3,3,2,2,1,3,3,1,1,1,3,1,2,3,1,1,1,0,0},
-            {0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,0,0},
-            {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0},
-            {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0},
-            {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0},
-            {0,0,9,0,0,0,0,0,0,1,1,1,1,3,2,1,2,1,1,1,0,0,0,0,0,0,9,0,0},
-            {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0},
-            {0,0,2,2,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,1,0,0},
-            {0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,0,0},
-            {0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0},
-            {0,0,9,0,0,0,0,0,0,1,1,2,3,3,2,1,1,1,3,1,0,0,0,0,0,0,9,0,0},
-            {0,0,9,0,0,0,0,0,0,4,0,0,0,0,0,0,0,0,0,4,0,0,0,0,0,0,9,0,0},
-            {0,0,9,0,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0,9,0,0,0,0,0,0,9,0,0},
-            {0,0,9,0,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0,9,0,0,0,0,0,0,9,0,0},
-            {0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,1,1,3,3,1,2,2,3,0,0},
-            {0,0,5,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,5,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}};
+            {0,0,1,8,0,0,0,0,8,8,8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,9,9,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,9,9,8,1,0,0},
+            {0,0,1,8,8,8,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,8,8,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,1,3,2,1,1,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,1,0,0},
+            {0,0,1,8,0,0,0,0,8,8,8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,8,1,0,0}};
 
     //大地圖左上角座標
     private final int X = 0;
@@ -52,6 +55,8 @@ public class Map3 implements GameObject, GameMap {
         block = new MovingBitmap(R.drawable.block);
         block1 = new MovingBitmap(R.drawable.block1);
         block2 = new MovingBitmap(R.drawable.block2);
+        block3 = new MovingBitmap(R.drawable.block3);
+        block4 = new MovingBitmap(R.drawable.block4);
         pillar = new MovingBitmap(R.drawable.pillar);
         pillar1 = new MovingBitmap(R.drawable.pillar1);
         pillar2 = new MovingBitmap(R.drawable.pillar2);
@@ -59,24 +64,24 @@ public class Map3 implements GameObject, GameMap {
         scores = new MovingBitmap(R.drawable.scores);
         MonsterList = new ArrayList<Monster>();
         monster = new Monster();
-        monster1 = new Monster();
-        monster.initialize();
-        monster.setLocation(500, 285);
-        monster1.initialize();
-        monster1.setLocation(100, 285);
+//        monster1 = new Monster();
+        monster.initialize(monsterStep);
+        monster.setLocation(95, 130);
+//        monster1.initialize(monsterStep);
+//        monster1.setLocation(100, 285);
         MonsterList.add(monster);
-        MonsterList.add(monster1);
+//        MonsterList.add(monster1);
         scores.setLocation(453,348);
     }
 
     @Override
     public int getInitialPositionX(){
-        return 300;
+        return 310;
     }
 
     @Override
     public int getInitialPositionY() {
-        return 170;
+        return 321;
     }
 
     @Override
@@ -84,23 +89,27 @@ public class Map3 implements GameObject, GameMap {
         block.release();
         block1.release();
         block2.release();
+        block3.release();
+        block4.release();
         pillar.release();
         pillar1.release();
         pillar2.release();
         pillar3.release();
         monster.release();
-        monster1.release();
+//        monster1.release();
         scores.release();
 
         block = null;
         block1 = null;
         block2 = null;
+        block3 = null;
+        block4 = null;
         pillar = null;
         pillar1 = null;
         pillar2 = null;
         pillar3 = null;
         monster = null;
-        monster1 = null;
+//        monster1 = null;
         MonsterList = null;
         scores = null;
     }
@@ -111,10 +120,10 @@ public class Map3 implements GameObject, GameMap {
             monster.move();
             monster.regular();
         }
-        if(monster1 != null) {
-            monster1.move();
-            monster1.regular();
-        }
+//        if(monster1 != null) {
+//            monster1.move();
+//            monster1.regular();
+//        }
     }
 
     @Override
@@ -151,13 +160,21 @@ public class Map3 implements GameObject, GameMap {
                         pillar3.setLocation(X+(MW*j), Y+(MH*i));
                         pillar3.show();
                         break;
+                    case 8:
+                        block3.setLocation(X+(MW*j), Y+(MH*i));
+                        block3.show();
+                        break;
+                    case 9:
+                        block4.setLocation(X+(MW*j), Y+(MH*i));
+                        block4.show();
+                        break;
                     default:
                         break;
                 }
             }
         }
         monster.show();
-        monster1.show();
+//        monster1.show();
     }
 
     public boolean isWalkable_down_left(int x, int y){
@@ -173,13 +190,34 @@ public class Map3 implements GameObject, GameMap {
 //        }else{
 //            return true;
 //        }
-        if(x > 430 && x < 587 && y < 323-46){//345 - character height
+        if (x <= 184 && x > 92 && y < 161-46){
             return true;
-        }else if(x <= 430 && x > 204 && y < 279-46){
+        }else if (x <= 552 && x > 483 && y < 161-46) {
             return true;
-        }else if(x <= 204 && x > 35 && y < 323-46){
+        }else if (x <= 483 && x > 184 && y < 161-46 && y > 23){
             return true;
-        }else{
+        }else if (x <= 386 && x > 253){
+            if(y < 281-46 && y > 276-46){
+                return false;
+            }else if(y < 322 && y > 317){
+                return false;
+            }else{
+                return true;
+            }
+//            return true;
+//        }else if (x <= 391 && x > 253 && (y > 184 || y < 179)){
+//            return true;
+//        }else if (x <= 391 && x > 253 && (y > 258 || y < 253)){
+//            return true;
+        }else if (x <= 483 && x > 386 && y < 322 && y > 184){
+            return true;
+        }else if (x <= 529 && x > 483 && y > 184){
+            return true;
+        }else if (x <= 253 && x > 184 && y < 322 && y > 184){
+            return true;
+        }else if (x <= 184 && x > 92 && y < 322 && y > 184){
+            return true;
+        }else {
             return false;
         }
     }
@@ -192,13 +230,88 @@ public class Map3 implements GameObject, GameMap {
 //        }else{
 //            return true;
 //        }
-        if(x > 413 && x < 587 && y < 323-46){//345 - character height
+        if (x <= 184 && x > 92 && y < 161-46){
             return true;
-        }else if(x <= 413 && x > 192 && y < 279-46 && y > 175-46){
+        }else if (x <= 552 && x > 483 && y < 161-46) {
             return true;
-        }else if(x <= 192 && x > 35 && y < 323-46){
+        }else if (x <= 478 && x > 184 && y < 161-46 && y > 23){
             return true;
-        }else{
+        }else if (x <= 391 && x > 276 && y < 322 && y > 173){
+            return true;
+        }else if (x <= 506 && x > 391 && y < 368-46 && y > 184){
+            return true;
+        }else if (x <= 529 && x > 478 && y > 207){
+            return true;
+        }else if (x <= 276 && x > 161 && y < 368-46 && y > 184){
+            return true;
+        }else if (x <= 161 && x > 92 && y < 368-46 && y > 207){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+    public boolean isWalkable_right(int x, int y){
+        if (x > 92 && x < 529) {
+            if (y < 322 && y > 184) {
+                return true;
+            } else if (y > 23 && y < 161 - 43) {
+                return true;
+            } else {
+                return false;
+            }
+        }else {
+            return false;
+        }
+    }
+    public boolean isWalkable_left(int x, int y){
+        if (x > 92 && x < 529) {
+            if (y < 322 && y > 184) {
+                return true;
+            }else if (y > 23 && y < 161 - 43) {
+                return true;
+            }else {
+                return false;
+            }
+        }else {
+            return false;
+        }
+    }
+    public boolean isWalkable_down(int x, int y) {
+        if (y < 23 && (x > 460 || x < 184)){
+            return true;
+        }else if (y > 23 && y < 161-43){
+            return true;
+        }else if(y > 161){
+            if ((x <= 253 && x > 161) || (x > 368 && x < 460)){
+                if (y < 322) {
+                    return true;
+                }else {
+                    return false;
+                }
+            }else if (x < 184 || x > 460){
+                    return true;
+            }else {
+                if (y < 322 && y > 235){
+                    return true;
+                }else if (y < 231){
+                    return true;
+                }else {
+                    return false;
+                }
+            }
+        }else {
+            return false;
+        }
+    }
+    public boolean isWalkable_up(int x, int y) {
+        if (y <= 23 && (x > 506 || x < 138)){
+            return true;
+        }else if (y > 23 && y < 161-43){
+            return true;
+        }else if(y > 161){
+            return true;
+        }else {
             return false;
         }
     }
@@ -250,6 +363,15 @@ public class Map3 implements GameObject, GameMap {
             return false;
         }else{
             return true;
+        }
+    }
+
+    @Override
+    public boolean superJump(int x, int y) {
+        if (y <= 161-43 && y >= 115 && ((x > 506 || x < 120))){
+            return true;
+        }else {
+            return false;
         }
     }
 

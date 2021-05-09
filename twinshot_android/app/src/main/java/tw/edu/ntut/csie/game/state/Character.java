@@ -33,6 +33,7 @@ public class Character implements GameObject {
     private Handler handler;
     private Runnable runnable;
     private boolean jumping;
+    private boolean falling;
     private boolean godMode;
 
 
@@ -52,6 +53,7 @@ public class Character implements GameObject {
         score = 0;
         direction = "standingRight";
         godMode = false;
+        falling = false;
     }
 
     public void initialize(GameMap map){
@@ -94,16 +96,18 @@ public class Character implements GameObject {
             public void run() {
                 if(jumping){
                     if(jumpHeight>0){
-                        if(gameMap.isWalkable_up_right(main.getX(), main.getY()-5)){
+                        if(gameMap.isWalkable_up(main.getX(), main.getY()-5)){
                             main.setLocation(main.getX(), main.getY() - 5);
                             jumpHeight--;
                         }else{
+                            System.out.println(main.getX()+","+main.getY());
                             jumpHeight = 0;
                         }
 
                     }
                     if(jumpHeight<=0){
-                        if(gameMap.isWalkable_down_left(main.getX(), main.getY()+5)){
+                        falling = true;
+                        if(gameMap.isWalkable_down(main.getX(), main.getY()+5)){
                             if(checkIfLeftArrowOnWall(main.getX(), main.getY()+5)){
                                 jumping = false;
                                 stopTimer();
@@ -113,10 +117,13 @@ public class Character implements GameObject {
                                 stopTimer();
                             }
                             main.setLocation(main.getX(), main.getY() + 5);
+                            System.out.println(main.getX()+","+main.getY());
                             jumpHeight--;
 
                         }else{
+                            System.out.println(main.getX()+","+main.getY());
                             jumping = false;
+                            falling = false;
                             stopTimer();
                         }
                     }
@@ -166,6 +173,15 @@ public class Character implements GameObject {
             }
         }
         animePlay(direction);
+        if(falling && main.getY() > 400){
+            main.setLocation(main.getX(), 0);
+        }
+        if (!falling && main.getY() < 10){
+            main.setLocation(main.getX(), 391);
+        }
+        if (gameMap.superJump(main.getX(),main.getY())){
+            jump(11);
+        }
     }
 
     @Override
@@ -233,7 +249,7 @@ public class Character implements GameObject {
                 main.setCurrentFrameIndex(0);
             }
         }else if(s.equals("standingLeft")){
-            if(main.getCurrentFrameIndex() >= 10 || main.getCurrentFrameIndex() < 9){
+            if(main.getCurrentFrameIndex() != 9){
                 main.setCurrentFrameIndex(9);
             }
         }

@@ -12,11 +12,14 @@ import tw.edu.ntut.csie.game.state.Monster;
 public interface GameMap extends GameObject {
     public int getInitialPositionX();
     public int getInitialPositionY();
-    public boolean isWalkable_down_left(int x, int y);
-    public boolean isWalkable_up_right(int x, int y);
+    public boolean isWalkable_down(int x, int y);
+    public boolean isWalkable_up(int x, int y);
+    public boolean isWalkable_right(int x, int y);
+    public boolean isWalkable_left(int x, int y);
     public boolean arrowEnable_left(int x, int y, Arrow arrow);
     public boolean arrowEnable_right(int x, int y, Arrow arrow);
     public List<Monster> getMonsterList();
     public int getLevel();
+    public default boolean superJump(int x, int y){ return false; }
 
 }

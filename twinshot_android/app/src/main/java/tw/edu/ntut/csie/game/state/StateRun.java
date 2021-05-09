@@ -122,6 +122,7 @@ public class StateRun extends GameState {
         character.hurt(checkCollide());
         gameMap.move();
         checkState();
+
     }
 
     @Override
@@ -238,21 +239,23 @@ public class StateRun extends GameState {
             int moveX = actionPointer.getX();
             int moveY = actionPointer.getY();
             if(moveX > _button.getX()){
-                if(gameMap.isWalkable_up_right(character.getX()+5, character.getY())){
+                if(gameMap.isWalkable_right(character.getX()+5, character.getY())){
                     character.setLocation(character.getX()+5, character.getY());
                     character.setDirection("right");
                 }
-                if(gameMap.isWalkable_up_right(character.getX(), character.getY()+5)){
+                if(gameMap.isWalkable_down(character.getX(), character.getY()+5)){
                     if(!character.isJumping()){
                         character.jump(0);
+                        System.out.println(character.getX()+","+character.getY());
                     }
                 }
             }else if(moveX < _button.getX() + _button.getWidth()){
-                if(gameMap.isWalkable_down_left(character.getX()-5, character.getY())){
+                if(gameMap.isWalkable_left(character.getX()-5, character.getY())){
                     character.setLocation(character.getX()-5, character.getY());
+                    System.out.println(character.getX()+","+character.getY());
                     character.setDirection("left");
                 }
-                if(gameMap.isWalkable_down_left(character.getX(), character.getY()+5)){
+                if(gameMap.isWalkable_down(character.getX(), character.getY()+5)){
                     if(!character.isJumping()){
                         character.jump(0);
                     }
