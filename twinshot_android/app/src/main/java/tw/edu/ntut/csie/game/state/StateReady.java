@@ -64,12 +64,15 @@ public class StateReady extends AbstractGameState {
 
         level1 = new HashMap<>();
         level1.put("level", 2);
+        level1.put("score", 0);
 
         level2 = new HashMap<>();
         level2.put("level", 3);
+        level2.put("score", 0);
 
         level3 = new HashMap<>();
         level3.put("level", 4);
+        level3.put("score", 0);
     }
 
     /**

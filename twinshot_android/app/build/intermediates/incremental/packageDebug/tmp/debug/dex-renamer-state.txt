@@ -1,4 +1,4 @@
-#Thu Apr 29 22:12:59 CST 2021
-base.0=C\:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+#Fri May 07 11:53:44 CST 2021
+base.0=/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

@@ -6,9 +6,9 @@ import java.util.List;
 import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
-import tw.edu.ntut.csie.game.extend.Animation;
+import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 import tw.edu.ntut.csie.game.state.Arrow;
-import tw.edu.ntut.csie.game.state.Monster;
+import tw.edu.ntut.csie.game.monster.Monster;
 
 public class Map2 implements GameObject, GameMap {
     private MovingBitmap block;
@@ -19,9 +19,7 @@ public class Map2 implements GameObject, GameMap {
     private MovingBitmap pillar2;
     private MovingBitmap pillar3;
     private MovingBitmap pillar4;
-    private Monster monster;
-    private Monster monster1;
-    private List<Monster> MonsterList;
+    private MonsterBuilder monsterBuilder;
     private MovingBitmap scores;
 
     private int[][] map = {
@@ -55,20 +53,14 @@ public class Map2 implements GameObject, GameMap {
         block1 = new MovingBitmap(R.drawable.block1);
         block2 = new MovingBitmap(R.drawable.block2);
         pillar = new MovingBitmap(R.drawable.pillar);
-        pillar1 = new MovingBitmap(R.drawable.pillar1);
+        pillar1 = new MovingBitmap(R.drawable.pillar1_1);
         pillar2 = new MovingBitmap(R.drawable.pillar2);
         pillar3 = new MovingBitmap(R.drawable.pillar3);
         pillar4 = new MovingBitmap(R.drawable.pillar4);
         scores = new MovingBitmap(R.drawable.scores);
-        MonsterList = new ArrayList<Monster>();
-        monster = new Monster();
-        monster1 = new Monster();
-        monster.initialize();
-        monster.setLocation(500, 285);
-        monster1.initialize();
-        monster1.setLocation(100, 285);
-        MonsterList.add(monster);
-        MonsterList.add(monster1);
+        monsterBuilder = new MonsterBuilder();
+        monsterBuilder.add(1, 500, 285);
+        monsterBuilder.add(1, 100, 285);
         scores.setLocation(453,348);
     }
 
@@ -79,7 +71,7 @@ public class Map2 implements GameObject, GameMap {
 
     @Override
     public int getInitialPositionY() {
-        return 170;
+        return 182;
     }
 
     @Override
@@ -92,8 +84,7 @@ public class Map2 implements GameObject, GameMap {
         pillar2.release();
         pillar3.release();
         pillar4.release();
-        monster.release();
-        monster1.release();
+        monsterBuilder.release();
         scores.release();
 
         block = null;
@@ -104,22 +95,12 @@ public class Map2 implements GameObject, GameMap {
         pillar2 = null;
         pillar3 = null;
         pillar4 = null;
-        monster = null;
-        monster1 = null;
-        MonsterList = null;
         scores = null;
     }
 
     @Override
     public void move(){
-        if(monster != null){
-            monster.move();
-            monster.regular();
-        }
-        if(monster1 != null) {
-            monster1.move();
-            monster1.regular();
-        }
+        monsterBuilder.move();
     }
 
     @Override
@@ -165,8 +146,7 @@ public class Map2 implements GameObject, GameMap {
                 }
             }
         }
-        monster.show();
-        monster1.show();
+        monsterBuilder.show();
     }
 
     public boolean isWalkable_down_left(int x, int y){
@@ -188,7 +168,7 @@ public class Map2 implements GameObject, GameMap {
             return true;
         }else if (x <= 506 && x > 450 && y < 322-46){
             return true;
-        }else if (x <= 455 && x > 175 && y < 230-46 && y > 138){
+        }else if (x <= 455 && x > 175 && y < 232-46 && y > 138){
             return true;
         }else if (x <= 455 && x > 175 && y < 115-46){
             return true;
@@ -196,7 +176,7 @@ public class Map2 implements GameObject, GameMap {
             return true;
         }if (x <= 155 && x > 63 && y < 161-46){
             return true;
-        }else if (x <= 155 && x > 63 && y < 322-46 && y > 184){
+        }else if (x <= 155 && x > 63 && y < 322-46 && y > 186){
             return true;
         }else {
             return false;
@@ -217,13 +197,13 @@ public class Map2 implements GameObject, GameMap {
             return true;
         }else if (x <= 506 && x > 450 && y < 323-46){
             return true;
-        }else if (x <= 455 && x > 165 && y < 231-46){
+        }else if (x <= 455 && x > 165 && y < 232-46){
             return true;
         }else if (x <= 168 && x > 138 && y < 323-46){
             return true;
         }if (x <= 155 && x > 46 && y < 162-46){
             return true;
-        }else if (x <= 155 && x > 46 && y < 323-46 && y > 184){
+        }else if (x <= 155 && x > 46 && y < 323-46 && y > 186){
             return true;
         }else {
             return false;
@@ -233,55 +213,23 @@ public class Map2 implements GameObject, GameMap {
     public boolean arrowEnable_left(int x, int y, Arrow arrow){// map and monster check
         int i = y/23;
         int j = x/23+1;
-        for(Monster monster: MonsterList){
-            if(monster != null){
-                if(x > monster.getX()+23 || x < monster.getX()){
-                    continue;
-                }else if(y > monster.getY()+23 || y < monster.getY()-10){
-                    continue;
-                }else{
-                    if(!arrow.noPower){
-                        monster.setIskilled();
-                        arrow.hitMonster = true;
-                        return false;
-                    }
-                }
-            }
-        }
-        if(map[i][j] != 0){
-            return false;
-        }else{
-            return true;
-        }
+        return !monsterBuilder.shootingMonster_Left(x, y, arrow) && map[i][j] == 0;
     }
 
     public boolean arrowEnable_right(int x, int y, Arrow arrow){
         int i = y/23;
         int j = x/23+1;
-        for(Monster monster: MonsterList){
-            if(monster != null){
-                if(x+46 > monster.getX()+10 || x+46 < monster.getX()){
-                    continue;
-                }else if(y > monster.getY()+23 || y < monster.getY()-10){
-                    continue;
-                }else{
-                    if(!arrow.noPower){
-                        monster.setIskilled();
-                        arrow.hitMonster = true;
-                        return false;
-                    }
-                }
-            }
-        }
-        if(map[i][j] != 0){
-            return false;
-        }else{
-            return true;
-        }
+        return !monsterBuilder.shootingMonster_Right(x, y, arrow) && map[i][j] == 0;
     }
 
+    @Override
     public List<Monster> getMonsterList(){
-        return MonsterList;
+        return monsterBuilder.getMonsterList();
+    }
+
+    @Override
+    public MonsterBuilder getMonsterBuilder(){
+        return monsterBuilder;
     }
 
     public int getLevel() { return 2; }

@@ -6,8 +6,9 @@ import java.util.List;
 import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
+import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 import tw.edu.ntut.csie.game.state.Arrow;
-import tw.edu.ntut.csie.game.state.Monster;
+import tw.edu.ntut.csie.game.monster.Monster;
 
 public class Map3 implements GameObject, GameMap {
     private MovingBitmap block;
@@ -253,8 +254,14 @@ public class Map3 implements GameObject, GameMap {
         }
     }
 
+    @Override
     public List<Monster> getMonsterList(){
         return MonsterList;
+    }
+
+    @Override
+    public MonsterBuilder getMonsterBuilder() {
+        return null;
     }
 
     public int getLevel() { return 3; }

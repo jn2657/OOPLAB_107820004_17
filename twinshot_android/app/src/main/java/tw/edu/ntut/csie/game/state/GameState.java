@@ -59,6 +59,14 @@ public abstract class GameState implements GameObject, KeyEventHandler, SensorEv
         _engine.setGameState(state, parameter);
     }
 
+    public void pauseState(int state, GameState gameState, Map<String, Object> parameter){
+        _engine.setGameStatePause(state, gameState, parameter);
+    }
+
+    public void resumeState(int state, Map<String, Object> parameter){
+        _engine.setGameStateResume(state, parameter);
+    }
+
     @Override
     public void move() {
         moveAllGameObjects();
