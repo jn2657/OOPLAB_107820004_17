@@ -7,12 +7,11 @@ public class Monster2 extends Animation implements GameMonster{
     private Animation monster;
     public boolean iskilled;
     private int step;
+    private int initStep;
     private int direction;
     private double speed;
-    private boolean godMode;
     boolean turned;
     private int jumpStep, fallStep;
-    private int initStep;
     private boolean firstShot;
     private boolean shotAgain;
 
@@ -65,19 +64,22 @@ public class Monster2 extends Animation implements GameMonster{
         monster.setDelay(2);
     }
 
-
     public void initialize(int monsterStep) {
         iskilled = false;
         step = monsterStep;
         initStep = monsterStep;
         jumpStep = 5;
-//        fallStep = 30;
+        fallStep = 30;
         direction = 0;
         turned = false;
     }
 
     public void setIskilled() {
         iskilled = true;
+    }
+
+    public boolean isKilled() {
+        return iskilled;
     }
 
     public void setLocation(int x, int y) {
@@ -92,11 +94,13 @@ public class Monster2 extends Animation implements GameMonster{
         return monster.getY();
     }
 
+    @Override
     public void release() {
         monster.release();
         monster = null;
     }
 
+    @Override
     public void move() {
         if (monster != null) {
             monster.move();
@@ -104,13 +108,9 @@ public class Monster2 extends Animation implements GameMonster{
         }
     }
 
+    @Override
     public void show() {
         monster.show();
-    }
-
-    @Override
-    public boolean getIfDead() {
-        return iskilled;
     }
 
     public void regular() {
@@ -140,7 +140,7 @@ public class Monster2 extends Animation implements GameMonster{
             }
             speed = 5;
             if (jumpStep <= 0) {
-//                fallStep--;
+                fallStep--;
                 monster.setLocation(monster.getX(), (int) (monster.getY() + speed));
                 if (monster.getY() + speed >= 368){
                     monster.setVisible(false);

@@ -59,9 +59,9 @@ public class Arrow extends Animation {
         hitMonster = false;
     }
 
-    public void shot(){
+    public void shoot(){
         if(attack){
-            if(direction.contains("Left") || direction.contains("standingLeft")){
+            if(direction.contains("Left")){
                 if(gameMap.arrowEnable_left(arrow.getX()-20, arrow.getY(), this) && fallCount > 0 && !hitMonster){
                     arrow.setLocation(arrow.getX()-20, arrow.getY());
                     fallCount--;
@@ -77,6 +77,7 @@ public class Arrow extends Animation {
                         arrow.setVisible(false);
                         attack = false;
                     }else if(disappearCount != 0){
+                        onWall = true;
                         if(disappearCount%2==0){
                             arrow.setVisible(false);
                         }else{
@@ -84,13 +85,14 @@ public class Arrow extends Animation {
                         }
                     }else{
                         attack = false;
+                        onWall = false;
                     }
                 }
                 if(arrow.getX() < -20){
                     arrow.setLocation(600, arrow.getY());
                 }
             }
-            if(direction.contains("Right") || direction.contains("standingRight")){
+            if(direction.contains("Right")){
                 if(gameMap.arrowEnable_right(arrow.getX()+20, arrow.getY(), this) && fallCount > 0 && !hitMonster){
                     arrow.setLocation(arrow.getX()+20, arrow.getY());
                     fallCount--;
@@ -142,7 +144,7 @@ public class Arrow extends Animation {
     @Override
     public void move(){
         arrow.move();
-        shot();
+        shoot();
     }
 
     @Override

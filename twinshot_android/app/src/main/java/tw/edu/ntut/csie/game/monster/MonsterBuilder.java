@@ -15,13 +15,13 @@ public class MonsterBuilder {
     public void add(int monsterNum, int monsterStep, int x, int y){
         switch (monsterNum){
             case 1:
-                Monster1 m = new Monster1();
+                GameMonster m = new Monster1();
                 m.initialize(monsterStep);
                 m.setLocation(x, y);
                 MonsterList.add(m);
                 break;
             case 2:
-                Monster2 m2 = new Monster2();
+                GameMonster m2 = new Monster2();
                 m2.initialize(monsterStep);
                 m2.setLocation(x, y);
                 MonsterList.add(m2);
@@ -94,9 +94,7 @@ public class MonsterBuilder {
     public int checkScore(){
         int score = 0;
         for(GameMonster m: MonsterList){
-            if (m.getIfDead()) {
-                score += 100;
-            }
+            if(m.isKilled()){score += 100;}
         }
         return score;
     }

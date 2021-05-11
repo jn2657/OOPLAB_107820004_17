@@ -1,14 +1,15 @@
 package tw.edu.ntut.csie.game.monster;
 
 public interface GameMonster {
-    public void initialize(int x);
+    public void initialize(int monsterStep);
     public void setIskilled();
-    public void regular();
-    public void animePlay();
+    public boolean isKilled();
+    public void setLocation(int x, int y);
     public int getX();
     public int getY();
-    public void show();
-    public void move();
+    public void regular();
+    public void animePlay();
     public void release();
-    public boolean getIfDead();
+    public void move();
+    public void show();
 }

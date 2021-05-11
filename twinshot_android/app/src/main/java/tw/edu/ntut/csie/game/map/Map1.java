@@ -1,6 +1,5 @@
 package tw.edu.ntut.csie.game.map;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import tw.edu.ntut.csie.game.GameObject;

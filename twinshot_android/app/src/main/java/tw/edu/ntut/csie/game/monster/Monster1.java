@@ -81,6 +81,10 @@ public class Monster1 extends Animation implements GameMonster {
         iskilled = true;
     }
 
+    public boolean isKilled() {
+        return iskilled;
+    }
+
     public void setLocation(int x, int y) {
         monster.setLocation(x, y);
     }
@@ -93,11 +97,13 @@ public class Monster1 extends Animation implements GameMonster {
         return monster.getY();
     }
 
+    @Override
     public void release() {
         monster.release();
         monster = null;
     }
 
+    @Override
     public void move() {
         if (monster != null) {
             monster.move();
@@ -105,13 +111,9 @@ public class Monster1 extends Animation implements GameMonster {
         }
     }
 
+    @Override
     public void show() {
         monster.show();
-    }
-
-    @Override
-    public boolean getIfDead(){
-        return iskilled;
     }
 
     public void regular() {

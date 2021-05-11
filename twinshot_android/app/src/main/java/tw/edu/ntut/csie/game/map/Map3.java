@@ -1,28 +1,21 @@
 package tw.edu.ntut.csie.game.map;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
+import tw.edu.ntut.csie.game.monster.GameMonster;
 import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 import tw.edu.ntut.csie.game.state.Arrow;
 import tw.edu.ntut.csie.game.monster.GameMonster;
 
 public class Map3 implements GameObject, GameMap {
-    private MovingBitmap block;
-    private MovingBitmap block1;
-    private MovingBitmap block2;
-    private MovingBitmap block3;
-    private MovingBitmap block4;
-    private MovingBitmap pillar;
-    private MovingBitmap pillar1;
-    private MovingBitmap pillar2;
-    private MovingBitmap pillar3;
+    private MovingBitmap block, block1, block2, block3, block4;
+    private MovingBitmap pillar, pillar1, pillar2, pillar3;
+    private MovingBitmap scores;
     private List<GameMonster> MonsterList;
     private MonsterBuilder monsterBuilder;
-    private MovingBitmap scores;
 
     private int[][] map = {
             {0,0,1,8,0,0,0,0,8,8,8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,8,1,0,0},
