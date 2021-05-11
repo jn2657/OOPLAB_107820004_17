@@ -56,8 +56,8 @@ public class StateRun extends GameState {
             currentScore = 0;
         }
 
-        _background = new MovingBitmap(R.drawable.levelbackground1);
-        _background.setLocation(55, 0);
+        _background = new MovingBitmap(R.drawable.levelbackground3);
+        _background.setLocation(0, 0);
         _message = new MovingBitmap(R.drawable.message, 130, 150);
         s = new MovingBitmap(R.drawable.s);
         t = new MovingBitmap(R.drawable.t);

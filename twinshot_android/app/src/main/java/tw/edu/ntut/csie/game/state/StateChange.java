@@ -34,8 +34,8 @@ public class StateChange extends AbstractGameState {
         Nextlevel.put("score", data.get("score"));
 
         addGameObject(_complete = new MovingBitmap(R.drawable.complete));
-        addGameObject(_background = new MovingBitmap(R.drawable.levelbackground1));
-        _background.setLocation(55,0);
+        addGameObject(_background = new MovingBitmap(R.drawable.levelbackground3));
+        _background.setLocation(0,0);
         _complete.setLocation(225,80);
         initializeContinueButton();
         initializeEndButton();
