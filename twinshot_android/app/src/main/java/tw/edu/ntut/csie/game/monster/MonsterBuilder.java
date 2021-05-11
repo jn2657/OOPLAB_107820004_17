@@ -61,9 +61,23 @@ public class MonsterBuilder {
                 continue;
             }else{
                 if(!arrow.noPower){
-                    monster.setIskilled();
-                    arrow.hitMonster = true;
-                    return true;
+                    if (!(monster instanceof Monster2)){
+                        System.out.println("true");
+                        monster.setIskilled();
+                        arrow.hitMonster = true;
+                        return true;
+                    }else{
+                        ((Monster2) monster).setGodMode();
+                        arrow.hitMonster = true;
+                        if(((Monster2) monster).getFirstShot()) {
+//                            ((Monster2) monster).setFirstShot();
+                            System.out.println("false");
+                            monster.setIskilled();
+//                        continue;
+                            return true;
+                        }
+                        return false;
+                    }
                 }
             }
         }
@@ -78,9 +92,13 @@ public class MonsterBuilder {
                 continue;
             }else{
                 if(!arrow.noPower){
-                    monster.setIskilled();
-                    arrow.hitMonster = true;
-                    return true;
+                    if(monster instanceof Monster2 && !((Monster2) monster).getFirstShot()){
+                        ((Monster2) monster).setFirstShot();
+                    }else if (!(monster instanceof Monster2) || ((Monster2) monster).getFirstShot()){
+                        monster.setIskilled();
+                        arrow.hitMonster = true;
+                        return true;
+                    }
                 }
             }
         }

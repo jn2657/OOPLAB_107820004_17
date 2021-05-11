@@ -3,7 +3,7 @@ package tw.edu.ntut.csie.game.monster;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.extend.Animation;
 
-public class Monster2 extends Animation implements GameMonster{
+public class Monster2 extends Animation implements GameMonster {
     private Animation monster;
     public boolean iskilled;
     private int step;
@@ -12,8 +12,10 @@ public class Monster2 extends Animation implements GameMonster{
     private double speed;
     boolean turned;
     private int jumpStep, fallStep;
-    private boolean firstShot;
+    private boolean firstShot, godMode;
     private boolean shotAgain;
+    private int stay;
+    private int initY;
 
     public Monster2() {
         monster = new Animation();
@@ -72,10 +74,22 @@ public class Monster2 extends Animation implements GameMonster{
         fallStep = 30;
         direction = 0;
         turned = false;
+        firstShot = false;
+        shotAgain = false;
+        godMode = false;
+        stay = 40;
     }
 
     public void setIskilled() {
         iskilled = true;
+    }
+
+    public void setFirstShot() {
+        firstShot = true;
+    }
+
+    public boolean getFirstShot() {
+        return firstShot;
     }
 
     public boolean isKilled() {
@@ -114,23 +128,33 @@ public class Monster2 extends Animation implements GameMonster{
     }
 
     public void regular() {
-        if (monster != null && !iskilled) {
-            speed = 2;
-            if (step <= 0 && direction == 0) {
-                direction = 1;
-                step = initStep;
-            } else if (step <= 0 && direction == 1) {
-                direction = 0;
-                step = initStep;
-            } else {
-                if (direction == 0) {
-                    monster.setLocation((int) (monster.getX() + speed), monster.getY());
+        if (!godMode){
+            if (monster != null && !iskilled) {
+                speed = 2;
+                if (step <= 0 && direction == 0) {
+                    direction = 1;
+                    step = initStep;
+                } else if (step <= 0 && direction == 1) {
+                    direction = 0;
+                    step = initStep;
                 } else {
-                    monster.setLocation((int) (monster.getX() - speed), monster.getY());
+                    if (direction == 0) {
+                        monster.setLocation((int) (monster.getX() + speed), monster.getY());
+                    } else {
+                        monster.setLocation((int) (monster.getX() - speed), monster.getY());
+                    }
                 }
+                step--;
             }
-            step--;
         }
+    }
+
+    public void setGodMode(){
+        godMode = true;
+    }
+
+    public boolean isGodMode(){
+        return godMode;
     }
 
     public void animePlay() {
@@ -142,7 +166,7 @@ public class Monster2 extends Animation implements GameMonster{
             if (jumpStep <= 0) {
                 fallStep--;
                 monster.setLocation(monster.getX(), (int) (monster.getY() + speed));
-                if (monster.getY() + speed >= 368){
+                if (monster.getY() + speed >= 368) {
                     monster.setVisible(false);
                     monster.setLocation(650, 400);
                 }
@@ -150,11 +174,33 @@ public class Monster2 extends Animation implements GameMonster{
                 jumpStep--;
                 monster.setLocation(monster.getX(), (int) (monster.getY() - speed));
             }
-        }else {
+        } else if (godMode) {
+            if (stay > 0) {
+                stay--;
+                if (monster.getCurrentFrameIndex() >= 12) {
+                    firstShot = true;
+                    monster.setCurrentFrameIndex(12);
+                }
+            } else {
+                firstShot = false;
+                if(monster.getCurrentFrameIndex() <= 12){
+                    monster.setCurrentFrameIndex(13);
+                }
+                if (monster.getCurrentFrameIndex() >= 17) {
+                    monster.setCurrentFrameIndex(0);
+                    godMode = false;
+                    stay = 40;
+                }
+            }
+        } else {
             if (monster.getCurrentFrameIndex() >= 3) {
-                monster.setCurrentFrameIndex(1);
+                monster.setCurrentFrameIndex(0);
             }
         }
     }
 
+//    public void growUp(){
+//        if()
+//        monster.setLocation(monster.getX(), initY + 3);
+//    }
 }
