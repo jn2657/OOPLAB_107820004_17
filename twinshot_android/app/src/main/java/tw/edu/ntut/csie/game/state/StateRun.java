@@ -14,7 +14,7 @@ import tw.edu.ntut.csie.game.engine.GameEngine;
 import tw.edu.ntut.csie.game.extend.Integer;
 import tw.edu.ntut.csie.game.map.MapController;
 import tw.edu.ntut.csie.game.map.GameMap;
-import tw.edu.ntut.csie.game.monster.Monster;
+import tw.edu.ntut.csie.game.monster.GameMonster;
 import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 
 
@@ -23,7 +23,7 @@ public class StateRun extends GameState {
     private MovingBitmap _background, _button, _message, _pauseButton;
     private GameMap gameMap;
     private MonsterBuilder monsterBuilder;
-    private List<Monster> MonsterList;
+    private List<GameMonster> MonsterList;
 
     private Character character;
     private MovingBitmap _life1, _life2, _life3;
@@ -339,13 +339,13 @@ public class StateRun extends GameState {
     }
 
     public boolean checkCollide(){
-        for(Monster monster: MonsterList){
+        for(GameMonster monster: MonsterList){
             if(character.getX() > monster.getX()+23 || character.getX() < monster.getX()-23){
                 return false;
             }else if(character.getY() > monster.getY()+23 || character.getY() < monster.getY()-23){
                 return false;
             }else{
-                if(!monster.iskilled){
+                if(!monster.getIfDead()){
                     switch (character.life){
                         case 2:
                             if(_life1 != null){
@@ -375,8 +375,8 @@ public class StateRun extends GameState {
 
     private void checkState(){
         int i = 0;
-        for(Monster monster: MonsterList){
-            if(!monster.iskilled){ i += 1; }
+        for(GameMonster monster: MonsterList){
+            if(!monster.getIfDead()){ i += 1; }
         }
         if(i == 0){
             _scores.setValue(monsterBuilder.checkScore() + currentScore);

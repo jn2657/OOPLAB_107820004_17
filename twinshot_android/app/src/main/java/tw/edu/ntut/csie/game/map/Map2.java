@@ -8,7 +8,7 @@ import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
 import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 import tw.edu.ntut.csie.game.state.Arrow;
-import tw.edu.ntut.csie.game.monster.Monster;
+import tw.edu.ntut.csie.game.monster.GameMonster;
 
 public class Map2 implements GameObject, GameMap {
     private MovingBitmap block;
@@ -59,8 +59,8 @@ public class Map2 implements GameObject, GameMap {
         pillar4 = new MovingBitmap(R.drawable.pillar4);
         scores = new MovingBitmap(R.drawable.scores);
         monsterBuilder = new MonsterBuilder();
-        monsterBuilder.add(1, 110,210, 80);
-        monsterBuilder.add(1, 110,210, 196);
+        monsterBuilder.add(2, 110,210, 80);
+        monsterBuilder.add(2, 110,210, 196);
         scores.setLocation(453,348);
     }
 
@@ -235,7 +235,7 @@ public class Map2 implements GameObject, GameMap {
     }
 
     @Override
-    public List<Monster> getMonsterList(){
+    public List<GameMonster> getMonsterList(){
         return monsterBuilder.getMonsterList();
     }
 

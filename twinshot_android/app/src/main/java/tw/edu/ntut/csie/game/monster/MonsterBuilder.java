@@ -6,7 +6,7 @@ import java.util.List;
 import tw.edu.ntut.csie.game.state.Arrow;
 
 public class MonsterBuilder {
-    private List<Monster> MonsterList;
+    private List<GameMonster> MonsterList;
 
     public MonsterBuilder(){
         MonsterList = new ArrayList<>();
@@ -15,10 +15,16 @@ public class MonsterBuilder {
     public void add(int monsterNum, int monsterStep, int x, int y){
         switch (monsterNum){
             case 1:
-                Monster m = new Monster();
+                Monster1 m = new Monster1();
                 m.initialize(monsterStep);
                 m.setLocation(x, y);
                 MonsterList.add(m);
+                break;
+            case 2:
+                Monster2 m2 = new Monster2();
+                m2.initialize(monsterStep);
+                m2.setLocation(x, y);
+                MonsterList.add(m2);
                 break;
             default:
                 break;
@@ -26,13 +32,13 @@ public class MonsterBuilder {
     }
 
     public void show(){
-        for(Monster m: MonsterList){
+        for(GameMonster m: MonsterList){
             m.show();
         }
     }
 
     public void move(){
-        for(Monster m: MonsterList){
+        for(GameMonster m: MonsterList){
             if(m != null){
                 m.move();
                 m.regular();
@@ -41,14 +47,14 @@ public class MonsterBuilder {
     }
 
     public void release(){
-        for(Monster m: MonsterList){
+        for(GameMonster m: MonsterList){
             m.release();
             m = null;
         }
     }
 
     public boolean shootingMonster_Left(int x, int y, Arrow arrow){
-        for(Monster monster: MonsterList){
+        for(GameMonster monster: MonsterList){
             if(x > monster.getX()+23 || x < monster.getX()){
                 continue;
             }else if(y > monster.getY()+23 || y < monster.getY()-10){
@@ -65,7 +71,7 @@ public class MonsterBuilder {
     }
 
     public boolean shootingMonster_Right(int x, int y, Arrow arrow){
-        for(Monster monster: MonsterList){
+        for(GameMonster monster: MonsterList){
             if(x+46 > monster.getX()+10 || x+46 < monster.getX()){
                 continue;
             }else if(y > monster.getY()+23 || y < monster.getY()-10){
@@ -81,14 +87,16 @@ public class MonsterBuilder {
         return false;
     }
 
-    public List<Monster> getMonsterList(){
+    public List<GameMonster> getMonsterList(){
         return MonsterList;
     }
 
     public int checkScore(){
         int score = 0;
-        for(Monster m: MonsterList){
-            if(m.iskilled){score += 100;}
+        for(GameMonster m: MonsterList){
+            if (m.getIfDead()) {
+                score += 100;
+            }
         }
         return score;
     }
