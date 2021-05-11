@@ -1,12 +1,9 @@
 package tw.edu.ntut.csie.game.monster;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.extend.Animation;
 
-public class Monster1 extends Animation implements GameMonster{
+public class Monster1 extends Animation implements GameMonster {
     private Animation monster;
     public boolean iskilled;
     private int step;

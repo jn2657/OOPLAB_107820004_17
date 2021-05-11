@@ -8,6 +8,7 @@ import tw.edu.ntut.csie.game.core.MovingBitmap;
 import tw.edu.ntut.csie.game.monster.GameMonster;
 import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 import tw.edu.ntut.csie.game.state.Arrow;
+import tw.edu.ntut.csie.game.monster.GameMonster;
 
 public class Map1 implements GameObject, GameMap {
     private MovingBitmap block, block1, block2;

@@ -8,7 +8,7 @@ import tw.edu.ntut.csie.game.core.MovingBitmap;
 import tw.edu.ntut.csie.game.monster.GameMonster;
 import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 import tw.edu.ntut.csie.game.state.Arrow;
-import tw.edu.ntut.csie.game.monster.Monster1;
+import tw.edu.ntut.csie.game.monster.GameMonster;
 
 public class Map3 implements GameObject, GameMap {
     private MovingBitmap block, block1, block2, block3, block4;
@@ -220,51 +220,13 @@ public class Map3 implements GameObject, GameMap {
     public boolean arrowEnable_left(int x, int y, Arrow arrow){// map and monster check
         int i = y/23;
         int j = x/23+1;
-        for(GameMonster monster: MonsterList){
-            if(monster != null){
-                if(x > monster.getX()+23 || x < monster.getX()){
-                    continue;
-                }else if(y > monster.getY()+23 || y < monster.getY()-10){
-                    continue;
-                }else{
-                    if(!arrow.noPower){
-                        monster.setIskilled();
-                        arrow.hitMonster = true;
-                        return false;
-                    }
-                }
-            }
-        }
-        if(map[i][j] != 0){
-            return false;
-        }else{
-            return true;
-        }
+        return !monsterBuilder.shootingMonster_Left(x, y, arrow) && map[i][j] == 0;
     }
 
     public boolean arrowEnable_right(int x, int y, Arrow arrow){
         int i = y/23;
         int j = x/23+1;
-        for(GameMonster monster: MonsterList){
-            if(monster != null){
-                if(x+46 > monster.getX()+10 || x+46 < monster.getX()){
-                    continue;
-                }else if(y > monster.getY()+23 || y < monster.getY()-10){
-                    continue;
-                }else{
-                    if(!arrow.noPower){
-                        monster.setIskilled();
-                        arrow.hitMonster = true;
-                        return false;
-                    }
-                }
-            }
-        }
-        if(map[i][j] != 0){
-            return false;
-        }else{
-            return true;
-        }
+        return !monsterBuilder.shootingMonster_Left(x, y, arrow) && map[i][j] == 0;
     }
 
     @Override

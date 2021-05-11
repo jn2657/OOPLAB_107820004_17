@@ -11,35 +11,32 @@ public class Monster2 extends Animation implements GameMonster{
     private int direction;
     private double speed;
     boolean turned;
-    private int jumpStep;
-    private int fallStep;
+    private int jumpStep, fallStep;
+    private boolean firstShot;
+    private boolean shotAgain;
 
     public Monster2() {
         monster = new Animation();
         monster.setLocation(0, 0);
-        monster.addFrame(R.drawable.monsterleft1);
-        monster.addFrame(R.drawable.monsterleft2);
-        monster.addFrame(R.drawable.monsterleft3);
-        monster.addFrame(R.drawable.monsterleft4);
-        monster.addFrame(R.drawable.monsterleft5);
-        monster.addFrame(R.drawable.monsterleft6);
-        monster.addFrame(R.drawable.monsterleft7);
-        monster.addFrame(R.drawable.monsterleft8);
-        monster.addFrame(R.drawable.monsterleft9);
-        monster.addFrame(R.drawable.monsterleft10);
-        monster.addFrame(R.drawable.monsterleft11);
-        monster.addFrame(R.drawable.monsterright1);
-        monster.addFrame(R.drawable.monsterright2);
-        monster.addFrame(R.drawable.monsterright3);
-        monster.addFrame(R.drawable.monsterright4);
-        monster.addFrame(R.drawable.monsterright5);
-        monster.addFrame(R.drawable.monsterright6);
-        monster.addFrame(R.drawable.monsterright7);
-        monster.addFrame(R.drawable.monsterright8);
-        monster.addFrame(R.drawable.monsterright9);
-        monster.addFrame(R.drawable.monsterright10);
-        monster.addFrame(R.drawable.monsterright11);
-        monster.addFrame(R.drawable.d1);
+        monster.addFrame(R.drawable.monster1_2);
+        monster.addFrame(R.drawable.monster1_1);
+        monster.addFrame(R.drawable.monster1_2);
+        monster.addFrame(R.drawable.monster1_3);
+        monster.addFrame(R.drawable.monster1_shot1); //4
+        monster.addFrame(R.drawable.monster1_shot2);
+        monster.addFrame(R.drawable.monster1_shot3);
+        monster.addFrame(R.drawable.monster1_shot4);
+        monster.addFrame(R.drawable.monster1_shot5);
+        monster.addFrame(R.drawable.monster1_shot6);
+        monster.addFrame(R.drawable.monster1_shot7);
+        monster.addFrame(R.drawable.monster1_shot8);
+        monster.addFrame(R.drawable.monster1_shot9);
+        monster.addFrame(R.drawable.monster1_shot10); //13
+        monster.addFrame(R.drawable.monster1_shot11);
+        monster.addFrame(R.drawable.monster1_shot12);
+        monster.addFrame(R.drawable.monster1_shot13);
+        monster.addFrame(R.drawable.monster1_shot14);
+        monster.addFrame(R.drawable.d1); //18
         monster.addFrame(R.drawable.d2);
         monster.addFrame(R.drawable.d3);
         monster.addFrame(R.drawable.d4);
@@ -154,14 +151,8 @@ public class Monster2 extends Animation implements GameMonster{
                 monster.setLocation(monster.getX(), (int) (monster.getY() - speed));
             }
         }else {
-            if (direction == 0) {
-                if (monster.getCurrentFrameIndex() <= 10 || monster.getCurrentFrameIndex() >= 21) {
-                    monster.setCurrentFrameIndex(11);
-                }
-            } else if (direction == 1) {
-                if (monster.getCurrentFrameIndex() >= 11) {
-                    monster.setCurrentFrameIndex(0);
-                }
+            if (monster.getCurrentFrameIndex() >= 3) {
+                monster.setCurrentFrameIndex(1);
             }
         }
     }

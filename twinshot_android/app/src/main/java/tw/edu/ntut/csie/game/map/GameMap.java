@@ -6,6 +6,7 @@ import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.monster.GameMonster;
 import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 import tw.edu.ntut.csie.game.state.Arrow;
+import tw.edu.ntut.csie.game.monster.GameMonster;
 
 public interface GameMap extends GameObject {
     public int getInitialPositionX();

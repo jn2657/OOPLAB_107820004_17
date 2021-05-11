@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
-                    "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/values/strings.xml",
+                    "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
                         "startLines": "1,5,4,2,3",
                         "startColumns": "4,4,4,4,4",

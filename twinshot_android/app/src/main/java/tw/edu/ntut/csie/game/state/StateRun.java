@@ -14,7 +14,6 @@ import tw.edu.ntut.csie.game.extend.Integer;
 import tw.edu.ntut.csie.game.map.MapController;
 import tw.edu.ntut.csie.game.map.GameMap;
 import tw.edu.ntut.csie.game.monster.GameMonster;
-import tw.edu.ntut.csie.game.monster.Monster1;
 import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 
 
@@ -48,10 +47,10 @@ public class StateRun extends GameState {
     public void initialize(Map<String, Object> data) {
         MapController mapController = new MapController();
         mapController.initialize();
-        if(data != null){
+        if (data != null) {
             gameMap = mapController.goToLevel((int) data.get("level"));
             currentScore = (int) data.get("score");
-        }else{
+        } else {
             gameMap = mapController.FirstLevel();
             currentScore = 0;
         }
@@ -70,7 +69,7 @@ public class StateRun extends GameState {
         g.setLocation(646, 80);//346
         e.setLocation(671, 80);//371
         beginWordsAnimationCount = 30;
-        switch(gameMap.getLevel()){
+        switch (gameMap.getLevel()) {
             case 1:
                 level = new MovingBitmap(R.drawable.one);
                 break;
@@ -90,7 +89,7 @@ public class StateRun extends GameState {
         _pauseButton.setLocation(590, 10);
 
         changelevel = new HashMap<>();
-        changelevel.put("level", gameMap.getLevel()+1);
+        changelevel.put("level", gameMap.getLevel() + 1);
 
         monsterBuilder = gameMap.getMonsterBuilder();
         MonsterList = monsterBuilder.getMonsterList();
@@ -131,12 +130,12 @@ public class StateRun extends GameState {
 
     @Override
     public void move() {
-        if(!pausing){
+        if (!pausing) {
             character.move();
             character.hurt(checkCollide());
             gameMap.move();
             checkState();
-            if(monsterBuilder != null){
+            if (monsterBuilder != null) {
                 _scores.setValue(monsterBuilder.checkScore() + currentScore);
             }
             levelBeginWordsAnimationPlay();
@@ -148,7 +147,7 @@ public class StateRun extends GameState {
         // 順序為貼圖順序
         _background.show();
         character.show();
-        if(gameMap.getLevel() == 1){
+        if (gameMap.getLevel() == 1) {
             _message.show();
         }
         _button.show();
@@ -172,15 +171,15 @@ public class StateRun extends GameState {
         _black1.release();
         _black2.release();
         _black3.release();
-        if(character.life == 3){
+        if (character.life == 3) {
             _life1.release();
             _life2.release();
             _life3.release();
-        }else{
-            if(_life2 != null){
+        } else {
+            if (_life2 != null) {
                 _life2.release();
             }
-            if(_life3 != null){
+            if (_life3 != null) {
                 _life3.release();
             }
         }
@@ -242,29 +241,29 @@ public class StateRun extends GameState {
         _message.setVisible(false);
         int touchX = actionPointer.getX();
         int touchY = actionPointer.getY();
-        if(touchX > 560 && touchX < 590 && touchY < 20){
+        if (touchX > 560 && touchX < 590 && touchY < 20) {
             character.setLocation(300, 182);
         }
-        if(touchX > 590 && touchY < 20){
+        if (touchX > 590 && touchY < 20) {
             pause();
         }
-        if(touchX > 325 && touchY > 185){
-            if(character.getHeight() == 5){
+        if (touchX > 325 && touchY > 185) {
+            if (character.getHeight() == 5) {
                 character.jump(5);
             }
         }
-        if(touchX > 325 && touchY < 185 && touchY > 20){
+        if (touchX > 325 && touchY < 185 && touchY > 20) {
             character.shoot();
         }
 
-        if(touchX > _button.getX() && touchX < _button.getX() + _button.getWidth() &&
-                touchY > _button.getY() && touchY < _button.getY() + _button.getHeight()){
+        if (touchX > _button.getX() && touchX < _button.getX() + _button.getWidth() &&
+                touchY > _button.getY() && touchY < _button.getY() + _button.getHeight()) {
             _grab = true;
-        }else{
+        } else {
             _grab = false;
-            if(_pointer1 == null){
+            if (_pointer1 == null) {
                 _pointer1 = actionPointer;
-            }else if(_pointer2 == null){
+            } else if (_pointer2 == null) {
                 _pointer2 = actionPointer;
             }
         }
@@ -273,37 +272,37 @@ public class StateRun extends GameState {
 
     @Override
     public boolean pointerMoved(Pointer actionPointer, List<Pointer> pointers) {
-        if(_grab){
+        if (_grab) {
             int moveX = actionPointer.getX();
             int moveY = actionPointer.getY();
-            if(moveX > _button.getX()){
-                if(gameMap.isWalkable_right(character.getX()+5, character.getY())){
-                    character.setLocation(character.getX()+5, character.getY());
+            if (moveX > _button.getX()) {
+                if (gameMap.isWalkable_right(character.getX() + 5, character.getY())) {
+                    character.setLocation(character.getX() + 5, character.getY());
                     character.setDirection("Right");
                 }
-                if(gameMap.isWalkable_down(character.getX(), character.getY()+5)){
-                    if(!character.isJumping()){
+                if (gameMap.isWalkable_down(character.getX(), character.getY() + 5)) {
+                    if (!character.isJumping()) {
                         character.jump(0);
-                        System.out.println(character.getX()+","+character.getY());
+                        System.out.println(character.getX() + "," + character.getY());
                     }
                 }
-            }else if(moveX < _button.getX() + _button.getWidth()){
-                if(gameMap.isWalkable_left(character.getX()-5, character.getY())){
-                    character.setLocation(character.getX()-5, character.getY());
+            } else if (moveX < _button.getX() + _button.getWidth()) {
+                if (gameMap.isWalkable_left(character.getX() - 5, character.getY())) {
+                    character.setLocation(character.getX() - 5, character.getY());
                     character.setDirection("Left");
                 }
-                if(gameMap.isWalkable_down(character.getX(), character.getY()+5)){
-                    if(!character.isJumping()){
+                if (gameMap.isWalkable_down(character.getX(), character.getY() + 5)) {
+                    if (!character.isJumping()) {
                         character.jump(0);
                     }
                 }
             }
         }
 
-        if(_pointer1 != null && _pointer2 != null){
-            if(actionPointer.getID() == _pointer1.getID()){
+        if (_pointer1 != null && _pointer2 != null) {
+            if (actionPointer.getID() == _pointer1.getID()) {
                 _pointer1 = actionPointer;
-            }else if(actionPointer.getID() == _pointer2.getID()){
+            } else if (actionPointer.getID() == _pointer2.getID()) {
                 _pointer2 = actionPointer;
             }
         }
@@ -314,9 +313,9 @@ public class StateRun extends GameState {
     public boolean pointerReleased(Pointer actionPointer, List<Pointer> pointers) {
         _grab = false;
         String d = character.getDirection();
-        if(d.contains("Right") && !d.equals("shootingRight")){
+        if (d.contains("Right") && !d.equals("shootingRight")) {
             character.setDirection("standingRight");
-        }else if(d.contains("Left") && !d.equals("shootingLeft")){
+        } else if (d.contains("Left") && !d.equals("shootingLeft")) {
             character.setDirection("standingLeft");
         }
         return false;
@@ -335,124 +334,125 @@ public class StateRun extends GameState {
         pausing = false;
     }
 
-    public boolean checkCollide(){
-        for(GameMonster monster: MonsterList){
-            if(character.getX() > monster.getX()+23 || character.getX() < monster.getX()-23){
+    public boolean checkCollide() {
+        for (GameMonster monster : MonsterList) {
+            if (character.getX() > monster.getX() + 23 || character.getX() < monster.getX() - 23) {
                 continue;
-            }else if(character.getY() > monster.getY()+23 || character.getY() < monster.getY()-23){
+            } else if (character.getY() > monster.getY() + 23 || character.getY() < monster.getY() - 23) {
                 continue;
-            }else{
-                if(!monster.isKilled()){
-                    switch (character.life){
+            } else {
+                if (!monster.isKilled()) {
+                    switch (character.life) {
                         case 2:
-                            if(_life1 != null){
+                            if (_life1 != null) {
                                 _life1.release();
                                 _life1 = null;
                             }
                             break;
                         case 1:
-                            if(_life2 != null) {
+                            if (_life2 != null) {
                                 _life2.release();
                                 _life2 = null;
                             }
                             break;
                         case 0:
-                            if(_life3 != null) {
+                            if (_life3 != null) {
                                 _life3.release();
                                 _life3 = null;
                             }
                             break;
+                        }
+                        return true;
                     }
-                    return true;
                 }
             }
-        }
         return false;
     }
 
-    private void checkState(){
-        int i = 0;
-        for(GameMonster monster: MonsterList){
-            if(!monster.isKilled()){ i += 1; }
+        private void checkState () {
+            int i = 0;
+            for (GameMonster monster : MonsterList) {
+                if (!monster.isKilled()) {
+                    i += 1;
+                }
+            }
+            if (i == 0) {
+                _scores.setValue(monsterBuilder.checkScore() + currentScore);
+                changelevel.put("score", _scores.getValue());
+                changeState(Game.CHANGE_STATE, changelevel);
+            }
+            if (character.dead) {
+                changelevel.put("score", currentScore);
+                changeState(Game.OVER_STATE, changelevel);
+            }
         }
-        if(i == 0){
-            _scores.setValue(monsterBuilder.checkScore() + currentScore);
-            changelevel.put("score", _scores.getValue());
-            changeState(Game.CHANGE_STATE, changelevel);
+
+        private void showLife () {
+            _black1.show();
+            _black2.show();
+            _black3.show();
+            if (_life1 != null) {
+                _life1.show();
+            }
+            if (_life2 != null) {
+                _life2.show();
+            }
+            if (_life3 != null) {
+                _life3.show();
+            }
         }
-        if(character.dead){
-            changelevel.put("score", currentScore);
-            changeState(Game.OVER_STATE, changelevel);
+
+        private void showLevelBeginWords () {
+            s.show();
+            t.show();
+            a.show();
+            g.show();
+            e.show();
+            level.show();
+        }
+
+        private void levelBeginWordsAnimationPlay () {
+            if (beginWordsAnimationCount > 0) {
+                if (beginWordsAnimationCount <= 30 && s != null && s.getX() > 271) {
+                    s.setLocation(s.getX() - 15, s.getY());
+                }
+                if (beginWordsAnimationCount <= 28 && t != null && t.getX() > 296) {
+                    t.setLocation(t.getX() - 15, t.getY());
+                }
+                if (beginWordsAnimationCount <= 26 && a != null && a.getX() > 321) {
+                    a.setLocation(a.getX() - 15, a.getY());
+                }
+                if (beginWordsAnimationCount <= 24 && g != null && g.getX() > 346) {
+                    g.setLocation(g.getX() - 15, g.getY());
+                }
+                if (beginWordsAnimationCount <= 22 && e != null && e.getX() > 371) {
+                    e.setLocation(e.getX() - 15, e.getY());
+                }
+                if (beginWordsAnimationCount <= 20 && level != null && level.getX() > 396) {
+                    level.setLocation(level.getX() - 15, level.getY());
+                }
+                beginWordsAnimationCount--;
+            } else if (beginWordsAnimationCount > -80) {
+                if (beginWordsAnimationCount <= -10 && s != null && s.getX() > -30) {
+                    s.setLocation(s.getX() - 15, s.getY());
+                }
+                if (beginWordsAnimationCount <= -12 && t != null && t.getX() > -30) {
+                    t.setLocation(t.getX() - 15, t.getY());
+                }
+                if (beginWordsAnimationCount <= -14 && a != null && a.getX() > -30) {
+                    a.setLocation(a.getX() - 15, a.getY());
+                }
+                if (beginWordsAnimationCount <= -16 && g != null && g.getX() > -30) {
+                    g.setLocation(g.getX() - 15, g.getY());
+                }
+                if (beginWordsAnimationCount <= -18 && e != null && e.getX() > -30) {
+                    e.setLocation(e.getX() - 15, e.getY());
+                }
+                if (beginWordsAnimationCount <= -20 && level != null && level.getX() > -30) {
+                    level.setLocation(level.getX() - 15, level.getY());
+                }
+                beginWordsAnimationCount--;
+            }
+
         }
     }
-
-    private void showLife(){
-        _black1.show();
-        _black2.show();
-        _black3.show();
-        if(_life1 != null){
-            _life1.show();
-        }
-        if(_life2 != null){
-            _life2.show();
-        }
-        if(_life3 != null) {
-            _life3.show();
-        }
-    }
-
-    private void showLevelBeginWords(){
-        s.show();
-        t.show();
-        a.show();
-        g.show();
-        e.show();
-        level.show();
-    }
-
-    private void levelBeginWordsAnimationPlay(){
-        if(beginWordsAnimationCount > 0){
-            if(beginWordsAnimationCount <= 30 && s != null && s.getX() > 271){
-                s.setLocation(s.getX()-15, s.getY());
-            }
-            if(beginWordsAnimationCount <= 28 && t != null && t.getX() > 296){
-                t.setLocation(t.getX()-15, t.getY());
-            }
-            if(beginWordsAnimationCount <= 26 && a != null && a.getX() > 321){
-                a.setLocation(a.getX()-15, a.getY());
-            }
-            if(beginWordsAnimationCount <= 24 && g != null && g.getX() > 346){
-                g.setLocation(g.getX()-15, g.getY());
-            }
-            if(beginWordsAnimationCount <= 22 && e != null && e.getX() > 371){
-                e.setLocation(e.getX()-15, e.getY());
-            }
-            if(beginWordsAnimationCount <= 20 && level != null && level.getX() > 396){
-                level.setLocation(level.getX()-15, level.getY());
-            }
-            beginWordsAnimationCount--;
-        }else if(beginWordsAnimationCount > -80){
-            if(beginWordsAnimationCount <= -10 && s != null && s.getX() > -30){
-                s.setLocation(s.getX()-15, s.getY());
-            }
-            if(beginWordsAnimationCount <= -12 && t != null && t.getX() > -30){
-                t.setLocation(t.getX()-15, t.getY());
-            }
-            if(beginWordsAnimationCount <= -14 && a != null && a.getX() > -30){
-                a.setLocation(a.getX()-15, a.getY());
-            }
-            if(beginWordsAnimationCount <= -16 && g != null && g.getX() > -30){
-                g.setLocation(g.getX()-15, g.getY());
-            }
-            if(beginWordsAnimationCount <= -18 && e != null && e.getX() > -30){
-                e.setLocation(e.getX()-15, e.getY());
-            }
-            if(beginWordsAnimationCount <= -20 && level != null && level.getX() > -30){
-                level.setLocation(level.getX()-15, level.getY());
-            }
-            beginWordsAnimationCount--;
-        }
-
-    }
-
-}
