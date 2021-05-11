@@ -32,8 +32,8 @@ public class StateOver extends AbstractGameState {
         Nextlevel.put("score", data.get("score"));
 
         addGameObject(_levelFailed = new MovingBitmap(R.drawable.levelfailed));
-        addGameObject(_background = new MovingBitmap(R.drawable.levelbackground1));
-        _background.setLocation(55,0);
+        addGameObject(_background = new MovingBitmap(R.drawable.levelbackground3));
+        _background.setLocation(0,0);
         _levelFailed.setLocation(249,80);
         initializeRestartButton();
         initializeEndButton();

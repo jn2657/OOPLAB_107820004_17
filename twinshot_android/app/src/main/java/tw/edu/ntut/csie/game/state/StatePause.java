@@ -31,8 +31,8 @@ public class StatePause extends AbstractGameState {
     public void initialize(Map<String, Object> data) {
         temp = (GameState) data.get("state");
         addGameObject(_pause = new MovingBitmap(R.drawable.paused));
-        addGameObject(_background = new MovingBitmap(R.drawable.levelbackground1));
-        _background.setLocation(55,0);
+        addGameObject(_background = new MovingBitmap(R.drawable.levelbackground3));
+        _background.setLocation(0,0);
         _pause.setLocation(300,80);
         initializeResumeButton();
         initializeEndButton();
