@@ -1,6 +1,5 @@
 package tw.edu.ntut.csie.game.state;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +13,8 @@ import tw.edu.ntut.csie.game.engine.GameEngine;
 import tw.edu.ntut.csie.game.extend.Integer;
 import tw.edu.ntut.csie.game.map.MapController;
 import tw.edu.ntut.csie.game.map.GameMap;
-import tw.edu.ntut.csie.game.monster.Monster;
+import tw.edu.ntut.csie.game.monster.GameMonster;
+import tw.edu.ntut.csie.game.monster.Monster1;
 import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 
 
@@ -23,7 +23,7 @@ public class StateRun extends GameState {
     private MovingBitmap _background, _button, _message, _pauseButton;
     private GameMap gameMap;
     private MonsterBuilder monsterBuilder;
-    private List<Monster> MonsterList;
+    private List<GameMonster> MonsterList;
 
     private Character character;
     private MovingBitmap _life1, _life2, _life3;
@@ -31,7 +31,7 @@ public class StateRun extends GameState {
     private MovingBitmap s, t, a, g, e, level;
 
     private Integer _scores;
-    private int currentLevel, currentScore, beginWordsAnimationCount;
+    private int currentScore, beginWordsAnimationCount;
 
     private boolean _grab;
     public boolean pausing;
@@ -49,8 +49,7 @@ public class StateRun extends GameState {
         MapController mapController = new MapController();
         mapController.initialize();
         if(data != null){
-            currentLevel = (int) data.get("level");
-            gameMap = mapController.goToLevel(currentLevel);
+            gameMap = mapController.goToLevel((int) data.get("level"));
             currentScore = (int) data.get("score");
         }else{
             gameMap = mapController.FirstLevel();
@@ -263,8 +262,6 @@ public class StateRun extends GameState {
             _grab = true;
         }else{
             _grab = false;
-
-
             if(_pointer1 == null){
                 _pointer1 = actionPointer;
             }else if(_pointer2 == null){
@@ -339,13 +336,13 @@ public class StateRun extends GameState {
     }
 
     public boolean checkCollide(){
-        for(Monster monster: MonsterList){
+        for(GameMonster monster: MonsterList){
             if(character.getX() > monster.getX()+23 || character.getX() < monster.getX()-23){
-                return false;
+                continue;
             }else if(character.getY() > monster.getY()+23 || character.getY() < monster.getY()-23){
-                return false;
+                continue;
             }else{
-                if(!monster.iskilled){
+                if(!monster.isKilled()){
                     switch (character.life){
                         case 2:
                             if(_life1 != null){
@@ -375,8 +372,8 @@ public class StateRun extends GameState {
 
     private void checkState(){
         int i = 0;
-        for(Monster monster: MonsterList){
-            if(!monster.iskilled){ i += 1; }
+        for(GameMonster monster: MonsterList){
+            if(!monster.isKilled()){ i += 1; }
         }
         if(i == 0){
             _scores.setValue(monsterBuilder.checkScore() + currentScore);
@@ -434,7 +431,7 @@ public class StateRun extends GameState {
                 level.setLocation(level.getX()-15, level.getY());
             }
             beginWordsAnimationCount--;
-        }else if(beginWordsAnimationCount > -80 && beginWordsAnimationCount <= 0){
+        }else if(beginWordsAnimationCount > -80){
             if(beginWordsAnimationCount <= -10 && s != null && s.getX() > -30){
                 s.setLocation(s.getX()-15, s.getY());
             }

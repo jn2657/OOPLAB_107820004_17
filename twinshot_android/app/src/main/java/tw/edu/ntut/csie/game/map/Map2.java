@@ -1,14 +1,13 @@
 package tw.edu.ntut.csie.game.map;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
+import tw.edu.ntut.csie.game.monster.GameMonster;
 import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 import tw.edu.ntut.csie.game.state.Arrow;
-import tw.edu.ntut.csie.game.monster.Monster;
 
 public class Map2 implements GameObject, GameMap {
     private MovingBitmap block;
@@ -235,7 +234,7 @@ public class Map2 implements GameObject, GameMap {
     }
 
     @Override
-    public List<Monster> getMonsterList(){
+    public List<GameMonster> getMonsterList(){
         return monsterBuilder.getMonsterList();
     }
 

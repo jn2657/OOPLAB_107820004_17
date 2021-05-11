@@ -3,37 +3,43 @@ package tw.edu.ntut.csie.game.monster;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.extend.Animation;
 
-public class Monster2 extends Animation {
+public class Monster2 extends Animation implements GameMonster{
     private Animation monster;
     public boolean iskilled;
     private int step;
+    private int initStep;
     private int direction;
     private double speed;
-    private boolean godMode;
     boolean turned;
-    private int jumpStep, fallStep;
+    private int jumpStep;
+    private int fallStep;
 
     public Monster2() {
         monster = new Animation();
         monster.setLocation(0, 0);
-        monster.addFrame(R.drawable.monster1_1);
-        monster.addFrame(R.drawable.monster1_2);
-        monster.addFrame(R.drawable.monster1_3);
-        monster.addFrame(R.drawable.monster1_shot1); //3
-        monster.addFrame(R.drawable.monster1_shot2);
-        monster.addFrame(R.drawable.monster1_shot3);
-        monster.addFrame(R.drawable.monster1_shot4);
-        monster.addFrame(R.drawable.monster1_shot5);
-        monster.addFrame(R.drawable.monster1_shot6);
-        monster.addFrame(R.drawable.monster1_shot7);
-        monster.addFrame(R.drawable.monster1_shot8);
-        monster.addFrame(R.drawable.monster1_shot9);
-        monster.addFrame(R.drawable.monster1_shot10); //12
-        monster.addFrame(R.drawable.monster1_shot11);
-        monster.addFrame(R.drawable.monster1_shot12);
-        monster.addFrame(R.drawable.monster1_shot13);
-        monster.addFrame(R.drawable.monster1_shot14);
-        monster.addFrame(R.drawable.d1); //17
+        monster.addFrame(R.drawable.monsterleft1);
+        monster.addFrame(R.drawable.monsterleft2);
+        monster.addFrame(R.drawable.monsterleft3);
+        monster.addFrame(R.drawable.monsterleft4);
+        monster.addFrame(R.drawable.monsterleft5);
+        monster.addFrame(R.drawable.monsterleft6);
+        monster.addFrame(R.drawable.monsterleft7);
+        monster.addFrame(R.drawable.monsterleft8);
+        monster.addFrame(R.drawable.monsterleft9);
+        monster.addFrame(R.drawable.monsterleft10);
+        monster.addFrame(R.drawable.monsterleft11);
+        monster.addFrame(R.drawable.monsterright1);
+        monster.addFrame(R.drawable.monsterright2);
+        monster.addFrame(R.drawable.monsterright3);
+        monster.addFrame(R.drawable.monsterright4);
+        monster.addFrame(R.drawable.monsterright5);
+        monster.addFrame(R.drawable.monsterright6);
+        monster.addFrame(R.drawable.monsterright7);
+        monster.addFrame(R.drawable.monsterright8);
+        monster.addFrame(R.drawable.monsterright9);
+        monster.addFrame(R.drawable.monsterright10);
+        monster.addFrame(R.drawable.monsterright11);
+        monster.addFrame(R.drawable.d1);
         monster.addFrame(R.drawable.d2);
         monster.addFrame(R.drawable.d3);
         monster.addFrame(R.drawable.d4);
@@ -61,18 +67,22 @@ public class Monster2 extends Animation {
         monster.setDelay(2);
     }
 
-
-    public void initialize() {
+    public void initialize(int monsterStep) {
         iskilled = false;
-        step = 30;
+        step = monsterStep;
+        initStep = monsterStep;
         jumpStep = 5;
-//        fallStep = 30;
+        fallStep = 30;
         direction = 0;
         turned = false;
     }
 
     public void setIskilled() {
         iskilled = true;
+    }
+
+    public boolean isKilled() {
+        return iskilled;
     }
 
     public void setLocation(int x, int y) {
@@ -87,11 +97,13 @@ public class Monster2 extends Animation {
         return monster.getY();
     }
 
+    @Override
     public void release() {
         monster.release();
         monster = null;
     }
 
+    @Override
     public void move() {
         if (monster != null) {
             monster.move();
@@ -99,6 +111,7 @@ public class Monster2 extends Animation {
         }
     }
 
+    @Override
     public void show() {
         monster.show();
     }
@@ -108,10 +121,10 @@ public class Monster2 extends Animation {
             speed = 2;
             if (step <= 0 && direction == 0) {
                 direction = 1;
-                step = 30;
+                step = initStep;
             } else if (step <= 0 && direction == 1) {
                 direction = 0;
-                step = 30;
+                step = initStep;
             } else {
                 if (direction == 0) {
                     monster.setLocation((int) (monster.getX() + speed), monster.getY());
@@ -130,7 +143,7 @@ public class Monster2 extends Animation {
             }
             speed = 5;
             if (jumpStep <= 0) {
-//                fallStep--;
+                fallStep--;
                 monster.setLocation(monster.getX(), (int) (monster.getY() + speed));
                 if (monster.getY() + speed >= 368){
                     monster.setVisible(false);

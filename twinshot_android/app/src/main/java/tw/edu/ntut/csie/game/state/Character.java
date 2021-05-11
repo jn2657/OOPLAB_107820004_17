@@ -24,7 +24,7 @@ public class Character implements GameObject {
     private int godModeCount, jumpHeight;
     private GameMap gameMap;
     private String direction;
-    private boolean jumping, falling, shooting, godMode;
+    private boolean jumping, falling, shooting, godMode, onArrow;
     public boolean dead;
 
 
@@ -87,6 +87,7 @@ public class Character implements GameObject {
 
     public void jump(int height){
         jumping = true;
+        onArrow = false;
         jumpHeight = height*5;
         if(timer == null){ timer = new Timer(); }
         timer.scheduleAtFixedRate(timerTask = new TimerTask() {
@@ -109,10 +110,16 @@ public class Character implements GameObject {
                             jumpHeight--;
                             if(checkIfLeftArrowOnWall(main.getX(), main.getY())){
                                 jumping = false;
+                                falling = false;
+                                onArrow = true;
+                                direction = "standingLeft";
                                 stopTimer();
                             }
                             if(checkIfRightArrowOnWall(main.getX(), main.getY())){
                                 jumping = false;
+                                falling = false;
+                                onArrow = true;
+                                direction = "standingRight";
                                 stopTimer();
                             }
 
@@ -120,6 +127,7 @@ public class Character implements GameObject {
                             System.out.println(main.getX()+","+main.getY());
                             jumping = false;
                             falling = false;
+                            onArrow = false;
                             stopTimer();
                         }
                     }
@@ -141,6 +149,15 @@ public class Character implements GameObject {
             arrowLeft.initializeLeft();
             arrowLeft.attack(main.getX(), main.getY(), 20);
             direction = "shootingLeft";
+        }
+    }
+
+    public void checkGravity(){
+        if(!jumping && onArrow){
+            if(!checkIfLeftArrowOnWall(main.getX(), main.getY()) && !checkIfRightArrowOnWall(main.getX(), main.getY())){
+                jump(0);
+                onArrow = false;
+            }
         }
     }
 
@@ -166,7 +183,7 @@ public class Character implements GameObject {
             }
         }
         animePlay(direction);
-        if(falling && main.getY() > 400){
+        if(main.getY() > 400){
             main.setLocation(main.getX(), 0);
         }
         if (!falling && main.getY() < 10){
@@ -175,6 +192,7 @@ public class Character implements GameObject {
         if (gameMap.superJump(main.getX(),main.getY())){
             jump(11);
         }
+        checkGravity();
     }
 
     @Override
@@ -311,11 +329,13 @@ public class Character implements GameObject {
     public boolean checkIfLeftArrowOnWall(int mainX, int mainY){
         int ArrowX;
         int ArrowY;
+        if(arrowLeft != null){
+            System.out.println("ArrowLeft: "+arrowLeft.getX()+","+arrowLeft.getY());
+            System.out.println("Main: "+mainX+","+(mainY+40));
+        }
         if(arrowLeft != null && arrowLeft.onWall){
             ArrowX = arrowLeft.getX();
             ArrowY = arrowLeft.getY();
-            System.out.println("ArrowLeft: "+ArrowX+","+ArrowY);
-            System.out.println("Main: "+mainX+","+(mainY+40));
             if(mainX+46 > ArrowX && mainX <= ArrowX+46 && mainY+40 < ArrowY && mainY+40 > ArrowY - 10){
                 return true;
             }

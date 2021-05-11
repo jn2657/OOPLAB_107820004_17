@@ -23,20 +23,11 @@ public class StateReady extends AbstractGameState {
 //    private BitmapButton _sound;
 
     private BitmapButton _play;
-    private BitmapButton _back1;
-    private BitmapButton _back2;
+    private BitmapButton _back1, _back2;
     private BitmapButton _startButton;
-    private BitmapButton _level1;
-    private BitmapButton _level2;
-    private BitmapButton _level3;
+    private BitmapButton _level1, _level2, _level3;
 
-    private boolean _showMode;
-    private boolean _showLevels;
-
-    private Map<String, Object> level1;
-    private Map<String, Object> level2;
-    private Map<String, Object> level3;
-
+    private Map<String, Object> level1, level2, level3;
     private Map<String, Object> chooseLevel;
 
     public StateReady(GameEngine engine) {
@@ -196,30 +187,19 @@ public class StateReady extends AbstractGameState {
      * @param showLevels ���About�e��
      */
     private void setVisibility(boolean showMode, boolean showLevels) {
-        _showMode = showMode;
-        _showLevels = showLevels;
-        boolean showMenu = !_showLevels && !_showMode;
+        boolean showMenu = !showLevels && !showMode;
         _background.setVisible(showMenu);
-        _mode.setVisible(_showMode);
-        _levels.setVisible(_showLevels);
+        _mode.setVisible(showMode);
+        _levels.setVisible(showLevels);
 
         _startButton.setVisible(showMenu);
-        _play.setVisible(_showMode);
-        _back1.setVisible(_showMode);
-        _back2.setVisible(_showLevels);
-        _level1.setVisible(_showLevels);
-        _level2.setVisible(_showLevels);
-        _level3.setVisible(_showLevels);
+        _play.setVisible(showMode);
+        _back1.setVisible(showMode);
+        _back2.setVisible(showLevels);
+        _level1.setVisible(showLevels);
+        _level2.setVisible(showLevels);
+        _level3.setVisible(showLevels);
     }
 
-//    private void setMap(){
-//        chooseLevel = new HashMap<>();
-//        MapController mc = new MapController();
-//        mc.initialize();
-//        List<GameMap> mapList= new ArrayList<>(mc.getMapList());
-//        for(GameMap map: mapList){
-//            chooseLevel.put("level"+map.getLevel(), map);
-//        }
-//    }
 }
 

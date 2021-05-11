@@ -1,29 +1,21 @@
 package tw.edu.ntut.csie.game.map;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
+import tw.edu.ntut.csie.game.monster.GameMonster;
 import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 import tw.edu.ntut.csie.game.state.Arrow;
-import tw.edu.ntut.csie.game.monster.Monster;
+import tw.edu.ntut.csie.game.monster.Monster1;
 
 public class Map3 implements GameObject, GameMap {
-    private MovingBitmap block;
-    private MovingBitmap block1;
-    private MovingBitmap block2;
-    private MovingBitmap block3;
-    private MovingBitmap block4;
-    private MovingBitmap pillar;
-    private MovingBitmap pillar1;
-    private MovingBitmap pillar2;
-    private MovingBitmap pillar3;
-    private Monster monster;
-    private List<Monster> MonsterList;
-    private MonsterBuilder monsterBuilder;
+    private MovingBitmap block, block1, block2, block3, block4;
+    private MovingBitmap pillar, pillar1, pillar2, pillar3;
     private MovingBitmap scores;
+    private List<GameMonster> MonsterList;
+    private MonsterBuilder monsterBuilder;
 
     private int[][] map = {
             {0,0,1,8,0,0,0,0,8,8,8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,8,1,0,0},
@@ -62,13 +54,9 @@ public class Map3 implements GameObject, GameMap {
         pillar2 = new MovingBitmap(R.drawable.pillar2);
         pillar3 = new MovingBitmap(R.drawable.pillar3);
         scores = new MovingBitmap(R.drawable.scores);
-//        MonsterList = new ArrayList<Monster>();
-//        monster = new Monster();
-//        monster.initialize(monsterStep);
-//        monster.setLocation(95, 130);
-//        MonsterList.add(monster);
         monsterBuilder = new MonsterBuilder();
         monsterBuilder.add(1, 200,95, 130);
+        MonsterList = monsterBuilder.getMonsterList();
         scores.setLocation(453,348);
     }
 
@@ -232,7 +220,7 @@ public class Map3 implements GameObject, GameMap {
     public boolean arrowEnable_left(int x, int y, Arrow arrow){// map and monster check
         int i = y/23;
         int j = x/23+1;
-        for(Monster monster: MonsterList){
+        for(GameMonster monster: MonsterList){
             if(monster != null){
                 if(x > monster.getX()+23 || x < monster.getX()){
                     continue;
@@ -257,7 +245,7 @@ public class Map3 implements GameObject, GameMap {
     public boolean arrowEnable_right(int x, int y, Arrow arrow){
         int i = y/23;
         int j = x/23+1;
-        for(Monster monster: MonsterList){
+        for(GameMonster monster: MonsterList){
             if(monster != null){
                 if(x+46 > monster.getX()+10 || x+46 < monster.getX()){
                     continue;
@@ -287,7 +275,7 @@ public class Map3 implements GameObject, GameMap {
             return false;
         }
     }
-    public List<Monster> getMonsterList(){
+    public List<GameMonster> getMonsterList(){
         return monsterBuilder.getMonsterList();
     }
 
