@@ -162,12 +162,4 @@ public class Monster extends Animation {
         }
     }
 
-    public boolean getScore(){
-        if(iskilled && addScoreCheck){
-            addScoreCheck = false;
-            return true;
-        }else{
-            return false;
-        }
-    }
 }

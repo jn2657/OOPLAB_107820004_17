@@ -15,40 +15,26 @@ import tw.edu.ntut.csie.game.map.GameMap;
 
 public class Character implements GameObject {
     private Animation main;
-    public Arrow arrowLeft;
-    public Arrow arrowRight;
+    public Arrow arrowLeft, arrowRight;
 
     private Timer timer;
     private TimerTask timerTask;
 
-    private int arrowMoveCount;
-    private int disppearCount;
-    private int jumpHeight;
-    public int life;
-    public int score;
-    private int count;
-    private int godModeCount;
+    public int life, score;
+    private int godModeCount, jumpHeight;
     private GameMap gameMap;
     private String direction;
-    private Handler handler;
-    private Runnable runnable;
-    private boolean jumping;
-    private boolean falling;
-    private boolean shooting;
-    private boolean godMode;
+    private boolean jumping, falling, shooting, godMode;
+    public boolean dead;
 
 
     public Character(){
         main = new Animation();
-        handler = null;
-        runnable = null;
         arrowLeft = null;
         arrowRight = null;
         timer = null;
         timerTask = null;
-        count = 0;
         jumpHeight = 5;
-        disppearCount = 10;
         godModeCount = 50;
         life = 3;
         score = 0;
@@ -56,6 +42,7 @@ public class Character implements GameObject {
         godMode = false;
         falling = false;
         shooting = false;
+        dead = false;
     }
 
     public void initialize(GameMap map){
@@ -98,13 +85,10 @@ public class Character implements GameObject {
         return jumping;
     }
 
-    public void jump(int j){
+    public void jump(int height){
         jumping = true;
-        jumpHeight = j;
-        jumpHeight *= 5;
-        if(timer == null){
-            timer = new Timer();
-        }
+        jumpHeight = height*5;
+        if(timer == null){ timer = new Timer(); }
         timer.scheduleAtFixedRate(timerTask = new TimerTask() {
             @Override
             public void run() {
@@ -117,20 +101,19 @@ public class Character implements GameObject {
                             jumpHeight = 0;
                         }
 
-                    }
-                    if(jumpHeight<=0){
+                    }else{
                         falling = true;
                         if(gameMap.isWalkable_down_left(main.getX(), main.getY()+5)){
-                            if(checkIfLeftArrowOnWall(main.getX(), main.getY()+5)){
-                                jumping = false;
-                                stopTimer();
-                            }
-                            if(checkIfRightArrowOnWall(main.getX(), main.getY()+5)){
-                                jumping = false;
-                                stopTimer();
-                            }
-                            main.setLocation(main.getX(), main.getY() + 5);
+                            main.setLocation(main.getX(), main.getY()+5);
                             jumpHeight--;
+                            if(checkIfLeftArrowOnWall(main.getX(), main.getY())){
+                                jumping = false;
+                                stopTimer();
+                            }
+                            if(checkIfRightArrowOnWall(main.getX(), main.getY())){
+                                jumping = false;
+                                stopTimer();
+                            }
 
                         }else{
                             jumping = false;
@@ -139,26 +122,22 @@ public class Character implements GameObject {
                         }
                     }
                 }
-
             }
-
         }, 100, 20);
-
     }
 
-
-    public void shot(){
+    public void shoot(){
         shooting = true;
-        if(direction.contains("right") || direction.contains("standingRight")){
+        if(direction.contains("Right")){
             arrowRight = new Arrow(gameMap);
             arrowRight.initializeRight();
-            arrowRight.attack(true, main.getX(), main.getY(), 20);
+            arrowRight.attack(main.getX(), main.getY(), 20);
             direction = "shootingRight";
         }
-        if(direction.contains("left") || direction.contains("standingLeft")){
+        if(direction.contains("Left")){
             arrowLeft = new Arrow(gameMap);
             arrowLeft.initializeLeft();
-            arrowLeft.attack(true, main.getX(), main.getY(), 20);
+            arrowLeft.attack(main.getX(), main.getY(), 20);
             direction = "shootingLeft";
         }
     }
@@ -190,12 +169,8 @@ public class Character implements GameObject {
     @Override
     public void show(){
         main.show();
-        if(arrowRight != null){
-            arrowRight.show();
-        }
-        if(arrowLeft != null){
-            arrowLeft.show();
-        }
+        if(arrowRight != null){ arrowRight.show(); }
+        if(arrowLeft != null){ arrowLeft.show(); }
     }
 
     @Override
@@ -240,26 +215,26 @@ public class Character implements GameObject {
             }
         }
         if(falling && !shooting){
-            if((s.contains("left") || s.contains("Left"))){
+            if(s.contains("Left")){
                 if(main.getCurrentFrameIndex() != 28){
                     main.setCurrentFrameIndex(28);
                 }
             }else{
                 main.setCurrentFrameIndex(29);
             }
-        }else if(jumping && !shooting && (s.contains("left") || s.contains("Left"))){
+        }else if(jumping && !shooting && s.contains("Left")){
             if(main.getCurrentFrameIndex() != 26){
                 main.setCurrentFrameIndex(26);
             }
-        }else if(jumping && !shooting && (s.contains("right") || s.contains("Right"))){
+        }else if(jumping && !shooting && s.contains("Right")){
             if(main.getCurrentFrameIndex() != 27){
                 main.setCurrentFrameIndex(27);
             }
-        }else if(s.equals("right")){
+        }else if(s.equals("Right")){
             if(main.getCurrentFrameIndex() >= 8 || main.getCurrentFrameIndex() < 2){
                 main.setCurrentFrameIndex(2);
             }
-        }else if(s.equals("left")){
+        }else if(s.equals("Left")){
             if(main.getCurrentFrameIndex() >= 17 || main.getCurrentFrameIndex() < 11){
                 main.setCurrentFrameIndex(11);
             }
@@ -303,16 +278,21 @@ public class Character implements GameObject {
         jumpHeight = 5;
     }
 
-    public void decreaseLife(){
-        life--;
-        jump(5);
-    }
-
     public void hurt(boolean collide){
         if(collide){
-            if(!godMode){
-                decreaseLife();
+            if(!godMode && life > 0){
+                jump(5);
                 godMode = true;
+                life--;
+            }
+        }
+        if(life == 0){
+            godMode = true;
+            if(main.getY() < 390){
+                main.setLocation(main.getX(), main.getY()+5);
+                if(main.getY() > 385){
+                    dead = true;
+                }
             }
         }
     }
@@ -323,7 +303,9 @@ public class Character implements GameObject {
         if(arrowLeft != null && arrowLeft.onWall){
             ArrowX = arrowLeft.getX();
             ArrowY = arrowLeft.getY();
-            if(mainX+46 > ArrowX && mainX+46 < ArrowX+46 && mainY+46 < ArrowY && mainY+46 > ArrowY - 10){
+            System.out.println("ArrowLeft: "+ArrowX+","+ArrowY);
+            System.out.println("Main: "+mainX+","+(mainY+40));
+            if(mainX+46 > ArrowX && mainX <= ArrowX+46 && mainY+40 < ArrowY && mainY+40 > ArrowY - 10){
                 return true;
             }
         }
@@ -336,7 +318,9 @@ public class Character implements GameObject {
         if(arrowRight != null && arrowRight.onWall){
             ArrowX = arrowRight.getX();
             ArrowY = arrowRight.getY();
-            if(mainX+46 > ArrowX && mainX+46 < ArrowX+46 && mainY+46 < ArrowY && mainY+46 > ArrowY - 30){
+            System.out.println("ArrowRight: "+ArrowX+","+ArrowY);
+            System.out.println("Main: "+mainX+","+(mainY+40));
+            if(mainX+46 > ArrowX && mainX <= ArrowX+46 && mainY+40 < ArrowY && mainY+40 > ArrowY - 10){
                 return true;
             }
         }

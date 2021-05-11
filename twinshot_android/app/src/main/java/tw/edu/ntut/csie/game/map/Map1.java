@@ -11,15 +11,10 @@ import tw.edu.ntut.csie.game.state.Arrow;
 import tw.edu.ntut.csie.game.monster.Monster;
 
 public class Map1 implements GameObject, GameMap {
-    private MovingBitmap block;
-    private MovingBitmap block1;
-    private MovingBitmap block2;
-    private MovingBitmap pillar;
-    private MovingBitmap pillar1;
-    private MovingBitmap pillar2;
-    private MovingBitmap pillar3;
-    private MonsterBuilder monsterBuilder;
+    private MovingBitmap block, block1, block2;
+    private MovingBitmap pillar, pillar1, pillar2, pillar3;
     private MovingBitmap scores;
+    private MonsterBuilder monsterBuilder;
 
     private int[][] map = {{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0},
