@@ -6,19 +6,18 @@ import java.util.TimerTask;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.extend.Animation;
 
-public class Monster extends Animation {
+public class Monster1 extends Animation implements GameMonster{
     private Animation monster;
     public boolean iskilled;
     private int step;
     private int initStep;
     private int direction;
     private double speed;
-    private boolean addScoreCheck;
     boolean turned;
     private int jumpStep;
     private int fallStep;
 
-    public Monster() {
+    public Monster1() {
         monster = new Animation();
         monster.setLocation(0, 0);
         monster.addFrame(R.drawable.monsterleft1);
@@ -78,12 +77,15 @@ public class Monster extends Animation {
         jumpStep = 5;
         fallStep = 30;
         direction = 0;
-        addScoreCheck = true;
         turned = false;
     }
 
     public void setIskilled() {
         iskilled = true;
+    }
+
+    public boolean isKilled() {
+        return iskilled;
     }
 
     public void setLocation(int x, int y) {
@@ -98,11 +100,13 @@ public class Monster extends Animation {
         return monster.getY();
     }
 
+    @Override
     public void release() {
         monster.release();
         monster = null;
     }
 
+    @Override
     public void move() {
         if (monster != null) {
             monster.move();
@@ -110,6 +114,7 @@ public class Monster extends Animation {
         }
     }
 
+    @Override
     public void show() {
         monster.show();
     }
