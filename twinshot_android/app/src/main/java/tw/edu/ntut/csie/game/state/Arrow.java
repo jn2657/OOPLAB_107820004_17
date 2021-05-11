@@ -37,7 +37,7 @@ public class Arrow extends Animation {
     public void initializeLeft(){
         arrow.addFrame(R.drawable.arrowleft);
         arrow.setDelay(2);
-        direction = "left";
+        direction = "Left";
         noPower = false;
         onWall = false;
     }
@@ -45,13 +45,13 @@ public class Arrow extends Animation {
     public void initializeRight(){
         arrow.addFrame(R.drawable.arrowright);
         arrow.setDelay(2);
-        direction = "right";
+        direction = "Right";
         noPower = false;
         onWall = false;
     }
 
-    public void attack(boolean state, int mainX, int mainY, int delay){
-        attack = state;
+    public void attack(int mainX, int mainY, int delay){
+        attack = true;
         arrow.setLocation(mainX, mainY+15);
         fallCount = delay;
         arrow.setVisible(true);
@@ -61,7 +61,7 @@ public class Arrow extends Animation {
 
     public void shot(){
         if(attack){
-            if(direction.contains("left") || direction.contains("standingLeft")){
+            if(direction.contains("Left") || direction.contains("standingLeft")){
                 if(gameMap.arrowEnable_left(arrow.getX()-20, arrow.getY(), this) && fallCount > 0 && !hitMonster){
                     arrow.setLocation(arrow.getX()-20, arrow.getY());
                     fallCount--;
@@ -90,7 +90,7 @@ public class Arrow extends Animation {
                     arrow.setLocation(600, arrow.getY());
                 }
             }
-            if(direction.contains("right") || direction.contains("standingRight")){
+            if(direction.contains("Right") || direction.contains("standingRight")){
                 if(gameMap.arrowEnable_right(arrow.getX()+20, arrow.getY(), this) && fallCount > 0 && !hitMonster){
                     arrow.setLocation(arrow.getX()+20, arrow.getY());
                     fallCount--;
@@ -123,6 +123,16 @@ public class Arrow extends Animation {
             }
         }
 
+    }
+
+    @Override
+    public int getX(){
+        return arrow.getX();
+    }
+
+    @Override
+    public int getY(){
+        return arrow.getY();
     }
 
     public boolean getAttackState(){

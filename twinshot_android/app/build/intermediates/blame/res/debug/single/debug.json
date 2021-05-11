@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_fallleft.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\fallleft.png"
     },
@@ -10,6 +11,18 @@
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mainright6.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\mainright6.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterdied10.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/monsterdied10.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_help.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/help.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_fallleft.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/fallleft.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_digit_4.png.flat",
@@ -60,6 +73,7 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\d1.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pause_pressed.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\pause_pressed.png"
     },
@@ -70,12 +84,25 @@
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_arrowright.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\arrowright.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_d7.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/d7.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_d24.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/d24.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterdied11.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/monsterdied11.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\button.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_main.xml.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\layout\\main.xml"
     },
@@ -86,6 +113,18 @@
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_monsterdied1.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\monsterdied1.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_digit_1.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/digit_1.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_about_info.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/about_info.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterleft6.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/monsterleft6.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shoot_right4_1.png.flat",
@@ -100,12 +139,29 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\monsterright10.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shoot_right3_1.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\shoot_right3_1.png"
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_monsterright2.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\monsterright2.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_endgame2_pressed.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/endgame2_pressed.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterright1.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/monsterright1.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_a.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/a.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_state_over.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/state_over.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shoot_right2_1.png.flat",
@@ -128,6 +184,7 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\flower1.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_d4.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\d4.png"
     },
@@ -138,14 +195,39 @@
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_monsterleft9.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\monsterleft9.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_mainright4.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/mainright4.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_digit_2.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/digit_2.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_arrow_left.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/arrow_left.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_message.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\message.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_monster1_shot3.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\monster1_shot3.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_three.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/three.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_endgame2.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/endgame2.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterdied1.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/monsterdied1.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_door.png.flat",
@@ -164,6 +246,7 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\monster1_3.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_digit_3.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\digit_3.png"
     },
@@ -174,6 +257,18 @@
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_digit_6.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\digit_6.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_mainright1.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/mainright1.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterleft11.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/monsterleft11.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_menu_pressed.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/menu_pressed.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_complete.png.flat",
@@ -220,6 +315,7 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\exit.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_options_pressed.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\options_pressed.png"
     },
@@ -230,6 +326,18 @@
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_help.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\help.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/raw_ntut.mid.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/raw/ntut.mid"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_mainleft1.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/mainleft1.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_d19.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/d19.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mainright3.png.flat",
@@ -300,6 +408,7 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\pillar1_1.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mainleft3.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\mainleft3.png"
     },
@@ -310,14 +419,35 @@
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_monsterdied4.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\monsterdied4.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_message.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/message.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_flower4.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/flower4.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterleft5.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/monsterleft5.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_digit_2.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\digit_2.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mainright.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\mainright.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_s.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/s.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_d22.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/d22.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pillar1.png.flat",
@@ -336,8 +466,17 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\d23.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_play.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\play.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_two.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/two.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterdied8.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/monsterdied8.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_monster1_2.png.flat",
@@ -368,8 +507,17 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\state_over.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_state_ready.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\state_ready.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_levelfailed.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/levelfailed.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_clickstart.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/clickstart.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_start_pressed.png.flat",
@@ -384,20 +532,38 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\mainleft4.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_digit_10.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\digit_10.png"
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_flower3.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\flower3.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_g.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/g.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_digit_7.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/digit_7.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_d6.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\d6.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_monsterleft2.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\monsterleft2.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_mainleft6.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/mainleft6.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_back.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/back.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_block.png.flat",
@@ -448,6 +614,7 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\block3.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_d13.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\d13.png"
     },
@@ -466,6 +633,30 @@
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_d9.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\d9.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_digit_5.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/digit_5.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_mainleft7.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/mainleft7.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_pillar4.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/pillar4.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterdied9.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/monsterdied9.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_sound_off.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/sound_off.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_restartlevel_pressed.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/restartlevel_pressed.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_statechange_background.png.flat",
@@ -516,8 +707,17 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\d12.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_flower5.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\flower5.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_restartlevel.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/restartlevel.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_jumpleft.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/jumpleft.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_block4.png.flat",
@@ -540,8 +740,17 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\flower4.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_digit_9.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\digit_9.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_t.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/t.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_mainleft4.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/mainleft4.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_d7.png.flat",
@@ -576,6 +785,7 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\d11.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_monsterright8.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\monsterright8.png"
     },
@@ -586,14 +796,31 @@
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_pillar3.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\pillar3.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_background1.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/background1.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_block1.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/block1.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_d14.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\d14.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_d17.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\d17.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_options_pressed.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/options_pressed.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterright4.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/monsterright4.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_monsterright5.png.flat",
@@ -608,6 +835,7 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\monsterdied3.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shoot_right2.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\shoot_right2.png"
     },
@@ -618,6 +846,18 @@
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_jumpright.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\jumpright.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_resume.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/resume.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_monsterleft10.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/monsterleft10.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_menu.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/menu.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_level2.png.flat",
@@ -684,8 +924,17 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\clickstart.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_shoot_right3.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\shoot_right3.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_e.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/e.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_shoot_right2_1.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/shoot_right2_1.png"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     },
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_options.png.flat",
@@ -764,6 +1013,7 @@
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\mainright7.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_arrow_right.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\arrow_right.png"
     },
@@ -806,5 +1056,13 @@
     {
         "merged": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_monsterdied12.png.flat",
         "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\drawable\\monsterdied12.png"
+=======
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/drawable_one.png.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/drawable/one.png"
+    },
+    {
+        "merged": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/res/merged/debug/layout_main.xml.flat",
+        "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/layout/main.xml"
+>>>>>>> ef54fae88a7c6b4fdacf048947a280e8099622be
     }
 ]

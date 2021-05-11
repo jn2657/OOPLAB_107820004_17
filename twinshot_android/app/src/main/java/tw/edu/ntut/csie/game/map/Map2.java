@@ -21,7 +21,6 @@ public class Map2 implements GameObject, GameMap {
     private MovingBitmap pillar4;
     private MonsterBuilder monsterBuilder;
     private MovingBitmap scores;
-    private int monsterStep = 110;
 
     private int[][] map = {
             {0,0,1,1,3,1,1,3,1,1,3,3,2,2,1,3,3,1,1,1,3,1,2,3,1,1,1,0,0},

@@ -7,13 +7,11 @@ public class Monster2 extends Animation {
     private Animation monster;
     public boolean iskilled;
     private int step;
-    private int initStep;
     private int direction;
     private double speed;
-    private boolean addScoreCheck;
+    private boolean godMode;
     boolean turned;
-    private int jumpStep;
-    private int fallStep;
+    private int jumpStep, fallStep;
 
     public Monster2() {
         monster = new Animation();
@@ -63,14 +61,13 @@ public class Monster2 extends Animation {
         monster.setDelay(2);
     }
 
-    public void initialize(int monsterStep) {
+
+    public void initialize() {
         iskilled = false;
-        step = monsterStep;
-        initStep = monsterStep;
+        step = 30;
         jumpStep = 5;
-        fallStep = 30;
+//        fallStep = 30;
         direction = 0;
-        addScoreCheck = true;
         turned = false;
     }
 
@@ -111,10 +108,10 @@ public class Monster2 extends Animation {
             speed = 2;
             if (step <= 0 && direction == 0) {
                 direction = 1;
-                step = initStep;
+                step = 30;
             } else if (step <= 0 && direction == 1) {
                 direction = 0;
-                step = initStep;
+                step = 30;
             } else {
                 if (direction == 0) {
                     monster.setLocation((int) (monster.getX() + speed), monster.getY());
@@ -133,7 +130,7 @@ public class Monster2 extends Animation {
             }
             speed = 5;
             if (jumpStep <= 0) {
-                fallStep--;
+//                fallStep--;
                 monster.setLocation(monster.getX(), (int) (monster.getY() + speed));
                 if (monster.getY() + speed >= 368){
                     monster.setVisible(false);
@@ -156,12 +153,4 @@ public class Monster2 extends Animation {
         }
     }
 
-    public boolean getScore(){
-        if(iskilled && addScoreCheck){
-            addScoreCheck = false;
-            return true;
-        }else{
-            return false;
-        }
-    }
 }

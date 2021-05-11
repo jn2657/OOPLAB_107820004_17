@@ -24,7 +24,6 @@ public class Map3 implements GameObject, GameMap {
     private List<Monster> MonsterList;
     private MonsterBuilder monsterBuilder;
     private MovingBitmap scores;
-    private int monsterStep = 200;
 
     private int[][] map = {
             {0,0,1,8,0,0,0,0,8,8,8,8,8,8,8,8,8,8,8,8,8,0,0,0,0,8,1,0,0},
