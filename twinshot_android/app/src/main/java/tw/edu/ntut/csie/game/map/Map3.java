@@ -55,7 +55,7 @@ public class Map3 implements GameObject, GameMap {
         pillar3 = new MovingBitmap(R.drawable.pillar3);
         scores = new MovingBitmap(R.drawable.scores);
         monsterBuilder = new MonsterBuilder();
-        monsterBuilder.add(1, 200,95, 130);
+        monsterBuilder.add(3, 200,95, 130);
         MonsterList = monsterBuilder.getMonsterList();
         scores.setLocation(453,348);
     }

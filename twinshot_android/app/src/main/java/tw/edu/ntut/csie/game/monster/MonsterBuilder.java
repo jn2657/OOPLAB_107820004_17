@@ -26,6 +26,12 @@ public class MonsterBuilder {
                 m2.setLocation(x, y);
                 MonsterList.add(m2);
                 break;
+            case 3:
+                GameMonster m3 = new Monster3();
+                m3.initialize(monsterStep);
+                m3.setLocation(x, y);
+                MonsterList.add(m3);
+                break;
             default:
                 break;
         }
