@@ -19,7 +19,7 @@ import tw.edu.ntut.csie.game.monster.MonsterBuilder;
 
 public class StateRun extends GameState {
     public static final int DEFAULT_SCORE_DIGITS = 4;
-    private MovingBitmap _background, _button, _message, _pauseButton;
+    private MovingBitmap _background, _button, _message, _message_attack, _message_jump, _pauseButton;
     private GameMap gameMap;
     private MonsterBuilder monsterBuilder;
     private List<GameMonster> MonsterList;
@@ -57,7 +57,9 @@ public class StateRun extends GameState {
 
         _background = new MovingBitmap(R.drawable.levelbackground3);
         _background.setLocation(0, 0);
-        _message = new MovingBitmap(R.drawable.message, 130, 150);
+        _message = new MovingBitmap(R.drawable.message_move, 130, 150);
+        _message_attack = new MovingBitmap(R.drawable.message_attack, 490, 60);
+        _message_jump = new MovingBitmap(R.drawable.message_jump, 490, 230);
         s = new MovingBitmap(R.drawable.s);
         t = new MovingBitmap(R.drawable.t);
         a = new MovingBitmap(R.drawable.a);
@@ -149,6 +151,8 @@ public class StateRun extends GameState {
         character.show();
         if (gameMap.getLevel() == 1) {
             _message.show();
+            _message_attack.show();
+            _message_jump.show();
         }
         _button.show();
         gameMap.show();
@@ -165,6 +169,8 @@ public class StateRun extends GameState {
         _button.release();
         character.release();
         _message.release();
+        _message_attack.release();
+        _message_jump.release();
         _music.release();
         gameMap.release();
         _pauseButton.release();
@@ -195,6 +201,8 @@ public class StateRun extends GameState {
         _button = null;
         character = null;
         _message = null;
+        _message_attack = null;
+        _message_jump = null;
         _music = null;
         gameMap = null;
         _pauseButton = null;
@@ -239,6 +247,8 @@ public class StateRun extends GameState {
     @Override
     public boolean pointerPressed(Pointer actionPointer, List<Pointer> pointers) {
         _message.setVisible(false);
+        _message_attack.setVisible(false);
+        _message_jump.setVisible(false);
         int touchX = actionPointer.getX();
         int touchY = actionPointer.getY();
         if (touchX > 560 && touchX < 590 && touchY < 20) {

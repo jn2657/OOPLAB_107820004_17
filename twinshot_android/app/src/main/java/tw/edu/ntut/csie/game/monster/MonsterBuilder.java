@@ -12,23 +12,23 @@ public class MonsterBuilder {
         MonsterList = new ArrayList<>();
     }
 
-    public void add(int monsterNum, int monsterStep, int x, int y){
+    public void add(int monsterNum, int monsterStep, int x, int y, int height){
         switch (monsterNum){
             case 1:
                 GameMonster m = new Monster1();
-                m.initialize(monsterStep);
+                m.initialize(monsterStep, height);
                 m.setLocation(x, y);
                 MonsterList.add(m);
                 break;
             case 2:
                 GameMonster m2 = new Monster2();
-                m2.initialize(monsterStep);
+                m2.initialize(monsterStep, height);
                 m2.setLocation(x, y);
                 MonsterList.add(m2);
                 break;
             case 3:
                 GameMonster m3 = new Monster3();
-                m3.initialize(monsterStep);
+                m3.initialize(monsterStep, height);
                 m3.setLocation(x, y);
                 MonsterList.add(m3);
                 break;
@@ -68,7 +68,6 @@ public class MonsterBuilder {
             }else{
                 if(!arrow.noPower){
                     if (!(monster instanceof Monster2)){
-                        System.out.println("true");
                         monster.setIskilled();
                         arrow.hitMonster = true;
                         return true;
@@ -76,10 +75,7 @@ public class MonsterBuilder {
                         ((Monster2) monster).setGodMode();
                         arrow.hitMonster = true;
                         if(((Monster2) monster).getFirstShot()) {
-//                            ((Monster2) monster).setFirstShot();
-                            System.out.println("false");
                             monster.setIskilled();
-//                        continue;
                             return true;
                         }
                         return false;
@@ -99,7 +95,6 @@ public class MonsterBuilder {
             }else{
                 if(!arrow.noPower){
                     if (!(monster instanceof Monster2)){
-                        System.out.println("true");
                         monster.setIskilled();
                         arrow.hitMonster = true;
                         return true;
@@ -107,10 +102,7 @@ public class MonsterBuilder {
                         ((Monster2) monster).setGodMode();
                         arrow.hitMonster = true;
                         if(((Monster2) monster).getFirstShot()) {
-//                            ((Monster2) monster).setFirstShot();
-                            System.out.println("false");
                             monster.setIskilled();
-//                        continue;
                             return true;
                         }
                         return false;

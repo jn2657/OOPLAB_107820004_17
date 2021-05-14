@@ -11,7 +11,7 @@ public class Monster3 extends Animation implements GameMonster {
     private int direction;
     private double speed;
     boolean turned;
-    private int jumpStep;
+    private int jumpStep, basicHeight;
     private int fallStep;
 
     public Monster3() {
@@ -65,10 +65,11 @@ public class Monster3 extends Animation implements GameMonster {
         monster.setDelay(2);
     }
 
-    public void initialize(int monsterStep) {
+    public void initialize(int monsterStep, int height) {
         iskilled = false;
         step = monsterStep;
         initStep = monsterStep;
+        basicHeight = height;
         jumpStep = 5;
         fallStep = 30;
         direction = 0;
@@ -106,6 +107,7 @@ public class Monster3 extends Animation implements GameMonster {
         if (monster != null) {
             monster.move();
             animePlay();
+            adjustHeight();
         }
     }
 
@@ -160,6 +162,17 @@ public class Monster3 extends Animation implements GameMonster {
                 if (monster.getCurrentFrameIndex() >= 10) {
                     monster.setCurrentFrameIndex(0);
                 }
+            }
+        }
+    }
+
+    public void adjustHeight(){ //need to be customized
+        if(!iskilled) {
+            if(monster.getCurrentFrameIndex() ==5 || monster.getCurrentFrameIndex() == 6 ||
+            monster.getCurrentFrameIndex() == 15 || monster.getCurrentFrameIndex() == 16){
+                monster.setLocation(monster.getX(), basicHeight - monster.getHeight()-20);
+            }else{
+                monster.setLocation(monster.getX(), basicHeight - monster.getHeight());
             }
         }
     }

@@ -14,7 +14,6 @@ public class Map3 implements GameObject, GameMap {
     private MovingBitmap block, block1, block2, block3, block4;
     private MovingBitmap pillar, pillar1, pillar2, pillar3;
     private MovingBitmap scores;
-    private List<GameMonster> MonsterList;
     private MonsterBuilder monsterBuilder;
 
     private int[][] map = {
@@ -55,8 +54,7 @@ public class Map3 implements GameObject, GameMap {
         pillar3 = new MovingBitmap(R.drawable.pillar3);
         scores = new MovingBitmap(R.drawable.scores);
         monsterBuilder = new MonsterBuilder();
-        monsterBuilder.add(3, 200,95, 130);
-        MonsterList = monsterBuilder.getMonsterList();
+        monsterBuilder.add(3, 200,95, 130, 160);
         scores.setLocation(453,348);
     }
 
@@ -226,16 +224,12 @@ public class Map3 implements GameObject, GameMap {
     public boolean arrowEnable_right(int x, int y, Arrow arrow){
         int i = y/23;
         int j = x/23+1;
-        return !monsterBuilder.shootingMonster_Left(x, y, arrow) && map[i][j] == 0;
+        return !monsterBuilder.shootingMonster_Right(x, y, arrow) && map[i][j] == 0;
     }
 
     @Override
     public boolean superJump(int x, int y) {
-        if (y <= 161-43 && y >= 115 && ((x > 506 || x < 120))){
-            return true;
-        }else {
-            return false;
-        }
+        return y <= 161 - 43 && y >= 115 && ((x > 506 || x < 120));
     }
     public List<GameMonster> getMonsterList(){
         return monsterBuilder.getMonsterList();
