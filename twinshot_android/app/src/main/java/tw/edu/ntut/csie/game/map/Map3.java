@@ -55,7 +55,7 @@ public class Map3 implements GameObject, GameMap {
         pillar3 = new MovingBitmap(R.drawable.pillar3);
         scores = new MovingBitmap(R.drawable.scores);
         monsterBuilder = new MonsterBuilder();
-        monsterBuilder.add(3, 200,95, 130);
+        monsterBuilder.add(3, 200,95, 130, 160);
         MonsterList = monsterBuilder.getMonsterList();
         scores.setLocation(453,348);
     }
@@ -226,7 +226,7 @@ public class Map3 implements GameObject, GameMap {
     public boolean arrowEnable_right(int x, int y, Arrow arrow){
         int i = y/23;
         int j = x/23+1;
-        return !monsterBuilder.shootingMonster_Left(x, y, arrow) && map[i][j] == 0;
+        return !monsterBuilder.shootingMonster_Right(x, y, arrow) && map[i][j] == 0;
     }
 
     @Override

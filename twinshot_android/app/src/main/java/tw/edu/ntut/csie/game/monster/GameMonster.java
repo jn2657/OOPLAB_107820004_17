@@ -1,7 +1,7 @@
 package tw.edu.ntut.csie.game.monster;
 
 public interface GameMonster {
-    public void initialize(int monsterStep);
+    public void initialize(int monsterStep, int height);
     public void setIskilled();
     public boolean isKilled();
     public void setLocation(int x, int y);

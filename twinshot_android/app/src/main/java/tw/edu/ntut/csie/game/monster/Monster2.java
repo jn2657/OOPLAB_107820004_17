@@ -14,7 +14,7 @@ public class Monster2 extends Animation implements GameMonster {
     private int jumpStep, fallStep;
     private boolean firstShot, godMode;
     private boolean shotAgain;
-    private int stay;
+    private int stay, basicHeight;
     private int initY;
 
     public Monster2() {
@@ -66,10 +66,11 @@ public class Monster2 extends Animation implements GameMonster {
         monster.setDelay(2);
     }
 
-    public void initialize(int monsterStep) {
+    public void initialize(int monsterStep, int height) {
         iskilled = false;
         step = monsterStep;
         initStep = monsterStep;
+        basicHeight = height;
         jumpStep = 5;
         fallStep = 30;
         direction = 0;
@@ -119,6 +120,7 @@ public class Monster2 extends Animation implements GameMonster {
         if (monster != null) {
             monster.move();
             animePlay();
+            adjustHeight();
         }
     }
 
@@ -199,8 +201,7 @@ public class Monster2 extends Animation implements GameMonster {
         }
     }
 
-//    public void growUp(){
-//        if()
-//        monster.setLocation(monster.getX(), initY + 3);
-//    }
+    public void adjustHeight(){
+        monster.setLocation(monster.getX(), basicHeight-monster.getHeight());
+    }
 }
