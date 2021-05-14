@@ -167,7 +167,14 @@ public class Monster3 extends Animation implements GameMonster {
     }
 
     public void adjustHeight(){ //need to be customized
-        monster.setLocation(monster.getX(), basicHeight-monster.getHeight());
+        if(!iskilled) {
+            if(monster.getCurrentFrameIndex() ==5 || monster.getCurrentFrameIndex() == 6 ||
+            monster.getCurrentFrameIndex() == 15 || monster.getCurrentFrameIndex() == 16){
+                monster.setLocation(monster.getX(), basicHeight - monster.getHeight()-20);
+            }else{
+                monster.setLocation(monster.getX(), basicHeight - monster.getHeight());
+            }
+        }
     }
 
 }

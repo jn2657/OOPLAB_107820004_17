@@ -14,7 +14,6 @@ public class Map3 implements GameObject, GameMap {
     private MovingBitmap block, block1, block2, block3, block4;
     private MovingBitmap pillar, pillar1, pillar2, pillar3;
     private MovingBitmap scores;
-    private List<GameMonster> MonsterList;
     private MonsterBuilder monsterBuilder;
 
     private int[][] map = {
@@ -56,7 +55,6 @@ public class Map3 implements GameObject, GameMap {
         scores = new MovingBitmap(R.drawable.scores);
         monsterBuilder = new MonsterBuilder();
         monsterBuilder.add(3, 200,95, 130, 160);
-        MonsterList = monsterBuilder.getMonsterList();
         scores.setLocation(453,348);
     }
 
@@ -231,11 +229,7 @@ public class Map3 implements GameObject, GameMap {
 
     @Override
     public boolean superJump(int x, int y) {
-        if (y <= 161-43 && y >= 115 && ((x > 506 || x < 120))){
-            return true;
-        }else {
-            return false;
-        }
+        return y <= 161 - 43 && y >= 115 && ((x > 506 || x < 120));
     }
     public List<GameMonster> getMonsterList(){
         return monsterBuilder.getMonsterList();
