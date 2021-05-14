@@ -20,7 +20,7 @@ public class Monster3 extends Animation implements GameMonster {
         monster.addFrame(R.drawable.monster2_left1);
         monster.addFrame(R.drawable.monster2_left2);
         monster.addFrame(R.drawable.monster2_left3);
-        monster.addFrame(R.drawable.monster2_left4);
+        monster.addFrame(R.drawable.monster2_left4); //3
         monster.addFrame(R.drawable.monster2_left5);
         monster.addFrame(R.drawable.monster2_left6);
         monster.addFrame(R.drawable.monster2_left7);
