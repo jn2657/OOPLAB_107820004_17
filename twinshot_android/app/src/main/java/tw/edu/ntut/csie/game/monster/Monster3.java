@@ -6,13 +6,10 @@ import tw.edu.ntut.csie.game.extend.Animation;
 public class Monster3 extends Animation implements GameMonster {
     private Animation monster;
     public boolean iskilled;
-    private int step;
-    private int initStep;
     private int direction;
     private double speed;
     boolean turned;
-    private int jumpStep, basicHeight;
-    private int fallStep;
+    private int step, initStep, jumpStep, fallStep, basicHeight;
 
     public Monster3() {
         monster = new Animation();
@@ -77,7 +74,10 @@ public class Monster3 extends Animation implements GameMonster {
     }
 
     public void setIskilled() {
-        iskilled = true;
+        if(monster.getVisible()){
+            iskilled = true;
+            monster.setLocation(-30, -30);
+        }
     }
 
     public boolean isKilled() {
@@ -175,6 +175,21 @@ public class Monster3 extends Animation implements GameMonster {
                 monster.setLocation(monster.getX(), basicHeight - monster.getHeight());
             }
         }
+    }
+
+    @Override
+    public void setVisible(boolean visible){
+        monster.setVisible(visible);
+    }
+
+    @Override
+    public void setDirection(int d){
+        direction = d;
+    }
+
+    @Override
+    public void setCurrentFrame(int frame){
+        monster.setCurrentFrameIndex(frame);
     }
 
 }

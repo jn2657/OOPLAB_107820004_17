@@ -97,6 +97,15 @@ public class Map3 implements GameObject, GameMap {
     @Override
     public void move(){
         monsterBuilder.move();
+        for(GameMonster m: monsterBuilder.getMonsterList()){
+            System.out.println(m.getX());
+            if(m.getX() <= 92){
+                m.setDirection(0);
+            }
+            if(m.getX() >= 529){
+                m.setDirection(1);
+            }
+        }
     }
 
     @Override

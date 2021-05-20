@@ -129,6 +129,16 @@ public class Monster2 extends Animation implements GameMonster {
         monster.show();
     }
 
+    @Override
+    public void setDirection(int direction) {
+
+    }
+
+    @Override
+    public void setCurrentFrame(int frame) {
+
+    }
+
     public void regular() {
         if (!godMode){
             if (monster != null && !iskilled) {
