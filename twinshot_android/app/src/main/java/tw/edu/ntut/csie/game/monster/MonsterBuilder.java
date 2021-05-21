@@ -28,9 +28,26 @@ public class MonsterBuilder {
                 break;
             case 3:
                 GameMonster m3 = new Monster3();
-                m3.initialize(monsterStep, height);
-                m3.setLocation(x, y);
+                GameMonster m3_1 = new Monster3();
+                GameMonster m3_2 = new Monster3();
+                GameMonster m3_3 = new Monster3();
+                GameMonster m3_4 = new Monster3();
+                GameMonster m3_5 = new Monster3();
+                GameMonster m3_6 = new Monster3();
                 MonsterList.add(m3);
+                MonsterList.add(m3_1);
+                MonsterList.add(m3_2);
+                MonsterList.add(m3_3);
+                MonsterList.add(m3_4);
+                MonsterList.add(m3_5);
+                MonsterList.add(m3_6);
+                for(int i=0; i<MonsterList.size(); i++) {
+                    MonsterList.get(i).initialize(monsterStep, height);
+                    MonsterList.get(i).setLocation(x, y);
+                    if(i != 0){
+                        MonsterList.get(i).setVisible(false);
+                    }
+                }
                 break;
             default:
                 break;
@@ -40,6 +57,9 @@ public class MonsterBuilder {
     public void show(){
         for(GameMonster m: MonsterList){
             m.show();
+            if(m instanceof Monster3){
+                monster3_split();
+            }
         }
     }
 
@@ -111,6 +131,41 @@ public class MonsterBuilder {
             }
         }
         return false;
+    }
+
+    public void monster3_split(){
+        for(int i=0; i<MonsterList.size(); i++){
+            if(i==0 && MonsterList.get(i).isKilled() && !MonsterList.get(i+1).isKilled()){
+                if(!MonsterList.get(i+1).isKilled() && !MonsterList.get(i+2).isKilled()){
+                    MonsterList.get(i+1).setVisible(true);
+                    MonsterList.get(i+1).setDirection(0);
+                    MonsterList.get(i+3).setDirection(0);
+                    MonsterList.get(i+4).setDirection(0);
+                    MonsterList.get(i+3).setLocation(MonsterList.get(i+1).getX(), MonsterList.get(i+1).getY());
+                    MonsterList.get(i+4).setLocation(MonsterList.get(i+1).getX(), MonsterList.get(i+1).getY());
+                    MonsterList.get(i+2).setVisible(true);
+                    MonsterList.get(i+2).setDirection(1);
+                    MonsterList.get(i+5).setDirection(1);
+                    MonsterList.get(i+6).setDirection(1);
+                    MonsterList.get(i+5).setLocation(MonsterList.get(i+2).getX(), MonsterList.get(i+2).getY());
+                    MonsterList.get(i+6).setLocation(MonsterList.get(i+2).getX(), MonsterList.get(i+2).getY());
+                }
+            }else if(i == 1 && MonsterList.get(i).isKilled()){
+                if(!MonsterList.get(i+2).getVisible()){
+                    MonsterList.get(i+2).setVisible(true);
+                    MonsterList.get(i+3).setVisible(true);
+                    MonsterList.get(i+2).setDirection(0);
+                    MonsterList.get(i+3).setDirection(1);
+                }
+            }else if(i == 2 && MonsterList.get(i).isKilled()){
+                if(!MonsterList.get(i+3).getVisible()){
+                    MonsterList.get(i+3).setVisible(true);
+                    MonsterList.get(i+4).setVisible(true);
+                    MonsterList.get(i+3).setDirection(0);
+                    MonsterList.get(i+4).setDirection(1);
+                }
+            }
+        }
     }
 
     public List<GameMonster> getMonsterList(){

@@ -12,4 +12,8 @@ public interface GameMonster {
     public void release();
     public void move();
     public void show();
+    public void setVisible(boolean visible);
+    public void setDirection(int direction);
+    public void setCurrentFrame(int frame);
+    public boolean getVisible();
 }

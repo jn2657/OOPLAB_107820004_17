@@ -118,6 +118,21 @@ public class Monster1 extends Animation implements GameMonster {
         monster.show();
     }
 
+    @Override
+    public void setDirection(int direction) {
+
+    }
+
+    @Override
+    public void setCurrentFrame(int frame) {
+
+    }
+
+    @Override
+    public boolean getVisible(){
+        return monster.getVisible();
+    }
+
     public void regular() {
         if (monster != null && !iskilled) {
             speed = 2;
