@@ -17,7 +17,7 @@ public class Monster3 extends Animation implements GameMonster {
         monster.addFrame(R.drawable.monster2_left1);
         monster.addFrame(R.drawable.monster2_left2);
         monster.addFrame(R.drawable.monster2_left3);
-        monster.addFrame(R.drawable.monster2_left4);
+        monster.addFrame(R.drawable.monster2_left4); //3
         monster.addFrame(R.drawable.monster2_left5);
         monster.addFrame(R.drawable.monster2_left6);
         monster.addFrame(R.drawable.monster2_left7);
@@ -97,6 +97,16 @@ public class Monster3 extends Animation implements GameMonster {
     }
 
     @Override
+    public int getWidth(){
+        return monster.getWidth();
+    }
+
+    @Override
+    public int getHeight(){
+        return monster.getHeight();
+    }
+
+    @Override
     public void release() {
         monster.release();
         monster = null;
@@ -118,6 +128,7 @@ public class Monster3 extends Animation implements GameMonster {
 
     public void regular() {
         if (monster != null && !iskilled) {
+            System.out.println("step: "+step+", direction: "+direction+", x: "+monster.getX()+", y: "+monster.getY());
             speed = 2;
             if (step <= 0 && direction == 0) {
                 direction = 1;
@@ -130,6 +141,9 @@ public class Monster3 extends Animation implements GameMonster {
                     monster.setLocation((int) (monster.getX() + speed), monster.getY());
                 } else {
                     monster.setLocation((int) (monster.getX() - speed), monster.getY());
+                }
+                if (!(monster.getX() <= 529) || !(monster.getX() >= 92)) {
+                    step = 0;
                 }
             }
             step--;
@@ -190,6 +204,11 @@ public class Monster3 extends Animation implements GameMonster {
     @Override
     public void setCurrentFrame(int frame){
         monster.setCurrentFrameIndex(frame);
+    }
+
+    @Override
+    public boolean getVisible(){
+        return monster.getVisible();
     }
 
 }

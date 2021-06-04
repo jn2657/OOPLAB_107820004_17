@@ -254,16 +254,21 @@ public class StateRun extends GameState {
         if (touchX > 560 && touchX < 590 && touchY < 20) {
             character.setLocation(300, 182);
         }
+        if (touchX > 530 && touchX < 560 && touchY < 20) {
+            monsterBuilder.killAll();
+        }
         if (touchX > 590 && touchY < 20) {
             pause();
         }
         if (touchX > 325 && touchY > 185) {
-            if (character.getHeight() == 5) {
+            if (character.getJumpHeight() == 5) {
                 character.jump(5);
             }
         }
         if (touchX > 325 && touchY < 185 && touchY > 20) {
-            character.shoot();
+            if(character.life>0){
+                character.shoot();
+            }
         }
 
         if (touchX > _button.getX() && touchX < _button.getX() + _button.getWidth() &&
@@ -293,7 +298,6 @@ public class StateRun extends GameState {
                 if (gameMap.isWalkable_down(character.getX(), character.getY() + 5)) {
                     if (!character.isJumping()) {
                         character.jump(0);
-                        System.out.println(character.getX() + "," + character.getY());
                     }
                 }
             } else if (moveX < _button.getX() + _button.getWidth()) {
@@ -346,9 +350,9 @@ public class StateRun extends GameState {
 
     public boolean checkCollide() {
         for (GameMonster monster : MonsterList) {
-            if (character.getX() > monster.getX() + 23 || character.getX() < monster.getX() - 23) {
+            if (character.getX() > monster.getX() + monster.getWidth() || character.getX()+character.getWidth() < monster.getX()) {
                 continue;
-            } else if (character.getY() > monster.getY() + 23 || character.getY() < monster.getY() - 23) {
+            } else if (character.getY() > monster.getY()+monster.getHeight() || character.getY()+character.getHeight() < monster.getY()) {
                 continue;
             } else {
                 if (!monster.isKilled()) {
@@ -380,13 +384,15 @@ public class StateRun extends GameState {
     }
 
         private void checkState () {
-            int i = 0;
+            int monsterClear = 0;
             for (GameMonster monster : MonsterList) {
-                if (!monster.isKilled()) {
-                    i += 1;
+                if (!monster.isKilled() && monster.getVisible()) {
+                    monsterClear += 1;
+                }else if(monster.isKilled() && monster.getVisible()){
+                    monsterClear += 1;
                 }
             }
-            if (i == 0) {
+            if (monsterClear == 0) {
                 _scores.setValue(monsterBuilder.checkScore() + currentScore);
                 changelevel.put("score", _scores.getValue());
                 changeState(Game.CHANGE_STATE, changelevel);

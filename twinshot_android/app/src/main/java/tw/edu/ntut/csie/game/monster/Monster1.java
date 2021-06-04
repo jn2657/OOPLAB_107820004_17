@@ -99,6 +99,16 @@ public class Monster1 extends Animation implements GameMonster {
     }
 
     @Override
+    public int getWidth(){
+        return monster.getWidth();
+    }
+
+    @Override
+    public int getHeight(){
+        return monster.getHeight();
+    }
+
+    @Override
     public void release() {
         monster.release();
         monster = null;
@@ -128,6 +138,11 @@ public class Monster1 extends Animation implements GameMonster {
 
     }
 
+    @Override
+    public boolean getVisible(){
+        return monster.getVisible();
+    }
+
     public void regular() {
         if (monster != null && !iskilled) {
             speed = 2;
@@ -153,7 +168,7 @@ public class Monster1 extends Animation implements GameMonster {
             if (monster.getCurrentFrameIndex() <= 21) {
                 monster.setCurrentFrameIndex(22);
             }
-            speed = 5;
+            speed++;
             if (jumpStep <= 0) {
                 fallStep--;
                 monster.setLocation(monster.getX(), (int) (monster.getY() + speed));
