@@ -198,5 +198,4 @@ public class Monster1 extends Animation implements GameMonster {
             monster.setLocation(monster.getX(), basicHeight - monster.getHeight());
         }
     }
-
 }
