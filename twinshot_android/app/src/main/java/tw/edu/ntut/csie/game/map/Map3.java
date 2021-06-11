@@ -54,7 +54,7 @@ public class Map3 implements GameObject, GameMap {
         pillar3 = new MovingBitmap(R.drawable.pillar3);
         scores = new MovingBitmap(R.drawable.scores);
         monsterBuilder = new MonsterBuilder();
-        monsterBuilder.add(3, 200,95, 130, 160);
+        monsterBuilder.add(3, 230,95, 130, 160);
         scores.setLocation(453,348);
     }
 
@@ -97,15 +97,6 @@ public class Map3 implements GameObject, GameMap {
     @Override
     public void move(){
         monsterBuilder.move();
-        for(GameMonster m: monsterBuilder.getMonsterList()){
-            System.out.println(m.getX());
-            if(m.getX() <= 92){
-                m.setDirection(0);
-            }
-            if(m.getX() >= 529){
-                m.setDirection(1);
-            }
-        }
     }
 
     @Override

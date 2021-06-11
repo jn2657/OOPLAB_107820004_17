@@ -7,6 +7,8 @@ public interface GameMonster {
     public void setLocation(int x, int y);
     public int getX();
     public int getY();
+    public int getWidth();
+    public int getHeight();
     public void regular();
     public void animePlay();
     public void release();

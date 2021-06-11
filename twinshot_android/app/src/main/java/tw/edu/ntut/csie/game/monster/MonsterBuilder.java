@@ -81,9 +81,9 @@ public class MonsterBuilder {
 
     public boolean shootingMonster_Left(int x, int y, Arrow arrow){
         for(GameMonster monster: MonsterList){
-            if(x > monster.getX()+23 || x < monster.getX()){
+            if(x > monster.getX()+monster.getWidth() || x < monster.getX()){
                 continue;
-            }else if(y > monster.getY()+23 || y < monster.getY()-10){
+            }else if(y > monster.getY()+monster.getHeight() || y+arrow.getHeight() < monster.getY()){
                 continue;
             }else{
                 if(!arrow.noPower){
@@ -108,9 +108,9 @@ public class MonsterBuilder {
 
     public boolean shootingMonster_Right(int x, int y, Arrow arrow){
         for(GameMonster monster: MonsterList){
-            if(x+46 > monster.getX()+10 || x+46 < monster.getX()){
+            if(x+arrow.getWidth() > monster.getX()+monster.getWidth() || x+arrow.getWidth() < monster.getX()){
                 continue;
-            }else if(y > monster.getY()+23 || y < monster.getY()-10){
+            }else if(y > monster.getY()+monster.getHeight() || y+arrow.getHeight() < monster.getY()){
                 continue;
             }else{
                 if(!arrow.noPower){
@@ -178,5 +178,11 @@ public class MonsterBuilder {
             if(m.isKilled()){score += 100;}
         }
         return score;
+    }
+
+    public void killAll(){
+        for(GameMonster m: MonsterList){
+            m.setIskilled();
+        }
     }
 }

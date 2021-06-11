@@ -137,6 +137,16 @@ public class Arrow extends Animation {
         return arrow.getY();
     }
 
+    @Override
+    public int getWidth(){
+        return arrow.getWidth();
+    }
+
+    @Override
+    public int getHeight(){
+        return arrow.getHeight();
+    }
+
     public boolean getAttackState(){
         return attack;
     }

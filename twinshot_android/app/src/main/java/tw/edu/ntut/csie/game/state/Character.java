@@ -99,7 +99,6 @@ public class Character implements GameObject {
                             main.setLocation(main.getX(), main.getY() - 5);
                             jumpHeight--;
                         }else{
-                            System.out.println(main.getX()+","+main.getY());
                             jumpHeight = 0;
                         }
 
@@ -124,7 +123,6 @@ public class Character implements GameObject {
                             }
 
                         }else{
-                            System.out.println(main.getX()+","+main.getY());
                             jumping = false;
                             falling = false;
                             onArrow = false;
@@ -216,13 +214,21 @@ public class Character implements GameObject {
         return main.getY();
     }
 
+    public int getWidth(){
+        return main.getWidth();
+    }
+
+    public int getHeight(){
+        return main.getHeight();
+    }
+
     public void setLocation(int x, int y){
         main.setLocation(x, y);
     }
 
     public String getDirection() {return direction;}
 
-    public int getHeight(){
+    public int getJumpHeight(){
         return jumpHeight;
     }
 
@@ -329,10 +335,6 @@ public class Character implements GameObject {
     public boolean checkIfLeftArrowOnWall(int mainX, int mainY){
         int ArrowX;
         int ArrowY;
-        if(arrowLeft != null){
-            System.out.println("ArrowLeft: "+arrowLeft.getX()+","+arrowLeft.getY());
-            System.out.println("Main: "+mainX+","+(mainY+40));
-        }
         if(arrowLeft != null && arrowLeft.onWall){
             ArrowX = arrowLeft.getX();
             ArrowY = arrowLeft.getY();
@@ -349,8 +351,6 @@ public class Character implements GameObject {
         if(arrowRight != null && arrowRight.onWall){
             ArrowX = arrowRight.getX();
             ArrowY = arrowRight.getY();
-            System.out.println("ArrowRight: "+ArrowX+","+ArrowY);
-            System.out.println("Main: "+mainX+","+(mainY+40));
             if(mainX+46 > ArrowX && mainX <= ArrowX+46 && mainY+40 < ArrowY && mainY+40 > ArrowY - 10){
                 return true;
             }
