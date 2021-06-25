@@ -7,6 +7,8 @@ import java.util.Map;
 import tw.edu.ntut.csie.game.Game;
 import tw.edu.ntut.csie.game.Pointer;
 import tw.edu.ntut.csie.game.R;
+import tw.edu.ntut.csie.game.audio.AudioController;
+import tw.edu.ntut.csie.game.audio.AudioType;
 import tw.edu.ntut.csie.game.core.Audio;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
 import tw.edu.ntut.csie.game.engine.GameEngine;
@@ -27,7 +29,7 @@ public class StateRun extends GameState {
     private Character character;
     private MovingBitmap _life1, _life2, _life3;
     private MovingBitmap _black1, _black2, _black3;
-    private MovingBitmap s, t, a, g, e, level;
+    private MovingBitmap s, t, a, g, e, level, refreshButton, killMonster;
 
     private Integer _scores;
     private int currentScore, beginWordsAnimationCount;
@@ -35,7 +37,7 @@ public class StateRun extends GameState {
     private boolean _grab;
     public boolean pausing;
 
-    private Audio _music;
+    private AudioController audioController;
     private Pointer _pointer1, _pointer2;
     private Map<String, Object> changelevel;
 
@@ -90,6 +92,11 @@ public class StateRun extends GameState {
         _pauseButton = new MovingBitmap(R.drawable.pause);
         _pauseButton.setLocation(590, 10);
 
+        refreshButton = new MovingBitmap(R.drawable.refresh_button);
+        refreshButton.setLocation(560, 10);
+        killMonster = new MovingBitmap(R.drawable.sword_button);
+        killMonster.setLocation(530, 10);
+
         changelevel = new HashMap<>();
         changelevel.put("level", gameMap.getLevel() + 1);
 
@@ -101,9 +108,8 @@ public class StateRun extends GameState {
         character = new Character();
         character.initialize(gameMap);
 
-        _music = new Audio(R.raw.ntut);
-        _music.setRepeating(true);
-        _music.play();
+        audioController = new AudioController();
+        audioController.play(AudioType.BACKGROUND);
 
         _grab = false;
         pausing = false;
@@ -141,6 +147,9 @@ public class StateRun extends GameState {
                 _scores.setValue(monsterBuilder.checkScore() + currentScore);
             }
             levelBeginWordsAnimationPlay();
+            if(character.checkIfArrowOnWall()){
+                audioController.play(AudioType.OnWall);
+            }
         }
     }
 
@@ -157,6 +166,8 @@ public class StateRun extends GameState {
         _button.show();
         gameMap.show();
         _pauseButton.show();
+        refreshButton.show();
+        killMonster.show();
         _scores.show();
         showLife();
         showLevelBeginWords();
@@ -171,9 +182,11 @@ public class StateRun extends GameState {
         _message.release();
         _message_attack.release();
         _message_jump.release();
-        _music.release();
+        audioController.release();
         gameMap.release();
         _pauseButton.release();
+        refreshButton.release();
+        killMonster.release();
         _black1.release();
         _black2.release();
         _black3.release();
@@ -203,9 +216,11 @@ public class StateRun extends GameState {
         _message = null;
         _message_attack = null;
         _message_jump = null;
-        _music = null;
+        audioController = null;
         gameMap = null;
         _pauseButton = null;
+        refreshButton = null;
+        killMonster = null;
         changelevel = null;
         _black1 = null;
         _black2 = null;
@@ -263,11 +278,13 @@ public class StateRun extends GameState {
         if (touchX > 325 && touchY > 185) {
             if (character.getJumpHeight() == 5) {
                 character.jump(5);
+                audioController.play(AudioType.JUMP);
             }
         }
         if (touchX > 325 && touchY < 185 && touchY > 20) {
             if(character.life>0){
                 character.shoot();
+                audioController.play(AudioType.ATTACK);
             }
         }
 
@@ -337,14 +354,14 @@ public class StateRun extends GameState {
 
     @Override
     public void pause() {
-        _music.pause();
+        audioController.pause();
         pauseState(5, this, null);
         pausing = true;
     }
 
     @Override
     public void resume() {
-        _music.resume();
+        audioController.resume();
         pausing = false;
     }
 
@@ -361,18 +378,22 @@ public class StateRun extends GameState {
                             if (_life1 != null) {
                                 _life1.release();
                                 _life1 = null;
+                                audioController.play(AudioType.HURT);
                             }
                             break;
                         case 1:
                             if (_life2 != null) {
                                 _life2.release();
                                 _life2 = null;
+                                audioController.play(AudioType.HURT);
                             }
                             break;
                         case 0:
                             if (_life3 != null) {
                                 _life3.release();
                                 _life3 = null;
+                                audioController.play(AudioType.HURT);
+                                audioController.play(AudioType.DIE);
                             }
                             break;
                         }
