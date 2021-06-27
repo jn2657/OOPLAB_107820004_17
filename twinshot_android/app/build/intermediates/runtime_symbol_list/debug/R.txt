@@ -262,7 +262,13 @@ int drawable two 0x7f010104
 int id FrameLayout 0x7f020000
 int id GameView 0x7f020001
 int layout main 0x7f030000
-int raw ntut 0x7f040000
+int raw gameover 0x7f040000
+int raw hurt 0x7f040001
+int raw jump 0x7f040002
+int raw jump04 0x7f040003
+int raw ntut 0x7f040004
+int raw shoot 0x7f040005
+int raw to_wall 0x7f040006
 int string app_name 0x7f050000
 int string debugInfo 0x7f050001
 int string deviceInfo 0x7f050002

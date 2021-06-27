@@ -107,7 +107,7 @@ public class StateRun extends GameState {
         character = new Character();
         character.initialize(gameMap);
 
-        _music = new Audio(R.raw.ntut);
+        _music = new Audio(R.raw.jump04);
         _music.setRepeating(true);
         _music.play();
 
