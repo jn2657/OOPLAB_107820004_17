@@ -9,15 +9,15 @@
                         "startLines": "1,-1,-1,-1,-1",
                         "startColumns": "4,-1,-1,-1,-1",
                         "startOffsets": "17,-1,-1,-1,-1",
-                        "endColumns": "46,-1,-1,-1,-1",
-                        "endOffsets": "59,-1,-1,-1,-1"
+                        "endColumns": "45,-1,-1,-1,-1",
+                        "endOffsets": "58,-1,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,102,145,189,225",
-                        "endColumns": "46,42,43,35,35",
-                        "endOffsets": "97,140,184,220,256"
+                        "startOffsets": "55,101,144,188,224",
+                        "endColumns": "45,42,43,35,35",
+                        "endOffsets": "96,139,183,219,255"
                     }
                 }
             ]
