@@ -19,12 +19,13 @@ public class StateReady extends AbstractGameState {
     private MovingBitmap _mode;
     private MovingBitmap _levels;
     private MovingBitmap _background;
+    private MovingBitmap _about;
 
 //    private BitmapButton _sound;
 
     private BitmapButton _play;
-    private BitmapButton _back1, _back2;
-    private BitmapButton _startButton;
+    private BitmapButton _back1, _back2, _back3;
+    private BitmapButton _startButton, _aboutButton;
     private BitmapButton _level1, _level2, _level3;
 
     private Map<String, Object> level1, level2, level3;
@@ -39,19 +40,24 @@ public class StateReady extends AbstractGameState {
         addGameObject(_mode = new MovingBitmap(R.drawable.select));
         addGameObject(_background = new MovingBitmap(R.drawable.background3));
         addGameObject(_levels = new MovingBitmap(R.drawable.levels));
+        addGameObject(_about = new MovingBitmap(R.drawable.about_info));
         _background.resize((int)(_background.getWidth()*1.124),(int)(_background.getHeight()*1.045));
+        _about.resize((int)(_about.getWidth()*1.124),(int)(_about.getHeight()*1.045));
         _background.setLocation(55,0);
         _mode.setLocation(55,0);
         _levels.setLocation(55,0);
+        _about.setLocation(55,0);
         initializeStartButton();
+        initializeAboutButton();
         initializeBack1Button();
         initializePlayButton();
         initializeBack2Button();
+        initializeBack3Button();
         initializeLevel1Button();
         initializeLevel2Button();
         initializeLevel3Button();
 //        initializeSoundButton();
-        setVisibility(false, false);
+        setVisibility(false, false,false);
 
         level1 = new HashMap<>();
         level1.put("level", 2);
@@ -75,10 +81,21 @@ public class StateReady extends AbstractGameState {
         _back2.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-                setVisibility(true, false);
+                setVisibility(true, false,false);
             }
         });
         addPointerEventHandler(_back2);
+    }
+
+    private void initializeBack3Button() {
+        addGameObject(_back3 = new BitmapButton(R.drawable.back, R.drawable.back_pressed, 257, 280));
+        _back3.addButtonEventHandler(new ButtonEventHandler() {
+            @Override
+            public void perform(BitmapButton button) {
+                setVisibility(false, false, false);
+            }
+        });
+        addPointerEventHandler(_back3);
     }
 
     /**
@@ -90,7 +107,7 @@ public class StateReady extends AbstractGameState {
         _play.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-                setVisibility(false, true);
+                setVisibility(false, true,false);
             }
         });
         addPointerEventHandler(_play);
@@ -104,7 +121,7 @@ public class StateReady extends AbstractGameState {
         _back1.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-                setVisibility(false, false);
+                setVisibility(false, false,false);
             }
         });
         addPointerEventHandler(_back1);
@@ -155,10 +172,21 @@ public class StateReady extends AbstractGameState {
         _startButton.addButtonEventHandler(new ButtonEventHandler() {
             @Override
             public void perform(BitmapButton button) {
-                setVisibility(true, false);
+                setVisibility(true, false,false);
             }
         });
         addPointerEventHandler(_startButton);
+    }
+
+    private void initializeAboutButton() {
+        addGameObject(_aboutButton = new BitmapButton(R.drawable.about, R.drawable.about_pressed, 500, 320));
+        _aboutButton.addButtonEventHandler(new ButtonEventHandler() {
+            @Override
+            public void perform(BitmapButton button) {
+                setVisibility(false, false,true);
+            }
+        });
+        addPointerEventHandler(_aboutButton);
     }
 
 //    private void initializeSoundButton() {
@@ -186,16 +214,19 @@ public class StateReady extends AbstractGameState {
      * @param showMode  ���Help�e��
      * @param showLevels ���About�e��
      */
-    private void setVisibility(boolean showMode, boolean showLevels) {
-        boolean showMenu = !showLevels && !showMode;
+    private void setVisibility(boolean showMode, boolean showLevels, boolean showAbout) {
+        boolean showMenu = !showLevels && !showMode && !showAbout;
         _background.setVisible(showMenu);
         _mode.setVisible(showMode);
         _levels.setVisible(showLevels);
+        _about.setVisible(showAbout);
 
         _startButton.setVisible(showMenu);
+        _aboutButton.setVisible(showMenu);
         _play.setVisible(showMode);
         _back1.setVisible(showMode);
         _back2.setVisible(showLevels);
+        _back3.setVisible(showAbout);
         _level1.setVisible(showLevels);
         _level2.setVisible(showLevels);
         _level3.setVisible(showLevels);

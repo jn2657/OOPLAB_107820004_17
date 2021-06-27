@@ -24,7 +24,7 @@ public class Character implements GameObject {
     private int godModeCount, jumpHeight;
     private GameMap gameMap;
     private String direction;
-    private boolean jumping, falling, shooting, godMode, onArrow;
+    private boolean jumping, falling, shooting, godMode, onArrow, rightCheck, leftCheck;
     public boolean dead;
 
 
@@ -43,6 +43,8 @@ public class Character implements GameObject {
         falling = false;
         shooting = false;
         dead = false;
+        rightCheck = false;
+        leftCheck = false;
     }
 
     public void initialize(GameMap map){
@@ -354,6 +356,24 @@ public class Character implements GameObject {
             if(mainX+46 > ArrowX && mainX <= ArrowX+46 && mainY+40 < ArrowY && mainY+40 > ArrowY - 10){
                 return true;
             }
+        }
+        return false;
+    }
+
+    public boolean checkIfArrowOnWall(){
+        if(arrowRight != null && arrowRight.onWall && !rightCheck){
+            rightCheck = true;
+            return true;
+        }
+        if(rightCheck && arrowRight != null && !arrowRight.onWall){
+            rightCheck = false;
+        }
+        if(arrowLeft != null && arrowLeft.onWall && !leftCheck){
+            leftCheck = true;
+            return true;
+        }
+        if(rightCheck && arrowLeft != null && !arrowLeft.onWall){
+            leftCheck = false;
         }
         return false;
     }

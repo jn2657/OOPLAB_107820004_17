@@ -16,12 +16,9 @@ public class Arrow extends Animation {
     private TimerTask timerTask;
     private String direction;
     private GameMap gameMap;
-    private int fallCount;
-    private int disappearCount;
+    private int fallCount, disappearCount;
     private boolean attack;
-    public boolean noPower;
-    public boolean onWall;
-    public boolean hitMonster;
+    public boolean noPower, onWall, hitMonster;
 
     public Arrow(GameMap map){
         arrow = new Animation();
