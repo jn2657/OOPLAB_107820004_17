@@ -68,14 +68,4 @@ public class AudioController {
         audioList.add(background);
     }
 
-//    private void play_with_thread(){
-//        Thread t = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                jump.setRepeating(true);
-//                jump.play();
-//            }
-//        });
-//        t.start();
-//    }
 }
