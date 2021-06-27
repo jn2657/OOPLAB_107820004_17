@@ -1,23 +1,23 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\OOPLAB\\twinshot_android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\values\\strings.xml",
+                    "source": "/Users/JohnnyLee/Documents/OOPLAB_107820004_17/twinshot_android/app/src/main/res/values/strings.xml",
                     "from": {
-                        "startLines": "1,-1,-1,-1,-1",
-                        "startColumns": "4,-1,-1,-1,-1",
-                        "startOffsets": "17,-1,-1,-1,-1",
-                        "endColumns": "46,-1,-1,-1,-1",
-                        "endOffsets": "59,-1,-1,-1,-1"
+                        "startLines": "1,5,4,2,3",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "17,183,138,64,101",
+                        "endColumns": "45,42,43,35,35",
+                        "endOffsets": "58,221,177,95,132"
                     },
                     "to": {
                         "startLines": "2,3,4,5,6",
                         "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,102,145,189,225",
-                        "endColumns": "46,42,43,35,35",
-                        "endOffsets": "97,140,184,220,256"
+                        "startOffsets": "55,101,144,188,224",
+                        "endColumns": "45,42,43,35,35",
+                        "endOffsets": "96,139,183,219,255"
                     }
                 }
             ]
