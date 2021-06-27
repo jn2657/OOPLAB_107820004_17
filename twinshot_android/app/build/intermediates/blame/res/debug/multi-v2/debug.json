@@ -6,11 +6,11 @@
                 {
                     "source": "C:\\OOPLAB\\twinshot_android\\app\\src\\main\\res\\values\\strings.xml",
                     "from": {
-                        "startLines": "1,-1,-1,-1,-1",
-                        "startColumns": "4,-1,-1,-1,-1",
-                        "startOffsets": "17,-1,-1,-1,-1",
-                        "endColumns": "45,-1,-1,-1,-1",
-                        "endOffsets": "58,-1,-1,-1,-1"
+                        "startLines": "1,5,4,2,3",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "17,183,138,64,101",
+                        "endColumns": "45,42,43,35,35",
+                        "endOffsets": "58,221,177,95,132"
                     },
                     "to": {
                         "startLines": "2,3,4,5,6",

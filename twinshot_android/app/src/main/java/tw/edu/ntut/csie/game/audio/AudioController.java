@@ -3,10 +3,11 @@ package tw.edu.ntut.csie.game.audio;
 import java.util.ArrayList;
 import java.util.List;
 
+import tw.edu.ntut.csie.game.GameObject;
 import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.Audio;
 
-public class AudioController {
+public class AudioController implements GameObject {
     private Audio hurt, jump, attack, die, onWall, background, background1;
     private List<Audio> audioList;
 
@@ -73,14 +74,13 @@ public class AudioController {
         audioList.add(background1);
     }
 
-//    private void play_with_thread(){
-//        Thread t = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                jump.setRepeating(true);
-//                jump.play();
-//            }
-//        });
-//        t.start();
-//    }
+    @Override
+    public void move() {
+
+    }
+
+    @Override
+    public void show() {
+
+    }
 }

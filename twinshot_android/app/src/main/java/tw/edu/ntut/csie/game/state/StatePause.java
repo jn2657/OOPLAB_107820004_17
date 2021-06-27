@@ -65,17 +65,6 @@ public class StatePause extends AbstractGameState {
         addPointerEventHandler(_end);
     }
 
-//    private void initializeSoundButton() {
-//        addGameObject(_startButton = new BitmapButton(R.drawable.sound, R.drawable.sound_off, 220, 331));
-//        _startButton.addButtonEventHandler(new ButtonEventHandler() {
-//            @Override
-//            public void perform(BitmapButton button) {
-//                setVisibility(true, false);
-//            }
-//        });
-//        addPointerEventHandler(_startButton);
-//    }
-
     @Override
     public void pause() {
     }

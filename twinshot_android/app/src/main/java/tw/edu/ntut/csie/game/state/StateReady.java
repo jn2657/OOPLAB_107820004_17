@@ -45,6 +45,7 @@ public class StateReady extends AbstractGameState {
         addGameObject(_background = new MovingBitmap(R.drawable.background3));
         addGameObject(_levels = new MovingBitmap(R.drawable.levels));
         addGameObject(_about = new MovingBitmap(R.drawable.about_info));
+        addGameObject(audioController = new AudioController());
         _background.resize((int)(_background.getWidth()*1.124),(int)(_background.getHeight()*1.045));
         _about.resize((int)(_about.getWidth()*1.124),(int)(_about.getHeight()*1.045));
         _background.setLocation(55,0);
@@ -75,7 +76,6 @@ public class StateReady extends AbstractGameState {
         level3.put("level", 4);
         level3.put("score", 0);
 
-        audioController = new AudioController();
         audioController.play(AudioType.BACKGROUND1);
     }
 
