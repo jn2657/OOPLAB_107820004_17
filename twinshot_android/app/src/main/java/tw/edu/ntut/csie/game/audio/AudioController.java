@@ -7,7 +7,7 @@ import tw.edu.ntut.csie.game.R;
 import tw.edu.ntut.csie.game.core.Audio;
 
 public class AudioController {
-    private Audio hurt, jump, attack, die, onWall, background;
+    private Audio hurt, jump, attack, die, onWall, background, background1;
     private List<Audio> audioList;
 
     public AudioController(){
@@ -16,7 +16,8 @@ public class AudioController {
         attack = new Audio(R.raw.shoot);
         die = new Audio(R.raw.gameover);
         onWall = new Audio(R.raw.towall);
-        background = new Audio(R.raw.ntut);
+        background = new Audio(R.raw.ingame);
+        background1 = new Audio(R.raw.outgame);
         createAudioList();
     }
 
@@ -41,6 +42,9 @@ public class AudioController {
                 background.setRepeating(true);
                 background.play();
                 break;
+            case BACKGROUND1:
+                background1.setRepeating(true);
+                background1.play();
         }
     }
 
@@ -66,6 +70,7 @@ public class AudioController {
         audioList.add(die);
         audioList.add(onWall);
         audioList.add(background);
+        audioList.add(background1);
     }
 
 //    private void play_with_thread(){
