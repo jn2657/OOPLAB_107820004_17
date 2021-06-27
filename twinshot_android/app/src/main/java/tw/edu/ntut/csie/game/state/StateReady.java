@@ -7,6 +7,8 @@ import java.util.Map;
 
 import tw.edu.ntut.csie.game.Game;
 import tw.edu.ntut.csie.game.R;
+import tw.edu.ntut.csie.game.audio.AudioController;
+import tw.edu.ntut.csie.game.audio.AudioType;
 import tw.edu.ntut.csie.game.core.MovingBitmap;
 import tw.edu.ntut.csie.game.engine.GameEngine;
 import tw.edu.ntut.csie.game.extend.BitmapButton;
@@ -30,6 +32,8 @@ public class StateReady extends AbstractGameState {
 
     private Map<String, Object> level1, level2, level3;
     private Map<String, Object> chooseLevel;
+
+    private AudioController audioController;
 
     public StateReady(GameEngine engine) {
         super(engine);
@@ -70,6 +74,9 @@ public class StateReady extends AbstractGameState {
         level3 = new HashMap<>();
         level3.put("level", 4);
         level3.put("score", 0);
+
+        audioController = new AudioController();
+        audioController.play(AudioType.BACKGROUND1);
     }
 
     /**
@@ -137,6 +144,7 @@ public class StateReady extends AbstractGameState {
             public void perform(BitmapButton button) {
 //                changeState(Game.RUNNING_STATE);
                 changeState(Game.RUNNING_STATE, level1);
+                audioController.release();
             }
         });
         addPointerEventHandler(_level1);
@@ -148,6 +156,7 @@ public class StateReady extends AbstractGameState {
             @Override
             public void perform(BitmapButton button) {
                 changeState(Game.RUNNING_STATE, level2);
+                audioController.release();
             }
         });
         addPointerEventHandler(_level2);
@@ -159,6 +168,7 @@ public class StateReady extends AbstractGameState {
             @Override
             public void perform(BitmapButton button) {
                 changeState(Game.RUNNING_STATE, level3);
+                audioController.release();
             }
         });
         addPointerEventHandler(_level3);

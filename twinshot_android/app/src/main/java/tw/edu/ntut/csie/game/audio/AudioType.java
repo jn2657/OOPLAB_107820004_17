@@ -6,5 +6,6 @@ public enum AudioType {
     HURT,
     DIE,
     OnWall,
-    BACKGROUND
+    BACKGROUND,
+    BACKGROUND1
 }
